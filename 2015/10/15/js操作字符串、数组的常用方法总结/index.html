@@ -1,0 +1,410 @@
+<!DOCTYPE html>
+<!--[if lte IE 8 ]>
+<html class="ie" xmlns="http://www.w3.org/1999/xhtml" xml:lang="en-US" lang="en-US">
+<![endif]-->
+<!--[if (gte IE 9)|!(IE)]><!-->
+<!--
+***************  *      *     *
+      8          *    *       *
+      8          *  *         *
+      8          **           *
+      8          *  *         *
+      8          *    *       *
+      8          *      *     *
+      8          *        *   ***********    -----Theme By Kieran(http://go.kieran.top)
+-->
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en-US" lang="en-US">
+<!--<![endif]-->
+
+<head>
+  <title>js操作字符串、数组的常用方法总结 | 我想要只金毛</title>
+  <!-- Meta data -->
+    <meta http-equiv="Content-Type" content="text/html" charset="UTF-8" >
+    <meta http-equiv="X-UA-Compatible" content="IE=edge"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="generator" content="我想要只金毛">
+    <meta name="author" content="Junwei Shi">
+    <meta name="description" content="惜安" />
+    <meta name="keywords" content="" />
+
+    <!-- Favicon, (keep icon in root folder) -->
+    <link rel="Shortcut Icon" href="/img/favicon.ico" type="image/ico">
+
+    <link rel="alternate" href="/atom.xml" title="我想要只金毛" type="application/atom+xml">
+    <link rel="stylesheet" href="/css/all.css" media="screen" type="text/css">
+	
+    <link rel="stylesheet" href="/highlightjs/vs.css" type="text/css">
+    
+    
+
+    <!-- Custom stylesheet, (add custom styles here, always load last) -->
+    <!-- Load our stylesheet for IE8 -->
+    <!--[if IE 8]>
+    <link rel="stylesheet" type="text/css" href="/css/ie8.css" />
+    <![endif]-->
+
+    <!-- Google Webfonts (Monserrat 400/700, Open Sans 400/600) -->
+    <link href='//fonts.useso.com/css?family=Montserrat:400,700' rel='stylesheet' type='text/css'>
+    <link href='//fonts.useso.com/css?family=Open+Sans:400,600' rel='stylesheet' type='text/css'>
+
+    <!-- Load our fonts individually if IE8+, to avoid faux bold & italic rendering -->
+    <!--[if IE]>
+    <link href='http://fonts.useso.com/css?family=Montserrat:400' rel='stylesheet' type='text/css'>
+    <link href='http://fonts.useso.com/css?family=Montserrat:700' rel='stylesheet' type='text/css'>
+    <link href='http://fonts.useso.com/css?family=Open+Sans:400' rel='stylesheet' type='text/css'>
+    <link href='http://fonts.useso.com/css?family=Open+Sans:600' rel='stylesheet' type='text/css'>
+    <![endif]-->
+
+    <!-- jQuery | Load our jQuery, with an alternative source fallback to a local version if request is unavailable -->
+    <script src="/js/jquery-1.11.1.min.js"></script>
+    <script>window.jQuery || document.write('<script src="js/jquery-1.11.1.min.js"><\/script>')</script>
+
+    <!-- Load these in the <head> for quicker IE8+ load times -->
+    <!-- HTML5 shim and Respond.js IE8 support of HTML5 elements and media queries -->
+    <!--[if lt IE 9]>
+    <script src="/js/html5shiv.min.js"></script>
+    <script src="/js/respond.min.js"></script>
+    <![endif]-->
+
+
+
+
+
+
+
+
+
+
+  
+  
+  
+
+  
+  <style>.col-md-8.col-md-offset-2.opening-statement img{display:none;}</style>
+</head>
+
+<!--
+<body class="post-template">
+-->
+<body id="index" class="lightnav animsition">
+
+      <!-- ============================ Off-canvas navigation =========================== -->
+
+    <div class="sb-slidebar sb-right sb-style-overlay sb-momentum-scrolling">
+        <div class="sb-close" aria-label="Close Menu" aria-hidden="true">
+            <img src="/img/close.png" alt="Close"/>
+        </div>
+        <!-- Lists in Slidebars -->
+        <ul class="sb-menu">
+            <li><a href="/" class="animsition-link" title="Home">Home</a></li>
+            <li><a href="/archives" class="animsition-link" title="archive">archives</a></li>
+            <!-- Dropdown Menu -->
+			 
+            <li>
+                <a class="sb-toggle-submenu">Works<span class="sb-caret"></span></a>
+                <ul class="sb-submenu">
+                    
+                        <li><a href="/" target="_BLANK" class="animsition-link">AAA</a></li>
+                    
+                </ul>
+            </li>
+            
+            
+        	<li>
+        		<a class="sb-toggle-submenu">Categories<span class="sb-caret"></span></a>
+            	<ul class="sb-submenu">
+				  	
+				    <li><a href="/categories/CSS/" class="animsition-link">CSS<small>(1)</small></a></li>
+				    
+				    <li><a href="/categories/CSS3/" class="animsition-link">CSS3<small>(4)</small></a></li>
+				    
+				    <li><a href="/categories/HTML5/" class="animsition-link">HTML5<small>(1)</small></a></li>
+				    
+				    <li><a href="/categories/hexo/" class="animsition-link">hexo<small>(1)</small></a></li>
+				    
+				    <li><a href="/categories/html/" class="animsition-link">html<small>(1)</small></a></li>
+				    
+				    <li><a href="/categories/html5/" class="animsition-link">html5<small>(1)</small></a></li>
+				    
+				    <li><a href="/categories/javascript/" class="animsition-link">javascript<small>(13)</small></a></li>
+				    
+				    <li><a href="/categories/webApp/" class="animsition-link">webApp<small>(1)</small></a></li>
+				    
+				    <li><a href="/categories/脚手架工具/" class="animsition-link">脚手架工具<small>(2)</small></a></li>
+				    
+				    <li><a href="/categories/随笔/" class="animsition-link">随笔<small>(1)</small></a></li>
+				    
+				</ul>
+        	</li>
+			
+            
+            <li>
+                <a class="sb-toggle-submenu">Links<span class="sb-caret"></span></a>
+                <ul class="sb-submenu">
+                    
+                    <li><a href="http://www.timeface.cn" class="animsition-link">时光流影TimeFace</a></li>
+                    
+                    <li><a href="http://surongxiang.github.io" class="animsition-link">somebody&#39;s blog</a></li>
+                    
+                </ul>
+            </li>
+            
+        </ul>
+        <!-- Lists in Slidebars -->
+        <ul class="sb-menu secondary">
+            <li><a href="/about.html" class="animsition-link" title="about">About</a></li>
+            <li><a href="/atom.xml" class="animsition-link" title="rss">RSS</a></li>
+        </ul>
+    </div>
+    
+    <!-- ============================ END Off-canvas navigation =========================== -->
+
+    <!-- ============================ #sb-site Main Page Wrapper =========================== -->
+
+    <div id="sb-site">
+        <!-- #sb-site - All page content should be contained within this id, except the off-canvas navigation itself -->
+
+        <!-- ============================ Header & Logo bar =========================== -->
+
+        <div id="navigation" class="navbar navbar-fixed-top">
+            <div class="navbar-inner">
+                <div class="container">
+                    <!-- Nav logo -->
+                    <div class="logo">
+                        <a href="/" title="Logo" class="animsition-link">
+                         <img src="/img/logo.png" alt="Logo" width="35px;"/> 
+                        </a>
+                    </div>
+                    <!-- // Nav logo -->
+                    <!-- Info-bar -->
+                    <nav>
+                        <ul class="nav">
+                            <li><a href="/" class="animsition-link">我想要只金毛</a></li>
+                            <li class="nolink"><span>Always </span>Creative.</li>
+                            
+                            <li><a href="https://github.com/shijunwei.github" title="Github" target="_blank"><i class="icon-github"></i></a></li>
+                            
+                            
+                            
+                            
+                            
+                            <li><a href="http://weibo.com/p/1005053013104975/home" title="Sina-Weibo" target="_blank"><i class="icon-sina-weibo"></i></a></li>
+                            
+                            <li class="nolink"><span>Welcome!</span></li>
+                        </ul>
+                    </nav>
+                    <!--// Info-bar -->
+                </div>
+                <!-- // .container -->
+                <div class="learnmore sb-toggle-right">More</div>
+                <button type="button" class="navbar-toggle menu-icon sb-toggle-right" title="More">
+                <span class="sr-only">Toggle navigation</span>
+                <span class="icon-bar before"></span>
+                <span class="icon-bar main"></span>
+                <span class="icon-bar after"></span>
+                </button>
+            </div>
+            <!-- // .navbar-inner -->
+        </div>
+
+        <!-- ============================ Header & Logo bar =========================== -->
+
+        <!-- ============================ Hero Image =========================== -->
+
+        <section id="hero" class="scrollme">
+            <div class="container-fluid element-img" style="background: url(/img/1.jpg) no-repeat center center fixed">
+                <div class="row">
+                    <div class="col-xs-12 col-sm-8 col-sm-offset-2 col-md-8 col-md-offset-2 vertical-align cover boost text-center">
+                        <div class="center-me animateme" data-when="exit" data-from="0" data-to="0.6" data-opacity="0" data-translatey="100">
+                            <div>
+                            	
+                                <h2>YOU'VE MADE A <span>BRAVE</span> DECISION, WELCOME.</h2>
+                                <p></p>
+				    			
+                                <h2></h2>
+                                <p>每一个不曾起舞的日子都是对生命的辜负。</p>
+				    			
+
+                            </div>
+                        </div>
+                    </div>
+                    <!-- // .col-md-12 -->
+                </div>
+                <div class="herofade beige-dk"></div>
+            </div>
+        </section>
+
+        <!-- Height spacing helper -->
+        <div class="heightblock"></div>
+        <!-- // End height spacing helper -->
+
+        <!-- ============================ END Hero Image =========================== -->
+      
+<section id="intro">
+    <div class="container">
+        <div class="row col-md-offset-2">
+            <div class="col-md-8">
+    			<span class="post-meta">
+      <time datetime="2015-10-15T04:10:07.000Z" itemprop="datePublished">
+          2015-10-15
+      </time>
+    
+</span>
+                <h1>js操作字符串、数组的常用方法总结</h1>
+            </div>
+        </div>
+        <div class="col-md-8 col-md-offset-2">
+      		<p>对于像我这种记忆力不是很好的人，这样的整理还是很有必要的，虽然是很常用的方法，有时候也会因为强迫症要验证一次，在这里总结一下，方便以后查看。</p>
+<p>在Javascript中字符串是固定不变的，也就是说，当使用某种方法处理字符串的时候，类似于replace()等，会返回一个新的字符串，也就是说字符串是不能被修改的。</p>
+<p>可以使用“+”号将两个字符串进行连接：</p>
+<pre><code>msg = <span class="string">"hello,"</span>+<span class="string">"word"</span>;  <span class="comment">//生成字符串hello，word</span>
+</code></pre><p>字符串具有length属性，可以使用charAt()方法配合length属性返回字符串某个位置上的元素：</p>
+<pre><code>var s = <span class="string">"hello,word"</span>;
+s.charAt<span class="comment">(0)</span>        <span class="comment">//返回 h</span>
+s.charAt<span class="comment">(s.length-1)</span>    <span class="comment">//        返回 d</span>
+</code></pre><p>当需要根据索引截取一个字符串的时候，可以使用substring()方法或者slice()方法：</p>
+<pre><code>s.<span class="function"><span class="title">substring</span><span class="params">(<span class="number">1</span>,<span class="number">4</span>)</span></span>        <span class="comment">//返回索引位置为1、2、3的字符组成的字符串‘ell’；</span>
+s.<span class="function"><span class="title">slice</span><span class="params">(<span class="number">1</span>,<span class="number">4</span>)</span></span>            <span class="comment">//同上返回‘ell’</span>
+s.<span class="function"><span class="title">slice</span><span class="params">(<span class="number">0</span>)</span></span>                <span class="comment">//返回整个字符串‘hello word’</span>
+s.<span class="function"><span class="title">slice</span><span class="params">(-<span class="number">3</span>)</span></span>                <span class="comment">//从末尾开始返回后三个字符‘ord’</span>
+s.<span class="function"><span class="title">clice</span><span class="params">(<span class="number">0</span>,-<span class="number">3</span>)</span></span>            <span class="comment">//返回‘ellow,w’</span>
+<span class="comment">//负值的索引，可以理解为从最后的位置开始算起，但是并不存在‘-0’</span>
+</code></pre><p>当需要查找摸个字符在字符串中的位置的时候，可以使用indexOf()方法，返回该字符的索引位置：</p>
+<pre><code>s.indexOf(<span class="string">"o"</span>);            <span class="comment">//返回“4”，字符“o”首次出现位置的索引；</span>
+s.lastIndexOf(<span class="string">"o"</span>)        <span class="comment">//这是最后一次出现“o”的位置，返回7；</span>
+s.indexOf(<span class="string">"1"</span>,<span class="number">3</span>);        <span class="comment">//这是返回在位置3以及3以后首次出现“o”的索引，返回4；</span>
+</code></pre><p>可以使用split()方法将字符串分割成数组：</p>
+<pre><code>s.<span class="function"><span class="title">split</span><span class="params">(<span class="string">","</span>)</span></span>            <span class="comment">//根据“，”这一标识符，将字符串分割成一个数组，返回的数组为['hello','word']，值得注意的是这里面已经不包含“，”这个字符了。</span>
+</code></pre><p>同样，我们还可以使用replace()方法替换字符串中的某个字符：</p>
+<pre><code>s.<span class="keyword">replace</span>(<span class="string">"h"</span>,<span class="string">"H"</span>);        <span class="comment">//返回“Hello,word”，但是如果直接用“h”，作为标示，这个方法只会替换一次，也就是说如果字符串中有许多的“h”，也只会替换一次。想要全部替换可以选择使用正则表达式；</span>
+s.<span class="keyword">replace</span>(/\<span class="keyword">l</span>/<span class="keyword">g</span>,<span class="string">"L"</span>)；    <span class="comment">//这样就可以换掉所有的“l”；</span>
+s.toUpperCase()；        <span class="comment">//返回“HELLO,WORD”;</span>
+</code></pre><p>可以使用push()方法，向一个数组的末尾添加元素：</p>
+<pre><code><span class="atom">var</span> <span class="atom">arr</span> = [<span class="string">'heool'</span>,<span class="string">'word'</span>];
+<span class="atom">arr</span>.<span class="atom">push</span>(<span class="string">'!'</span>);        //<span class="atom">arr</span>=[<span class="string">'heool'</span>,<span class="string">'word'</span>,<span class="string">'!'</span>];
+</code></pre><p>对于数组的遍历，有两种方法，一种是根据数组的length属性，利用for循环进行遍历；另一种可以使用for/in循环，</p>
+<pre><code><span class="keyword">for</span>(<span class="keyword">var</span> index <span class="keyword">in</span> array){
+    <span class="keyword">var</span> <span class="keyword">value</span>  = array[index];
+}
+</code></pre><p>数组也可以转换成字符串，使用join()方法，可以将数组转换成字符串：</p>
+<pre><code><span class="keyword">var</span> arr = [<span class="string">'1'</span>,<span class="string">'2'</span>,<span class="string">'3'</span>];
+arr.<span class="keyword">join</span>(<span class="string">","</span>);        <span class="comment">//返回“1，2，3”;</span>
+</code></pre><p>sort()方法可以对数组进行排序，当不传入参数时，数组元素以字母表顺序排序：</p>
+<pre><code><span class="keyword">var</span> arr = [<span class="string">'banana'</span>,<span class="string">'cherry'</span>,<span class="string">'apple'</span>];
+a.sort;
+<span class="keyword">var</span> str = a.join(<span class="string">","</span>)；    <span class="comment">//str的值是“apple,banana,cherry”；如果数组中包含undefined，它会被放在数组的尾部。</span>
+<span class="comment">//还可以给这个数组传入一个函数，这个函数有两个参数，排序的规则是根据这个函数的返回值，返回值大于零，第一个参数在后，返回值小于零，第一个参数在前，返回值等于零，顺序无所谓。</span>
+a.sort(<span class="function"><span class="keyword">function</span><span class="params">(a,b)</span></span>{<span class="keyword">return</span> a-b;});
+</code></pre><p>连接两个数组可以使用concat(),这个方法返回一个连接好的新数组：</p>
+<pre><code><span class="keyword">var</span> a = [<span class="number">1</span>,<span class="number">2</span>,<span class="number">3</span>];
+a.<span class="keyword">concat</span>(<span class="number">4</span>,<span class="number">5</span>);        <span class="comment">//返回[1,2,3,4,5];</span>
+a.<span class="keyword">concat</span>([<span class="number">4</span>,<span class="number">5</span>]);    <span class="comment">//返回[1,2,3,4,5];</span>
+</code></pre><p>数组也有slice()方法，slice()方法不会修改原来的数组，而是返回一个新的数组：</p>
+<pre><code>var a = [<span class="number">1</span>,<span class="number">2</span>,<span class="number">3</span>,<span class="number">4</span>,<span class="number">5</span>];
+a.slice<span class="comment">(0,3)</span>;    <span class="comment">//返回[1,2,3];</span>
+a.slice<span class="comment">(3)</span>;        <span class="comment">//返回[4,5];</span>
+a.slice<span class="comment">(1,-1)</span>;    <span class="comment">//返回[2,3,4];参数-1指定了最后一个元素</span>
+a.slice<span class="comment">(-3,-2)</span>;    <span class="comment">//返回[3];</span>
+</code></pre><p>slice()能够从数组中删除元素、插入元素到数组中或者同时完成这两件事情，var a = [1,2,3,4,5,6,7,8];a.splice(4)，当只有一个参数的时候，从数组的起点位置开始到数组结尾的所有元素都会被删除，这个方法会返回被删除的[5,6,7,8],这时数组a的值是[1,2,3,4]，a.splice(1,2);返回[2,3]，现在a的值是[1,4]，a.splice(1,0,’a’,’b’);    //返回[‘a’,’b’]，现在a的值是[1,’a’,’b’,4];</p>
+<p>向数组中添加或者删除元素，还有push(),pop(),unshift(),shift()四个方法，分别是想数组末尾添加元素，从数组末尾删除元素，在数组头添加一个或多个元素，shift()删除数组的第一个元素并返回。</p>
+
+            <div class="clearfix"></div>
+            <hr class="nogutter">
+        </div>
+        <nav class="pagination" role="pagination">
+    
+    <a class="pull-left" href="/2015/10/17/javascript排序算法/" style="float: left;">
+        ← javascript排序算法
+    </a>
+    
+    
+    <a class="pull-right" href="/2015/10/15/用canvas制作炫酷的倒计时/">
+        用canvas制作炫酷的倒计时 →
+    </a>
+    
+</nav>
+
+        <div class="duoshuo">
+<div class="ds-thread" data-thread-key="2015/10/15/js操作字符串、数组的常用方法总结/" data-title="js操作字符串、数组的常用方法总结" data-url="http://yoursite.com/2015/10/15/js操作字符串、数组的常用方法总结/"></div>
+<script type="text/javascript">
+var duoshuoQuery = {short_name:"shijunwei2015"};
+(function() {
+	var ds = document.createElement('script');
+	ds.type = 'text/javascript';ds.async = true;
+	ds.src = (document.location.protocol == 'https:' ? 'https:' : 'http:') + '//static.duoshuo.com/embed.js';
+	ds.charset = 'UTF-8';
+	(document.getElementsByTagName('head')[0] 
+	 || document.getElementsByTagName('body')[0]).appendChild(ds);
+})();
+</script>
+</div>
+    </div>
+</section>
+
+
+      
+<!-- ============================ Footer =========================== -->
+
+<footer>
+    <div class="container">
+            <div class="copy">
+                <p>
+                    &copy; 2014<script>new Date().getFullYear()>2010&&document.write("-"+new Date().getFullYear());</script>, Content By Junwei Shi. All Rights Reserved.
+                </p>
+                <p>Theme By <a href="//go.kieran.top" style="color: #767D84">Kieran</a></p>
+            </div>
+            <div class="social">
+                <ul>
+                    
+                    <li><a href="https://github.com/shijunwei.github" title="Github" target="_blank"><i class="icon-github"></i></a>&nbsp;</li>
+                    
+                    
+                    
+                    
+                    
+                    <li><a href="http://weibo.com/p/1005053013104975/home" title="Sina-Weibo" target="_blank"><i class="icon-sina-weibo"></i></a>&nbsp;</li>
+                    
+                </ul>
+            </div>
+            <div class="clearfix"> </div>
+        </div>
+</footer>
+
+<!-- ============================ END Footer =========================== -->
+      <!-- Load our scripts -->
+        
+<!-- Resizable 'on-demand' full-height hero -->
+<script type="text/javascript">
+    
+    var resizeHero = function () {
+        var hero = $(".cover,.heightblock"),
+            window1 = $(window);
+        hero.css({
+            "height": window1.height()
+        });
+    };
+    
+    resizeHero();
+    
+    $(window).resize(function () {
+        resizeHero();
+    });
+</script>
+<script src="/js/plugins.min.js"></script><!-- Bootstrap core and concatenated plugins always load here -->
+<script src="/js/jquery.flexslider-min.js"></script><!-- Flexslider plugin -->
+<script src="/js/scripts.js"></script><!-- Theme scripts -->
+
+<!-- Initiate flexslider plugin -->
+<script type="text/javascript">
+    $(document).ready(function($) {
+      $('.flexslider').flexslider({
+        animation: "fade",
+        prevText: "",
+        nextText: "",
+        directionNav: true
+      });
+    });
+</script>
+
+</body>
+</html>

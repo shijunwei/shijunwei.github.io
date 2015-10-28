@@ -1,0 +1,411 @@
+<!DOCTYPE html>
+<!--[if lte IE 8 ]>
+<html class="ie" xmlns="http://www.w3.org/1999/xhtml" xml:lang="en-US" lang="en-US">
+<![endif]-->
+<!--[if (gte IE 9)|!(IE)]><!-->
+<!--
+***************  *      *     *
+      8          *    *       *
+      8          *  *         *
+      8          **           *
+      8          *  *         *
+      8          *    *       *
+      8          *      *     *
+      8          *        *   ***********    -----Theme By Kieran(http://go.kieran.top)
+-->
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en-US" lang="en-US">
+<!--<![endif]-->
+
+<head>
+  <title>js对象（1） | 我想要只金毛</title>
+  <!-- Meta data -->
+    <meta http-equiv="Content-Type" content="text/html" charset="UTF-8" >
+    <meta http-equiv="X-UA-Compatible" content="IE=edge"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="generator" content="我想要只金毛">
+    <meta name="author" content="Junwei Shi">
+    <meta name="description" content="惜安" />
+    <meta name="keywords" content="" />
+
+    <!-- Favicon, (keep icon in root folder) -->
+    <link rel="Shortcut Icon" href="/img/favicon.ico" type="image/ico">
+
+    <link rel="alternate" href="/atom.xml" title="我想要只金毛" type="application/atom+xml">
+    <link rel="stylesheet" href="/css/all.css" media="screen" type="text/css">
+	
+    <link rel="stylesheet" href="/highlightjs/vs.css" type="text/css">
+    
+    
+
+    <!-- Custom stylesheet, (add custom styles here, always load last) -->
+    <!-- Load our stylesheet for IE8 -->
+    <!--[if IE 8]>
+    <link rel="stylesheet" type="text/css" href="/css/ie8.css" />
+    <![endif]-->
+
+    <!-- Google Webfonts (Monserrat 400/700, Open Sans 400/600) -->
+    <link href='//fonts.useso.com/css?family=Montserrat:400,700' rel='stylesheet' type='text/css'>
+    <link href='//fonts.useso.com/css?family=Open+Sans:400,600' rel='stylesheet' type='text/css'>
+
+    <!-- Load our fonts individually if IE8+, to avoid faux bold & italic rendering -->
+    <!--[if IE]>
+    <link href='http://fonts.useso.com/css?family=Montserrat:400' rel='stylesheet' type='text/css'>
+    <link href='http://fonts.useso.com/css?family=Montserrat:700' rel='stylesheet' type='text/css'>
+    <link href='http://fonts.useso.com/css?family=Open+Sans:400' rel='stylesheet' type='text/css'>
+    <link href='http://fonts.useso.com/css?family=Open+Sans:600' rel='stylesheet' type='text/css'>
+    <![endif]-->
+
+    <!-- jQuery | Load our jQuery, with an alternative source fallback to a local version if request is unavailable -->
+    <script src="/js/jquery-1.11.1.min.js"></script>
+    <script>window.jQuery || document.write('<script src="js/jquery-1.11.1.min.js"><\/script>')</script>
+
+    <!-- Load these in the <head> for quicker IE8+ load times -->
+    <!-- HTML5 shim and Respond.js IE8 support of HTML5 elements and media queries -->
+    <!--[if lt IE 9]>
+    <script src="/js/html5shiv.min.js"></script>
+    <script src="/js/respond.min.js"></script>
+    <![endif]-->
+
+
+
+
+
+
+
+
+
+
+  
+  
+  
+
+  
+  <style>.col-md-8.col-md-offset-2.opening-statement img{display:none;}</style>
+</head>
+
+<!--
+<body class="post-template">
+-->
+<body id="index" class="lightnav animsition">
+
+      <!-- ============================ Off-canvas navigation =========================== -->
+
+    <div class="sb-slidebar sb-right sb-style-overlay sb-momentum-scrolling">
+        <div class="sb-close" aria-label="Close Menu" aria-hidden="true">
+            <img src="/img/close.png" alt="Close"/>
+        </div>
+        <!-- Lists in Slidebars -->
+        <ul class="sb-menu">
+            <li><a href="/" class="animsition-link" title="Home">Home</a></li>
+            <li><a href="/archives" class="animsition-link" title="archive">archives</a></li>
+            <!-- Dropdown Menu -->
+			 
+            <li>
+                <a class="sb-toggle-submenu">Works<span class="sb-caret"></span></a>
+                <ul class="sb-submenu">
+                    
+                        <li><a href="/" target="_BLANK" class="animsition-link">AAA</a></li>
+                    
+                </ul>
+            </li>
+            
+            
+        	<li>
+        		<a class="sb-toggle-submenu">Categories<span class="sb-caret"></span></a>
+            	<ul class="sb-submenu">
+				  	
+				    <li><a href="/categories/CSS/" class="animsition-link">CSS<small>(1)</small></a></li>
+				    
+				    <li><a href="/categories/CSS3/" class="animsition-link">CSS3<small>(4)</small></a></li>
+				    
+				    <li><a href="/categories/HTML5/" class="animsition-link">HTML5<small>(1)</small></a></li>
+				    
+				    <li><a href="/categories/hexo/" class="animsition-link">hexo<small>(1)</small></a></li>
+				    
+				    <li><a href="/categories/html/" class="animsition-link">html<small>(1)</small></a></li>
+				    
+				    <li><a href="/categories/html5/" class="animsition-link">html5<small>(1)</small></a></li>
+				    
+				    <li><a href="/categories/javascript/" class="animsition-link">javascript<small>(13)</small></a></li>
+				    
+				    <li><a href="/categories/webApp/" class="animsition-link">webApp<small>(1)</small></a></li>
+				    
+				    <li><a href="/categories/脚手架工具/" class="animsition-link">脚手架工具<small>(2)</small></a></li>
+				    
+				    <li><a href="/categories/随笔/" class="animsition-link">随笔<small>(1)</small></a></li>
+				    
+				</ul>
+        	</li>
+			
+            
+            <li>
+                <a class="sb-toggle-submenu">Links<span class="sb-caret"></span></a>
+                <ul class="sb-submenu">
+                    
+                    <li><a href="http://www.timeface.cn" class="animsition-link">时光流影TimeFace</a></li>
+                    
+                    <li><a href="http://surongxiang.github.io" class="animsition-link">somebody&#39;s blog</a></li>
+                    
+                </ul>
+            </li>
+            
+        </ul>
+        <!-- Lists in Slidebars -->
+        <ul class="sb-menu secondary">
+            <li><a href="/about.html" class="animsition-link" title="about">About</a></li>
+            <li><a href="/atom.xml" class="animsition-link" title="rss">RSS</a></li>
+        </ul>
+    </div>
+    
+    <!-- ============================ END Off-canvas navigation =========================== -->
+
+    <!-- ============================ #sb-site Main Page Wrapper =========================== -->
+
+    <div id="sb-site">
+        <!-- #sb-site - All page content should be contained within this id, except the off-canvas navigation itself -->
+
+        <!-- ============================ Header & Logo bar =========================== -->
+
+        <div id="navigation" class="navbar navbar-fixed-top">
+            <div class="navbar-inner">
+                <div class="container">
+                    <!-- Nav logo -->
+                    <div class="logo">
+                        <a href="/" title="Logo" class="animsition-link">
+                         <img src="/img/logo.png" alt="Logo" width="35px;"/> 
+                        </a>
+                    </div>
+                    <!-- // Nav logo -->
+                    <!-- Info-bar -->
+                    <nav>
+                        <ul class="nav">
+                            <li><a href="/" class="animsition-link">我想要只金毛</a></li>
+                            <li class="nolink"><span>Always </span>Creative.</li>
+                            
+                            <li><a href="https://github.com/shijunwei.github" title="Github" target="_blank"><i class="icon-github"></i></a></li>
+                            
+                            
+                            
+                            
+                            
+                            <li><a href="http://weibo.com/p/1005053013104975/home" title="Sina-Weibo" target="_blank"><i class="icon-sina-weibo"></i></a></li>
+                            
+                            <li class="nolink"><span>Welcome!</span></li>
+                        </ul>
+                    </nav>
+                    <!--// Info-bar -->
+                </div>
+                <!-- // .container -->
+                <div class="learnmore sb-toggle-right">More</div>
+                <button type="button" class="navbar-toggle menu-icon sb-toggle-right" title="More">
+                <span class="sr-only">Toggle navigation</span>
+                <span class="icon-bar before"></span>
+                <span class="icon-bar main"></span>
+                <span class="icon-bar after"></span>
+                </button>
+            </div>
+            <!-- // .navbar-inner -->
+        </div>
+
+        <!-- ============================ Header & Logo bar =========================== -->
+
+        <!-- ============================ Hero Image =========================== -->
+
+        <section id="hero" class="scrollme">
+            <div class="container-fluid element-img" style="background: url(/img/1.jpg) no-repeat center center fixed">
+                <div class="row">
+                    <div class="col-xs-12 col-sm-8 col-sm-offset-2 col-md-8 col-md-offset-2 vertical-align cover boost text-center">
+                        <div class="center-me animateme" data-when="exit" data-from="0" data-to="0.6" data-opacity="0" data-translatey="100">
+                            <div>
+                            	
+                                <h2>YOU'VE MADE A <span>BRAVE</span> DECISION, WELCOME.</h2>
+                                <p></p>
+				    			
+                                <h2></h2>
+                                <p>每一个不曾起舞的日子都是对生命的辜负。</p>
+				    			
+
+                            </div>
+                        </div>
+                    </div>
+                    <!-- // .col-md-12 -->
+                </div>
+                <div class="herofade beige-dk"></div>
+            </div>
+        </section>
+
+        <!-- Height spacing helper -->
+        <div class="heightblock"></div>
+        <!-- // End height spacing helper -->
+
+        <!-- ============================ END Hero Image =========================== -->
+      
+<section id="intro">
+    <div class="container">
+        <div class="row col-md-offset-2">
+            <div class="col-md-8">
+    			<span class="post-meta">
+      <time datetime="2015-10-15T04:02:12.000Z" itemprop="datePublished">
+          2015-10-15
+      </time>
+    
+</span>
+                <h1>js对象（1）</h1>
+            </div>
+        </div>
+        <div class="col-md-8 col-md-offset-2">
+      		<p>对象是JavaScript的基本数据类型，是复合值，在JavaScript中除了字符串、数字、true、false、null和undefined之外，JavaScript中的值都是对象。</p>
+<h3 id="创建JavaScript对象">创建JavaScript对象</h3><p>使用对象直接量，也就是名值对组成的映射表，格式如下：</p>
+<pre><code><span class="keyword">var</span> <span class="keyword">empty</span> = {};        <span class="comment">//这是一个空对象</span>
+<span class="keyword">var</span> point = { x:<span class="number">0</span> , y:<span class="number">1</span> };         <span class="comment">//这个对象有连个属性</span>
+<span class="keyword">var</span> car = {
+    name：<span class="string">'BMW X7'</span>,
+    color：<span class="string">'black'</span>,
+    <span class="string">'max-speed'</span>:<span class="string">'200'</span>    <span class="comment">//属性名中间有空格或-，必须用字符串表示</span>
+}
+</code></pre><p>使用<code>new</code>创建对象：</p>
+<pre><code><span class="built_in">var</span> myArray <span class="subst">=</span> <span class="literal">new</span> <span class="built_in">Array</span>（）;        <span class="comment">//创建一个数组，等同于[]</span>
+<span class="built_in">var</span> <span class="built_in">date</span> <span class="subst">=</span> <span class="literal">new</span> <span class="built_in">Date</span>()         <span class="comment">//创建一个Date对象</span>
+</code></pre><h3 id="原型">原型</h3><p>绝大多数JavaScript对象都会和另一个对象关联，这种关联就涉及到了原型，当通过关键字new和构造函数创建对象的时候，实际上是构造该对象的prototype属性，JavaScript对象具有自有属性，也有一些属性是从原型对象继承而来的，所以通过<code>new Array()</code>创建的对象的原型就是Array.prototype。</p>
+<p>举个例子，当我们要查询对象ooo中的x属性，如果o中不存在x，那么会在o的原型中继续查找x。如果原型对象中也没有x，那么会在这个原型对象的原型上继续查询，知道找到这个x，或者直到某个对象的原型是<code>null</code>为止，这样我们可以清楚的发现，对象的原型属性构成了一个链，通过这个链，就可以实现属性的继承(<a href="http://dmitrysoshnikov.com/ecmascript/javascript-the-core/" target="_blank" rel="external">图片来源</a>)。</p>
+<p><img src="http://7xivia.com1.z0.glb.clouddn.com/jsyuanxing.png" alt="图片"></p>
+<p>ECMAScript5中定义了一个Object.creat()的方法，创建一个新的对象，其中的一个参数就是对象的原型，同时还有第二个参数，是对对象的属性的进一步描述。</p>
+<pre><code><span class="keyword">var</span> o = <span class="built_in">Object</span>.creat({x:<span class="number">1</span>,y:<span class="number">1</span>});    <span class="comment">//o继承了属性x和y</span>
+</code></pre><p>如果我们传入了null参数，这时创建的对象就不会继承任何东西（基础方法也不会继承），比如toString(),如果想要创建一个新对象需要传入Object.prototype。下面这个方法可以模拟原型继承：</p>
+<pre><code><span class="function"><span class="keyword">function</span> <span class="title">inherit</span><span class="params">(p)</span></span>{
+    <span class="keyword">if</span>(p==<span class="literal">null</span>) <span class="keyword">throw</span> <span class="built_in">TypeError</span>();
+    <span class="keyword">if</span>(<span class="built_in">Object</span>.creat)
+        <span class="keyword">return</span> <span class="built_in">Object</span>.creat(p);
+    <span class="keyword">var</span> t = <span class="keyword">typeof</span> p;
+    <span class="keyword">if</span>(t !== <span class="string">"object"</span> &amp;&amp; t !== <span class="string">"function"</span>) <span class="keyword">throw</span> <span class="built_in">TypeError</span>();
+    <span class="function"><span class="keyword">function</span> <span class="title">f</span><span class="params">()</span> </span>{};
+    f.prototype = p;
+    <span class="keyword">return</span> <span class="keyword">new</span> f();
+}
+</code></pre><h3 id="对象属性的查询和设置">对象属性的查询和设置</h3><p>对象的属性可以通过’<code>.</code>‘或者’<code>[]</code>‘进行查询，简单的说，当使用’<code>.</code>‘的时候，’<code>.</code>‘的右边一定要是对象的属性名，当使用’<code>[]</code>‘的时候，’<code>[]</code>‘内必须是一个计算结果为字符串的表达式，也可以直接是字符串。同时我们也可以使用’<code>.</code>‘和’<code>[]</code>‘来设置属性值。</p>
+<pre><code>var book={
+    name:<span class="string">'AngularJs'</span>
+    title:<span class="string">'Easy Study'</span>
+    }
+console.<span class="keyword">log</span>(book.name);            <span class="comment">//AngularJs</span>
+console.<span class="keyword">log</span>(book[name]);        <span class="comment">//AngularJs</span>
+book.<span class="keyword">color</span> = <span class="string">'red'</span>;
+book.pages = <span class="number">1000</span>;
+console.<span class="keyword">log</span>(book.<span class="keyword">color</span>);        <span class="comment">//red</span>
+console.<span class="keyword">log</span>(book[pages]);        <span class="comment">//1000</span>
+</code></pre><p>值得注意的是，在我们的程序中可能经常会出现这样的代码，</p>
+<pre><code>var <span class="built_in">length</span> = book.subtitle.<span class="built_in">length</span>;        <span class="comment">//这会抛出一个错误，因为book.subtitle本身是undefined的，并没有length属性，除非你确定subtitle和book都是对象，否则尽量不要这样去写。可以用下面的两种方式。</span>
+<span class="comment">//方法一</span>
+var <span class="built_in">length</span> = undefined;
+<span class="keyword">if</span>(book){
+    <span class="keyword">if</span>(book.subtitle) len = book.subtitle.<span class="built_in">length</span>;
+}
+<span class="comment">//方法二:短路写法</span>
+var <span class="built_in">length</span> = book &amp;&amp; book.subtitle &amp;&amp; book.subtitle.<span class="built_in">length</span>;
+</code></pre><h3 id="对象属性的删除">对象属性的删除</h3><p>删除属性可以用delete运算符，但是delete只能断开属性和宿主对象的关系，而不会去操作属性中的属性，说白了，就是当一个对象的属性的值的类型还是一个对象的时候，当我们删除了这个属性，这个作为属性的这个对象依然可以使用的。</p>
+<pre><code>a = {p:{x:<span class="number">1</span>}};
+b = a.p;
+<span class="keyword">delete</span> a.p;
+console.<span class="built_in">log</span>(b.x);        
+<span class="comment">//输出1，因为已经删除的属性的引用依然存在。这种问题有可能导致内存泄露，所以在删除对象属性的时候，一定要删除的彻底。遍历所有的属性，并且都删除。</span>
+</code></pre>
+            <div class="clearfix"></div>
+            <hr class="nogutter">
+        </div>
+        <nav class="pagination" role="pagination">
+    
+    <a class="pull-left" href="/2015/10/15/new运算符/" style="float: left;">
+        ← javascript new 运算符
+    </a>
+    
+    
+    <a class="pull-right" href="/2015/10/15/reduce方法/">
+        javascript reduce方法 →
+    </a>
+    
+</nav>
+
+        <div class="duoshuo">
+<div class="ds-thread" data-thread-key="2015/10/15/js对象（1）/" data-title="js对象（1）" data-url="http://yoursite.com/2015/10/15/js对象（1）/"></div>
+<script type="text/javascript">
+var duoshuoQuery = {short_name:"shijunwei2015"};
+(function() {
+	var ds = document.createElement('script');
+	ds.type = 'text/javascript';ds.async = true;
+	ds.src = (document.location.protocol == 'https:' ? 'https:' : 'http:') + '//static.duoshuo.com/embed.js';
+	ds.charset = 'UTF-8';
+	(document.getElementsByTagName('head')[0] 
+	 || document.getElementsByTagName('body')[0]).appendChild(ds);
+})();
+</script>
+</div>
+    </div>
+</section>
+
+
+      
+<!-- ============================ Footer =========================== -->
+
+<footer>
+    <div class="container">
+            <div class="copy">
+                <p>
+                    &copy; 2014<script>new Date().getFullYear()>2010&&document.write("-"+new Date().getFullYear());</script>, Content By Junwei Shi. All Rights Reserved.
+                </p>
+                <p>Theme By <a href="//go.kieran.top" style="color: #767D84">Kieran</a></p>
+            </div>
+            <div class="social">
+                <ul>
+                    
+                    <li><a href="https://github.com/shijunwei.github" title="Github" target="_blank"><i class="icon-github"></i></a>&nbsp;</li>
+                    
+                    
+                    
+                    
+                    
+                    <li><a href="http://weibo.com/p/1005053013104975/home" title="Sina-Weibo" target="_blank"><i class="icon-sina-weibo"></i></a>&nbsp;</li>
+                    
+                </ul>
+            </div>
+            <div class="clearfix"> </div>
+        </div>
+</footer>
+
+<!-- ============================ END Footer =========================== -->
+      <!-- Load our scripts -->
+        
+<!-- Resizable 'on-demand' full-height hero -->
+<script type="text/javascript">
+    
+    var resizeHero = function () {
+        var hero = $(".cover,.heightblock"),
+            window1 = $(window);
+        hero.css({
+            "height": window1.height()
+        });
+    };
+    
+    resizeHero();
+    
+    $(window).resize(function () {
+        resizeHero();
+    });
+</script>
+<script src="/js/plugins.min.js"></script><!-- Bootstrap core and concatenated plugins always load here -->
+<script src="/js/jquery.flexslider-min.js"></script><!-- Flexslider plugin -->
+<script src="/js/scripts.js"></script><!-- Theme scripts -->
+
+<!-- Initiate flexslider plugin -->
+<script type="text/javascript">
+    $(document).ready(function($) {
+      $('.flexslider').flexslider({
+        animation: "fade",
+        prevText: "",
+        nextText: "",
+        directionNav: true
+      });
+    });
+</script>
+
+</body>
+</html>

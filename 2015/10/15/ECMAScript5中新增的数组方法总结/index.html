@@ -1,0 +1,397 @@
+<!DOCTYPE html>
+<!--[if lte IE 8 ]>
+<html class="ie" xmlns="http://www.w3.org/1999/xhtml" xml:lang="en-US" lang="en-US">
+<![endif]-->
+<!--[if (gte IE 9)|!(IE)]><!-->
+<!--
+***************  *      *     *
+      8          *    *       *
+      8          *  *         *
+      8          **           *
+      8          *  *         *
+      8          *    *       *
+      8          *      *     *
+      8          *        *   ***********    -----Theme By Kieran(http://go.kieran.top)
+-->
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en-US" lang="en-US">
+<!--<![endif]-->
+
+<head>
+  <title>ECMAScript5中新增的数组方法总结 | 我想要只金毛</title>
+  <!-- Meta data -->
+    <meta http-equiv="Content-Type" content="text/html" charset="UTF-8" >
+    <meta http-equiv="X-UA-Compatible" content="IE=edge"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="generator" content="我想要只金毛">
+    <meta name="author" content="Junwei Shi">
+    <meta name="description" content="惜安" />
+    <meta name="keywords" content="" />
+
+    <!-- Favicon, (keep icon in root folder) -->
+    <link rel="Shortcut Icon" href="/img/favicon.ico" type="image/ico">
+
+    <link rel="alternate" href="/atom.xml" title="我想要只金毛" type="application/atom+xml">
+    <link rel="stylesheet" href="/css/all.css" media="screen" type="text/css">
+	
+    <link rel="stylesheet" href="/highlightjs/vs.css" type="text/css">
+    
+    
+
+    <!-- Custom stylesheet, (add custom styles here, always load last) -->
+    <!-- Load our stylesheet for IE8 -->
+    <!--[if IE 8]>
+    <link rel="stylesheet" type="text/css" href="/css/ie8.css" />
+    <![endif]-->
+
+    <!-- Google Webfonts (Monserrat 400/700, Open Sans 400/600) -->
+    <link href='//fonts.useso.com/css?family=Montserrat:400,700' rel='stylesheet' type='text/css'>
+    <link href='//fonts.useso.com/css?family=Open+Sans:400,600' rel='stylesheet' type='text/css'>
+
+    <!-- Load our fonts individually if IE8+, to avoid faux bold & italic rendering -->
+    <!--[if IE]>
+    <link href='http://fonts.useso.com/css?family=Montserrat:400' rel='stylesheet' type='text/css'>
+    <link href='http://fonts.useso.com/css?family=Montserrat:700' rel='stylesheet' type='text/css'>
+    <link href='http://fonts.useso.com/css?family=Open+Sans:400' rel='stylesheet' type='text/css'>
+    <link href='http://fonts.useso.com/css?family=Open+Sans:600' rel='stylesheet' type='text/css'>
+    <![endif]-->
+
+    <!-- jQuery | Load our jQuery, with an alternative source fallback to a local version if request is unavailable -->
+    <script src="/js/jquery-1.11.1.min.js"></script>
+    <script>window.jQuery || document.write('<script src="js/jquery-1.11.1.min.js"><\/script>')</script>
+
+    <!-- Load these in the <head> for quicker IE8+ load times -->
+    <!-- HTML5 shim and Respond.js IE8 support of HTML5 elements and media queries -->
+    <!--[if lt IE 9]>
+    <script src="/js/html5shiv.min.js"></script>
+    <script src="/js/respond.min.js"></script>
+    <![endif]-->
+
+
+
+
+
+
+
+
+
+
+  
+  
+  
+
+  
+  <style>.col-md-8.col-md-offset-2.opening-statement img{display:none;}</style>
+</head>
+
+<!--
+<body class="post-template">
+-->
+<body id="index" class="lightnav animsition">
+
+      <!-- ============================ Off-canvas navigation =========================== -->
+
+    <div class="sb-slidebar sb-right sb-style-overlay sb-momentum-scrolling">
+        <div class="sb-close" aria-label="Close Menu" aria-hidden="true">
+            <img src="/img/close.png" alt="Close"/>
+        </div>
+        <!-- Lists in Slidebars -->
+        <ul class="sb-menu">
+            <li><a href="/" class="animsition-link" title="Home">Home</a></li>
+            <li><a href="/archives" class="animsition-link" title="archive">archives</a></li>
+            <!-- Dropdown Menu -->
+			 
+            <li>
+                <a class="sb-toggle-submenu">Works<span class="sb-caret"></span></a>
+                <ul class="sb-submenu">
+                    
+                        <li><a href="/" target="_BLANK" class="animsition-link">AAA</a></li>
+                    
+                </ul>
+            </li>
+            
+            
+        	<li>
+        		<a class="sb-toggle-submenu">Categories<span class="sb-caret"></span></a>
+            	<ul class="sb-submenu">
+				  	
+				    <li><a href="/categories/CSS/" class="animsition-link">CSS<small>(1)</small></a></li>
+				    
+				    <li><a href="/categories/CSS3/" class="animsition-link">CSS3<small>(4)</small></a></li>
+				    
+				    <li><a href="/categories/HTML5/" class="animsition-link">HTML5<small>(1)</small></a></li>
+				    
+				    <li><a href="/categories/hexo/" class="animsition-link">hexo<small>(1)</small></a></li>
+				    
+				    <li><a href="/categories/html/" class="animsition-link">html<small>(1)</small></a></li>
+				    
+				    <li><a href="/categories/html5/" class="animsition-link">html5<small>(1)</small></a></li>
+				    
+				    <li><a href="/categories/javascript/" class="animsition-link">javascript<small>(13)</small></a></li>
+				    
+				    <li><a href="/categories/webApp/" class="animsition-link">webApp<small>(1)</small></a></li>
+				    
+				    <li><a href="/categories/脚手架工具/" class="animsition-link">脚手架工具<small>(2)</small></a></li>
+				    
+				    <li><a href="/categories/随笔/" class="animsition-link">随笔<small>(1)</small></a></li>
+				    
+				</ul>
+        	</li>
+			
+            
+            <li>
+                <a class="sb-toggle-submenu">Links<span class="sb-caret"></span></a>
+                <ul class="sb-submenu">
+                    
+                    <li><a href="http://www.timeface.cn" class="animsition-link">时光流影TimeFace</a></li>
+                    
+                    <li><a href="http://surongxiang.github.io" class="animsition-link">somebody&#39;s blog</a></li>
+                    
+                </ul>
+            </li>
+            
+        </ul>
+        <!-- Lists in Slidebars -->
+        <ul class="sb-menu secondary">
+            <li><a href="/about.html" class="animsition-link" title="about">About</a></li>
+            <li><a href="/atom.xml" class="animsition-link" title="rss">RSS</a></li>
+        </ul>
+    </div>
+    
+    <!-- ============================ END Off-canvas navigation =========================== -->
+
+    <!-- ============================ #sb-site Main Page Wrapper =========================== -->
+
+    <div id="sb-site">
+        <!-- #sb-site - All page content should be contained within this id, except the off-canvas navigation itself -->
+
+        <!-- ============================ Header & Logo bar =========================== -->
+
+        <div id="navigation" class="navbar navbar-fixed-top">
+            <div class="navbar-inner">
+                <div class="container">
+                    <!-- Nav logo -->
+                    <div class="logo">
+                        <a href="/" title="Logo" class="animsition-link">
+                         <img src="/img/logo.png" alt="Logo" width="35px;"/> 
+                        </a>
+                    </div>
+                    <!-- // Nav logo -->
+                    <!-- Info-bar -->
+                    <nav>
+                        <ul class="nav">
+                            <li><a href="/" class="animsition-link">我想要只金毛</a></li>
+                            <li class="nolink"><span>Always </span>Creative.</li>
+                            
+                            <li><a href="https://github.com/shijunwei.github" title="Github" target="_blank"><i class="icon-github"></i></a></li>
+                            
+                            
+                            
+                            
+                            
+                            <li><a href="http://weibo.com/p/1005053013104975/home" title="Sina-Weibo" target="_blank"><i class="icon-sina-weibo"></i></a></li>
+                            
+                            <li class="nolink"><span>Welcome!</span></li>
+                        </ul>
+                    </nav>
+                    <!--// Info-bar -->
+                </div>
+                <!-- // .container -->
+                <div class="learnmore sb-toggle-right">More</div>
+                <button type="button" class="navbar-toggle menu-icon sb-toggle-right" title="More">
+                <span class="sr-only">Toggle navigation</span>
+                <span class="icon-bar before"></span>
+                <span class="icon-bar main"></span>
+                <span class="icon-bar after"></span>
+                </button>
+            </div>
+            <!-- // .navbar-inner -->
+        </div>
+
+        <!-- ============================ Header & Logo bar =========================== -->
+
+        <!-- ============================ Hero Image =========================== -->
+
+        <section id="hero" class="scrollme">
+            <div class="container-fluid element-img" style="background: url(/img/1.jpg) no-repeat center center fixed">
+                <div class="row">
+                    <div class="col-xs-12 col-sm-8 col-sm-offset-2 col-md-8 col-md-offset-2 vertical-align cover boost text-center">
+                        <div class="center-me animateme" data-when="exit" data-from="0" data-to="0.6" data-opacity="0" data-translatey="100">
+                            <div>
+                            	
+                                <h2>YOU'VE MADE A <span>BRAVE</span> DECISION, WELCOME.</h2>
+                                <p></p>
+				    			
+                                <h2></h2>
+                                <p>每一个不曾起舞的日子都是对生命的辜负。</p>
+				    			
+
+                            </div>
+                        </div>
+                    </div>
+                    <!-- // .col-md-12 -->
+                </div>
+                <div class="herofade beige-dk"></div>
+            </div>
+        </section>
+
+        <!-- Height spacing helper -->
+        <div class="heightblock"></div>
+        <!-- // End height spacing helper -->
+
+        <!-- ============================ END Hero Image =========================== -->
+      
+<section id="intro">
+    <div class="container">
+        <div class="row col-md-offset-2">
+            <div class="col-md-8">
+    			<span class="post-meta">
+      <time datetime="2015-10-15T03:54:39.000Z" itemprop="datePublished">
+          2015-10-15
+      </time>
+    
+</span>
+                <h1>ECMAScript5中新增的数组方法总结</h1>
+            </div>
+        </div>
+        <div class="col-md-8 col-md-offset-2">
+      		<h3 id="every():测试断言函数是否对每个数组元素为真">every():测试断言函数是否对每个数组元素为真</h3><p>array.ervery(predicate,o);</p>
+<p><code>参数predicate</code>：断言函数，有三个参数predicate（array[i],i,array),返回值被当做布尔值解析。所有数组元素通过断言函数的返回值都可以被转换成布尔真时，<code>every()</code>方法返回true；</p>
+<p><code>参数o</code>：调用predicate时可选的this值,可选；</p>
+<p>例子：</p>
+<pre><code>[<span class="number">1</span>,<span class="number">2</span>,<span class="number">3</span>].every(<span class="function"><span class="keyword">function</span><span class="params">(x)</span></span>{<span class="keyword">return</span> x&lt;<span class="number">5</span>}); //=&gt;<span class="keyword">true</span>:所有元素都小于<span class="number">5</span>
+[<span class="number">1</span>,<span class="number">2</span>,<span class="number">3</span>].every(<span class="function"><span class="keyword">function</span><span class="params">(x)</span></span>{<span class="keyword">return</span> x&lt;<span class="number">3</span>}); //=&gt;<span class="keyword">false</span>:不是所有元素都小于<span class="number">3</span>
+[].every(<span class="function"><span class="keyword">function</span><span class="params">(x)</span></span>{<span class="keyword">return</span> <span class="keyword">false</span>}); //=&gt;<span class="keyword">true</span>:[]总是返回<span class="keyword">true</span>
+</code></pre><h3 id="filter():过滤数组元素，返回一个满足条件的新数组">filter():过滤数组元素，返回一个满足条件的新数组</h3><p>array.filter(predicate,o);</p>
+<p><code>参数predicate</code>：过滤函数，有三个参数predicate（array[i],i,array),按序号从小到大遍历array，每个数组元素调用一次predicate，若返回值为真，则该数组元素会添加到返回的数组中；</p>
+<p><code>参数o</code>：调用predicate时可选的this值,可选；</p>
+<p>例子：</p>
+<pre><code>[<span class="number">1</span>,<span class="number">2</span>,<span class="number">3</span>].filter(<span class="function"><span class="keyword">function</span><span class="params">(x)</span></span>{<span class="keyword">return</span> x&gt;<span class="number">1</span>}); <span class="comment">//=&gt;[2,3]</span>
+</code></pre><h3 id="forEach():便利数组元素，并对每一个元素调用一次f">forEach():便利数组元素，并对每一个元素调用一次f</h3><p>array.forEach(f,o);</p>
+<p><code>参数f</code>：为array的每一个元素调用的函数(序号从小到大)；</p>
+<p><code>参数o</code>：调用f时可选的this值,可选；</p>
+<p>例子：</p>
+<pre><code><span class="keyword">var</span> a = [<span class="number">1</span>,<span class="number">2</span>,<span class="number">3</span>];
+a.forEach(<span class="function"><span class="keyword">function</span><span class="params">(x,i,<span class="keyword">array</span>)</span><span class="comment">{array[i]++}</span>);</span> <span class="comment">//a现在的值是[2,3,4]。forEach没有返回值。</span>
+</code></pre><h3 id="indexOf():在数组中查找值">indexOf():在数组中查找值</h3><p>array.indexOf(value,start);</p>
+<p><code>参数value</code>：要查找的值；</p>
+<p><code>参数start</code>：开始查找数组元素的序号，可选参数，不传则从0开始查找；</p>
+<p>若找到该值(用<code>&#39;====&#39;</code>判断)，则方法返回该值的索引位置，若没有找到，返回-1。</p>
+<p>例子：</p>
+<pre><code>[<span class="string">'a'</span>,<span class="string">'b'</span>,<span class="string">'c'</span>].indexOf(<span class="string">'b'</span>);  <span class="comment">// =&gt; 1</span>
+[<span class="string">'a'</span>,<span class="string">'b'</span>,<span class="string">'c'</span>].indexOf(<span class="string">'a'</span>,<span class="number">1</span>);  <span class="comment">// =&gt; -1</span>
+[<span class="string">'a'</span>,<span class="string">'b'</span>,<span class="string">'c'</span>].indexOf(<span class="string">'d'</span>);  <span class="comment">// =&gt; -1</span>
+</code></pre><h3 id="lastIndexOf()：在数组中查找值(反向)">lastIndexOf()：在数组中查找值(反向)</h3><p>array.lastIndexOf(value,start);</p>
+<p><code>参数value</code>：要查找的值；</p>
+<p><code>参数start</code>：开始查找数组元素的序号，可选参数，不传则从最后一个元素开始查找；</p>
+<p>若找到该值(用<code>&#39;====&#39;</code>判断)，则方法返回该值的索引位置，若没有找到，返回-1，查找的方向与indexOf相反。</p>
+<h3 id="map()：按某种规则处理每个数组元素，返回一个等长的新的数组">map()：按某种规则处理每个数组元素，返回一个等长的新的数组</h3><p>array.map(f,o);</p>
+<p><code>参数f</code>：数组的处理函数,有三个参数f (array[i],i,array)，该方法返回的值会成为<code>map</code>方法返回数组的一个元素，索引为<code>i</code>；</p>
+<p><code>参数o</code>：调用f时可选的this值,可选；</p>
+<p>例子：</p>
+<pre><code>[<span class="number">1</span>,<span class="number">2</span>,<span class="number">3</span>].map(<span class="function"><span class="keyword">function</span><span class="params">(x)</span></span>{<span class="keyword">return</span> x*x;});  <span class="comment">// =&gt; [1,4,9]</span>
+</code></pre><h3 id="reduce():从数组中计算出一个值">reduce():从数组中计算出一个值</h3><p><code>详见</code>：<a href="http://shijunwei.github.io/2015/10/04/jsreduce/" target="_blank">javascript reduce方法</a></p>
+<h3 id="reduceRight():从数组中计算出一个值(从右到左)">reduceRight():从数组中计算出一个值(从右到左)</h3><p><code>reduceRight()</code>方法与<code>reduce()</code>方法只有一点不同：reduceRight()方法遍历数组的时候是从右到左(从最大序号到最小序号)。</p>
+<h3 id="some():测试是否有数组元素满足断言函数">some():测试是否有数组元素满足断言函数</h3><p><code>参数predicate</code>：断言函数，有三个参数predicate（array[i],i,array)；</p>
+<p><code>参数o</code>：调用predicate时可选的this值,可选；</p>
+<p><code>some()</code>方法与<code>every()</code>很相似，不同的是，<code>some()</code>并不需要所有的数组元素在调用predicate时都返回真，只需要有一个元素在调用predicate时返回真，<code>some()</code>就会停止遍历，并返回true。</p>
+
+            <div class="clearfix"></div>
+            <hr class="nogutter">
+        </div>
+        <nav class="pagination" role="pagination">
+    
+    <a class="pull-left" href="/2015/10/15/前端工程构建···YEOMAN/" style="float: left;">
+        ← 前端工程构建···YEOMAN
+    </a>
+    
+    
+    <a class="pull-right" href="/2015/10/15/颠倒div顺序/">
+        颠倒DIV顺序 →
+    </a>
+    
+</nav>
+
+        <div class="duoshuo">
+<div class="ds-thread" data-thread-key="2015/10/15/ECMAScript5中新增的数组方法总结/" data-title="ECMAScript5中新增的数组方法总结" data-url="http://yoursite.com/2015/10/15/ECMAScript5中新增的数组方法总结/"></div>
+<script type="text/javascript">
+var duoshuoQuery = {short_name:"shijunwei2015"};
+(function() {
+	var ds = document.createElement('script');
+	ds.type = 'text/javascript';ds.async = true;
+	ds.src = (document.location.protocol == 'https:' ? 'https:' : 'http:') + '//static.duoshuo.com/embed.js';
+	ds.charset = 'UTF-8';
+	(document.getElementsByTagName('head')[0] 
+	 || document.getElementsByTagName('body')[0]).appendChild(ds);
+})();
+</script>
+</div>
+    </div>
+</section>
+
+
+      
+<!-- ============================ Footer =========================== -->
+
+<footer>
+    <div class="container">
+            <div class="copy">
+                <p>
+                    &copy; 2014<script>new Date().getFullYear()>2010&&document.write("-"+new Date().getFullYear());</script>, Content By Junwei Shi. All Rights Reserved.
+                </p>
+                <p>Theme By <a href="//go.kieran.top" style="color: #767D84">Kieran</a></p>
+            </div>
+            <div class="social">
+                <ul>
+                    
+                    <li><a href="https://github.com/shijunwei.github" title="Github" target="_blank"><i class="icon-github"></i></a>&nbsp;</li>
+                    
+                    
+                    
+                    
+                    
+                    <li><a href="http://weibo.com/p/1005053013104975/home" title="Sina-Weibo" target="_blank"><i class="icon-sina-weibo"></i></a>&nbsp;</li>
+                    
+                </ul>
+            </div>
+            <div class="clearfix"> </div>
+        </div>
+</footer>
+
+<!-- ============================ END Footer =========================== -->
+      <!-- Load our scripts -->
+        
+<!-- Resizable 'on-demand' full-height hero -->
+<script type="text/javascript">
+    
+    var resizeHero = function () {
+        var hero = $(".cover,.heightblock"),
+            window1 = $(window);
+        hero.css({
+            "height": window1.height()
+        });
+    };
+    
+    resizeHero();
+    
+    $(window).resize(function () {
+        resizeHero();
+    });
+</script>
+<script src="/js/plugins.min.js"></script><!-- Bootstrap core and concatenated plugins always load here -->
+<script src="/js/jquery.flexslider-min.js"></script><!-- Flexslider plugin -->
+<script src="/js/scripts.js"></script><!-- Theme scripts -->
+
+<!-- Initiate flexslider plugin -->
+<script type="text/javascript">
+    $(document).ready(function($) {
+      $('.flexslider').flexslider({
+        animation: "fade",
+        prevText: "",
+        nextText: "",
+        directionNav: true
+      });
+    });
+</script>
+
+</body>
+</html>
