@@ -178,6 +178,77 @@
 </nav>
       <div class="body-wrap">
   
+    <article id="post-meta" class="article article-type-post" itemscope itemprop="blogPost">
+  
+    <div class="article-meta">
+      <a href="/2015/10/15/meta/" class="article-date">
+  	<time datetime="2015-10-15T04:00:28.000Z" itemprop="datePublished">2015-10-15</time>
+</a>
+    </div>
+  
+  <div class="article-inner">
+    
+      <input type="hidden" class="isFancy" />
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2015/10/15/meta/">meta&amp;viewport</a>
+    </h1>
+  
+
+      </header>
+      
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <h3 id="调研了一下meta标签，总结一些心得。">调研了一下meta标签，总结一些心得。</h3><p>meta标签主要是提供了有关页面的一些描述信息和HTTP标题信息，例如一些有关网页的描述和关键字等等，这些信息是用户不可见的。</p>
+<pre><code>&lt;meta <span class="variable">http-equiv=</span><span class="string">"Content-Type"</span> <span class="variable">Content=</span><span class="string">"text/html; Charset=gb2312"</span>&gt;
+</code></pre><p>定义了HTML页面所用的字符集，这个方法只是在html4中存在，在html5中可以直接通过charset属性进行字符集的设置，还有一个有意思的用法，meta可以让你的页面跳转</p>
+<pre><code>&lt;meta <span class="variable">http-equiv=</span><span class="string">"Refresh"</span> <span class="variable">Content=</span><span class="string">"5; Url=http://www.baidu.com"</span>&gt;
+</code></pre><p>页面会在5s之后跳转到百度首页，上面两个用法提到的http-equiv 属性，实际上是服务器把名称/值对添加到发送给浏览器的内容头部。</p>
+<pre><code>&lt;meta <span class="variable">http-equiv=</span><span class="string">"charset"</span> <span class="variable">content=</span><span class="string">"iso-8859-1"</span>&gt;
+</code></pre><p>这时发送到浏览器的头部就应该包含:</p>
+<pre><code><span class="attribute">content</span>-type: text/<span class="tag">html</span>
+charset:iso-<span class="number">8859</span>-<span class="number">1</span>
+</code></pre><p>因为所有服务器至少会发送一个：</p>
+<pre><code>content-<span class="class"><span class="keyword">type</span>:<span class="title">text</span>/<span class="title">html</span></span>
+</code></pre><p>meta标签还有一个<code>name</code>属性，name属性的值有author(网站作者)、description(网站描述)、keywords(网站的关键字)、generator(编辑软件)、revised(软件的版本)。<br>keywords和description通常是帮助搜索引擎更好的获取你页面的内容，制定搜索的关键字。</p>
+<h3 id="ViewPort">ViewPort</h3><p>如果一个在PC上正常浏览的网页，放到移动设备上，移动设备会默认先将网页放入一个虚拟的窗口中，这个窗口就是viewport。这个窗口会比手机的屏幕宽大，网页加载之后，再通过整体的缩放（或者是3：1，或者是2：1），来让网页整个现实到屏幕上。</p>
+<p>通常经过这样的缩放，页面上的元素已经很难看清楚了，为了解决这样的问题，可以使用meta标签的viewport属性，来人为的制定viewport的大小，这样，就可以避免由于缩放引起的问题。、</p>
+<pre><code>&lt;meta <span class="variable">name=</span><span class="string">"viewport"</span> <span class="variable">content=</span><span class="string">"width=device-width,height=device-height,inital-scale=1.0,maximum-scale=1.0,minimum-scale=1.0,user-scalable=no;"</span> /&gt;
+</code></pre><p>这里面制定的宽度为设备宽度，高度为设备的高度，inital-scale表示初始的缩放比例，maximum-scale和minimum-scale分别代表用户能缩放的最大和最小的比例，user-scalable则指定了用户是否可以进行缩放。</p>
+<p>通过这样的设置，使viewport和设备的屏幕大小一样，因此就不会产生缩放。元素也就能够看得清了。同时，在缩放比例为100%(也就是1，也就是没有进行缩放的时候)，设备的像素和css的像素相等。</p>
+
+      
+    </div>
+    
+    <div class="article-info article-info-index">
+      
+      
+	<div class="article-tag tagcloud">
+		<ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/html/">html</a></li></ul>
+	</div>
+
+      
+
+      
+      <div class="clearfix"></div>
+    </div>
+    
+  </div>
+  
+</article>
+
+
+
+
+
+
+
+  
     <article id="post-js继承学习笔记" class="article article-type-post" itemscope itemprop="blogPost">
   
     <div class="article-meta">

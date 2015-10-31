@@ -6,24 +6,24 @@
   <title>js操作字符串、数组的常用方法总结 | 我想养只小金毛</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
   <meta name="description" content="对于像我这种记忆力不是很好的人，这样的整理还是很有必要的，虽然是很常用的方法，有时候也会因为强迫症要验证一次，在这里总结一下，方便以后查看。
-在Javascript中字符串是固定不变的，也就是说，当使用某种方法处理字符串的时候，类似于replace()等，会返回一个新的字符串，也就是说字符串是不能被修改的。
+字符串在Javascript中字符串是固定不变的，也就是说，当使用某种方法处理字符串的时候，类似于replace()等，会返回一个新的字符串，也就是说字符串是不能被修改的。
 可以使用“+”号将两个字符串进行连接：
-msg = &quot;hello,&quot;+&quot;word&quot;;  /">
+msg = &quot;hello,&quot;+&quot;word&quot;;">
 <meta property="og:type" content="article">
 <meta property="og:title" content="js操作字符串、数组的常用方法总结">
 <meta property="og:url" content="http://shijunwei.github.io/2015/10/15/js操作字符串、数组的常用方法总结/index.html">
 <meta property="og:site_name" content="我想养只小金毛">
 <meta property="og:description" content="对于像我这种记忆力不是很好的人，这样的整理还是很有必要的，虽然是很常用的方法，有时候也会因为强迫症要验证一次，在这里总结一下，方便以后查看。
-在Javascript中字符串是固定不变的，也就是说，当使用某种方法处理字符串的时候，类似于replace()等，会返回一个新的字符串，也就是说字符串是不能被修改的。
+字符串在Javascript中字符串是固定不变的，也就是说，当使用某种方法处理字符串的时候，类似于replace()等，会返回一个新的字符串，也就是说字符串是不能被修改的。
 可以使用“+”号将两个字符串进行连接：
-msg = &quot;hello,&quot;+&quot;word&quot;;  /">
-<meta property="og:updated_time" content="2015-10-28T13:33:41.000Z">
+msg = &quot;hello,&quot;+&quot;word&quot;;">
+<meta property="og:updated_time" content="2015-10-30T16:25:13.000Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="js操作字符串、数组的常用方法总结">
 <meta name="twitter:description" content="对于像我这种记忆力不是很好的人，这样的整理还是很有必要的，虽然是很常用的方法，有时候也会因为强迫症要验证一次，在这里总结一下，方便以后查看。
-在Javascript中字符串是固定不变的，也就是说，当使用某种方法处理字符串的时候，类似于replace()等，会返回一个新的字符串，也就是说字符串是不能被修改的。
+字符串在Javascript中字符串是固定不变的，也就是说，当使用某种方法处理字符串的时候，类似于replace()等，会返回一个新的字符串，也就是说字符串是不能被修改的。
 可以使用“+”号将两个字符串进行连接：
-msg = &quot;hello,&quot;+&quot;word&quot;;  /">
+msg = &quot;hello,&quot;+&quot;word&quot;;">
   
     <link rel="alternative" href="/atom.xml" title="我想养只小金毛" type="application/atom+xml">
   
@@ -224,7 +224,7 @@ msg = &quot;hello,&quot;+&quot;word&quot;;  /">
     <div class="article-entry" itemprop="articleBody">
       
         <p>对于像我这种记忆力不是很好的人，这样的整理还是很有必要的，虽然是很常用的方法，有时候也会因为强迫症要验证一次，在这里总结一下，方便以后查看。</p>
-<p>在Javascript中字符串是固定不变的，也就是说，当使用某种方法处理字符串的时候，类似于replace()等，会返回一个新的字符串，也就是说字符串是不能被修改的。</p>
+<h3 id="字符串">字符串</h3><p>在Javascript中字符串是固定不变的，也就是说，当使用某种方法处理字符串的时候，类似于replace()等，会返回一个新的字符串，也就是说字符串是不能被修改的。</p>
 <p>可以使用“+”号将两个字符串进行连接：</p>
 <pre><code>msg = <span class="string">"hello,"</span>+<span class="string">"word"</span>;  <span class="comment">//生成字符串hello，word</span>
 </code></pre><p>字符串具有length属性，可以使用charAt()方法配合length属性返回字符串某个位置上的元素：</p>
@@ -248,7 +248,7 @@ s.indexOf(<span class="string">"1"</span>,<span class="number">3</span>);       
 <pre><code>s.<span class="keyword">replace</span>(<span class="string">"h"</span>,<span class="string">"H"</span>);        <span class="comment">//返回“Hello,word”，但是如果直接用“h”，作为标示，这个方法只会替换一次，也就是说如果字符串中有许多的“h”，也只会替换一次。想要全部替换可以选择使用正则表达式；</span>
 s.<span class="keyword">replace</span>(/\<span class="keyword">l</span>/<span class="keyword">g</span>,<span class="string">"L"</span>)；    <span class="comment">//这样就可以换掉所有的“l”；</span>
 s.toUpperCase()；        <span class="comment">//返回“HELLO,WORD”;</span>
-</code></pre><p>可以使用push()方法，向一个数组的末尾添加元素：</p>
+</code></pre><h3 id="数组">数组</h3><p>可以使用push()方法，向一个数组的末尾添加元素：</p>
 <pre><code><span class="atom">var</span> <span class="atom">arr</span> = [<span class="string">'heool'</span>,<span class="string">'word'</span>];
 <span class="atom">arr</span>.<span class="atom">push</span>(<span class="string">'!'</span>);        //<span class="atom">arr</span>=[<span class="string">'heool'</span>,<span class="string">'word'</span>,<span class="string">'!'</span>];
 </code></pre><p>对于数组的遍历，有两种方法，一种是根据数组的length属性，利用for循环进行遍历；另一种可以使用for/in循环，</p>
@@ -260,9 +260,10 @@ s.toUpperCase()；        <span class="comment">//返回“HELLO,WORD”;</span>
 arr.<span class="keyword">join</span>(<span class="string">","</span>);        <span class="comment">//返回“1，2，3”;</span>
 </code></pre><p>sort()方法可以对数组进行排序，当不传入参数时，数组元素以字母表顺序排序：</p>
 <pre><code><span class="keyword">var</span> arr = [<span class="string">'banana'</span>,<span class="string">'cherry'</span>,<span class="string">'apple'</span>];
-a.sort;
-<span class="keyword">var</span> str = a.join(<span class="string">","</span>)；    <span class="comment">//str的值是“apple,banana,cherry”；如果数组中包含undefined，它会被放在数组的尾部。</span>
-<span class="comment">//还可以给这个数组传入一个函数，这个函数有两个参数，排序的规则是根据这个函数的返回值，返回值大于零，第一个参数在后，返回值小于零，第一个参数在前，返回值等于零，顺序无所谓。</span>
+arr.sort();
+<span class="keyword">var</span> str = a.join(<span class="string">","</span>)；    <span class="comment">//str的值是“apple,banana,cherry”；</span>
+<span class="comment">//如果数组中包含undefined，sort方法会把它放在数组的尾部。</span>
+<span class="comment">//sort方法把数组中的每个对象转换成字符串，然后进行比较，那么 11 会被放在 2 的前面。所以我们需要传递一个函数给sort用来比较纯数字的大小，这个函数有两个参数，排序的规则是根据这个函数的返回值，返回值大于零，第一个参数在后，返回值小于零，第一个参数在前，返回值等于零，顺序无所谓。</span>
 a.sort(<span class="function"><span class="keyword">function</span><span class="params">(a,b)</span></span>{<span class="keyword">return</span> a-b;});
 </code></pre><p>连接两个数组可以使用concat(),这个方法返回一个连接好的新数组：</p>
 <pre><code><span class="keyword">var</span> a = [<span class="number">1</span>,<span class="number">2</span>,<span class="number">3</span>];
