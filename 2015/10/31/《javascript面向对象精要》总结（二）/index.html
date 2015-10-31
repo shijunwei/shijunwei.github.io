@@ -5,28 +5,19 @@
   
   <title>《javascript面向对象精要》总结（二） | 我想养只小金毛</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta name="description" content="理解对象
-属性的定义，探测，删除：
- 我们知道，我们可以在任何时候给js的对象去添加属性。至于添加属性的具体过程，是javascript在对象上调用了一个叫[[Put]]的内部方法，该方法会在对象上创建一个节点来保存属性（自有属性）。当已有的属性被设置一个新的值时，调用的是一个叫[[Set]]的方法，该方法将属性的当前值替换成新值。
- 判断一个属性是否存在，有时我们会这样做：
-if(person.">
+  <meta name="description" content="理解对象属性的定义，探测，删除：我们知道，我们可以在任何时候给js的对象去添加属性。至于添加属性的具体过程，是javascript在对象上调用了一个叫[[Put]]的内部方法，该方法会在对象上创建一个节点来保存属性（自有属性）。当已有的属性被设置一个新的值时，调用的是一个叫[[Set]]的方法，该方法将属性的当前值替换成新值。判断一个属性是否存在，有时我们会这样做：
+if(person.name)">
 <meta property="og:type" content="article">
 <meta property="og:title" content="《javascript面向对象精要》总结（二）">
 <meta property="og:url" content="http://shijunwei.github.io/2015/10/31/《javascript面向对象精要》总结（二）/index.html">
 <meta property="og:site_name" content="我想养只小金毛">
-<meta property="og:description" content="理解对象
-属性的定义，探测，删除：
- 我们知道，我们可以在任何时候给js的对象去添加属性。至于添加属性的具体过程，是javascript在对象上调用了一个叫[[Put]]的内部方法，该方法会在对象上创建一个节点来保存属性（自有属性）。当已有的属性被设置一个新的值时，调用的是一个叫[[Set]]的方法，该方法将属性的当前值替换成新值。
- 判断一个属性是否存在，有时我们会这样做：
-if(person.">
-<meta property="og:updated_time" content="2015-10-31T12:58:32.000Z">
+<meta property="og:description" content="理解对象属性的定义，探测，删除：我们知道，我们可以在任何时候给js的对象去添加属性。至于添加属性的具体过程，是javascript在对象上调用了一个叫[[Put]]的内部方法，该方法会在对象上创建一个节点来保存属性（自有属性）。当已有的属性被设置一个新的值时，调用的是一个叫[[Set]]的方法，该方法将属性的当前值替换成新值。判断一个属性是否存在，有时我们会这样做：
+if(person.name)">
+<meta property="og:updated_time" content="2015-10-31T13:23:00.000Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="《javascript面向对象精要》总结（二）">
-<meta name="twitter:description" content="理解对象
-属性的定义，探测，删除：
- 我们知道，我们可以在任何时候给js的对象去添加属性。至于添加属性的具体过程，是javascript在对象上调用了一个叫[[Put]]的内部方法，该方法会在对象上创建一个节点来保存属性（自有属性）。当已有的属性被设置一个新的值时，调用的是一个叫[[Set]]的方法，该方法将属性的当前值替换成新值。
- 判断一个属性是否存在，有时我们会这样做：
-if(person.">
+<meta name="twitter:description" content="理解对象属性的定义，探测，删除：我们知道，我们可以在任何时候给js的对象去添加属性。至于添加属性的具体过程，是javascript在对象上调用了一个叫[[Put]]的内部方法，该方法会在对象上创建一个节点来保存属性（自有属性）。当已有的属性被设置一个新的值时，调用的是一个叫[[Set]]的方法，该方法将属性的当前值替换成新值。判断一个属性是否存在，有时我们会这样做：
+if(person.name)">
   
     <link rel="alternative" href="/atom.xml" title="我想养只小金毛" type="application/atom+xml">
   
@@ -226,34 +217,27 @@ if(person.">
     
     <div class="article-entry" itemprop="articleBody">
       
-        <h3 id="理解对象">理解对象</h3><ol>
-<li><p>属性的定义，探测，删除：</p>
-<p> 我们知道，我们可以在任何时候给js的对象去添加属性。至于添加属性的具体过程，是javascript在对象上调用了一个叫[[Put]]的内部方法，该方法会在对象上创建一个节点来保存属性（自有属性）。当已有的属性被设置一个新的值时，调用的是一个叫[[Set]]的方法，该方法将属性的当前值替换成新值。</p>
-<p> 判断一个属性是否存在，有时我们会这样做：</p>
+        <h2 id="理解对象">理解对象</h2><h5 id="属性的定义，探测，删除：">属性的定义，探测，删除：</h5><p>我们知道，我们可以在任何时候给js的对象去添加属性。至于添加属性的具体过程，是javascript在对象上调用了一个叫[[Put]]的内部方法，该方法会在对象上创建一个节点来保存属性（自有属性）。当已有的属性被设置一个新的值时，调用的是一个叫[[Set]]的方法，该方法将属性的当前值替换成新值。判断一个属性是否存在，有时我们会这样做：</p>
 <pre><code><span class="keyword">if</span>(person.<span class="keyword">name</span>){
     //<span class="keyword">do</span> something
 }
-</code></pre><p> 但是，当name的值是一个对象，非空字符串，非零数字或者true时，会评估为真，但是当值是null，undefined，0，false，NaN或空字符串时，会被评估为假。显而易见这里就会存在一些问题了。</p>
-<p> 更加可靠的是使用in操作符，用法都知道，不说了。但是in操作符还会检查原型属性，这有可能也不是我们想要的，我们还可以使用<code>hasOwnProperty()</code>这个方法。每个javascript对象都有这个方法。</p>
-<p> 当我们想要删除一个对象的某个属性的时候，使用delete操作符就可以了。</p>
-</li>
-<li><p>属性的枚举：</p>
-<p> 典型的方法是使用<code>for-in</code>循环进行迭代（只能遍历可枚举的属性），他也会遍历原型属性：</p>
+</code></pre><p>但是，当name的值是一个对象，非空字符串，非零数字或者true时，会评估为真，但是当值是null，undefined，0，false，NaN或空字符串时，会被评估为假。显而易见这里就会存在一些问题了。</p>
+<p>更加可靠的是使用in操作符，用法都知道，不说了。但是in操作符还会检查原型属性，这有可能也不是我们想要的，我们还可以使用<code>hasOwnProperty()</code>这个方法。每个javascript对象都有这个方法。</p>
+<p>当我们想要删除一个对象的某个属性的时候，使用delete操作符就可以了。</p>
+<h5 id="属性的枚举：">属性的枚举：</h5><p>典型的方法是使用<code>for-in</code>循环进行迭代（只能遍历可枚举的属性），他也会遍历原型属性：</p>
 <pre><code>var <span class="keyword">property</span>;
 <span class="keyword">for</span>(<span class="keyword">property</span> <span class="keyword">in</span> object){
     console.<span class="command">log</span>(<span class="string">"Name:"</span>+<span class="keyword">property</span>);
     console.<span class="command">log</span>(<span class="string">"Value:"</span> + object[<span class="keyword">property</span>]);
 }
-</code></pre><p> ECMAScript5中引入了Object.keys()方法，可以获取对象的属性名字数组（自有属性，不包含原型属性）：</p>
+</code></pre><p>ECMAScript5中引入了Object.keys()方法，可以获取对象的属性名字数组（自有属性，不包含原型属性）：</p>
 <pre><code>var <span class="keyword">property</span> = Object.keys(object);
 var i <span class="built_in">len</span>;
 <span class="keyword">for</span> (i=<span class="number">0</span>,<span class="built_in">len</span>=peoperty.length;i&lt;<span class="built_in">len</span>;i++){
     console.<span class="built_in">log</span>(<span class="string">"Name:"</span>+<span class="keyword">property</span>[i]);
     console.<span class="built_in">log</span>(<span class="string">"Value:"</span> + object[<span class="keyword">property</span>[i]]);
 }
-</code></pre></li>
-<li><p>属性的类型：</p>
-<p> 属性的类型有两种，一种是数据属性，我们之前用到的属性都是数据属性，数据属性包含一个值。<br> 访问器属性不包含值，是定义了一个当前属性被读取时调用的函数，和一个当属性被写入是调用的函数（可以是一个也可以是两个都有）。</p>
+</code></pre><h5 id="属性的类型：">属性的类型：</h5><p>属性的类型有两种，一种是数据属性，我们之前用到的属性都是数据属性，数据属性包含一个值。<br>访问器属性不包含值，是定义了一个当前属性被读取时调用的函数，和一个当属性被写入是调用的函数（可以是一个也可以是两个都有）。</p>
 <pre><code><span class="keyword">var</span> person = {
     _name:<span class="string">"Shi"</span>,<span class="comment">//前置下划线是一个俗称的命名规范，表示该属性被认为是私有，但是实际上还是公开的。</span>
 
@@ -269,32 +253,43 @@ var i <span class="built_in">len</span>;
 console.log(person.name);
 person.name = <span class="string">"SHI"</span>;
 console.log(person.name);
-</code></pre></li>
-<li><p>属性特征：<br> 包括<code>通用的属性特征</code>：[[Enumerable]]决定了属性是否可以被枚举，[[Configurable]]决定了属性是否可以被配置。我们平时声明的属性都是可枚举，可配置的，所以你可以随时删除和更改。<br> 改变属性的特征可以使用Object.defineProperty()方法，该方法接受三个参数：拥有该属性的对象，属性名，包含需要设置的特征的属性描述对象：</p>
-<p> var person = {</p>
-<pre><code><span class="property">name</span>:<span class="string">"Shi"</span>
-</code></pre><p> }</p>
-<p> Object.defineProperty(person,”name”,{</p>
-<pre><code><span class="string">enumerable:</span><span class="literal">false</span>
-</code></pre><p> });</p>
-<p> console.log(“name” in person);    //true<br> console.log(person.propertyIsEnumerable(“name”));    //false</p>
-<p> var properties = Object.keys(person);<br> console.log(properties.length);        // 0</p>
-<p> Object.defineProperty(person,”name”,{</p>
-<pre><code><span class="string">configurable:</span><span class="literal">false</span>
-</code></pre><p> });</p>
-<p> delete person.name;        //严格模式下会导致错误，非严格模式会失败。<br> console.log(person.name);    //“Shi”</p>
-<p> //状态已经变成不可配置，不能修改了。<br> Object.defineProperty(person,”name”,{</p>
-<pre><code><span class="string">configurable:</span><span class="literal">true</span>
-</code></pre><p> });</p>
-<p> <code>数据的属性特征</code>：[[Value]]包含属性值，当你在对象上创建属性时该特征被自动赋值。[[Writable]]是一个布尔值，指示该属性是否可以写入。所有属性都是可写的，除非你另外指定。</p>
-<p> var person = {};</p>
-<p> Object.defineProperty(person,”name”,{</p>
-<pre><code><span class="string">configurable:</span><span class="literal">true</span>,
-<span class="string">enumerable:</span><span class="literal">true</span>,
-<span class="string">value:</span><span class="string">"Shi"</span>,
-<span class="string">writable:</span><span class="literal">true</span>
-</code></pre><p> });<br> //Object.defineProperty()定义新的属性时，要为所有的特征值制定一个值，否则布尔型的特征值会被制定为false。</p>
-<p> <code>访问器属性特征</code>：访问其属性不需要存值，所以没有[[Value]]和[[Writable]]，取而代之的是[[Get]]和[[Set]]。</p>
+</code></pre><h5 id="属性特征：">属性特征：</h5><p><code>通用的属性特征</code>：[[Enumerable]]决定了属性是否可以被枚举，[[Configurable]]决定了属性是否可以被配置。我们平时声明的属性都是可枚举，可配置的，所以你可以随时删除和更改。改变属性的特征可以使用<code>Object.defineProperty()</code>方法，该方法接受三个参数：拥有该属性的对象，属性名，包含需要设置的特征的属性描述对象：</p>
+<pre><code><span class="keyword">var</span> person = {
+    name:<span class="string">"Shi"</span>
+}
+
+<span class="built_in">Object</span>.defineProperty(person,<span class="string">"name"</span>,{
+    enumerable:<span class="literal">false</span>
+});
+
+<span class="built_in">console</span>.log(<span class="string">"name"</span> <span class="keyword">in</span> person);    <span class="comment">//true</span>
+<span class="built_in">console</span>.log(person.propertyIsEnumerable(<span class="string">"name"</span>));    <span class="comment">//false</span>
+
+<span class="keyword">var</span> properties = <span class="built_in">Object</span>.keys(person);
+<span class="built_in">console</span>.log(properties.length);        <span class="comment">// 0</span>
+
+<span class="built_in">Object</span>.defineProperty(person,<span class="string">"name"</span>,{
+    configurable:<span class="literal">false</span>
+});
+
+<span class="keyword">delete</span> person.name;        <span class="comment">//严格模式下会导致错误，非严格模式会失败。</span>
+<span class="built_in">console</span>.log(person.name);    <span class="comment">//"Shi"</span>
+
+<span class="comment">//状态已经变成不可配置，不能修改了。</span>
+<span class="built_in">Object</span>.defineProperty(person,<span class="string">"name"</span>,{
+    configurable:<span class="literal">true</span>
+});
+</code></pre><p><code>数据的属性特征</code>：[[Value]]包含属性值，当你在对象上创建属性时该特征被自动赋值。[[Writable]]是一个布尔值，指示该属性是否可以写入。所有属性都是可写的，除非你另外指定。</p>
+<pre><code><span class="keyword">var</span> person = {};
+
+Object.defineProperty(person,<span class="string">"name"</span>,{
+    configurable:<span class="keyword">true</span>,
+    enumerable:<span class="keyword">true</span>,
+    <span class="keyword">value</span>:<span class="string">"Shi"</span>,
+    writable:<span class="keyword">true</span>
+});
+<span class="comment">//Object.defineProperty()定义新的属性时，要为所有的特征值制定一个值，否则布尔型的特征值会被制定为false。</span>
+</code></pre><p><code>访问器属性特征</code>：访问其属性不需要存值，所以没有[[Value]]和[[Writable]]，取而代之的是[[Get]]和[[Set]]。</p>
 <pre><code><span class="keyword">var</span> person = {
     _name:<span class="string">"Shi"</span>
 };
@@ -308,7 +303,7 @@ Object.defineProperty(person,<span class="string">"name"</span>,{
     enumerable:<span class="literal">true</span>,
     configurable:<span class="literal">true</span>
 });
-</code></pre><p> 当然，从上面的代码可以知道，当我们想要创建一个只能读取的属性时，只需要定义一个get访问器属性就可以了。其他的特征属性不设置则默认为(false)。<br> 下面说说获取属性特征的方法：</p>
+</code></pre><p>当然，从上面的代码可以知道，当我们想要创建一个只能读取的属性时，只需要定义一个get访问器属性就可以了。其他的特征属性不设置则默认为(false)。下面说说获取属性特征的方法：</p>
 <pre><code><span class="keyword">var</span> person = {
     name:<span class="string">"Shi"</span>
 };
@@ -318,9 +313,7 @@ Object.defineProperty(person,<span class="string">"name"</span>,{
 <span class="built_in">console</span>.log(descriptor.writable);
 <span class="built_in">console</span>.log(descriptor.value);
 <span class="comment">//非常清晰，不多说。</span>
-</code></pre></li>
-<li><p>禁止修改对象：</p>
-<p> 对象也和属性一样，具有指导其行为的内部特征。[[Extensible]]指明该对象本身是否可以被修改。我们之前创建的所有对象默认都是可以扩展的，这意味着新的属性可以随时被添加。当我们设置了[[Extensible]]为false，就可以禁止新的属性被添加。有三种方法可以锁定对象属性。<br> <code>禁止扩展</code>：使用Object.preventExtensions()创建一个不可扩展的对象。该方法接受一个参数，就是你希望使其不可扩展的对象。可以使用Object.isExtensible()来检查[[Extensible]]的值。</p>
+</code></pre><h5 id="禁止修改对象：">禁止修改对象：</h5><p>对象也和属性一样，具有指导其行为的内部特征。[[Extensible]]指明该对象本身是否可以被修改。我们之前创建的所有对象默认都是可以扩展的，这意味着新的属性可以随时被添加。当我们设置了[[Extensible]]为false，就可以禁止新的属性被添加。有三种方法可以锁定对象属性。<br><code>禁止扩展</code>：使用Object.preventExtensions()创建一个不可扩展的对象。该方法接受一个参数，就是你希望使其不可扩展的对象。可以使用Object.isExtensible()来检查[[Extensible]]的值。</p>
 <pre><code><span class="keyword">var</span> person = {
     name:<span class="string">"Shi"</span>
 };
@@ -332,7 +325,7 @@ person.sayName = <span class="function"><span class="keyword">function</span><sp
     <span class="built_in">console</span>.log(<span class="keyword">this</span>.name);
 }
 <span class="built_in">console</span>.log(<span class="string">"sayName"</span> <span class="keyword">in</span> person);    <span class="comment">//false</span>
-</code></pre><p> <code>对象封印</code>：被封印的对象不可扩展而且所有的属性都不可配置，也就是不仅不能添加属性，也不能删除属性或者改变其类型，只能读取属性的值。可以是用Object.seal()来封印一个对象，该方法调用的时候，该属性的[[Extensible]]设置为false，其所有属性的[[configurable]]特征被设置为flase。可以使用Object.isSealed()来判断一个对象是否被封印。</p>
+</code></pre><p><code>对象封印</code>：被封印的对象不可扩展而且所有的属性都不可配置，也就是不仅不能添加属性，也不能删除属性或者改变其类型，只能读取属性的值。可以是用Object.seal()来封印一个对象，该方法调用的时候，该属性的[[Extensible]]设置为false，其所有属性的[[configurable]]特征被设置为flase。可以使用Object.isSealed()来判断一个对象是否被封印。</p>
 <pre><code><span class="keyword">var</span> person = {
     name:<span class="string">"Shi"</span>
 };
@@ -349,13 +342,11 @@ person.sayName = <span class="function"><span class="keyword">function</span><sp
 <span class="built_in">console</span>.log(<span class="string">"sayName"</span> <span class="keyword">in</span> person);    <span class="comment">//false</span>
 person.name = <span class="string">"Grey"</span>;
 <span class="built_in">console</span>.log(person.name);    <span class="comment">//"Grey"</span>
-</code></pre><p> <code>对象冻结</code>：和封印一样，但是冻结的对象是不能写入数据的。使用Object.freeze()来冻结一个对象。使用Object.isFrozen()来判断一个对象是否被冻结。</p>
+</code></pre><p><code>对象冻结</code>：和封印一样，但是冻结的对象是不能写入数据的。使用Object.freeze()来冻结一个对象。使用Object.isFrozen()来判断一个对象是否被冻结。</p>
 <pre><code><span class="built_in">Object</span>.freeze(person);
 person.name = <span class="string">"Grey"</span>;
 <span class="built_in">console</span>.log(person.name);    <span class="comment">//"Shi"</span>
-</code></pre></li>
-</ol>
-
+</code></pre>
       
     </div>
     
@@ -363,6 +354,15 @@ person.name = <span class="string">"Grey"</span>;
   
     
 <nav id="article-nav">
+  
+    <a href="/2015/10/31/《javascript面向对象精要》总结（三）/" id="article-nav-newer" class="article-nav-link-wrap">
+      <strong class="article-nav-caption"><</strong>
+      <div class="article-nav-title">
+        
+          《javascript面向对象精要》总结（三）
+        
+      </div>
+    </a>
   
   
     <a href="/2015/10/30/《javascript面向对象精要》总结(一)/" id="article-nav-older" class="article-nav-link-wrap">

@@ -178,6 +178,56 @@
 </nav>
       <div class="body-wrap">
   
+    <article id="post-《javascript面向对象精要》总结（三）" class="article article-type-post" itemscope itemprop="blogPost">
+  
+    <div class="article-meta">
+      <a href="/2015/10/31/《javascript面向对象精要》总结（三）/" class="article-date">
+  	<time datetime="2015-10-31T13:00:49.000Z" itemprop="datePublished">2015-10-31</time>
+</a>
+    </div>
+  
+  <div class="article-inner">
+    
+      <input type="hidden" class="isFancy" />
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2015/10/31/《javascript面向对象精要》总结（三）/">《javascript面向对象精要》总结（三）</a>
+    </h1>
+  
+
+      </header>
+      
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        
+      
+    </div>
+    
+    <div class="article-info article-info-index">
+      
+      
+      
+
+      
+      <div class="clearfix"></div>
+    </div>
+    
+  </div>
+  
+</article>
+
+
+
+
+
+
+
+  
     <article id="post-《javascript面向对象精要》总结（二）" class="article article-type-post" itemscope itemprop="blogPost">
   
     <div class="article-meta">
@@ -204,34 +254,27 @@
     
     <div class="article-entry" itemprop="articleBody">
       
-        <h3 id="理解对象">理解对象</h3><ol>
-<li><p>属性的定义，探测，删除：</p>
-<p> 我们知道，我们可以在任何时候给js的对象去添加属性。至于添加属性的具体过程，是javascript在对象上调用了一个叫[[Put]]的内部方法，该方法会在对象上创建一个节点来保存属性（自有属性）。当已有的属性被设置一个新的值时，调用的是一个叫[[Set]]的方法，该方法将属性的当前值替换成新值。</p>
-<p> 判断一个属性是否存在，有时我们会这样做：</p>
+        <h2 id="理解对象">理解对象</h2><h5 id="属性的定义，探测，删除：">属性的定义，探测，删除：</h5><p>我们知道，我们可以在任何时候给js的对象去添加属性。至于添加属性的具体过程，是javascript在对象上调用了一个叫[[Put]]的内部方法，该方法会在对象上创建一个节点来保存属性（自有属性）。当已有的属性被设置一个新的值时，调用的是一个叫[[Set]]的方法，该方法将属性的当前值替换成新值。判断一个属性是否存在，有时我们会这样做：</p>
 <pre><code><span class="keyword">if</span>(person.<span class="keyword">name</span>){
     //<span class="keyword">do</span> something
 }
-</code></pre><p> 但是，当name的值是一个对象，非空字符串，非零数字或者true时，会评估为真，但是当值是null，undefined，0，false，NaN或空字符串时，会被评估为假。显而易见这里就会存在一些问题了。</p>
-<p> 更加可靠的是使用in操作符，用法都知道，不说了。但是in操作符还会检查原型属性，这有可能也不是我们想要的，我们还可以使用<code>hasOwnProperty()</code>这个方法。每个javascript对象都有这个方法。</p>
-<p> 当我们想要删除一个对象的某个属性的时候，使用delete操作符就可以了。</p>
-</li>
-<li><p>属性的枚举：</p>
-<p> 典型的方法是使用<code>for-in</code>循环进行迭代（只能遍历可枚举的属性），他也会遍历原型属性：</p>
+</code></pre><p>但是，当name的值是一个对象，非空字符串，非零数字或者true时，会评估为真，但是当值是null，undefined，0，false，NaN或空字符串时，会被评估为假。显而易见这里就会存在一些问题了。</p>
+<p>更加可靠的是使用in操作符，用法都知道，不说了。但是in操作符还会检查原型属性，这有可能也不是我们想要的，我们还可以使用<code>hasOwnProperty()</code>这个方法。每个javascript对象都有这个方法。</p>
+<p>当我们想要删除一个对象的某个属性的时候，使用delete操作符就可以了。</p>
+<h5 id="属性的枚举：">属性的枚举：</h5><p>典型的方法是使用<code>for-in</code>循环进行迭代（只能遍历可枚举的属性），他也会遍历原型属性：</p>
 <pre><code>var <span class="keyword">property</span>;
 <span class="keyword">for</span>(<span class="keyword">property</span> <span class="keyword">in</span> object){
     console.<span class="command">log</span>(<span class="string">"Name:"</span>+<span class="keyword">property</span>);
     console.<span class="command">log</span>(<span class="string">"Value:"</span> + object[<span class="keyword">property</span>]);
 }
-</code></pre><p> ECMAScript5中引入了Object.keys()方法，可以获取对象的属性名字数组（自有属性，不包含原型属性）：</p>
+</code></pre><p>ECMAScript5中引入了Object.keys()方法，可以获取对象的属性名字数组（自有属性，不包含原型属性）：</p>
 <pre><code>var <span class="keyword">property</span> = Object.keys(object);
 var i <span class="built_in">len</span>;
 <span class="keyword">for</span> (i=<span class="number">0</span>,<span class="built_in">len</span>=peoperty.length;i&lt;<span class="built_in">len</span>;i++){
     console.<span class="built_in">log</span>(<span class="string">"Name:"</span>+<span class="keyword">property</span>[i]);
     console.<span class="built_in">log</span>(<span class="string">"Value:"</span> + object[<span class="keyword">property</span>[i]]);
 }
-</code></pre></li>
-<li><p>属性的类型：</p>
-<p> 属性的类型有两种，一种是数据属性，我们之前用到的属性都是数据属性，数据属性包含一个值。<br> 访问器属性不包含值，是定义了一个当前属性被读取时调用的函数，和一个当属性被写入是调用的函数（可以是一个也可以是两个都有）。</p>
+</code></pre><h5 id="属性的类型：">属性的类型：</h5><p>属性的类型有两种，一种是数据属性，我们之前用到的属性都是数据属性，数据属性包含一个值。<br>访问器属性不包含值，是定义了一个当前属性被读取时调用的函数，和一个当属性被写入是调用的函数（可以是一个也可以是两个都有）。</p>
 <pre><code><span class="keyword">var</span> person = {
     _name:<span class="string">"Shi"</span>,<span class="comment">//前置下划线是一个俗称的命名规范，表示该属性被认为是私有，但是实际上还是公开的。</span>
 
@@ -247,32 +290,43 @@ var i <span class="built_in">len</span>;
 console.log(person.name);
 person.name = <span class="string">"SHI"</span>;
 console.log(person.name);
-</code></pre></li>
-<li><p>属性特征：<br> 包括<code>通用的属性特征</code>：[[Enumerable]]决定了属性是否可以被枚举，[[Configurable]]决定了属性是否可以被配置。我们平时声明的属性都是可枚举，可配置的，所以你可以随时删除和更改。<br> 改变属性的特征可以使用Object.defineProperty()方法，该方法接受三个参数：拥有该属性的对象，属性名，包含需要设置的特征的属性描述对象：</p>
-<p> var person = {</p>
-<pre><code><span class="property">name</span>:<span class="string">"Shi"</span>
-</code></pre><p> }</p>
-<p> Object.defineProperty(person,”name”,{</p>
-<pre><code><span class="string">enumerable:</span><span class="literal">false</span>
-</code></pre><p> });</p>
-<p> console.log(“name” in person);    //true<br> console.log(person.propertyIsEnumerable(“name”));    //false</p>
-<p> var properties = Object.keys(person);<br> console.log(properties.length);        // 0</p>
-<p> Object.defineProperty(person,”name”,{</p>
-<pre><code><span class="string">configurable:</span><span class="literal">false</span>
-</code></pre><p> });</p>
-<p> delete person.name;        //严格模式下会导致错误，非严格模式会失败。<br> console.log(person.name);    //“Shi”</p>
-<p> //状态已经变成不可配置，不能修改了。<br> Object.defineProperty(person,”name”,{</p>
-<pre><code><span class="string">configurable:</span><span class="literal">true</span>
-</code></pre><p> });</p>
-<p> <code>数据的属性特征</code>：[[Value]]包含属性值，当你在对象上创建属性时该特征被自动赋值。[[Writable]]是一个布尔值，指示该属性是否可以写入。所有属性都是可写的，除非你另外指定。</p>
-<p> var person = {};</p>
-<p> Object.defineProperty(person,”name”,{</p>
-<pre><code><span class="string">configurable:</span><span class="literal">true</span>,
-<span class="string">enumerable:</span><span class="literal">true</span>,
-<span class="string">value:</span><span class="string">"Shi"</span>,
-<span class="string">writable:</span><span class="literal">true</span>
-</code></pre><p> });<br> //Object.defineProperty()定义新的属性时，要为所有的特征值制定一个值，否则布尔型的特征值会被制定为false。</p>
-<p> <code>访问器属性特征</code>：访问其属性不需要存值，所以没有[[Value]]和[[Writable]]，取而代之的是[[Get]]和[[Set]]。</p>
+</code></pre><h5 id="属性特征：">属性特征：</h5><p><code>通用的属性特征</code>：[[Enumerable]]决定了属性是否可以被枚举，[[Configurable]]决定了属性是否可以被配置。我们平时声明的属性都是可枚举，可配置的，所以你可以随时删除和更改。改变属性的特征可以使用<code>Object.defineProperty()</code>方法，该方法接受三个参数：拥有该属性的对象，属性名，包含需要设置的特征的属性描述对象：</p>
+<pre><code><span class="keyword">var</span> person = {
+    name:<span class="string">"Shi"</span>
+}
+
+<span class="built_in">Object</span>.defineProperty(person,<span class="string">"name"</span>,{
+    enumerable:<span class="literal">false</span>
+});
+
+<span class="built_in">console</span>.log(<span class="string">"name"</span> <span class="keyword">in</span> person);    <span class="comment">//true</span>
+<span class="built_in">console</span>.log(person.propertyIsEnumerable(<span class="string">"name"</span>));    <span class="comment">//false</span>
+
+<span class="keyword">var</span> properties = <span class="built_in">Object</span>.keys(person);
+<span class="built_in">console</span>.log(properties.length);        <span class="comment">// 0</span>
+
+<span class="built_in">Object</span>.defineProperty(person,<span class="string">"name"</span>,{
+    configurable:<span class="literal">false</span>
+});
+
+<span class="keyword">delete</span> person.name;        <span class="comment">//严格模式下会导致错误，非严格模式会失败。</span>
+<span class="built_in">console</span>.log(person.name);    <span class="comment">//"Shi"</span>
+
+<span class="comment">//状态已经变成不可配置，不能修改了。</span>
+<span class="built_in">Object</span>.defineProperty(person,<span class="string">"name"</span>,{
+    configurable:<span class="literal">true</span>
+});
+</code></pre><p><code>数据的属性特征</code>：[[Value]]包含属性值，当你在对象上创建属性时该特征被自动赋值。[[Writable]]是一个布尔值，指示该属性是否可以写入。所有属性都是可写的，除非你另外指定。</p>
+<pre><code><span class="keyword">var</span> person = {};
+
+Object.defineProperty(person,<span class="string">"name"</span>,{
+    configurable:<span class="keyword">true</span>,
+    enumerable:<span class="keyword">true</span>,
+    <span class="keyword">value</span>:<span class="string">"Shi"</span>,
+    writable:<span class="keyword">true</span>
+});
+<span class="comment">//Object.defineProperty()定义新的属性时，要为所有的特征值制定一个值，否则布尔型的特征值会被制定为false。</span>
+</code></pre><p><code>访问器属性特征</code>：访问其属性不需要存值，所以没有[[Value]]和[[Writable]]，取而代之的是[[Get]]和[[Set]]。</p>
 <pre><code><span class="keyword">var</span> person = {
     _name:<span class="string">"Shi"</span>
 };
@@ -286,7 +340,7 @@ Object.defineProperty(person,<span class="string">"name"</span>,{
     enumerable:<span class="literal">true</span>,
     configurable:<span class="literal">true</span>
 });
-</code></pre><p> 当然，从上面的代码可以知道，当我们想要创建一个只能读取的属性时，只需要定义一个get访问器属性就可以了。其他的特征属性不设置则默认为(false)。<br> 下面说说获取属性特征的方法：</p>
+</code></pre><p>当然，从上面的代码可以知道，当我们想要创建一个只能读取的属性时，只需要定义一个get访问器属性就可以了。其他的特征属性不设置则默认为(false)。下面说说获取属性特征的方法：</p>
 <pre><code><span class="keyword">var</span> person = {
     name:<span class="string">"Shi"</span>
 };
@@ -296,9 +350,7 @@ Object.defineProperty(person,<span class="string">"name"</span>,{
 <span class="built_in">console</span>.log(descriptor.writable);
 <span class="built_in">console</span>.log(descriptor.value);
 <span class="comment">//非常清晰，不多说。</span>
-</code></pre></li>
-<li><p>禁止修改对象：</p>
-<p> 对象也和属性一样，具有指导其行为的内部特征。[[Extensible]]指明该对象本身是否可以被修改。我们之前创建的所有对象默认都是可以扩展的，这意味着新的属性可以随时被添加。当我们设置了[[Extensible]]为false，就可以禁止新的属性被添加。有三种方法可以锁定对象属性。<br> <code>禁止扩展</code>：使用Object.preventExtensions()创建一个不可扩展的对象。该方法接受一个参数，就是你希望使其不可扩展的对象。可以使用Object.isExtensible()来检查[[Extensible]]的值。</p>
+</code></pre><h5 id="禁止修改对象：">禁止修改对象：</h5><p>对象也和属性一样，具有指导其行为的内部特征。[[Extensible]]指明该对象本身是否可以被修改。我们之前创建的所有对象默认都是可以扩展的，这意味着新的属性可以随时被添加。当我们设置了[[Extensible]]为false，就可以禁止新的属性被添加。有三种方法可以锁定对象属性。<br><code>禁止扩展</code>：使用Object.preventExtensions()创建一个不可扩展的对象。该方法接受一个参数，就是你希望使其不可扩展的对象。可以使用Object.isExtensible()来检查[[Extensible]]的值。</p>
 <pre><code><span class="keyword">var</span> person = {
     name:<span class="string">"Shi"</span>
 };
@@ -310,7 +362,7 @@ person.sayName = <span class="function"><span class="keyword">function</span><sp
     <span class="built_in">console</span>.log(<span class="keyword">this</span>.name);
 }
 <span class="built_in">console</span>.log(<span class="string">"sayName"</span> <span class="keyword">in</span> person);    <span class="comment">//false</span>
-</code></pre><p> <code>对象封印</code>：被封印的对象不可扩展而且所有的属性都不可配置，也就是不仅不能添加属性，也不能删除属性或者改变其类型，只能读取属性的值。可以是用Object.seal()来封印一个对象，该方法调用的时候，该属性的[[Extensible]]设置为false，其所有属性的[[configurable]]特征被设置为flase。可以使用Object.isSealed()来判断一个对象是否被封印。</p>
+</code></pre><p><code>对象封印</code>：被封印的对象不可扩展而且所有的属性都不可配置，也就是不仅不能添加属性，也不能删除属性或者改变其类型，只能读取属性的值。可以是用Object.seal()来封印一个对象，该方法调用的时候，该属性的[[Extensible]]设置为false，其所有属性的[[configurable]]特征被设置为flase。可以使用Object.isSealed()来判断一个对象是否被封印。</p>
 <pre><code><span class="keyword">var</span> person = {
     name:<span class="string">"Shi"</span>
 };
@@ -327,13 +379,11 @@ person.sayName = <span class="function"><span class="keyword">function</span><sp
 <span class="built_in">console</span>.log(<span class="string">"sayName"</span> <span class="keyword">in</span> person);    <span class="comment">//false</span>
 person.name = <span class="string">"Grey"</span>;
 <span class="built_in">console</span>.log(person.name);    <span class="comment">//"Grey"</span>
-</code></pre><p> <code>对象冻结</code>：和封印一样，但是冻结的对象是不能写入数据的。使用Object.freeze()来冻结一个对象。使用Object.isFrozen()来判断一个对象是否被冻结。</p>
+</code></pre><p><code>对象冻结</code>：和封印一样，但是冻结的对象是不能写入数据的。使用Object.freeze()来冻结一个对象。使用Object.isFrozen()来判断一个对象是否被冻结。</p>
 <pre><code><span class="built_in">Object</span>.freeze(person);
 person.name = <span class="string">"Grey"</span>;
 <span class="built_in">console</span>.log(person.name);    <span class="comment">//"Shi"</span>
-</code></pre></li>
-</ol>
-
+</code></pre>
       
     </div>
     
@@ -1416,159 +1466,6 @@ function renderDigit( x , y , num , cxt ){
       
 	<div class="article-tag tagcloud">
 		<ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/CSS3/">CSS3</a></li></ul>
-	</div>
-
-      
-
-      
-      <div class="clearfix"></div>
-    </div>
-    
-  </div>
-  
-</article>
-
-
-
-
-
-
-
-  
-    <article id="post-DOM" class="article article-type-post" itemscope itemprop="blogPost">
-  
-    <div class="article-meta">
-      <a href="/2015/10/15/DOM/" class="article-date">
-  	<time datetime="2015-10-15T04:07:49.000Z" itemprop="datePublished">2015-10-15</time>
-</a>
-    </div>
-  
-  <div class="article-inner">
-    
-      <input type="hidden" class="isFancy" />
-    
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/2015/10/15/DOM/">DOM</a>
-    </h1>
-  
-
-      </header>
-      
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-        <h3 id="DOM概览">DOM概览</h3><p>DOM（文档对象模型）是表示和操作HTML文档内容的基础API。用DOM树对象表示HTML文档的嵌套元素，包括HTML标签、表示文本字符串的节点，也可能包含HTML的注释节点。</p>
-<h3 id="选取文档元素">选取文档元素</h3><p>树形的根部是<code>document</code>节点，代表整个文档，代表HTML元素的是<code>Element</code>节点，代表文本的是<code>text</code>节点。这些节点都是<code>Node</code>的子类。JavaScript避免不了要操作DOM，这时可以使用全局变量document来引用DOM对象，同时，DOM也定义了许多方式来选取元素，如通过指定的id属性，name属性，标签名字，指定的CSS类等。</p>
-<p>1、通过id查找多个元素：</p>
-<pre><code><span class="comment">/*函数接受任意多个字符串参数，每个参数将作为元素id传入*/</span>
-<span class="function"><span class="keyword">function</span><span class="params">(/ids<span class="rest_arg">.../){
-    var</span> elements = {};
-    for(var i=0;i&lt;arguments.length;i++)</span></span>{
-        <span class="keyword">var</span> id = arguments[i];
-        <span class="keyword">var</span> elt = document.getElementById(id);
-        <span class="keyword">if</span>(elt == <span class="literal">null</span>){
-            thow <span class="keyword">new</span> Error(<span class="string">"No element with id:"</span>+id);
-        }<span class="keyword">else</span>{
-            elements[id] = elt;
-        }
-    }
-    <span class="keyword">return</span> elements;
-}
-<span class="comment">//低于IE8版本的浏览器中，getElementById()方法对匹配元素的ID不区分大小写，同时也会匹配到那么属性符合条件的元素。所以，注意设置name和id属性的时候尽量让这两个元素不要重名。</span>
-</code></pre><p>2、用过name属性和标签名来查找元素，分别使用getElementByName()和getElementsByTagName()方法，这两个方法都是返回一个<code>NodeList对象</code>。像document.images或者document.forms的属性为<code>HTMLCollection对象</code>。这两种都是只读的类数组对象，他们有length属性，也可以像数组一样索引（只能读），但是不能在这两类对象上直接调用数组的方法，但是可以间接的调用：</p>
-<pre><code><span class="keyword">var</span> content = <span class="built_in">Array</span>.prototype.map.call(<span class="built_in">document</span>.getElementByTagName(<span class="string">"p"</span>),<span class="function"><span class="keyword">function</span><span class="params">(e)</span></span>{ <span class="keyword">return</span> e.innerHTML;});
-</code></pre><p>值得注意的是<code>NodeList对象</code>和<code>HTMLCollection对象</code>都是实时的。同时，Element类也定义了getElementsByTagName()方法，该方法只在调用该方法的元素对象的后代中选取元素。</p>
-<p>3、通过HTML的class属性选择元素，使用getElementsByClassName()方法，返回的是一个实时的NodeList对象，该方法需要一个字符串参数，可以是由多个空格隔开的标识符组成。</p>
-<pre><code><span class="comment">//查找包含fatal和error类的元素,使用</span>
-<span class="keyword">var</span> ele = getElementsByClassName(<span class="string">'fatal error'</span>);
-</code></pre><p>4、使用querySelector方法返回文档中匹配指定 CSS 选择器的第一个元素。</p>
-<pre><code><span class="built_in">document</span>.<span class="built_in">querySelector</span>(CSS selectors);
-<span class="built_in">document</span>.<span class="built_in">querySelector</span>(<span class="string">"p"</span>);<span class="comment">//返回第一个p标签元素</span>
-<span class="built_in">document</span>.<span class="built_in">querySelector</span>(<span class="string">".container"</span>);<span class="comment">//返回class等于container的第一个元素</span>
-<span class="built_in">document</span>.<span class="built_in">querySelector</span>(<span class="string">".container header"</span>);<span class="comment">//返回class等于container中的第一个header子元素</span>
-</code></pre><p>5、使用querySelectorAll方法返回所有文档中匹配指定 CSS 选择器的元素，与querySelector相同，只不过querySelectorAll方法返回一个匹配的nodeList。</p>
-<h3 id="文档结构">文档结构</h3><p>一旦从文档中选取了一个元素，有事需要查找文档中与之在结构上相关的部分，这种结构可以看作一个节点对象树。</p>
-<p>1、节点树的文档。我们之前说的Document对象，和他的Element对象，文档中表示文本的Text对象都是属于Node对象，对于一个节点来讲，他具有以下的属性，</p>
-<pre><code>parentNode：父节点（document没有父节点，值为null），任何元素的父节点都不可能是<span class="keyword">Text</span>。任何Elemnt的parentNode总是一个<span class="keyword">Element</span>。
-childNodes：子节点的实时表示
-firstChild、lastChild：子节点的第一个和最后一个。不存在则为nul
-nextSibling、previousSibling：兄弟节点中的前一个和下一个。
-nodeType：节点的类型（<span class="number">9</span>代表Document节点，<span class="number">1</span>代表<span class="keyword">Element</span>节点，<span class="number">3</span>代表<span class="keyword">Text</span>节点，<span class="number">11</span>代表DocumenFragment节点）
-nodeValue：<span class="keyword">Text</span>节点的文本内容
-nodeName：元素的标签名（大写）
-</code></pre><p>例如有这样的一段HTML：<code>&lt;html&gt;&lt;head&gt;&lt;/head&gt;&lt;body&gt;hello word!&lt;/body&gt;&lt;/html&gt;</code><br>下面的方法可以获取到<code>body</code>：</p>
-<pre><code><span class="built_in">document</span>.childNodes[<span class="number">0</span>].childNodes[<span class="number">1</span>];<span class="comment">//选择到了body元素节点的引用</span>
-<span class="built_in">document</span>.firstChild.firstChild.nextSibling;
-</code></pre><p>API对文档的变化极其敏感，若我们在<code>head</code>和<code>html</code>之间插入一个新行，那么表示这个新行的Text节点就是文档下面的第一个子节点了。</p>
-<p>2、元素树的文档。这个应该是比较熟悉的内容，当我们想忽略部分文档，如Text节点的时候，可以使用另一个API（基于元素文档遍历API）：</p>
-<p><code>第一部分，children属性</code>：</p>
-<pre><code>该属性类似childNodes，也是一个NodeList对象，但是它只包含<span class="keyword">Element</span>。并且<span class="keyword">Text</span>节点和Commont节点没有children属性。
-</code></pre><p><code>第二部分，Element属性</code>：</p>
-<pre><code><span class="comment">//类似于firstChild和lastChild，不同的是只代表子Element</span>
-firstElementChild，lastElementChild
-<span class="comment">//类似于nextSibling和lastSibling，不同的是只代表兄弟Element</span>
-nextElementSibling，previousElementSibling
-<span class="comment">//子元素的个数，和children.length相等</span>
-childElementCount
-</code></pre><h3 id="元素的属性">元素的属性</h3><p>元素的属性应该都是比较熟悉的了，如id，class，src，以及一些时间的处理如onclick等，值得注意的是，有些属性在JavaScript中是保留字，如class，在JavaScript中把他变为ClassName。</p>
-<pre><code><span class="function"><span class="title">getAttribute</span><span class="params">()</span></span><span class="comment">//获取html属性，返回的是一个字符串，</span>
-<span class="function"><span class="title">setAttribute</span><span class="params">()</span></span><span class="comment">//设置元素的属性</span>
-<span class="function"><span class="title">hasAttribute</span><span class="params">()</span></span><span class="comment">//判断元素属性是否存在，</span>
-<span class="function"><span class="title">removeAttribute</span><span class="params">()</span></span><span class="comment">//完全删除属性</span>
-</code></pre><p>还有一种使用Element属性的方法，Node类型定义了attribute属性。</p>
-<pre><code>document.<span class="keyword">body</span>.attributes[<span class="number">0</span>];<span class="comment">//返回body元素的第一个属性</span>
-document.<span class="keyword">body</span>.attributes.bgcolor;<span class="comment">//返回body元素的第一个属性</span>
-</code></pre><p>html5文档中说，任意以<code>data-</code>为前缀的小写的属性名字都是合法的。这些数据集属性会以属性的形式存在于该元素的dataset属性内。如data-x的值保存在dataset.x内，带连字符的属性采用驼峰命名方式。</p>
-<h3 id="元素的内容">元素的内容</h3><p>Element的innerHTML属性会返回元素的内容，内容可以是HTML字符串，也可以是纯文本的字符串。<br>查询和插入纯文本形式的内容，可以使用Node对象的textContent属性实现，在ie中使用innerHTML替代。</p>
-<pre><code><span class="comment">/**
-*一个参数，返回element的textContent或者innerText
-*两个参数，设置elemnet的textContent或者innerText
-*/</span>
-<span class="function"><span class="keyword">function</span><span class="params">(element,value)</span></span>{
-    <span class="keyword">var</span> content = element.textContent;
-    <span class="keyword">if</span>(value === <span class="literal">undefined</span>){
-        <span class="comment">//没有传递value</span>
-        <span class="keyword">if</span>(content !== <span class="literal">undefined</span>) <span class="keyword">return</span> content;
-        <span class="keyword">else</span> <span class="keyword">return</span> element.innerText;
-    }
-    <span class="keyword">else</span>{
-        <span class="keyword">if</span>(content !== <span class="literal">undefined</span>) element.textContent = value;
-        <span class="keyword">else</span> element.innerText = value;
-    }
-}
-</code></pre><h3 id="创建、插入和删除节点">创建、插入和删除节点</h3><p>创建新的元素节点可以使用Document对象的createElement()方法。给方法传递元素的标签名（不区分大小写）。创建Text节点可以使用document。createTextNode()方法。</p>
-<pre><code><span class="reserved">var</span> newNode = <span class="built_in">document</span>.createTextNode(<span class="string">"this is a textNode"</span>);
-<span class="reserved">var</span> s = <span class="built_in">document</span>.createElement(<span class="string">"script"</span>)
-</code></pre><p>也可以选择clone已经存在的节点作为创建节点的另一种方式，每个节点都有一个<code>cloneNode()</code>方法，该方法返回该节点的一个全新副本, 给方法传递参数true可以递归的复制所有的后代节点。</p>
-<p>将创建的节点插入到文档中的方法有<code>appendChild()</code>和<code>insertBefore()</code>。<br>appendChild()在需要插入的元素上调用，并将节点作为他最后一个子节点插入。</p>
-<pre><code><span class="reserved">var</span> ele = <span class="built_in">document</span>.getElementById(<span class="string">"test"</span>);
-<span class="reserved">var</span> span = <span class="built_in">document</span>.createElement(<span class="string">"span"</span>);
-ele.appendChild(span);
-</code></pre><p><code>insertBefore()</code>与<code>appendChild()</code>类似，不同的是<code>insertBefore()</code>接受两个参数。该方法也是在被插入的元素节点上调用，第一个是待插入的元素，另一个是在被插入元素中已经存在的节点（该方法将新节点插入到该节点之前）。</p>
-<pre><code>ele<span class="class">.insertBefore</span>(<span class="tag">span</span>,ele<span class="class">.children</span><span class="attr_selector">[0]</span>);
-<span class="comment">//当位置索引大于被插入元素的子元素个数时，元素会被插入到末尾</span>
-</code></pre><p>当用这两个方法将已经存在于文档中的节点再插入一次的时候，那个节点将自动从他当前的位置删除，并在新的位置插入,不需要显示删除节点。</p>
-<p><code>removeChild()</code>从文档中删除节点，同样也是在被删除节点的父节点上调用，被删除节点作为参数传入方法。</p>
-<pre><code>n<span class="class">.parentNode</span><span class="class">.removeChild</span>(n)
-</code></pre><p><code>replaceChild()</code>方法删除一个子节点，并用一个新的子节点取而代之。在父节点上调用该方法，第一个参数是新节点，第二个参数是需要替代的节点。</p>
-<pre><code><span class="keyword">n</span>.parrentNode.replaceChild(<span class="keyword">n</span>.parrentNode.replaceChild(document.createTextNode(<span class="string">"this is a text node"</span>),<span class="keyword">n</span>);
-</code></pre><p><code>replaceChild()</code>另一种用法：<br>    //用元素<b>包裹节点n<br>    function embolden(n){<br>        //假如参数为字符串而不是节点，将其当作元素的id<br>        if(typeof n == ‘string’) n = document.getElementById(n);<br>        var parrent = n.parrentNode;    //获得n的父节点<br>        var b = document.createElement(“b”);<br>        parrent.replaceChild(b,n);<br>        b.apperndChild(n);<br>    }</b></p>
-<h3 id="文档片段">文档片段</h3><p>DocumentFragment是一种特殊的Node，他做为一个节点的临时容器存在。使用如下方法创建一个文档片段：</p>
-<pre><code><span class="tag">var</span> frag = document.<span class="function"><span class="title">createDocumentFragment</span><span class="params">()</span></span>；
-</code></pre><p>文档碎片是独立的，没有父节点，但是可以有任意多的子节点，所以插入元素的方法在文档碎片上同样适用。文档片段可以将一组节点被当做一个节点来看待，当我们把一个文档片段插入到文档中的时候，实际上是将文档片段中的节点插入到了文档中，二不是文档片段本身。</p>
-
-      
-    </div>
-    
-    <div class="article-info article-info-index">
-      
-      
-	<div class="article-tag tagcloud">
-		<ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/javascript/">javascript</a></li></ul>
 	</div>
 
       

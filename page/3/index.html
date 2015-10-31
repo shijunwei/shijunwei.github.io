@@ -178,6 +178,91 @@
 </nav>
       <div class="body-wrap">
   
+    <article id="post-reduce方法" class="article article-type-post" itemscope itemprop="blogPost">
+  
+    <div class="article-meta">
+      <a href="/2015/10/15/reduce方法/" class="article-date">
+  	<time datetime="2015-10-15T04:01:40.000Z" itemprop="datePublished">2015-10-15</time>
+</a>
+    </div>
+  
+  <div class="article-inner">
+    
+      <input type="hidden" class="isFancy" />
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2015/10/15/reduce方法/">javascript reduce方法</a>
+    </h1>
+  
+
+      </header>
+      
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <h3 id="reduce怎么玩的？">reduce怎么玩的？</h3><p>reduce是处理数组元素的一种方法，说点个人的理解：</p>
+<p>reduce方法接受两个参数，第一个参数是一个处理函数，第二个参数是一个初始值。先说第一个：</p>
+<pre><code><span class="reserved">var</span> arr = [<span class="string">"apple"</span>,<span class="string">"orange"</span>,<span class="string">"apple"</span>,<span class="string">"orange"</span>,<span class="string">"pear"</span>,<span class="string">"orange"</span>];
+arr.reduce(<span class="reserved">function</span>(previous, current, index, array){
+    <span class="built_in">console</span>.log(previous, current, index, array);
+})
+<span class="regexp">//</span>上面的代码会输出：
+<span class="regexp">//</span> apple orange <span class="number">1</span> [<span class="string">""</span>, <span class="string">"orange"</span>, <span class="string">"apple"</span>, <span class="string">"orange"</span>, <span class="string">"pear"</span>, <span class="string">"orange"</span>]
+<span class="regexp">//</span> <span class="literal">undefined</span> <span class="string">"apple"</span> <span class="number">2</span> [<span class="string">"apple"</span>, <span class="string">"orange"</span>, <span class="string">"apple"</span>, <span class="string">"orange"</span>, <span class="string">"pear"</span>, <span class="string">"orange"</span>]
+<span class="regexp">//</span> <span class="literal">undefined</span> orange <span class="number">3</span> [<span class="string">"apple"</span>, <span class="string">"orange"</span>, <span class="string">"apple"</span>, <span class="string">"orange"</span>, <span class="string">"pear"</span>, <span class="string">"orange"</span>]
+<span class="regexp">//</span> <span class="literal">undefined</span> pear <span class="number">4</span> [<span class="string">"apple"</span>, <span class="string">"orange"</span>, <span class="string">"apple"</span>, <span class="string">"orange"</span>, <span class="string">"pear"</span>, <span class="string">"orange"</span>]
+<span class="regexp">//</span> <span class="literal">undefined</span> orange <span class="number">5</span> [<span class="string">"apple"</span>, <span class="string">"orange"</span>, <span class="string">"apple"</span>, <span class="string">"orange"</span>, <span class="string">"pear"</span>, <span class="string">"orange"</span>]
+<span class="regexp">//</span> <span class="literal">undefined</span>
+</code></pre><p>处理函数有四个参数，分别代表：</p>
+<pre><code>previous：通过上一次调用回调函数获得的值。
+current：当前数组元素的值。
+<span class="keyword">index</span>：当前数组元素的数字索引。
+<span class="keyword">array</span>：包含该元素的数组对象。
+</code></pre><p>由于上面的例子我们没有在调用reduce方法时传入一个初始值，所以在第一次执行回调时，<code>previous</code> 是数组的第一个元素，<code>current</code>则是数组的第二个元素，<code>index</code>为 1，<code>array</code>则是整个数组。</p>
+<p>当第二次执行回调的时候，由于<code>previous</code>是指通过上一次调用回调函数获得的值，然而我们并没有在回调函数中返回任何值，所以第二次<code>previous</code>的值为undefined，当我们在毁掉函数的末尾添加一句话<code>return previous;</code>。这时，你会发现所有的<code>undefined</code>都会变成<code>apple</code>。</p>
+<p>下面简单修改一下代码，添加一个新的方法：</p>
+<pre><code><span class="function"><span class="keyword">function</span> <span class="title">getWordCnt</span><span class="params">()</span></span>{
+    <span class="keyword">return</span> arr.reduce(<span class="function"><span class="keyword">function</span><span class="params">(previous, current)</span></span>{
+        previous[current] = (previous[current] + <span class="number">1</span>) || <span class="number">1</span>;
+        <span class="keyword">return</span> previous;
+    },{});
+}
+<span class="built_in">console</span>.log(getWordCnt());   <span class="comment">//Object {apple: 2, orange: 3, pear: 1}</span>
+</code></pre><p>上边的例子，我们给reduce方法传入了一个空对象作为初始值，那在第一次执行回调的时候，<code>previous</code>就是这个<code>{}</code>,<code>current</code>是数组的第一个元素<code>apple</code>，<code>index</code>为 0,<code>array</code>还是整个数组。</p>
+<p>如上代码实现了一个统计数组中相同元素出现的次数的功能，在回调函数中我们每次都会判断<code>previous</code>中是否已经存在了当前元素，并作相应的处理，之后将<code>previous</code>返回。最后我们会将处理结果对象返回。</p>
+<h3 id="reduce的用法">reduce的用法</h3><p>reduce可以用在求数组的合，统计数组中元素的个数，将二维数组转化成一维数组(concat方法)等等，主要还是看自己的想法。</p>
+
+      
+    </div>
+    
+    <div class="article-info article-info-index">
+      
+      
+	<div class="article-tag tagcloud">
+		<ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/javascript/">javascript</a></li></ul>
+	</div>
+
+      
+
+      
+      <div class="clearfix"></div>
+    </div>
+    
+  </div>
+  
+</article>
+
+
+
+
+
+
+
+  
     <article id="post-css各种属性知识总结" class="article article-type-post" itemscope itemprop="blogPost">
   
     <div class="article-meta">
