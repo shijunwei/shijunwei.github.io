@@ -5,16 +5,34 @@
   
   <title>《javascript面向对象精要》总结（三） | 我想养只小金毛</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta name="description" content="前端，css，html，JavaScript，css3，html5，angularJS，php，c++">
+  <meta name="description" content="构造函数和原型对象构造函数：就是使用new创建对象时调用的函数，然而构造函数也是函数，可以用定义函数的方法定义它，唯一的区别是构造函数的函数名首字母应该大写，用此来与其他函数进行区别。
+function Person(){
+    //空的构造函数
+}
+var person1 = new Person;    //若没有需要传递给构造函数的参数，括号可以省略。
+
+//person1是Person的">
 <meta property="og:type" content="article">
 <meta property="og:title" content="《javascript面向对象精要》总结（三）">
 <meta property="og:url" content="http://shijunwei.github.io/2015/10/31/《javascript面向对象精要》总结（三）/index.html">
 <meta property="og:site_name" content="我想养只小金毛">
-<meta property="og:description" content="前端，css，html，JavaScript，css3，html5，angularJS，php，c++">
-<meta property="og:updated_time" content="2015-10-31T13:00:49.000Z">
+<meta property="og:description" content="构造函数和原型对象构造函数：就是使用new创建对象时调用的函数，然而构造函数也是函数，可以用定义函数的方法定义它，唯一的区别是构造函数的函数名首字母应该大写，用此来与其他函数进行区别。
+function Person(){
+    //空的构造函数
+}
+var person1 = new Person;    //若没有需要传递给构造函数的参数，括号可以省略。
+
+//person1是Person的">
+<meta property="og:updated_time" content="2015-10-31T16:19:50.000Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="《javascript面向对象精要》总结（三）">
-<meta name="twitter:description" content="前端，css，html，JavaScript，css3，html5，angularJS，php，c++">
+<meta name="twitter:description" content="构造函数和原型对象构造函数：就是使用new创建对象时调用的函数，然而构造函数也是函数，可以用定义函数的方法定义它，唯一的区别是构造函数的函数名首字母应该大写，用此来与其他函数进行区别。
+function Person(){
+    //空的构造函数
+}
+var person1 = new Person;    //若没有需要传递给构造函数的参数，括号可以省略。
+
+//person1是Person的">
   
     <link rel="alternative" href="/atom.xml" title="我想养只小金毛" type="application/atom+xml">
   
@@ -202,6 +220,10 @@
       
       <div class="article-info article-info-post">
         
+	<div class="article-tag tagcloud">
+		<ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/javascript/">javascript</a></li></ul>
+	</div>
+
         
 
         <div class="clearfix"></div>
@@ -210,7 +232,101 @@
     
     <div class="article-entry" itemprop="articleBody">
       
-        
+        <h3 id="构造函数和原型对象">构造函数和原型对象</h3><p><code>构造函数</code>：就是使用new创建对象时调用的函数，然而构造函数也是函数，可以用定义函数的方法定义它，唯一的区别是构造函数的函数名首字母应该大写，用此来与其他函数进行区别。</p>
+<pre><code><span class="function"><span class="keyword">function</span> <span class="title">Person</span><span class="params">()</span></span>{
+    <span class="comment">//空的构造函数</span>
+}
+<span class="keyword">var</span> person1 = <span class="keyword">new</span> Person;    <span class="comment">//若没有需要传递给构造函数的参数，括号可以省略。</span>
+
+<span class="comment">//person1是Person的一个实例，可以使用instanceof操作符获取对象的类型，每个对象在创建的时候都自动拥有一个构造函数属性，其中包含了一个指向其构造函数的引用。</span>
+
+<span class="built_in">console</span>.log(person1 <span class="keyword">instanceof</span> Person);        <span class="comment">//true</span>
+
+<span class="comment">//通过对象字面形式或Object构造函数创建出来的泛用对象，其构造函数属性只想Object,那些通过自定义构造函数创建出来的对象，其构造函数指向创建它的构造函数。</span>
+
+<span class="built_in">console</span>.log(person1.constructor=== Person）;        <span class="comment">//true</span>
+</code></pre><p>很明显，空的构造函数没有什么卵用，使用构造函数的目的是为了<code>创建许多拥有相同属性和方法的对象</code>，你需要做的事在构造函数内给<code>this</code>添加属性：</p>
+<pre><code><span class="function"><span class="keyword">function</span> <span class="title">Person</span><span class="params">(name)</span></span>{
+    <span class="keyword">this</span>.name = name;
+    <span class="keyword">this</span>.sayName = <span class="function"><span class="keyword">function</span><span class="params">()</span></span>{
+        <span class="built_in">console</span>.log(<span class="keyword">this</span>.name);
+    };
+}
+<span class="keyword">var</span> person = <span class="keyword">new</span> Person(<span class="string">"Shi"</span>);
+<span class="built_in">console</span>.log(person.name);    <span class="comment">// "Shi"</span>
+person.sayName();    <span class="comment">// "Shi"</span>
+</code></pre><p>构造函数本身不需要返回值，<code>new</code>会帮你返回，你也可以在构造函数中显示调用return。如果返回的值是一个对象，它会替代新创建的对象实例返回，如果返回值是一个原始类型，它会被忽略。尽量使用<code>new</code>调用构造函数，不然有可能改变全局变量。</p>
+<p>但是如果我们初始化好多个Person类的实例对象，那么每一个对象都有一个<code>name</code>属性和一个<code>sayName()</code>方法，存在代码冗余，而原型就帮我们实现了所有对象实例共享一个方法，是同this来访问正确的数据。</p>
+<pre><code><span class="function"><span class="keyword">function</span> <span class="title">Person</span><span class="params">(name)</span></span>{
+    <span class="keyword">this</span>.name = name;
+}
+Person.prototype.sayName = <span class="function"><span class="keyword">function</span><span class="params">()</span></span>{
+    <span class="built_in">console</span>.log(<span class="keyword">this</span>.name);
+}
+<span class="comment">//原型是javascript实现继承的基础，之前的文章有过记录，这里就不再多解释了。</span>
+<span class="comment">//但是当使用对象的字面形式改写原型对象改变了构造函数的属性，使他指向Object而不是你创建的类。这是因为原型对象具有一个constructor属性，这是其他对象没有的。当一个函数被创建时，它的prototype属性也被创建，而该原型对象的constructor属性指向该函数。所以我们需要这样去写：</span>
+
+Person.prototype = {
+    <span class="constructor"><span class="keyword">constructor</span>：Person,
+    sayName : function()</span>{
+        <span class="built_in">console</span>.log(<span class="keyword">this</span>.name);
+    }
+};
+</code></pre><p>可以发现对象和构造函数之间没有直接的联系，不过对象实例和原型对象以及原型对象和构造函数之间有直接的联系。</p>
+<h3 id="对象模式">对象模式</h3><p>javascript对象的所有属性都是公有的，但是有时你可能不希望数据公有。</p>
+<p><code>模块模式</code>：看看下面的代码</p>
+<pre><code><span class="keyword">var</span> yourObject = (function(){
+
+    //private data
+
+    <span class="keyword">return</span> {
+        //public <span class="keyword">method</span> <span class="keyword">and</span> properties
+    };
+}());
+//这种语法会立即执行这个匿名函数，也就是函数仅存在于被调用的瞬间，执行之后就被销毁了。
+</code></pre><p>模块模式实现了使用普通变量作为私有变量，并且通过创建闭包函数作为对象方法来操作他们：</p>
+<pre><code><span class="keyword">var</span> person = (<span class="function"><span class="keyword">function</span><span class="params">()</span></span>{
+    <span class="keyword">var</span> age = <span class="number">25</span>;
+    <span class="keyword">return</span> {
+        name : <span class="string">"Shi"</span>,
+        getAge : <span class="function"><span class="keyword">function</span><span class="params">()</span></span>{
+            <span class="keyword">return</span> age;
+        },
+        growOlder : <span class="function"><span class="keyword">function</span><span class="params">()</span></span>{
+            age++;
+        }
+    };
+}());
+
+<span class="built_in">console</span>.log(person.name);
+<span class="built_in">console</span>.log(person.getAge());
+person.age = <span class="number">100</span>;
+<span class="built_in">console</span>.log(person.getAge());
+person.growOlder();
+<span class="built_in">console</span>.log(person.getAge());
+</code></pre><p>构造函数的私有成员：</p>
+<pre><code><span class="keyword">var</span> Person = (<span class="function"><span class="keyword">function</span><span class="params">()</span></span>{
+    <span class="comment">//所有对象的实例都共享这个age</span>
+    <span class="keyword">var</span> age = <span class="number">25</span>;
+    <span class="function"><span class="keyword">function</span> <span class="title">InnerPerson</span><span class="params">(name)</span></span>{
+        <span class="keyword">this</span>.name = name;
+    }
+    InnerPerson.prototype.getAge = <span class="function"><span class="keyword">function</span><span class="params">()</span></span>{
+        <span class="keyword">return</span> age;
+    }
+    InnerPerson.prototype.growOlder = <span class="function"><span class="keyword">function</span><span class="params">()</span></span>{
+        age++;
+    }
+    <span class="keyword">return</span> InnerPerson;
+}());
+<span class="keyword">var</span> person = <span class="keyword">new</span> Person(<span class="string">'Shi'</span>);
+<span class="built_in">console</span>.log(person.name);
+<span class="built_in">console</span>.log(person.getAge());
+person.age = <span class="number">100</span>;
+<span class="built_in">console</span>.log(person.getAge());
+person.growOlder();
+<span class="built_in">console</span>.log(person.getAge());
+</code></pre>
       
     </div>
     
