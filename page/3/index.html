@@ -178,6 +178,111 @@
 </nav>
       <div class="body-wrap">
   
+    <article id="post-css各种属性知识总结" class="article article-type-post" itemscope itemprop="blogPost">
+  
+    <div class="article-meta">
+      <a href="/2015/10/15/css各种属性知识总结/" class="article-date">
+  	<time datetime="2015-10-15T04:01:05.000Z" itemprop="datePublished">2015-10-15</time>
+</a>
+    </div>
+  
+  <div class="article-inner">
+    
+      <input type="hidden" class="isFancy" />
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2015/10/15/css各种属性知识总结/">css各种属性知识总结</a>
+    </h1>
+  
+
+      </header>
+      
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <h3 id="有关margin的值">有关margin的值</h3><p>margin属性规定了元素的外边距，这个属性可以有1~4个值(padding属性的赋值规则也是一样的)，其作用和写法如下：</p>
+<pre><code><span class="attribute">margin</span>:<span class="number">10px</span>;  <span class="comment">//元素的上、下、左、右边距都为10；</span>
+<span class="attribute">margin</span>:<span class="number">10px</span> <span class="number">20px</span>;  <span class="comment">//元素的上、下边距为10px,左、右边距都为20px；</span>
+<span class="attribute">margin</span>:<span class="number">10px</span> <span class="number">20px</span> <span class="number">30px</span>; <span class="comment">//元素的上边距是10px，左边距和右边距为                         20，下边距为30;</span>
+<span class="attribute">margin</span>:<span class="number">10px</span> <span class="number">20px</span> <span class="number">30px</span> <span class="number">40px</span>;  <span class="comment">//元素的上、下、左、右边距分别为           10、20、30、40px</span>
+</code></pre><p><code>margin</code>属性存在边距合并的问题，块级元素的上下边距会合并(当两个垂直边距相遇的时候，选取最大的值)。当元素时浮动定位的时候，左右的边距并不会合并。</p>
+<p>经常会出现这样一种情况，存在一个父元素<code>div</code>，想让这个父元素中的子元素和这个父元素的顶部有一些距离，就像下面的代码：</p>
+<p><img src="http://7xivia.com1.z0.glb.clouddn.com/RP@MY5PJ}C]M}HC5KE{3G9V.png"></p>
+<p>然而结果可能并不像我们想想的样子:</p>
+<p>根据规范，一个盒子如果没有上<code>补白(padding-top)</code>和上边框<code>(border-top)</code>，那么这个盒子的上边距会和其内部文档流中的第一个子元素的上边距重叠。在例子里面可以理解为<code>chass=&quot;.middle&quot;</code>的div与<code>class=&#39;firstChild&#39;</code>的div的上边距重合，这会导致父元素也被子元素的margin挤了下来。</p>
+<p><b>对于何时使用margin，何时使用padding？</b></p>
+<p>我的理解是，margin既然作为外边距（元素周围生成<code>额外的</code>空白区），他应该是分离同级的元素，让他们之间存在一些间隔的空隙。padding为内边距，感觉叫“补白”更贴切一些，顾名思义，是为了让容器元素和子元素之间存在一些空隙。所以上边的例子更加适合使用<code>padding</code>而不是使用margin。<br>还有当不需要讲margin合并时，可以使用padding代替。    </p>
+<hr>
+<h3 id="有关position的值">有关position的值</h3><p><b>static</b></p>
+<p>position的默认属性，没有特殊的规则，此时会忽略元素的<code>left</code>、<code>top</code>、<code>right</code>、<code>bottom</code>和<code>z-index</code>属性，元素正常的出现在文档流中。</p>
+<p><b>relative</b></p>
+<p>相对定位，相对于该元素position属性为static时的位置去定位，根据规定的<code>left</code>、<code>top</code>、<code>right</code>和<code>bottom</code>属性值来对元素的位置进行修正。</p>
+<p><b>absolute</b></p>
+<p>绝对定位，元素相对于static定位以外的第一个父元素进行定位，可以使用<code>left</code>、<code>top</code>、<code>right</code>和<code>bottom</code>等属性对元素位置进行修正。并且如果绝对定位的元素的位置已经存在了元素，并且这个元素时<code>relative</code>或者<code>static</code>定位，那么决定定位的元素会出现在上层的位置。如果该元素时absolute或者fixed定位，那么他们的<code>层级由他们在文档中出现的顺序决定</code>。</p>
+<p><b>fixed</b></p>
+<p>相对于浏览器窗口的定位，也可以称为固定定位，也可以根据规定的<code>left</code>、<code>top</code>、<code>right</code>和<code>bottom</code>属性值来对元素的位置进行修正。</p>
+<p><b>inherit</b></p>
+<p>继承父元素的定位信息（position的值）。</p>
+<h3 id="有关border-radius的取值">有关border-radius的取值</h3><p><code>border-radius</code>规定元素的圆角属性，其写法如下：</p>
+<pre><code><span class="attribute">border-radius</span>:<span class="number">10px</span>; <span class="comment">//四个角由四个圆弧代替，每个圆弧的半径相同，都为10px</span>
+<span class="attribute">border-radius</span>:<span class="number">10px</span> <span class="number">10px</span> <span class="number">5px</span> <span class="number">5px</span>; <span class="comment">//从左上角开始，圆弧的半径分别为10，10,5,5像素</span>
+<span class="attribute">border-radius</span>:<span class="number">10px</span> <span class="number">10px</span> <span class="number">5px</span>; <span class="comment">//从左上角开始，圆弧的半径分别为10，10,5,10像素</span>
+<span class="attribute">border-radius</span>:<span class="number">10px</span> <span class="number">10px</span> <span class="number">10px</span> <span class="number">10px</span> /<span class="number">5px</span> <span class="number">5px</span> <span class="number">5px</span> <span class="number">5px</span>; 
+<span class="comment">//将四个圆角继续分解称为四个垂直方向的圆弧和四个水平方向的元素，则这八个值中的前四个代表水平方向上的四个圆弧的半径（从左上角开始），后四个值代表垂直方向上的圆弧的半径。</span>
+</code></pre><hr>
+<h3 id="有关bacakground的取值">有关bacakground的取值</h3><p>background用来设置所有背景属:</p>
+<pre><code><span class="attribute">background-color</span>：red，<span class="hexcolor">#ffffff</span>,<span class="function"><span class="title">rgba</span><span class="params">(<span class="number">0</span>,<span class="number">0</span>,<span class="number">0</span>,<span class="number">0.7</span>)</span></span> <span class="comment">//规定背景颜色</span>
+<span class="attribute">background-position</span>：
+<span class="comment">//规定如何定位背景图像。可以通过百分比取值，如：x% y%;或用像素取值，如：10px(水平) 10px(竖直)；这两种方式均基于元素左上角点。同时还可以使用预定的组合值，如：top center（第一个值代表竖直方向，可选值有top、center、bottom，第二个值代表水平法相，可选值有left center right）。</span>
+<span class="attribute">background-size</span>:
+<span class="comment">//规定背景图片的尺寸。可以使用px：100px 100px；百分比：100%(宽度) 100%(高度)，图片可能会变形；cover，将图片扩展至足够大，覆盖整个背景区域，图像不会发生形变；contain：将图片扩展至足够大，使图片宽度和告诉适应内容区域。</span>
+<span class="attribute">background-repeat</span>：
+<span class="comment">//规定是否重复背景图片，以及如何重复。no-repeat/repeat(水平和竖直方向)/repeat-x/repeat-y/inherit（继承父元素）。</span>
+<span class="attribute">background-origin</span>：
+<span class="comment">//用来规定background-position属性从哪里开始定位：padding-box：相对于内边距来定位，原点在左上角(不包括border的宽度)；border-box：相对于边框来定位，原点在左上角(包括border的宽度)；content-box：相对于content区域定位(不包括padding的宽度)。</span>
+<span class="attribute">background-clip</span>：
+<span class="comment">//用来规定背景的显示范围，也就是裁剪的范围：border-box/padding-box/content-box。</span>
+<span class="attribute">background-attachment</span>：
+<span class="comment">//规定背景图片是否随着元素内的元素滚动而滚动。scroll/fixed/inherit。</span>
+<span class="attribute">background-image</span>：
+<span class="comment">//设置背景图片的路径。url('URL')。默认值为none。</span>
+</code></pre><hr>
+<h3 id="有关box-shadow的取值">有关box-shadow的取值</h3><p>向<code>框</code>添加一个或多个阴影：</p>
+<pre><code>box-<span class="built_in">shadow</span>:h-<span class="built_in">shadow</span> v-<span class="built_in">shadow</span> blur spread <span class="keyword">color</span> inset;
+</code></pre><p>分别代表：水平阴影的位置(允许负值)，竖直阴影的位置(允许负值)，模糊距离(可选)，阴影尺寸(可选)，阴影颜色，将外部阴影改为内部阴影。</p>
+<hr>
+<h3 id="有关float的取值">有关float的取值</h3>
+      
+    </div>
+    
+    <div class="article-info article-info-index">
+      
+      
+	<div class="article-tag tagcloud">
+		<ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/CSS/">CSS</a></li></ul>
+	</div>
+
+      
+
+      
+      <div class="clearfix"></div>
+    </div>
+    
+  </div>
+  
+</article>
+
+
+
+
+
+
+
+  
     <article id="post-meta" class="article article-type-post" itemscope itemprop="blogPost">
   
     <div class="article-meta">

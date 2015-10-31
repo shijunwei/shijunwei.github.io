@@ -1,0 +1,480 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  
+  <title>《javascript面向对象精要》总结（二） | 我想养只小金毛</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+  <meta name="description" content="理解对象
+属性的定义，探测，删除：
+ 我们知道，我们可以在任何时候给js的对象去添加属性。至于添加属性的具体过程，是javascript在对象上调用了一个叫[[Put]]的内部方法，该方法会在对象上创建一个节点来保存属性（自有属性）。当已有的属性被设置一个新的值时，调用的是一个叫[[Set]]的方法，该方法将属性的当前值替换成新值。
+ 判断一个属性是否存在，有时我们会这样做：
+if(person.">
+<meta property="og:type" content="article">
+<meta property="og:title" content="《javascript面向对象精要》总结（二）">
+<meta property="og:url" content="http://shijunwei.github.io/2015/10/31/《javascript面向对象精要》总结（二）/index.html">
+<meta property="og:site_name" content="我想养只小金毛">
+<meta property="og:description" content="理解对象
+属性的定义，探测，删除：
+ 我们知道，我们可以在任何时候给js的对象去添加属性。至于添加属性的具体过程，是javascript在对象上调用了一个叫[[Put]]的内部方法，该方法会在对象上创建一个节点来保存属性（自有属性）。当已有的属性被设置一个新的值时，调用的是一个叫[[Set]]的方法，该方法将属性的当前值替换成新值。
+ 判断一个属性是否存在，有时我们会这样做：
+if(person.">
+<meta property="og:updated_time" content="2015-10-31T12:58:32.000Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="《javascript面向对象精要》总结（二）">
+<meta name="twitter:description" content="理解对象
+属性的定义，探测，删除：
+ 我们知道，我们可以在任何时候给js的对象去添加属性。至于添加属性的具体过程，是javascript在对象上调用了一个叫[[Put]]的内部方法，该方法会在对象上创建一个节点来保存属性（自有属性）。当已有的属性被设置一个新的值时，调用的是一个叫[[Set]]的方法，该方法将属性的当前值替换成新值。
+ 判断一个属性是否存在，有时我们会这样做：
+if(person.">
+  
+    <link rel="alternative" href="/atom.xml" title="我想养只小金毛" type="application/atom+xml">
+  
+  
+    <link rel="icon" href="/favicon.png">
+  
+  <link rel="stylesheet" href="/css/style.css" type="text/css">
+</head>
+<body>
+  <div id="container">
+    <div class="left-col">
+    <div class="overlay"></div>
+<div class="intrude-less">
+	<header id="header" class="inner">
+		<a href="/" class="profilepic">
+			
+			<img lazy-src="/img/avator.png" class="js-avatar">
+			
+		</a>
+
+		<hgroup>
+		  <h1 class="header-author"><a href="/">惜安</a></h1>
+		</hgroup>
+
+		
+		<p class="header-subtitle">惜安</p>
+		
+
+		
+			<div class="switch-btn">
+				<div class="icon">
+					<div class="icon-ctn">
+						<div class="icon-wrap icon-house" data-idx="0">
+							<div class="birdhouse"></div>
+							<div class="birdhouse_holes"></div>
+						</div>
+						<div class="icon-wrap icon-ribbon hide" data-idx="1">
+							<div class="ribbon"></div>
+						</div>
+						
+						<div class="icon-wrap icon-link hide" data-idx="2">
+							<div class="loopback_l"></div>
+							<div class="loopback_r"></div>
+						</div>
+						
+						
+						<div class="icon-wrap icon-me hide" data-idx="3">
+							<div class="user"></div>
+							<div class="shoulder"></div>
+						</div>
+						
+					</div>
+					
+				</div>
+				<div class="tips-box hide">
+					<div class="tips-arrow"></div>
+					<ul class="tips-inner">
+						<li>菜单</li>
+						<li>标签</li>
+						
+						<li>友情链接</li>
+						
+						
+						<li>关于我</li>
+						
+					</ul>
+				</div>
+			</div>
+		
+
+		<div class="switch-area">
+			<div class="switch-wrap">
+				<section class="switch-part switch-part1">
+					<nav class="header-menu">
+						<ul>
+						
+							<li><a href="/">主页</a></li>
+				        
+							<li><a href="/archives">所有文章</a></li>
+				        
+						</ul>
+					</nav>
+					<nav class="header-nav">
+						<div class="social">
+							
+								<a class="github" target="_blank" href="/#" title="github">github</a>
+					        
+								<a class="weibo" target="_blank" href="http://weibo.com/u/3013104975" title="weibo">weibo</a>
+					        
+						</div>
+					</nav>
+				</section>
+				
+				
+				<section class="switch-part switch-part2">
+					<div class="widget tagcloud" id="js-tagcloud">
+						<a href="/tags/CSS/" style="font-size: 10px;">CSS</a> <a href="/tags/CSS3/" style="font-size: 16.67px;">CSS3</a> <a href="/tags/HTML5/" style="font-size: 10px;">HTML5</a> <a href="/tags/hexo/" style="font-size: 10px;">hexo</a> <a href="/tags/html/" style="font-size: 10px;">html</a> <a href="/tags/html5/" style="font-size: 10px;">html5</a> <a href="/tags/javascript/" style="font-size: 20px;">javascript</a> <a href="/tags/webApp/" style="font-size: 10px;">webApp</a> <a href="/tags/脚手架工具/" style="font-size: 13.33px;">脚手架工具</a> <a href="/tags/随笔/" style="font-size: 10px;">随笔</a>
+					</div>
+				</section>
+				
+				
+				
+				<section class="switch-part switch-part3">
+					<div id="js-friends">
+					
+			          <a target="_blank" class="main-nav-link switch-friends-link" href="http://surongxiang.github.io">小贱人</a>
+			        
+			        </div>
+				</section>
+				
+
+				
+				
+				<section class="switch-part switch-part4">
+				
+					<div id="js-aboutme">伸手摘星，未必如愿，但不会脏了你的手。</div>
+				</section>
+				
+			</div>
+		</div>
+	</header>				
+</div>
+    </div>
+    <div class="mid-col">
+      <nav id="mobile-nav">
+  	<div class="overlay">
+  		<div class="slider-trigger"></div>
+  		<h1 class="header-author js-mobile-header hide">惜安</h1>
+  	</div>
+	<div class="intrude-less">
+		<header id="header" class="inner">
+			<div class="profilepic">
+				<img lazy-src="/img/avator.png" class="js-avatar">
+			</div>
+			<hgroup>
+			  <h1 class="header-author">惜安</h1>
+			</hgroup>
+			
+			<p class="header-subtitle">惜安</p>
+			
+			<nav class="header-menu">
+				<ul>
+				
+					<li><a href="/">主页</a></li>
+		        
+					<li><a href="/archives">所有文章</a></li>
+		        
+		        <div class="clearfix"></div>
+				</ul>
+			</nav>
+			<nav class="header-nav">
+				<div class="social">
+					
+						<a class="github" target="_blank" href="/#" title="github">github</a>
+			        
+						<a class="weibo" target="_blank" href="http://weibo.com/u/3013104975" title="weibo">weibo</a>
+			        
+				</div>
+			</nav>
+		</header>				
+	</div>
+</nav>
+      <div class="body-wrap"><article id="post-《javascript面向对象精要》总结（二）" class="article article-type-post" itemscope itemprop="blogPost">
+  
+    <div class="article-meta">
+      <a href="/2015/10/31/《javascript面向对象精要》总结（二）/" class="article-date">
+  	<time datetime="2015-10-31T02:25:39.000Z" itemprop="datePublished">2015-10-31</time>
+</a>
+    </div>
+  
+  <div class="article-inner">
+    
+      <input type="hidden" class="isFancy" />
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 class="article-title" itemprop="name">
+      《javascript面向对象精要》总结（二）
+    </h1>
+  
+
+      </header>
+      
+      <div class="article-info article-info-post">
+        
+	<div class="article-tag tagcloud">
+		<ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/javascript/">javascript</a></li></ul>
+	</div>
+
+        
+
+        <div class="clearfix"></div>
+      </div>
+      
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <h3 id="理解对象">理解对象</h3><ol>
+<li><p>属性的定义，探测，删除：</p>
+<p> 我们知道，我们可以在任何时候给js的对象去添加属性。至于添加属性的具体过程，是javascript在对象上调用了一个叫[[Put]]的内部方法，该方法会在对象上创建一个节点来保存属性（自有属性）。当已有的属性被设置一个新的值时，调用的是一个叫[[Set]]的方法，该方法将属性的当前值替换成新值。</p>
+<p> 判断一个属性是否存在，有时我们会这样做：</p>
+<pre><code><span class="keyword">if</span>(person.<span class="keyword">name</span>){
+    //<span class="keyword">do</span> something
+}
+</code></pre><p> 但是，当name的值是一个对象，非空字符串，非零数字或者true时，会评估为真，但是当值是null，undefined，0，false，NaN或空字符串时，会被评估为假。显而易见这里就会存在一些问题了。</p>
+<p> 更加可靠的是使用in操作符，用法都知道，不说了。但是in操作符还会检查原型属性，这有可能也不是我们想要的，我们还可以使用<code>hasOwnProperty()</code>这个方法。每个javascript对象都有这个方法。</p>
+<p> 当我们想要删除一个对象的某个属性的时候，使用delete操作符就可以了。</p>
+</li>
+<li><p>属性的枚举：</p>
+<p> 典型的方法是使用<code>for-in</code>循环进行迭代（只能遍历可枚举的属性），他也会遍历原型属性：</p>
+<pre><code>var <span class="keyword">property</span>;
+<span class="keyword">for</span>(<span class="keyword">property</span> <span class="keyword">in</span> object){
+    console.<span class="command">log</span>(<span class="string">"Name:"</span>+<span class="keyword">property</span>);
+    console.<span class="command">log</span>(<span class="string">"Value:"</span> + object[<span class="keyword">property</span>]);
+}
+</code></pre><p> ECMAScript5中引入了Object.keys()方法，可以获取对象的属性名字数组（自有属性，不包含原型属性）：</p>
+<pre><code>var <span class="keyword">property</span> = Object.keys(object);
+var i <span class="built_in">len</span>;
+<span class="keyword">for</span> (i=<span class="number">0</span>,<span class="built_in">len</span>=peoperty.length;i&lt;<span class="built_in">len</span>;i++){
+    console.<span class="built_in">log</span>(<span class="string">"Name:"</span>+<span class="keyword">property</span>[i]);
+    console.<span class="built_in">log</span>(<span class="string">"Value:"</span> + object[<span class="keyword">property</span>[i]]);
+}
+</code></pre></li>
+<li><p>属性的类型：</p>
+<p> 属性的类型有两种，一种是数据属性，我们之前用到的属性都是数据属性，数据属性包含一个值。<br> 访问器属性不包含值，是定义了一个当前属性被读取时调用的函数，和一个当属性被写入是调用的函数（可以是一个也可以是两个都有）。</p>
+<pre><code><span class="keyword">var</span> person = {
+    _name:<span class="string">"Shi"</span>,<span class="comment">//前置下划线是一个俗称的命名规范，表示该属性被认为是私有，但是实际上还是公开的。</span>
+
+    <span class="function"><span class="keyword">get</span> <span class="title">name</span><span class="params">()</span></span>{
+        <span class="keyword">return</span> <span class="keyword">this</span>._name;
+    },
+
+    <span class="function"><span class="keyword">set</span> <span class="title">name</span><span class="params">(<span class="keyword">value</span>)</span></span>{
+        <span class="keyword">this</span>._name = <span class="keyword">value</span>;
+    }
+};
+
+console.log(person.name);
+person.name = <span class="string">"SHI"</span>;
+console.log(person.name);
+</code></pre></li>
+<li><p>属性特征：<br> 包括<code>通用的属性特征</code>：[[Enumerable]]决定了属性是否可以被枚举，[[Configurable]]决定了属性是否可以被配置。我们平时声明的属性都是可枚举，可配置的，所以你可以随时删除和更改。<br> 改变属性的特征可以使用Object.defineProperty()方法，该方法接受三个参数：拥有该属性的对象，属性名，包含需要设置的特征的属性描述对象：</p>
+<p> var person = {</p>
+<pre><code><span class="property">name</span>:<span class="string">"Shi"</span>
+</code></pre><p> }</p>
+<p> Object.defineProperty(person,”name”,{</p>
+<pre><code><span class="string">enumerable:</span><span class="literal">false</span>
+</code></pre><p> });</p>
+<p> console.log(“name” in person);    //true<br> console.log(person.propertyIsEnumerable(“name”));    //false</p>
+<p> var properties = Object.keys(person);<br> console.log(properties.length);        // 0</p>
+<p> Object.defineProperty(person,”name”,{</p>
+<pre><code><span class="string">configurable:</span><span class="literal">false</span>
+</code></pre><p> });</p>
+<p> delete person.name;        //严格模式下会导致错误，非严格模式会失败。<br> console.log(person.name);    //“Shi”</p>
+<p> //状态已经变成不可配置，不能修改了。<br> Object.defineProperty(person,”name”,{</p>
+<pre><code><span class="string">configurable:</span><span class="literal">true</span>
+</code></pre><p> });</p>
+<p> <code>数据的属性特征</code>：[[Value]]包含属性值，当你在对象上创建属性时该特征被自动赋值。[[Writable]]是一个布尔值，指示该属性是否可以写入。所有属性都是可写的，除非你另外指定。</p>
+<p> var person = {};</p>
+<p> Object.defineProperty(person,”name”,{</p>
+<pre><code><span class="string">configurable:</span><span class="literal">true</span>,
+<span class="string">enumerable:</span><span class="literal">true</span>,
+<span class="string">value:</span><span class="string">"Shi"</span>,
+<span class="string">writable:</span><span class="literal">true</span>
+</code></pre><p> });<br> //Object.defineProperty()定义新的属性时，要为所有的特征值制定一个值，否则布尔型的特征值会被制定为false。</p>
+<p> <code>访问器属性特征</code>：访问其属性不需要存值，所以没有[[Value]]和[[Writable]]，取而代之的是[[Get]]和[[Set]]。</p>
+<pre><code><span class="keyword">var</span> person = {
+    _name:<span class="string">"Shi"</span>
+};
+Object.defineProperty(person,<span class="string">"name"</span>,{
+    <span class="keyword">get</span>:<span class="function"><span class="keyword">function</span><span class="params">()</span></span>{
+        <span class="keyword">return</span> <span class="keyword">this</span>._name;
+    },
+    <span class="keyword">set</span>:<span class="function"><span class="keyword">function</span><span class="params">(value)</span></span>{
+        <span class="keyword">this</span>._name = value;
+    },
+    enumerable:<span class="literal">true</span>,
+    configurable:<span class="literal">true</span>
+});
+</code></pre><p> 当然，从上面的代码可以知道，当我们想要创建一个只能读取的属性时，只需要定义一个get访问器属性就可以了。其他的特征属性不设置则默认为(false)。<br> 下面说说获取属性特征的方法：</p>
+<pre><code><span class="keyword">var</span> person = {
+    name:<span class="string">"Shi"</span>
+};
+<span class="keyword">var</span> descriptor = <span class="built_in">Object</span>.getOwnPropertyDescriptor(person,<span class="string">"name"</span>);
+<span class="built_in">console</span>.log(descriptor.enumerable);
+<span class="built_in">console</span>.log(descriptor.configurable);
+<span class="built_in">console</span>.log(descriptor.writable);
+<span class="built_in">console</span>.log(descriptor.value);
+<span class="comment">//非常清晰，不多说。</span>
+</code></pre></li>
+<li><p>禁止修改对象：</p>
+<p> 对象也和属性一样，具有指导其行为的内部特征。[[Extensible]]指明该对象本身是否可以被修改。我们之前创建的所有对象默认都是可以扩展的，这意味着新的属性可以随时被添加。当我们设置了[[Extensible]]为false，就可以禁止新的属性被添加。有三种方法可以锁定对象属性。<br> <code>禁止扩展</code>：使用Object.preventExtensions()创建一个不可扩展的对象。该方法接受一个参数，就是你希望使其不可扩展的对象。可以使用Object.isExtensible()来检查[[Extensible]]的值。</p>
+<pre><code><span class="keyword">var</span> person = {
+    name:<span class="string">"Shi"</span>
+};
+<span class="built_in">console</span>.log(<span class="built_in">Object</span>.isExtensible(person));    <span class="comment">//true</span>
+<span class="built_in">Object</span>.preventExtensions(person);
+<span class="built_in">console</span>.log(<span class="built_in">Object</span>.isExtensible(person));    <span class="comment">//false</span>
+
+person.sayName = <span class="function"><span class="keyword">function</span><span class="params">()</span></span>{
+    <span class="built_in">console</span>.log(<span class="keyword">this</span>.name);
+}
+<span class="built_in">console</span>.log(<span class="string">"sayName"</span> <span class="keyword">in</span> person);    <span class="comment">//false</span>
+</code></pre><p> <code>对象封印</code>：被封印的对象不可扩展而且所有的属性都不可配置，也就是不仅不能添加属性，也不能删除属性或者改变其类型，只能读取属性的值。可以是用Object.seal()来封印一个对象，该方法调用的时候，该属性的[[Extensible]]设置为false，其所有属性的[[configurable]]特征被设置为flase。可以使用Object.isSealed()来判断一个对象是否被封印。</p>
+<pre><code><span class="keyword">var</span> person = {
+    name:<span class="string">"Shi"</span>
+};
+<span class="built_in">console</span>.log(<span class="built_in">Object</span>.isExtensible(person));    <span class="comment">//true</span>
+<span class="built_in">console</span>.log(<span class="built_in">Object</span>.isSealed(person));    <span class="comment">//false</span>
+
+<span class="built_in">Object</span>.seal(person);
+<span class="built_in">console</span>.log(<span class="built_in">Object</span>.isExtensible(person));    <span class="comment">//false</span>
+<span class="built_in">console</span>.log(<span class="built_in">Object</span>.isSealed(person));    <span class="comment">//true</span>
+
+person.sayName = <span class="function"><span class="keyword">function</span><span class="params">()</span></span>{
+    <span class="built_in">console</span>.log(<span class="keyword">this</span>.name);
+}
+<span class="built_in">console</span>.log(<span class="string">"sayName"</span> <span class="keyword">in</span> person);    <span class="comment">//false</span>
+person.name = <span class="string">"Grey"</span>;
+<span class="built_in">console</span>.log(person.name);    <span class="comment">//"Grey"</span>
+</code></pre><p> <code>对象冻结</code>：和封印一样，但是冻结的对象是不能写入数据的。使用Object.freeze()来冻结一个对象。使用Object.isFrozen()来判断一个对象是否被冻结。</p>
+<pre><code><span class="built_in">Object</span>.freeze(person);
+person.name = <span class="string">"Grey"</span>;
+<span class="built_in">console</span>.log(person.name);    <span class="comment">//"Shi"</span>
+</code></pre></li>
+</ol>
+
+      
+    </div>
+    
+  </div>
+  
+    
+<nav id="article-nav">
+  
+  
+    <a href="/2015/10/30/《javascript面向对象精要》总结(一)/" id="article-nav-older" class="article-nav-link-wrap">
+      <div class="article-nav-title">《javascript面向对象精要》总结（一）</div>
+      <strong class="article-nav-caption">></strong>
+    </a>
+  
+</nav>
+
+  
+</article>
+
+
+<div class="share">
+	<!-- JiaThis Button BEGIN -->
+	<div class="jiathis_style">
+		<span class="jiathis_txt">分享到：</span>
+		<a class="jiathis_button_tsina"></a>
+		<a class="jiathis_button_cqq"></a>
+		<a class="jiathis_button_douban"></a>
+		<a class="jiathis_button_weixin"></a>
+		<a class="jiathis_button_tumblr"></a>
+		<a href="http://www.jiathis.com/share" class="jiathis jiathis_txt jtico jtico_jiathis" target="_blank"></a>
+	</div>
+	<script type="text/javascript" src="http://v3.jiathis.com/code/jia.js?uid=1405949716054953" charset="utf-8"></script>
+	<!-- JiaThis Button END -->
+</div>
+
+
+
+<div class="duoshuo">
+	<!-- 多说评论框 start -->
+	<div class="ds-thread" data-thread-key="《javascript面向对象精要》总结（二）" data-title="《javascript面向对象精要》总结（二）" data-url="http://shijunwei.github.io/2015/10/31/《javascript面向对象精要》总结（二）/"></div>
+	<!-- 多说评论框 end -->
+	<!-- 多说公共JS代码 start (一个网页只需插入一次) -->
+	<script type="text/javascript">
+	var duoshuoQuery = {short_name:"true"};
+	(function() {
+		var ds = document.createElement('script');
+		ds.type = 'text/javascript';ds.async = true;
+		ds.src = (document.location.protocol == 'https:' ? 'https:' : 'http:') + '//static.duoshuo.com/embed.js';
+		ds.charset = 'UTF-8';
+		(document.getElementsByTagName('head')[0] 
+		 || document.getElementsByTagName('body')[0]).appendChild(ds);
+	})();
+	</script>
+	<!-- 多说公共JS代码 end -->
+</div>
+
+
+
+
+</div>
+      <footer id="footer">
+  <div class="outer">
+    <div id="footer-info">
+    	<div class="footer-left">
+    		&copy; 2015 惜安
+    	</div>
+      	<div class="footer-right">
+      		<a href="http://hexo.io/" target="_blank">Hexo</a>  Theme <a href="https://github.com/litten/hexo-theme-yilia" target="_blank">Yilia</a> by Litten
+      	</div>
+    </div>
+  </div>
+</footer>
+    </div>
+    
+  <link rel="stylesheet" href="/fancybox/jquery.fancybox.css" type="text/css">
+
+
+<script>
+	var yiliaConfig = {
+		fancybox: true,
+		mathjax: true,
+		animate: true,
+		isHome: false,
+		isPost: true,
+		isArchive: false,
+		isTag: false,
+		isCategory: false,
+		open_in_new: true
+	}
+</script>
+<script src="http://7.url.cn/edu/jslib/comb/require-2.1.6,jquery-1.9.1.min.js" type="text/javascript"></script>
+<script src="/js/main.js" type="text/javascript"></script>
+
+
+
+
+
+
+<script type="text/x-mathjax-config">
+MathJax.Hub.Config({
+    tex2jax: {
+        inlineMath: [ ['$','$'], ["\\(","\\)"]  ],
+        processEscapes: true,
+        skipTags: ['script', 'noscript', 'style', 'textarea', 'pre', 'code']
+    }
+});
+
+MathJax.Hub.Queue(function() {
+    var all = MathJax.Hub.getAllJax(), i;
+    for(i=0; i < all.length; i += 1) {
+        all[i].SourceElement().parentNode.className += ' has-jax';                 
+    }       
+});
+</script>
+
+<script type="text/javascript" src="http://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML">
+</script>
+
+
+  </div>
+</body>
+</html>
