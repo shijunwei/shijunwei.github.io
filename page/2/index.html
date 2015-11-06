@@ -224,9 +224,10 @@
     <span class="keyword">return</span> elements;
 }
 <span class="comment">//低于IE8版本的浏览器中，getElementById()方法对匹配元素的ID不区分大小写，同时也会匹配到那么属性符合条件的元素。所以，注意设置name和id属性的时候尽量让这两个元素不要重名。</span>
-</code></pre><p>2、用过name属性和标签名来查找元素，分别使用getElementByName()和getElementsByTagName()方法，这两个方法都是返回一个<code>NodeList对象</code>。像document.images或者document.forms的属性为<code>HTMLCollection对象</code>。这两种都是只读的类数组对象，他们有length属性，也可以像数组一样索引（只能读），但是不能在这两类对象上直接调用数组的方法，但是可以间接的调用：</p>
-<pre><code><span class="keyword">var</span> content = <span class="built_in">Array</span>.prototype.map.call(<span class="built_in">document</span>.getElementByTagName(<span class="string">"p"</span>),<span class="function"><span class="keyword">function</span><span class="params">(e)</span></span>{ <span class="keyword">return</span> e.innerHTML;});
-</code></pre><p>值得注意的是<code>NodeList对象</code>和<code>HTMLCollection对象</code>都是实时的。同时，Element类也定义了getElementsByTagName()方法，该方法只在调用该方法的元素对象的后代中选取元素。</p>
+</code></pre><p>2、用过name属性和标签名来查找元素，分别使用getElementByName()和getElementsByTagName()方法，这两个方法都是返回一个<code>NodeList对象</code>。像document.images或者document.forms的属性为<code>HTMLCollection对象</code>。<br>这两种都是只读的类数组对象，他们有length属性，也可以像数组一样索引（只能读），但是不能在这两类对象上直接调用数组的方法，但是可以间接的调用：</p>
+<pre><code><span class="comment">//获取p标签中的内容</span>
+<span class="keyword">var</span> content = <span class="built_in">Array</span>.prototype.map.call(<span class="built_in">document</span>.getElementByTagName(<span class="string">"p"</span>),<span class="function"><span class="keyword">function</span><span class="params">(e)</span></span>{ <span class="keyword">return</span> e.innerHTML;});
+</code></pre><p>值得注意的是<code>NodeList对象</code>和<code>HTMLCollection对象</code>都是实时的。<br>同时，Element类也定义了getElementsByTagName()方法，该方法只在调用该方法的元素对象的后代中选取元素。</p>
 <p>3、通过HTML的class属性选择元素，使用getElementsByClassName()方法，返回的是一个实时的NodeList对象，该方法需要一个字符串参数，可以是由多个空格隔开的标识符组成。</p>
 <pre><code><span class="comment">//查找包含fatal和error类的元素,使用</span>
 <span class="keyword">var</span> ele = getElementsByClassName(<span class="string">'fatal error'</span>);
@@ -236,7 +237,7 @@
 <span class="built_in">document</span>.<span class="built_in">querySelector</span>(<span class="string">".container"</span>);<span class="comment">//返回class等于container的第一个元素</span>
 <span class="built_in">document</span>.<span class="built_in">querySelector</span>(<span class="string">".container header"</span>);<span class="comment">//返回class等于container中的第一个header子元素</span>
 </code></pre><p>5、使用querySelectorAll方法返回所有文档中匹配指定 CSS 选择器的元素，与querySelector相同，只不过querySelectorAll方法返回一个匹配的nodeList。</p>
-<h3 id="文档结构">文档结构</h3><p>一旦从文档中选取了一个元素，有事需要查找文档中与之在结构上相关的部分，这种结构可以看作一个节点对象树。</p>
+<h3 id="文档结构">文档结构</h3><p>一旦从文档中选取了一个元素，有时需要查找文档中与之在结构上相关的部分，这种结构可以看作一个节点对象树。</p>
 <p>1、节点树的文档。我们之前说的Document对象，和他的Element对象，文档中表示文本的Text对象都是属于Node对象，对于一个节点来讲，他具有以下的属性，</p>
 <pre><code>parentNode：父节点（document没有父节点，值为null），任何元素的父节点都不可能是<span class="keyword">Text</span>。任何Elemnt的parentNode总是一个<span class="keyword">Element</span>。
 childNodes：子节点的实时表示
@@ -260,14 +261,17 @@ nextElementSibling，previousElementSibling
 <span class="comment">//子元素的个数，和children.length相等</span>
 childElementCount
 </code></pre><h3 id="元素的属性">元素的属性</h3><p>元素的属性应该都是比较熟悉的了，如id，class，src，以及一些时间的处理如onclick等，值得注意的是，有些属性在JavaScript中是保留字，如class，在JavaScript中把他变为ClassName。</p>
-<pre><code><span class="function"><span class="title">getAttribute</span><span class="params">()</span></span><span class="comment">//获取html属性，返回的是一个字符串，</span>
-<span class="function"><span class="title">setAttribute</span><span class="params">()</span></span><span class="comment">//设置元素的属性</span>
-<span class="function"><span class="title">hasAttribute</span><span class="params">()</span></span><span class="comment">//判断元素属性是否存在，</span>
-<span class="function"><span class="title">removeAttribute</span><span class="params">()</span></span><span class="comment">//完全删除属性</span>
+<pre><code>getAttribute()<span class="comment">//获取html属性，返回的是一个字符串，</span>
+setAttribute()<span class="comment">//设置元素的属性</span>
+hasAttribute()<span class="comment">//判断元素属性是否存在，</span>
+removeAttribute()<span class="comment">//完全删除属性</span>
+
+var width = parseInt(images.getAttribute(<span class="string">"WIDTH));</span>
+images.setAttribute('class','thumbnail<span class="string">");</span>
 </code></pre><p>还有一种使用Element属性的方法，Node类型定义了attribute属性。</p>
 <pre><code>document.<span class="keyword">body</span>.attributes[<span class="number">0</span>];<span class="comment">//返回body元素的第一个属性</span>
 document.<span class="keyword">body</span>.attributes.bgcolor;<span class="comment">//返回body元素的第一个属性</span>
-</code></pre><p>html5文档中说，任意以<code>data-</code>为前缀的小写的属性名字都是合法的。这些数据集属性会以属性的形式存在于该元素的dataset属性内。如data-x的值保存在dataset.x内，带连字符的属性采用驼峰命名方式。</p>
+</code></pre><p>html5文档中中表明，任意以<code>data-</code>为前缀的小写的属性名字都是合法的。这些数据集属性会以属性的形式存在于该元素的dataset属性内。如data-x的值保存在dataset.x内，带连字符的属性采用驼峰命名方式。</p>
 <h3 id="元素的内容">元素的内容</h3><p>Element的innerHTML属性会返回元素的内容，内容可以是HTML字符串，也可以是纯文本的字符串。<br>查询和插入纯文本形式的内容，可以使用Node对象的textContent属性实现，在ie中使用innerHTML替代。</p>
 <pre><code><span class="comment">/**
 *一个参数，返回element的textContent或者innerText
@@ -285,18 +289,21 @@ document.<span class="keyword">body</span>.attributes.bgcolor;<span class="comme
         <span class="keyword">else</span> element.innerText = value;
     }
 }
-</code></pre><h3 id="创建、插入和删除节点">创建、插入和删除节点</h3><p>创建新的元素节点可以使用Document对象的createElement()方法。给方法传递元素的标签名（不区分大小写）。创建Text节点可以使用document。createTextNode()方法。</p>
+</code></pre><h3 id="创建、插入和删除节点">创建、插入和删除节点</h3><p>创建新的元素节点可以使用Document对象的createElement()方法。给方法传递元素的标签名（不区分大小写）。创建Text节点可以使用document.createTextNode()方法。</p>
 <pre><code><span class="reserved">var</span> newNode = <span class="built_in">document</span>.createTextNode(<span class="string">"this is a textNode"</span>);
 <span class="reserved">var</span> s = <span class="built_in">document</span>.createElement(<span class="string">"script"</span>)
 </code></pre><p>也可以选择clone已经存在的节点作为创建节点的另一种方式，每个节点都有一个<code>cloneNode()</code>方法，该方法返回该节点的一个全新副本, 给方法传递参数true可以递归的复制所有的后代节点。</p>
+<pre><code><span class="reserved">var</span> cloneNode = <span class="built_in">document</span>.getElementById(<span class="string">"test"</span>).cloneNode(<span class="literal">true</span>);
+</code></pre><hr>
 <p>将创建的节点插入到文档中的方法有<code>appendChild()</code>和<code>insertBefore()</code>。<br>appendChild()在需要插入的元素上调用，并将节点作为他最后一个子节点插入。</p>
 <pre><code><span class="reserved">var</span> ele = <span class="built_in">document</span>.getElementById(<span class="string">"test"</span>);
 <span class="reserved">var</span> span = <span class="built_in">document</span>.createElement(<span class="string">"span"</span>);
 ele.appendChild(span);
-</code></pre><p><code>insertBefore()</code>与<code>appendChild()</code>类似，不同的是<code>insertBefore()</code>接受两个参数。该方法也是在被插入的元素节点上调用，第一个是待插入的元素，另一个是在被插入元素中已经存在的节点（该方法将新节点插入到该节点之前）。</p>
-<pre><code>ele<span class="class">.insertBefore</span>(<span class="tag">span</span>,ele<span class="class">.children</span><span class="attr_selector">[0]</span>);
-<span class="comment">//当位置索引大于被插入元素的子元素个数时，元素会被插入到末尾</span>
+</code></pre><p><code>insertBefore()</code>与<code>appendChild()</code>类似，也是在被插入的元素节点上调用.不同的是<code>insertBefore()</code>接受两个参数，第一个是待插入的元素，另一个是在被插入元素中已经存在的节点（该方法将新节点插入到该节点之前）。</p>
+<pre><code><span class="comment">//当位置索引大于被插入元素的子元素个数时，元素会被插入到末尾</span>
+ele<span class="class">.insertBefore</span>(<span class="tag">span</span>,ele<span class="class">.children</span><span class="attr_selector">[0]</span>);
 </code></pre><p>当用这两个方法将已经存在于文档中的节点再插入一次的时候，那个节点将自动从他当前的位置删除，并在新的位置插入,不需要显示删除节点。</p>
+<hr>
 <p><code>removeChild()</code>从文档中删除节点，同样也是在被删除节点的父节点上调用，被删除节点作为参数传入方法。</p>
 <pre><code>n<span class="class">.parentNode</span><span class="class">.removeChild</span>(n)
 </code></pre><p><code>replaceChild()</code>方法删除一个子节点，并用一个新的子节点取而代之。在父节点上调用该方法，第一个参数是新节点，第二个参数是需要替代的节点。</p>
