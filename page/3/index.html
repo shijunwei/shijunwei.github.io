@@ -110,7 +110,7 @@
 				
 				<section class="switch-part switch-part2">
 					<div class="widget tagcloud" id="js-tagcloud">
-						<a href="/tags/CSS/" style="font-size: 10px;">CSS</a> <a href="/tags/CSS3/" style="font-size: 16.67px;">CSS3</a> <a href="/tags/HTML5/" style="font-size: 10px;">HTML5</a> <a href="/tags/hexo/" style="font-size: 10px;">hexo</a> <a href="/tags/html/" style="font-size: 10px;">html</a> <a href="/tags/html5/" style="font-size: 10px;">html5</a> <a href="/tags/javascript/" style="font-size: 20px;">javascript</a> <a href="/tags/webApp/" style="font-size: 10px;">webApp</a> <a href="/tags/脚手架工具/" style="font-size: 13.33px;">脚手架工具</a> <a href="/tags/随笔/" style="font-size: 10px;">随笔</a>
+						<a href="/tags/AngularJs/" style="font-size: 10px;">AngularJs</a> <a href="/tags/CSS/" style="font-size: 10px;">CSS</a> <a href="/tags/CSS3/" style="font-size: 16.67px;">CSS3</a> <a href="/tags/HTML5/" style="font-size: 10px;">HTML5</a> <a href="/tags/Python/" style="font-size: 10px;">Python</a> <a href="/tags/hexo/" style="font-size: 10px;">hexo</a> <a href="/tags/html/" style="font-size: 10px;">html</a> <a href="/tags/html5/" style="font-size: 10px;">html5</a> <a href="/tags/javascript/" style="font-size: 20px;">javascript</a> <a href="/tags/webApp/" style="font-size: 10px;">webApp</a> <a href="/tags/脚手架工具/" style="font-size: 13.33px;">脚手架工具</a> <a href="/tags/随笔/" style="font-size: 10px;">随笔</a>
 					</div>
 				</section>
 				
@@ -179,6 +179,192 @@
 	</div>
 </nav>
       <div class="body-wrap">
+  
+    <article id="post-new运算符" class="article article-type-post" itemscope itemprop="blogPost">
+  
+    <div class="article-meta">
+      <a href="/2015/10/15/new运算符/" class="article-date">
+  	<time datetime="2015-10-15T04:02:38.000Z" itemprop="datePublished">2015-10-15</time>
+</a>
+    </div>
+  
+  <div class="article-inner">
+    
+      <input type="hidden" class="isFancy" />
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2015/10/15/new运算符/">javascript new 运算符</a>
+    </h1>
+  
+
+      </header>
+      
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <h3 id="使用New运算符，实例化一个对象，都做了那些事情？">使用New运算符，实例化一个对象，都做了那些事情？</h3><p>面试时被问到这个问题，虽然自己有自己的理解，但是感觉回答的不是很好，查阅了一下网上的资料，总结一下。</p>
+<p>因为js对象都是相互关联的，也就是说，即使是一个空的对象，他的<code>__proto__</code>属性是指向Object的<code>prototype</code>。</p>
+<p>当我们使用<code>new</code>这个关键字来实例化一个对象时，要注意，<code>new</code>后面必须要是一个对象，并且这个对象要有一个名为<code>construct</code>的方法。首先我们可以模拟一下new的过程，我们写这样一个类：</p>
+<pre><code><span class="function"><span class="keyword">function</span> <span class="title">Person</span><span class="params">(name,age)</span></span>{
+    <span class="keyword">this</span>.name = name;
+    <span class="keyword">this</span>.age = age;
+}
+Person.prototype = {
+    walk:<span class="function"><span class="keyword">function</span><span class="params">()</span></span>{
+        <span class="built_in">console</span>.log(<span class="string">"This is a 'walk' method!"</span>)
+    }
+}
+<span class="comment">//构造一个伪construct方法：</span>
+Person.construct  = <span class="function"><span class="keyword">function</span><span class="params">()</span></span>{
+    <span class="keyword">var</span> o,Constructor = Person;
+    o.__proto__ = Person.prototype;
+    Constructor.apply(o,<span class="built_in">arguments</span>);
+    <span class="keyword">return</span> o;
+}
+<span class="keyword">var</span> person = <span class="keyword">new</span> Person(<span class="string">'Bill'</span>,<span class="number">18</span>);
+</code></pre><p>如上代码，我们构造了一个伪<code>construct</code>方法，当我们在使用<code>new</code>关键字实例化某个类对象时，首先会触发这个类(其实也是对象，我们称他为一个类)的<code>construct</code>方法。</p>
+<p>在这个方法中，我们首先创建了以个空的对象<code>o</code>，并且我们拿到了我们的类(对象)的引用<code>Constructor</code>。</p>
+<p>接着我们将我们创建的空对象的<code>__proto__</code>指向我们的类的<code>prototype</code>，这样，我们首先实现了基于原型链的继承，接着使用apply方法，让<code>o</code>去调用Person方法，初始化了<code>o</code>的<code>name</code>和<code>age</code>属性，最后将<code>o</code>返回给我们创建的person变量。</p>
+<p>至此，<code>new</code>的过程就结束了。person对象拥有两个自有属性<code>name</code>和<code>age</code>，以及一个继承的方法<code>walk</code>。</p>
+
+      
+    </div>
+    
+    <div class="article-info article-info-index">
+      
+      
+	<div class="article-tag tagcloud">
+		<ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/javascript/">javascript</a></li></ul>
+	</div>
+
+      
+
+      
+      <div class="clearfix"></div>
+    </div>
+    
+  </div>
+  
+</article>
+
+
+
+
+
+
+
+  
+    <article id="post-js对象（1）" class="article article-type-post" itemscope itemprop="blogPost">
+  
+    <div class="article-meta">
+      <a href="/2015/10/15/js对象（1）/" class="article-date">
+  	<time datetime="2015-10-15T04:02:12.000Z" itemprop="datePublished">2015-10-15</time>
+</a>
+    </div>
+  
+  <div class="article-inner">
+    
+      <input type="hidden" class="isFancy" />
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2015/10/15/js对象（1）/">js对象（1）</a>
+    </h1>
+  
+
+      </header>
+      
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <p>对象是JavaScript的基本数据类型，是复合值，在JavaScript中除了字符串、数字、true、false、null和undefined之外，JavaScript中的值都是对象。</p>
+<h3 id="创建JavaScript对象">创建JavaScript对象</h3><p>使用对象直接量，也就是名值对组成的映射表，格式如下：</p>
+<pre><code><span class="keyword">var</span> <span class="keyword">empty</span> = {};        <span class="comment">//这是一个空对象</span>
+<span class="keyword">var</span> point = { x:<span class="number">0</span> , y:<span class="number">1</span> };         <span class="comment">//这个对象有连个属性</span>
+<span class="keyword">var</span> car = {
+    name：<span class="string">'BMW X7'</span>,
+    color：<span class="string">'black'</span>,
+    <span class="string">'max-speed'</span>:<span class="string">'200'</span>    <span class="comment">//属性名中间有空格或-，必须用字符串表示</span>
+}
+</code></pre><p>使用<code>new</code>创建对象：</p>
+<pre><code><span class="built_in">var</span> myArray <span class="subst">=</span> <span class="literal">new</span> <span class="built_in">Array</span>（）;        <span class="comment">//创建一个数组，等同于[]</span>
+<span class="built_in">var</span> <span class="built_in">date</span> <span class="subst">=</span> <span class="literal">new</span> <span class="built_in">Date</span>()         <span class="comment">//创建一个Date对象</span>
+</code></pre><h3 id="原型">原型</h3><p>绝大多数JavaScript对象都会和另一个对象关联，这种关联就涉及到了原型，当通过关键字new和构造函数创建对象的时候，实际上是构造该对象的prototype属性，JavaScript对象具有自有属性，也有一些属性是从原型对象继承而来的，所以通过<code>new Array()</code>创建的对象的原型就是Array.prototype。</p>
+<p>举个例子，当我们要查询对象ooo中的x属性，如果o中不存在x，那么会在o的原型中继续查找x。如果原型对象中也没有x，那么会在这个原型对象的原型上继续查询，知道找到这个x，或者直到某个对象的原型是<code>null</code>为止，这样我们可以清楚的发现，对象的原型属性构成了一个链，通过这个链，就可以实现属性的继承(<a href="http://dmitrysoshnikov.com/ecmascript/javascript-the-core/" target="_blank" rel="external">图片来源</a>)。</p>
+<p><img src="http://7xivia.com1.z0.glb.clouddn.com/jsyuanxing.png" alt="图片"></p>
+<p>ECMAScript5中定义了一个Object.creat()的方法，创建一个新的对象，其中的一个参数就是对象的原型，同时还有第二个参数，是对对象的属性的进一步描述。</p>
+<pre><code><span class="keyword">var</span> o = <span class="built_in">Object</span>.creat({x:<span class="number">1</span>,y:<span class="number">1</span>});    <span class="comment">//o继承了属性x和y</span>
+</code></pre><p>如果我们传入了null参数，这时创建的对象就不会继承任何东西（基础方法也不会继承），比如toString(),如果想要创建一个新对象需要传入Object.prototype。下面这个方法可以模拟原型继承：</p>
+<pre><code><span class="function"><span class="keyword">function</span> <span class="title">inherit</span><span class="params">(p)</span></span>{
+    <span class="keyword">if</span>(p==<span class="literal">null</span>) <span class="keyword">throw</span> <span class="built_in">TypeError</span>();
+    <span class="keyword">if</span>(<span class="built_in">Object</span>.creat)
+        <span class="keyword">return</span> <span class="built_in">Object</span>.creat(p);
+    <span class="keyword">var</span> t = <span class="keyword">typeof</span> p;
+    <span class="keyword">if</span>(t !== <span class="string">"object"</span> &amp;&amp; t !== <span class="string">"function"</span>) <span class="keyword">throw</span> <span class="built_in">TypeError</span>();
+    <span class="function"><span class="keyword">function</span> <span class="title">f</span><span class="params">()</span> </span>{};
+    f.prototype = p;
+    <span class="keyword">return</span> <span class="keyword">new</span> f();
+}
+</code></pre><h3 id="对象属性的查询和设置">对象属性的查询和设置</h3><p>对象的属性可以通过’<code>.</code>‘或者’<code>[]</code>‘进行查询，简单的说，当使用’<code>.</code>‘的时候，’<code>.</code>‘的右边一定要是对象的属性名，当使用’<code>[]</code>‘的时候，’<code>[]</code>‘内必须是一个计算结果为字符串的表达式，也可以直接是字符串。同时我们也可以使用’<code>.</code>‘和’<code>[]</code>‘来设置属性值。</p>
+<pre><code>var book={
+    name:<span class="string">'AngularJs'</span>
+    title:<span class="string">'Easy Study'</span>
+    }
+console.<span class="keyword">log</span>(book.name);            <span class="comment">//AngularJs</span>
+console.<span class="keyword">log</span>(book[name]);        <span class="comment">//AngularJs</span>
+book.<span class="keyword">color</span> = <span class="string">'red'</span>;
+book.pages = <span class="number">1000</span>;
+console.<span class="keyword">log</span>(book.<span class="keyword">color</span>);        <span class="comment">//red</span>
+console.<span class="keyword">log</span>(book[pages]);        <span class="comment">//1000</span>
+</code></pre><p>值得注意的是，在我们的程序中可能经常会出现这样的代码，</p>
+<pre><code>var <span class="built_in">length</span> = book.subtitle.<span class="built_in">length</span>;        <span class="comment">//这会抛出一个错误，因为book.subtitle本身是undefined的，并没有length属性，除非你确定subtitle和book都是对象，否则尽量不要这样去写。可以用下面的两种方式。</span>
+<span class="comment">//方法一</span>
+var <span class="built_in">length</span> = undefined;
+<span class="keyword">if</span>(book){
+    <span class="keyword">if</span>(book.subtitle) len = book.subtitle.<span class="built_in">length</span>;
+}
+<span class="comment">//方法二:短路写法</span>
+var <span class="built_in">length</span> = book &amp;&amp; book.subtitle &amp;&amp; book.subtitle.<span class="built_in">length</span>;
+</code></pre><h3 id="对象属性的删除">对象属性的删除</h3><p>删除属性可以用delete运算符，但是delete只能断开属性和宿主对象的关系，而不会去操作属性中的属性，说白了，就是当一个对象的属性的值的类型还是一个对象的时候，当我们删除了这个属性，这个作为属性的这个对象依然可以使用的。</p>
+<pre><code>a = {p:{x:<span class="number">1</span>}};
+b = a.p;
+<span class="keyword">delete</span> a.p;
+console.<span class="built_in">log</span>(b.x);
+<span class="comment">//输出1，因为已经删除的属性的引用依然存在。这种问题有可能导致内存泄露，所以在删除对象属性的时候，一定要删除的彻底。遍历所有的属性，并且都删除。</span>
+</code></pre>
+      
+    </div>
+    
+    <div class="article-info article-info-index">
+      
+      
+	<div class="article-tag tagcloud">
+		<ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/javascript/">javascript</a></li></ul>
+	</div>
+
+      
+
+      
+      <div class="clearfix"></div>
+    </div>
+    
+  </div>
+  
+</article>
+
+
+
+
+
+
+
   
     <article id="post-reduce方法" class="article article-type-post" itemscope itemprop="blogPost">
   
@@ -768,178 +954,9 @@ A.prototype = {x:<span class="number">3</span>};
 
 
   
-    <article id="post-ECMAScript5中新增的数组方法总结" class="article article-type-post" itemscope itemprop="blogPost">
-  
-    <div class="article-meta">
-      <a href="/2015/10/15/ECMAScript5中新增的数组方法总结/" class="article-date">
-  	<time datetime="2015-10-15T03:54:39.000Z" itemprop="datePublished">2015-10-15</time>
-</a>
-    </div>
-  
-  <div class="article-inner">
-    
-      <input type="hidden" class="isFancy" />
-    
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/2015/10/15/ECMAScript5中新增的数组方法总结/">ECMAScript5中新增的数组方法总结</a>
-    </h1>
-  
-
-      </header>
-      
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-        <h3 id="every():测试断言函数是否对每个数组元素为真">every():测试断言函数是否对每个数组元素为真</h3><p>array.ervery(predicate,o);</p>
-<p><code>参数predicate</code>：断言函数，有三个参数predicate（array[i],i,array),返回值被当做布尔值解析。所有数组元素通过断言函数的返回值都可以被转换成布尔真时，<code>every()</code>方法返回true；</p>
-<p><code>参数o</code>：调用predicate时可选的this值,可选；</p>
-<p>例子：</p>
-<pre><code>[<span class="number">1</span>,<span class="number">2</span>,<span class="number">3</span>].every(<span class="function"><span class="keyword">function</span><span class="params">(x)</span></span>{<span class="keyword">return</span> x&lt;<span class="number">5</span>}); //=&gt;<span class="keyword">true</span>:所有元素都小于<span class="number">5</span>
-[<span class="number">1</span>,<span class="number">2</span>,<span class="number">3</span>].every(<span class="function"><span class="keyword">function</span><span class="params">(x)</span></span>{<span class="keyword">return</span> x&lt;<span class="number">3</span>}); //=&gt;<span class="keyword">false</span>:不是所有元素都小于<span class="number">3</span>
-[].every(<span class="function"><span class="keyword">function</span><span class="params">(x)</span></span>{<span class="keyword">return</span> <span class="keyword">false</span>}); //=&gt;<span class="keyword">true</span>:[]总是返回<span class="keyword">true</span>
-</code></pre><h3 id="filter():过滤数组元素，返回一个满足条件的新数组">filter():过滤数组元素，返回一个满足条件的新数组</h3><p>array.filter(predicate,o);</p>
-<p><code>参数predicate</code>：过滤函数，有三个参数predicate（array[i],i,array),按序号从小到大遍历array，每个数组元素调用一次predicate，若返回值为真，则该数组元素会添加到返回的数组中；</p>
-<p><code>参数o</code>：调用predicate时可选的this值,可选；</p>
-<p>例子：</p>
-<pre><code>[<span class="number">1</span>,<span class="number">2</span>,<span class="number">3</span>].filter(<span class="function"><span class="keyword">function</span><span class="params">(x)</span></span>{<span class="keyword">return</span> x&gt;<span class="number">1</span>}); <span class="comment">//=&gt;[2,3]</span>
-</code></pre><h3 id="forEach():便利数组元素，并对每一个元素调用一次f">forEach():便利数组元素，并对每一个元素调用一次f</h3><p>array.forEach(f,o);</p>
-<p><code>参数f</code>：为array的每一个元素调用的函数(序号从小到大)；</p>
-<p><code>参数o</code>：调用f时可选的this值,可选；</p>
-<p>例子：</p>
-<pre><code><span class="keyword">var</span> a = [<span class="number">1</span>,<span class="number">2</span>,<span class="number">3</span>];
-a.forEach(<span class="function"><span class="keyword">function</span><span class="params">(x,i,<span class="keyword">array</span>)</span><span class="comment">{array[i]++}</span>);</span> <span class="comment">//a现在的值是[2,3,4]。forEach没有返回值。</span>
-</code></pre><h3 id="indexOf():在数组中查找值">indexOf():在数组中查找值</h3><p>array.indexOf(value,start);</p>
-<p><code>参数value</code>：要查找的值；</p>
-<p><code>参数start</code>：开始查找数组元素的序号，可选参数，不传则从0开始查找；</p>
-<p>若找到该值(用<code>&#39;====&#39;</code>判断)，则方法返回该值的索引位置，若没有找到，返回-1。</p>
-<p>例子：</p>
-<pre><code>[<span class="string">'a'</span>,<span class="string">'b'</span>,<span class="string">'c'</span>].indexOf(<span class="string">'b'</span>);  <span class="comment">// =&gt; 1</span>
-[<span class="string">'a'</span>,<span class="string">'b'</span>,<span class="string">'c'</span>].indexOf(<span class="string">'a'</span>,<span class="number">1</span>);  <span class="comment">// =&gt; -1</span>
-[<span class="string">'a'</span>,<span class="string">'b'</span>,<span class="string">'c'</span>].indexOf(<span class="string">'d'</span>);  <span class="comment">// =&gt; -1</span>
-</code></pre><h3 id="lastIndexOf()：在数组中查找值(反向)">lastIndexOf()：在数组中查找值(反向)</h3><p>array.lastIndexOf(value,start);</p>
-<p><code>参数value</code>：要查找的值；</p>
-<p><code>参数start</code>：开始查找数组元素的序号，可选参数，不传则从最后一个元素开始查找；</p>
-<p>若找到该值(用<code>&#39;====&#39;</code>判断)，则方法返回该值的索引位置，若没有找到，返回-1，查找的方向与indexOf相反。</p>
-<h3 id="map()：按某种规则处理每个数组元素，返回一个等长的新的数组">map()：按某种规则处理每个数组元素，返回一个等长的新的数组</h3><p>array.map(f,o);</p>
-<p><code>参数f</code>：数组的处理函数,有三个参数f (array[i],i,array)，该方法返回的值会成为<code>map</code>方法返回数组的一个元素，索引为<code>i</code>；</p>
-<p><code>参数o</code>：调用f时可选的this值,可选；</p>
-<p>例子：</p>
-<pre><code>[<span class="number">1</span>,<span class="number">2</span>,<span class="number">3</span>].map(<span class="function"><span class="keyword">function</span><span class="params">(x)</span></span>{<span class="keyword">return</span> x*x;});  <span class="comment">// =&gt; [1,4,9]</span>
-</code></pre><h3 id="reduce():从数组中计算出一个值">reduce():从数组中计算出一个值</h3><p><code>详见</code>：<a href="http://shijunwei.github.io/2015/10/04/jsreduce/" target="_blank">javascript reduce方法</a></p>
-<h3 id="reduceRight():从数组中计算出一个值(从右到左)">reduceRight():从数组中计算出一个值(从右到左)</h3><p><code>reduceRight()</code>方法与<code>reduce()</code>方法只有一点不同：reduceRight()方法遍历数组的时候是从右到左(从最大序号到最小序号)。</p>
-<h3 id="some():测试是否有数组元素满足断言函数">some():测试是否有数组元素满足断言函数</h3><p><code>参数predicate</code>：断言函数，有三个参数predicate（array[i],i,array)；</p>
-<p><code>参数o</code>：调用predicate时可选的this值,可选；</p>
-<p><code>some()</code>方法与<code>every()</code>很相似，不同的是，<code>some()</code>并不需要所有的数组元素在调用predicate时都返回真，只需要有一个元素在调用predicate时返回真，<code>some()</code>就会停止遍历，并返回true。</p>
-
-      
-    </div>
-    
-    <div class="article-info article-info-index">
-      
-      
-	<div class="article-tag tagcloud">
-		<ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/javascript/">javascript</a></li></ul>
-	</div>
-
-      
-
-      
-      <div class="clearfix"></div>
-    </div>
-    
-  </div>
-  
-</article>
-
-
-
-
-
-
-
-  
-    <article id="post-颠倒div顺序" class="article article-type-post" itemscope itemprop="blogPost">
-  
-    <div class="article-meta">
-      <a href="/2015/10/15/颠倒div顺序/" class="article-date">
-  	<time datetime="2015-10-15T03:03:13.000Z" itemprop="datePublished">2015-10-15</time>
-</a>
-    </div>
-  
-  <div class="article-inner">
-    
-      <input type="hidden" class="isFancy" />
-    
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/2015/10/15/颠倒div顺序/">颠倒DIV顺序</a>
-    </h1>
-  
-
-      </header>
-      
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-        <p>之前面试遇到这样一个问题，如何将一个div中的子元素颠倒顺序，之后总结了一下方法：</p>
-<p><code>方法一：</code>创建文档碎片，倒序遍历原div中的子元素，并插入文档碎片；</p>
-<pre><code><span class="variable"><span class="keyword">var</span> oFrag</span> = document.createDocumentFragment(); <span class="comment">//创建文档碎片</span>
-<span class="variable"><span class="keyword">var</span> divlist</span> = document。getElementById('container'); <span class="comment">//获取外层的父div</span>
-<span class="variable"><span class="keyword">var</span> nodeList</span> = divlist.childNodes; <span class="comment">//获取子元素节点</span>
-<span class="keyword">for</span> (<span class="variable"><span class="keyword">var</span> i</span> = nodeList.length - <span class="number">1</span>; i &gt;= <span class="number">0</span>; i--) {
-    oFrag.appendChild(nodeList[i]);<span class="comment">//向文档碎片中添加子元素</span>
-};、
-<span class="keyword">while</span> (divlist.hasChildNodes()) {
-    divlist.removeChild(divlist.firstChild);<span class="comment">//移除原子元素</span>
-}
-divlist.appendChild(oFrag); <span class="comment">//添加新的子元素</span>
-</code></pre><p><code>方法二：</code></p>
-<pre><code><span class="function"><span class="keyword">function</span> <span class="title">reverse</span><span class="params">(ele)</span></span>{
-    <span class="comment">//创建一个DocumentFragment作为临时容器</span>
-    <span class="keyword">var</span> f = <span class="built_in">document</span>.creatDocumentFragment();
-    <span class="comment">//从后至前循环子节点，将一个将每一个节点移动到文档片段中</span>
-    <span class="comment">//值得注意的是，给f添加一个节点，，该节点会自动从n中删除</span>
-    <span class="keyword">while</span>(ele.lastChild) f.appendChild(ele.lastChild);
-    ele.appendChild(f);
-}
-</code></pre>
-      
-    </div>
-    
-    <div class="article-info article-info-index">
-      
-      
-	<div class="article-tag tagcloud">
-		<ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/javascript/">javascript</a></li></ul>
-	</div>
-
-      
-
-      
-      <div class="clearfix"></div>
-    </div>
-    
-  </div>
-  
-</article>
-
-
-
-
-
-
-
-  
   
     <nav id="page-nav">
-      <a class="extend prev" rel="prev" href="/page/2/">&laquo; Prev</a><a class="page-number" href="/">1</a><a class="page-number" href="/page/2/">2</a><span class="page-number current">3</span>
+      <a class="extend prev" rel="prev" href="/page/2/">&laquo; Prev</a><a class="page-number" href="/">1</a><a class="page-number" href="/page/2/">2</a><span class="page-number current">3</span><a class="page-number" href="/page/4/">4</a><a class="extend next" rel="next" href="/page/4/">Next &raquo;</a>
     </nav>
   
 </div>

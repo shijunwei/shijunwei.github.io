@@ -110,7 +110,7 @@
 				
 				<section class="switch-part switch-part2">
 					<div class="widget tagcloud" id="js-tagcloud">
-						<a href="/tags/CSS/" style="font-size: 10px;">CSS</a> <a href="/tags/CSS3/" style="font-size: 16.67px;">CSS3</a> <a href="/tags/HTML5/" style="font-size: 10px;">HTML5</a> <a href="/tags/hexo/" style="font-size: 10px;">hexo</a> <a href="/tags/html/" style="font-size: 10px;">html</a> <a href="/tags/html5/" style="font-size: 10px;">html5</a> <a href="/tags/javascript/" style="font-size: 20px;">javascript</a> <a href="/tags/webApp/" style="font-size: 10px;">webApp</a> <a href="/tags/脚手架工具/" style="font-size: 13.33px;">脚手架工具</a> <a href="/tags/随笔/" style="font-size: 10px;">随笔</a>
+						<a href="/tags/AngularJs/" style="font-size: 10px;">AngularJs</a> <a href="/tags/CSS/" style="font-size: 10px;">CSS</a> <a href="/tags/CSS3/" style="font-size: 16.67px;">CSS3</a> <a href="/tags/HTML5/" style="font-size: 10px;">HTML5</a> <a href="/tags/Python/" style="font-size: 10px;">Python</a> <a href="/tags/hexo/" style="font-size: 10px;">hexo</a> <a href="/tags/html/" style="font-size: 10px;">html</a> <a href="/tags/html5/" style="font-size: 10px;">html5</a> <a href="/tags/javascript/" style="font-size: 20px;">javascript</a> <a href="/tags/webApp/" style="font-size: 10px;">webApp</a> <a href="/tags/脚手架工具/" style="font-size: 13.33px;">脚手架工具</a> <a href="/tags/随笔/" style="font-size: 10px;">随笔</a>
 					</div>
 				</section>
 				
@@ -179,6 +179,217 @@
 	</div>
 </nav>
       <div class="body-wrap">
+  
+    <article id="post-使用flexbox实现元素的垂直居中" class="article article-type-post" itemscope itemprop="blogPost">
+  
+    <div class="article-meta">
+      <a href="/2015/10/15/使用flexbox实现元素的垂直居中/" class="article-date">
+  	<time datetime="2015-10-15T04:08:50.000Z" itemprop="datePublished">2015-10-15</time>
+</a>
+    </div>
+  
+  <div class="article-inner">
+    
+      <input type="hidden" class="isFancy" />
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2015/10/15/使用flexbox实现元素的垂直居中/">使用flexbox实现元素的垂直居中</a>
+    </h1>
+  
+
+      </header>
+      
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <h3 id="从父元素入手">从父元素入手</h3><p>如果我们有这样一段代码：<br><img src="http://7xivia.com1.z0.glb.clouddn.com/XQ8}C65YQ4$2WY@2U6SY0$S.png" width="600px"><br>代码的执行效果大家也很容易知道，现在我们就来让这个文字在垂直和水平方向实现居中：</p>
+<p>在class<code>container</code>中添加如下代码：</p>
+<pre><code><span class="attribute">display</span>: <span class="string">flex;</span>
+
+<span class="less"><span class="attribute">align-items</span>:center;<span class="comment">//让子元素垂直居中</span>
+
+<span class="attribute">justify-content</span>:center;<span class="comment">//让子元素水平居中</span></span>
+</code></pre><p>这时我们发现，文字已经在水平方向和垂直方向居中了。</p>
+<p>在实际开发中，经常会遇到这样的需求，类似于图片和文字处于同一行，而图片的高度大于文字，需要使文字看起来在图片的中间部位，如下图：<br><img src="http://7xivia.com1.z0.glb.clouddn.com/WB%2510ZP2{OZ2CWI`(VOXK)N.png" width="600px"></p>
+<p>然而使用flex方式实现这种布局，也很简单：</p>
+<p>只需要在<code>&lt;span&gt;</code>元素前面添加相应的<code>&lt;img&gt;</code>元素就可以了。</p>
+<p>注意想要垂直居中元素，其父元素一定是要有高度的。</p>
+<h3 id="从子元素入手">从子元素入手</h3><p>还是之前的代码，这次我们只需要在class等于<code>container</code>中添加一个属性<code>display：flex</code>即可，之后还是以该元素内的span为例，在span元素上添加如下代码：</p>
+<pre><code><span class="attribute">width</span>: <span class="number">300px</span>;<span class="comment">//设置元素宽度</span>
+<span class="attribute">align-self</span>:center;<span class="comment">//让元素垂直居中</span>
+<span class="attribute">margin</span>:<span class="number">0</span> auto;<span class="comment">//让元素水平居中</span>
+</code></pre><p>也实现了相同的效果。<br><code>justify-content</code>属性还有如下这么多的属性，可以尝试一下：</p>
+<p>flex-start/flex-end/center/space-between/space-around。</p>
+<p>同样，用在子元素上的<code>align-self</code>也有如下的值:</p>
+<p>flex-start/flex-end/center/flex-auto(填满)/baseline/stretch(填满)。</p>
+
+      
+    </div>
+    
+    <div class="article-info article-info-index">
+      
+      
+	<div class="article-tag tagcloud">
+		<ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/CSS3/">CSS3</a></li></ul>
+	</div>
+
+      
+
+      
+      <div class="clearfix"></div>
+    </div>
+    
+  </div>
+  
+</article>
+
+
+
+
+
+
+
+  
+    <article id="post-css3动画" class="article article-type-post" itemscope itemprop="blogPost">
+  
+    <div class="article-meta">
+      <a href="/2015/10/15/css3动画/" class="article-date">
+  	<time datetime="2015-10-15T04:08:19.000Z" itemprop="datePublished">2015-10-15</time>
+</a>
+    </div>
+  
+  <div class="article-inner">
+    
+      <input type="hidden" class="isFancy" />
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2015/10/15/css3动画/">css3动画</a>
+    </h1>
+  
+
+      </header>
+      
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <p>在之前实习的时候玩过一些CSS3的动画效果，感觉还是挺有意思的（除了有点麻烦），分享一些学习经验，也是对自己学习的一个总结。</p>
+<p>css3中的主要模块有<code>选择器</code>，<code>框模型</code>，<code>背景</code>，<code>边框</code>（圆角和阴影很常用），<code>文本效果</code>（好像不是很常用），<code>2D/3D转换</code>，<code>动画</code>，<code>多列布局</code>（好像也不常用）等等。在css3的背景中，已经可以设置背景的尺寸了，也可以通过<code>background-origin</code>属性设置背景图片的定位区域。</p>
+<p><img src="http://www.w3school.com.cn/i/background-origin.gif" alt="图片"></p>
+<p>当我们分别设置了这些值得时候，背景就会出现在不同的位置了。下面我们就可以进入正题了。</p>
+<h3 id="2D转换">2D转换</h3><p>关于2D转换，顾名思义，转换是在2D平面上进行了，这里主要介绍以下三种常用方法：</p>
+<pre><code><span class="function">translate</span>()  <span class="comment">//移动元素</span>
+<span class="attribute">transform</span><span class="value">: <span class="function">translate</span>(<span class="number">50px</span>,<span class="number">100px</span>);</span>  <span class="comment">//把元素在x轴方向移动50px，在y轴方向移动100px；</span>
+<span class="function">rotate</span>()   <span class="comment">//旋转元素</span>
+<span class="attribute">transform</span><span class="value">: <span class="function">translate</span>(<span class="number">30deg</span>);</span>  <span class="comment">//把元素旋转30度（方向试一试就知道了）</span>
+<span class="function">scale</span>()   <span class="comment">//改变元素的尺寸</span>
+<span class="attribute">transform</span><span class="value">: <span class="function">scale</span>(<span class="number">0.5</span>,<span class="number">4</span>);</span>   <span class="comment">//把元素的宽改成原来的0.5，高改为原来的4倍</span>
+</code></pre><p>2D转换的方法在实现动画效果的时候是很常用的。</p>
+<h3 id="3D转换">3D转换</h3><pre><code><span class="function"><span class="title">rotateX</span><span class="params">()</span></span> <span class="comment">//将元素围绕其 X 轴以给定的度数进行旋转</span>
+<span class="function"><span class="title">rotateY</span><span class="params">()</span></span> <span class="comment">//将元素围绕其 Y 轴以给定的度数进行旋转</span>
+</code></pre><hr>
+<p>好了，了解了上面的基本方法，我们实现一个简单的动画效果。先看html代码<a href="http://7xivia.com1.z0.glb.clouddn.com/ballon.png" target="_blank" rel="external">图片下载</a>,<a href="http://7xivia.com1.z0.glb.clouddn.com/baby.png" target="_blank" rel="external">图片下载</a>：</p>
+<pre><code>&lt;img <span class="keyword">class</span>=<span class="string">"img baby"</span> src=<span class="string">"baby.png"</span>&gt;
+&lt;img <span class="keyword">class</span>=<span class="string">"img ballon"</span> src=<span class="string">"ballon.png"</span>&gt;
+</code></pre><p>CSS代码：</p>
+<pre><code><span class="class">.img</span><span class="rules">{
+    <span class="rule"><span class="attribute">position</span>:<span class="value">absolute</span></span>;
+    <span class="rule"><span class="attribute">left</span>:<span class="value"><span class="number">50px</span></span></span>;
+}</span>
+<span class="class">.baby</span><span class="rules">{
+    <span class="rule"><span class="attribute">top</span>:<span class="value"><span class="number">86px</span></span></span>;
+}</span>
+</code></pre><p>现在页面上应该就是下面这个样子了。</p>
+<p><img src="http://7xivia.com1.z0.glb.clouddn.com/图片.png" alt="图片"></p>
+<p>下面我们看一下怎么让这个图片动起来：</p>
+<h2 id="@keyframes规则">@keyframes规则</h2><p>想要了解css3动画，要先简单介绍一下<code>@keyframes</code>规则，它用于规定动画的过程，在<code>@keyframes</code>中规定某项 CSS 样式，就能创建由当前样式逐渐改为新样式的动画效果(<a href="http://caniuse.com/#search=keyframes" target="_blank" rel="external">@keyframes浏览器支持</a>)。比如这样：</p>
+<pre><code><span class="at_rule">@<span class="keyword">keyframes</span> changeBg
+</span>{
+<span class="tag">from</span> <span class="rules">{<span class="rule"><span class="attribute">background</span>:<span class="value"> red</span></span>;}</span>
+<span class="tag">to</span> <span class="rules">{<span class="rule"><span class="attribute">background</span>:<span class="value"> yellow</span></span>;}</span>
+}
+<span class="tag">div</span>
+<span class="rules">{
+<span class="rule"><span class="attribute">animation</span>:<span class="value"> changeBg <span class="number">5s</span></span></span>;
+}</span>
+</code></pre><p>复制代码运行一下就能看到效果了。同时我们还可以这样写：</p>
+<pre><code><span class="at_rule">@<span class="keyword">keyframes</span> changeBg
+</span>{
+    0%   <span class="rules">{<span class="rule"><span class="attribute">background</span>:<span class="value"> red</span></span>;}</span>
+    25%  <span class="rules">{<span class="rule"><span class="attribute">background</span>:<span class="value"> yellow</span></span>;}</span>
+    50%  <span class="rules">{<span class="rule"><span class="attribute">background</span>:<span class="value"> blue</span></span>;}</span>
+    100% <span class="rules">{<span class="rule"><span class="attribute">background</span>:<span class="value"> green</span></span>;}</span>
+}
+</code></pre><p>这样我们就可以多次的改变样式了，同时我们还可以改变多个样式：</p>
+<pre><code><span class="at_rule">@<span class="keyword">keyframes</span> changeBg
+</span>{
+    0%   <span class="rules">{<span class="rule"><span class="attribute">background</span>:<span class="value"> red</span></span>; <span class="rule"><span class="attribute">left</span>:<span class="value"><span class="number">0px</span></span></span>; <span class="rule"><span class="attribute">top</span>:<span class="value"><span class="number">0px</span></span></span>;}</span>
+    25%  <span class="rules">{<span class="rule"><span class="attribute">background</span>:<span class="value"> yellow</span></span>; <span class="rule"><span class="attribute">left</span>:<span class="value"><span class="number">200px</span></span></span>; <span class="rule"><span class="attribute">top</span>:<span class="value"><span class="number">0px</span></span></span>;}</span>
+    50%  <span class="rules">{<span class="rule"><span class="attribute">background</span>:<span class="value"> blue</span></span>; <span class="rule"><span class="attribute">left</span>:<span class="value"><span class="number">200px</span></span></span>; <span class="rule"><span class="attribute">top</span>:<span class="value"><span class="number">200px</span></span></span>;}</span>
+    75%  <span class="rules">{<span class="rule"><span class="attribute">background</span>:<span class="value"> green</span></span>; <span class="rule"><span class="attribute">left</span>:<span class="value"><span class="number">0px</span></span></span>; <span class="rule"><span class="attribute">top</span>:<span class="value"><span class="number">200px</span></span></span>;}</span>
+    100% <span class="rules">{<span class="rule"><span class="attribute">background</span>:<span class="value"> red</span></span>; <span class="rule"><span class="attribute">left</span>:<span class="value"><span class="number">0px</span></span></span>; <span class="rule"><span class="attribute">top</span>:<span class="value"><span class="number">0px</span></span></span>;}</span>
+}
+</code></pre><p>刚才我们实际上进行了两部分行为，一部分是定义动画过程，一个是让元素应用动画效果。下面简单再完善一下如何使用动画：</p>
+<pre><code><span class="attribute">animation</span>:name duration function delay iteration-count direction 
+<span class="comment">//当给元素定义这个属性的时候，就是要对这个元素使用动画效果了，这个属性包括6个值，分别表示：</span>
+动画的名称（对应<span class="variable">@keyframes</span>），
+动画的执行时间（这个时间代表动画执行的总时间，而不是阶段时间，单位是毫秒），
+动画的速度曲线（匀速linear、低速-加快-变慢ease、以低速开始ease-in、以低速结束ease-out、以低速开始和结束ease-in-out），
+规定动画开始之前的延迟时间，
+规定该动画播放的次数（数字n，或者无限次播放infinite）
+</code></pre><p>掌握了这些之后，我们就可以为我们之前的html添加动画效果了，首先我们定义一下动画过程。</p>
+<pre><code><span class="at_rule">@<span class="keyword">-webkit-keyframes</span> ballon</span>{
+    <span class="tag">from</span><span class="rules">{
+        <span class="rule"><span class="attribute">-weblit-transform</span>:<span class="value"><span class="function">rotate</span>(-<span class="number">30deg</span>)</span></span>;
+        <span class="rule"><span class="attribute">-weblit-transform-origin</span>:<span class="value">center bottom</span></span>;
+    }</span>
+    <span class="tag">to</span><span class="rules">{
+        <span class="rule"><span class="attribute">-weblit-transform</span>:<span class="value"><span class="function">rotate</span>(<span class="number">30deg</span>)</span></span>;
+        <span class="rule"><span class="attribute">-weblit-transform-origin</span>:<span class="value">center bottom</span></span>;
+    }</span>
+}
+</code></pre><p>动画过程定义好了之后，我们就可以使用了：</p>
+<pre><code><span class="class">.ballon</span>{
+    <span class="attribute">-webkit-animation</span>:ballon <span class="number">2s</span> linear <span class="number">0s</span> infinite alternate
+}
+</code></pre><p>这样一个简单的气球摆动的动画就完成了，复杂的动画也都是通简单的动画组合而成的。在使用css3写动画的时候，注意要先写出静态的页面，通常的动画效果只是在页面加载完成后执行一次，这种情况下我们需要先完成动画页面的最终样式的布局，在此基础上添加动画效果（因为<code>动画执行完成之后会回到它的默认状态</code>）。</p>
+<p>在制作复杂的组合动画，或者单次动画的时候，尽量使用百分比方式定义动画，这样更容易掌控整个动画过程；当动画的行为比较简单且需要重复展示的时候（比如云彩的飘动等），可以使用<code>from...to</code>的方式定义动画。</p>
+<hr>
+<p>还有一个小技巧，之前我们介绍过动画开始之前可以设置延迟时间，但是当动画行为过多的时候，延迟时间会变得复杂且难以管理，这时我们可以使用另一种方式，我们首先要计算出页面所有动画执行完成所需要的时间，假设是10s，其中某一个动画在<code>5s</code>的时候才开始执行，我们可以在使用这个动画的时候就规定这个动画的时间为<code>10s</code>，但是在<code>前50%</code>我们什么都不去做，这样就实现了延迟的效果了。</p>
+
+      
+    </div>
+    
+    <div class="article-info article-info-index">
+      
+      
+	<div class="article-tag tagcloud">
+		<ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/CSS3/">CSS3</a></li></ul>
+	</div>
+
+      
+
+      
+      <div class="clearfix"></div>
+    </div>
+    
+  </div>
+  
+</article>
+
+
+
+
+
+
+
   
     <article id="post-DOM" class="article article-type-post" itemscope itemprop="blogPost">
   
@@ -960,195 +1171,9 @@ console.<span class="built_in">log</span>(<span class="built_in">ans</span><span
 
 
   
-    <article id="post-new运算符" class="article article-type-post" itemscope itemprop="blogPost">
-  
-    <div class="article-meta">
-      <a href="/2015/10/15/new运算符/" class="article-date">
-  	<time datetime="2015-10-15T04:02:38.000Z" itemprop="datePublished">2015-10-15</time>
-</a>
-    </div>
-  
-  <div class="article-inner">
-    
-      <input type="hidden" class="isFancy" />
-    
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/2015/10/15/new运算符/">javascript new 运算符</a>
-    </h1>
-  
-
-      </header>
-      
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-        <h3 id="使用New运算符，实例化一个对象，都做了那些事情？">使用New运算符，实例化一个对象，都做了那些事情？</h3><p>面试时被问到这个问题，虽然自己有自己的理解，但是感觉回答的不是很好，查阅了一下网上的资料，总结一下。</p>
-<p>因为js对象都是相互关联的，也就是说，即使是一个空的对象，他的<code>__proto__</code>属性是指向Object的<code>prototype</code>。</p>
-<p>当我们使用<code>new</code>这个关键字来实例化一个对象时，要注意，<code>new</code>后面必须要是一个对象，并且这个对象要有一个名为<code>construct</code>的方法。首先我们可以模拟一下new的过程，我们写这样一个类：</p>
-<pre><code><span class="function"><span class="keyword">function</span> <span class="title">Person</span><span class="params">(name,age)</span></span>{
-    <span class="keyword">this</span>.name = name;
-    <span class="keyword">this</span>.age = age;
-}
-Person.prototype = {
-    walk:<span class="function"><span class="keyword">function</span><span class="params">()</span></span>{
-        <span class="built_in">console</span>.log(<span class="string">"This is a 'walk' method!"</span>)
-    }
-}
-<span class="comment">//构造一个伪construct方法：</span>
-Person.construct  = <span class="function"><span class="keyword">function</span><span class="params">()</span></span>{
-    <span class="keyword">var</span> o,Constructor = Person;
-    o.__proto__ = Person.prototype;
-    Constructor.apply(o,<span class="built_in">arguments</span>);
-    <span class="keyword">return</span> o;
-}
-<span class="keyword">var</span> person = <span class="keyword">new</span> Person(<span class="string">'Bill'</span>,<span class="number">18</span>);
-</code></pre><p>如上代码，我们构造了一个伪<code>construct</code>方法，当我们在使用<code>new</code>关键字实例化某个类对象时，首先会触发这个类(其实也是对象，我们称他为一个类)的<code>construct</code>方法。</p>
-<p>在这个方法中，我们首先创建了以个空的对象<code>o</code>，并且我们拿到了我们的类(对象)的引用<code>Constructor</code>。</p>
-<p>接着我们将我们创建的空对象的<code>__proto__</code>指向我们的类的<code>prototype</code>，这样，我们首先实现了基于原型链的继承，接着使用apply方法，让<code>o</code>去调用Person方法，初始化了<code>o</code>的<code>name</code>和<code>age</code>属性，最后将<code>o</code>返回给我们创建的person变量。</p>
-<p>至此，<code>new</code>的过程就结束了。person对象拥有两个自有属性<code>name</code>和<code>age</code>，以及一个继承的方法<code>walk</code>。</p>
-
-      
-    </div>
-    
-    <div class="article-info article-info-index">
-      
-      
-	<div class="article-tag tagcloud">
-		<ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/javascript/">javascript</a></li></ul>
-	</div>
-
-      
-
-      
-      <div class="clearfix"></div>
-    </div>
-    
-  </div>
-  
-</article>
-
-
-
-
-
-
-
-  
-    <article id="post-js对象（1）" class="article article-type-post" itemscope itemprop="blogPost">
-  
-    <div class="article-meta">
-      <a href="/2015/10/15/js对象（1）/" class="article-date">
-  	<time datetime="2015-10-15T04:02:12.000Z" itemprop="datePublished">2015-10-15</time>
-</a>
-    </div>
-  
-  <div class="article-inner">
-    
-      <input type="hidden" class="isFancy" />
-    
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/2015/10/15/js对象（1）/">js对象（1）</a>
-    </h1>
-  
-
-      </header>
-      
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-        <p>对象是JavaScript的基本数据类型，是复合值，在JavaScript中除了字符串、数字、true、false、null和undefined之外，JavaScript中的值都是对象。</p>
-<h3 id="创建JavaScript对象">创建JavaScript对象</h3><p>使用对象直接量，也就是名值对组成的映射表，格式如下：</p>
-<pre><code><span class="keyword">var</span> <span class="keyword">empty</span> = {};        <span class="comment">//这是一个空对象</span>
-<span class="keyword">var</span> point = { x:<span class="number">0</span> , y:<span class="number">1</span> };         <span class="comment">//这个对象有连个属性</span>
-<span class="keyword">var</span> car = {
-    name：<span class="string">'BMW X7'</span>,
-    color：<span class="string">'black'</span>,
-    <span class="string">'max-speed'</span>:<span class="string">'200'</span>    <span class="comment">//属性名中间有空格或-，必须用字符串表示</span>
-}
-</code></pre><p>使用<code>new</code>创建对象：</p>
-<pre><code><span class="built_in">var</span> myArray <span class="subst">=</span> <span class="literal">new</span> <span class="built_in">Array</span>（）;        <span class="comment">//创建一个数组，等同于[]</span>
-<span class="built_in">var</span> <span class="built_in">date</span> <span class="subst">=</span> <span class="literal">new</span> <span class="built_in">Date</span>()         <span class="comment">//创建一个Date对象</span>
-</code></pre><h3 id="原型">原型</h3><p>绝大多数JavaScript对象都会和另一个对象关联，这种关联就涉及到了原型，当通过关键字new和构造函数创建对象的时候，实际上是构造该对象的prototype属性，JavaScript对象具有自有属性，也有一些属性是从原型对象继承而来的，所以通过<code>new Array()</code>创建的对象的原型就是Array.prototype。</p>
-<p>举个例子，当我们要查询对象ooo中的x属性，如果o中不存在x，那么会在o的原型中继续查找x。如果原型对象中也没有x，那么会在这个原型对象的原型上继续查询，知道找到这个x，或者直到某个对象的原型是<code>null</code>为止，这样我们可以清楚的发现，对象的原型属性构成了一个链，通过这个链，就可以实现属性的继承(<a href="http://dmitrysoshnikov.com/ecmascript/javascript-the-core/" target="_blank" rel="external">图片来源</a>)。</p>
-<p><img src="http://7xivia.com1.z0.glb.clouddn.com/jsyuanxing.png" alt="图片"></p>
-<p>ECMAScript5中定义了一个Object.creat()的方法，创建一个新的对象，其中的一个参数就是对象的原型，同时还有第二个参数，是对对象的属性的进一步描述。</p>
-<pre><code><span class="keyword">var</span> o = <span class="built_in">Object</span>.creat({x:<span class="number">1</span>,y:<span class="number">1</span>});    <span class="comment">//o继承了属性x和y</span>
-</code></pre><p>如果我们传入了null参数，这时创建的对象就不会继承任何东西（基础方法也不会继承），比如toString(),如果想要创建一个新对象需要传入Object.prototype。下面这个方法可以模拟原型继承：</p>
-<pre><code><span class="function"><span class="keyword">function</span> <span class="title">inherit</span><span class="params">(p)</span></span>{
-    <span class="keyword">if</span>(p==<span class="literal">null</span>) <span class="keyword">throw</span> <span class="built_in">TypeError</span>();
-    <span class="keyword">if</span>(<span class="built_in">Object</span>.creat)
-        <span class="keyword">return</span> <span class="built_in">Object</span>.creat(p);
-    <span class="keyword">var</span> t = <span class="keyword">typeof</span> p;
-    <span class="keyword">if</span>(t !== <span class="string">"object"</span> &amp;&amp; t !== <span class="string">"function"</span>) <span class="keyword">throw</span> <span class="built_in">TypeError</span>();
-    <span class="function"><span class="keyword">function</span> <span class="title">f</span><span class="params">()</span> </span>{};
-    f.prototype = p;
-    <span class="keyword">return</span> <span class="keyword">new</span> f();
-}
-</code></pre><h3 id="对象属性的查询和设置">对象属性的查询和设置</h3><p>对象的属性可以通过’<code>.</code>‘或者’<code>[]</code>‘进行查询，简单的说，当使用’<code>.</code>‘的时候，’<code>.</code>‘的右边一定要是对象的属性名，当使用’<code>[]</code>‘的时候，’<code>[]</code>‘内必须是一个计算结果为字符串的表达式，也可以直接是字符串。同时我们也可以使用’<code>.</code>‘和’<code>[]</code>‘来设置属性值。</p>
-<pre><code>var book={
-    name:<span class="string">'AngularJs'</span>
-    title:<span class="string">'Easy Study'</span>
-    }
-console.<span class="keyword">log</span>(book.name);            <span class="comment">//AngularJs</span>
-console.<span class="keyword">log</span>(book[name]);        <span class="comment">//AngularJs</span>
-book.<span class="keyword">color</span> = <span class="string">'red'</span>;
-book.pages = <span class="number">1000</span>;
-console.<span class="keyword">log</span>(book.<span class="keyword">color</span>);        <span class="comment">//red</span>
-console.<span class="keyword">log</span>(book[pages]);        <span class="comment">//1000</span>
-</code></pre><p>值得注意的是，在我们的程序中可能经常会出现这样的代码，</p>
-<pre><code>var <span class="built_in">length</span> = book.subtitle.<span class="built_in">length</span>;        <span class="comment">//这会抛出一个错误，因为book.subtitle本身是undefined的，并没有length属性，除非你确定subtitle和book都是对象，否则尽量不要这样去写。可以用下面的两种方式。</span>
-<span class="comment">//方法一</span>
-var <span class="built_in">length</span> = undefined;
-<span class="keyword">if</span>(book){
-    <span class="keyword">if</span>(book.subtitle) len = book.subtitle.<span class="built_in">length</span>;
-}
-<span class="comment">//方法二:短路写法</span>
-var <span class="built_in">length</span> = book &amp;&amp; book.subtitle &amp;&amp; book.subtitle.<span class="built_in">length</span>;
-</code></pre><h3 id="对象属性的删除">对象属性的删除</h3><p>删除属性可以用delete运算符，但是delete只能断开属性和宿主对象的关系，而不会去操作属性中的属性，说白了，就是当一个对象的属性的值的类型还是一个对象的时候，当我们删除了这个属性，这个作为属性的这个对象依然可以使用的。</p>
-<pre><code>a = {p:{x:<span class="number">1</span>}};
-b = a.p;
-<span class="keyword">delete</span> a.p;
-console.<span class="built_in">log</span>(b.x);
-<span class="comment">//输出1，因为已经删除的属性的引用依然存在。这种问题有可能导致内存泄露，所以在删除对象属性的时候，一定要删除的彻底。遍历所有的属性，并且都删除。</span>
-</code></pre>
-      
-    </div>
-    
-    <div class="article-info article-info-index">
-      
-      
-	<div class="article-tag tagcloud">
-		<ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/javascript/">javascript</a></li></ul>
-	</div>
-
-      
-
-      
-      <div class="clearfix"></div>
-    </div>
-    
-  </div>
-  
-</article>
-
-
-
-
-
-
-
-  
   
     <nav id="page-nav">
-      <a class="extend prev" rel="prev" href="/">&laquo; Prev</a><a class="page-number" href="/">1</a><span class="page-number current">2</span><a class="page-number" href="/page/3/">3</a><a class="extend next" rel="next" href="/page/3/">Next &raquo;</a>
+      <a class="extend prev" rel="prev" href="/">&laquo; Prev</a><a class="page-number" href="/">1</a><span class="page-number current">2</span><a class="page-number" href="/page/3/">3</a><a class="page-number" href="/page/4/">4</a><a class="extend next" rel="next" href="/page/3/">Next &raquo;</a>
     </nav>
   
 </div>
