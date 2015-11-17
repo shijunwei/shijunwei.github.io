@@ -5,28 +5,40 @@
   
   <title>python基础知识 | 我想养只小金毛</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta name="description" content="数据类型整数：1，101，-8080，0，等等。浮点数：3.14，1.234，1.23e9，2.3e8，等等。字符串：以‘ ’或者“ ”括起来的任意文本。布尔值：True，False(注意大小写)。空值：None。list：list是一种有序的集合，可以随时添加和删除其中的元素。
-# 创建list
-L = [&apos;Michael&apos;, &apos;Bob&apos;, &apos;Tracy&apos;]
-# 空的list
-empty_lis">
+  <meta name="description" content="数据类型整数：1，101，-8080，0，等等。浮点数：3.14，1.234，1.23e9，2.3e8，等等。字符串：以‘ ’或者“ ”括起来的任意文本。
+# 字符串切片
+s = &apos;ABCDEFG&apos;;
+s[:3] # ==&amp;gt; &apos;ABC&apos;
+S[:-3] # ==&amp;gt; &apos;EFG&apos;
+S[::2] # ==&amp;gt; &apos;ACEG&apos;
+
+# 字符串可以通过 % 进行格式化，用指定的参数替代 %s。
+d">
 <meta property="og:type" content="article">
 <meta property="og:title" content="python基础知识">
 <meta property="og:url" content="http://shijunwei.github.io/2015/11/16/python基础知识/index.html">
 <meta property="og:site_name" content="我想养只小金毛">
-<meta property="og:description" content="数据类型整数：1，101，-8080，0，等等。浮点数：3.14，1.234，1.23e9，2.3e8，等等。字符串：以‘ ’或者“ ”括起来的任意文本。布尔值：True，False(注意大小写)。空值：None。list：list是一种有序的集合，可以随时添加和删除其中的元素。
-# 创建list
-L = [&apos;Michael&apos;, &apos;Bob&apos;, &apos;Tracy&apos;]
-# 空的list
-empty_lis">
-<meta property="og:updated_time" content="2015-11-16T15:11:27.000Z">
+<meta property="og:description" content="数据类型整数：1，101，-8080，0，等等。浮点数：3.14，1.234，1.23e9，2.3e8，等等。字符串：以‘ ’或者“ ”括起来的任意文本。
+# 字符串切片
+s = &apos;ABCDEFG&apos;;
+s[:3] # ==&amp;gt; &apos;ABC&apos;
+S[:-3] # ==&amp;gt; &apos;EFG&apos;
+S[::2] # ==&amp;gt; &apos;ACEG&apos;
+
+# 字符串可以通过 % 进行格式化，用指定的参数替代 %s。
+d">
+<meta property="og:updated_time" content="2015-11-17T01:54:23.000Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="python基础知识">
-<meta name="twitter:description" content="数据类型整数：1，101，-8080，0，等等。浮点数：3.14，1.234，1.23e9，2.3e8，等等。字符串：以‘ ’或者“ ”括起来的任意文本。布尔值：True，False(注意大小写)。空值：None。list：list是一种有序的集合，可以随时添加和删除其中的元素。
-# 创建list
-L = [&apos;Michael&apos;, &apos;Bob&apos;, &apos;Tracy&apos;]
-# 空的list
-empty_lis">
+<meta name="twitter:description" content="数据类型整数：1，101，-8080，0，等等。浮点数：3.14，1.234，1.23e9，2.3e8，等等。字符串：以‘ ’或者“ ”括起来的任意文本。
+# 字符串切片
+s = &apos;ABCDEFG&apos;;
+s[:3] # ==&amp;gt; &apos;ABC&apos;
+S[:-3] # ==&amp;gt; &apos;EFG&apos;
+S[::2] # ==&amp;gt; &apos;ACEG&apos;
+
+# 字符串可以通过 % 进行格式化，用指定的参数替代 %s。
+d">
   
     <link rel="alternative" href="/atom.xml" title="我想养只小金毛" type="application/atom+xml">
   
@@ -228,31 +240,59 @@ empty_lis">
     
     <div class="article-entry" itemprop="articleBody">
       
-        <h3 id="数据类型">数据类型</h3><p><code>整数：</code>1，101，-8080，0，等等。<br><code>浮点数：</code>3.14，1.234，1.23e9，2.3e8，等等。<br><code>字符串：</code>以‘ ’或者“ ”括起来的任意文本。<br><code>布尔值：</code>True，False(注意大小写)。<br><code>空值：</code>None。<br><code>list：</code>list是一种有序的集合，可以随时添加和删除其中的元素。</p>
-<pre><code># 创建<span class="atom">list</span>
-<span class="name">L</span> = [<span class="string">'Michael'</span>, <span class="string">'Bob'</span>, <span class="string">'Tracy'</span>]
-# 空的<span class="atom">list</span>
-<span class="atom">empty_list</span> = []
-<span class="atom">print</span> <span class="name">L</span>[<span class="number">0</span>]    # ==&gt; <span class="string">'Michael'</span>。使用索引时，千万注意不要越界。
-<span class="atom">print</span> <span class="name">L</span>[-<span class="number">1</span>] # ==&gt; <span class="string">'Tracy'</span>。倒序访问
+        <h3 id="数据类型">数据类型</h3><p><code>整数：</code>1，101，-8080，0，等等。<br><code>浮点数：</code>3.14，1.234，1.23e9，2.3e8，等等。<br><code>字符串：</code>以‘ ’或者“ ”括起来的任意文本。</p>
+<pre><code># 字符串切片
+s = 'ABCDEFG';
+s[:3] # ==&gt; 'ABC'
+S[:-3] # ==&gt; 'EFG'
+S[::2] # ==&gt; 'ACEG'
 
-# 向<span class="atom">list</span>中插入元素
-<span class="name">L</span>.<span class="atom">append</span>(<span class="string">'Paul'</span>) # [<span class="string">'Michael'</span>, <span class="string">'Bob'</span>, <span class="string">'Tracy'</span>, <span class="string">'Paul'</span>]
-<span class="name">L</span>.<span class="atom">insert</span>(<span class="number">0</span>, <span class="string">'Paul'</span>) # [ <span class="string">'Paul'</span>, <span class="string">'Michael'</span>, <span class="string">'Bob'</span>, <span class="string">'Tracy'</span>]
-<span class="name">L</span>.<span class="atom">insert</span>(<span class="number">1</span>, <span class="string">'Paul'</span>) # [<span class="string">'Michael'</span>, <span class="string">'Paul'</span>, <span class="string">'Bob'</span>, <span class="string">'Tracy'</span>]
+# 字符串可以通过 % 进行格式化，用指定的参数替代 %s。
+d = { 'Adam': 95, 'Lisa': 85, 'Bart': 59 }
+tds = ['<span class="tag">&lt;<span class="title">tr</span>&gt;</span><span class="tag">&lt;<span class="title">td</span>&gt;</span>%s<span class="tag">&lt;/<span class="title">td</span>&gt;</span><span class="tag">&lt;<span class="title">td</span>&gt;</span>%s<span class="tag">&lt;/<span class="title">td</span>&gt;</span><span class="tag">&lt;/<span class="title">tr</span>&gt;</span>' % (name, score) for name, score in d.iteritems()]
+# 字符串的join()方法可以把一个 list 拼接成一个字符串。
+print '<span class="tag">&lt;<span class="title">table</span> <span class="attribute">border</span>=<span class="value">"1"</span>&gt;</span><span class="tag">&lt;<span class="title">tr</span>&gt;</span><span class="tag">&lt;<span class="title">th</span>&gt;</span>Name<span class="tag">&lt;/<span class="title">th</span>&gt;</span><span class="tag">&lt;<span class="title">th</span>&gt;</span>Score<span class="tag">&lt;/<span class="title">th</span>&gt;</span><span class="tag">&lt;<span class="title">tr</span>&gt;</span>'.join(tds).'<span class="tag">&lt;/<span class="title">table</span>&gt;</span>'
+# <span class="tag">&lt;<span class="title">table</span> <span class="attribute">border</span>=<span class="value">"1"</span>&gt;</span><span class="tag">&lt;<span class="title">tr</span>&gt;</span><span class="tag">&lt;<span class="title">th</span>&gt;</span>Name<span class="tag">&lt;/<span class="title">th</span>&gt;</span><span class="tag">&lt;<span class="title">th</span>&gt;</span>Score<span class="tag">&lt;/<span class="title">th</span>&gt;</span><span class="tag">&lt;<span class="title">tr</span>&gt;</span><span class="tag">&lt;<span class="title">tr</span>&gt;</span><span class="tag">&lt;<span class="title">td</span>&gt;</span>Lisa<span class="tag">&lt;/<span class="title">td</span>&gt;</span><span class="tag">&lt;<span class="title">td</span>&gt;</span>85<span class="tag">&lt;/<span class="title">td</span>&gt;</span><span class="tag">&lt;/<span class="title">tr</span>&gt;</span><span class="tag">&lt;<span class="title">tr</span>&gt;</span><span class="tag">&lt;<span class="title">td</span>&gt;</span>Adam<span class="tag">&lt;/<span class="title">td</span>&gt;</span><span class="tag">&lt;<span class="title">td</span>&gt;</span>95<span class="tag">&lt;/<span class="title">td</span>&gt;</span><span class="tag">&lt;/<span class="title">tr</span>&gt;</span><span class="tag">&lt;<span class="title">tr</span>&gt;</span><span class="tag">&lt;<span class="title">td</span>&gt;</span>Bart<span class="tag">&lt;/<span class="title">td</span>&gt;</span><span class="tag">&lt;<span class="title">td</span>&gt;</span>59<span class="tag">&lt;/<span class="title">td</span>&gt;</span><span class="tag">&lt;/<span class="title">tr</span>&gt;</span><span class="tag">&lt;/<span class="title">table</span>&gt;</span>
+</code></pre><p><code>布尔值：</code>True，False(注意大小写)。<br><code>空值：</code>None。<br><code>list：</code>list是一种有序的集合，可以随时添加和删除其中的元素。</p>
+<pre><code># 创建<span class="built_in">list</span>
+<span class="type">L</span> = [<span class="symbol">'Michael'</span>, <span class="symbol">'Bob'</span>, <span class="symbol">'Tracy'</span>]
+# 空的<span class="built_in">list</span>
+empty_list = <span class="literal">[]</span>
+print <span class="type">L</span>[<span class="number">0</span>]    # ==&gt; <span class="symbol">'Michael'</span>。使用索引时，千万注意不要越界。
+print <span class="type">L</span>[-<span class="number">1</span>] # ==&gt; <span class="symbol">'Tracy'</span>。倒序访问
 
-# 从<span class="atom">list</span>中删除元素
-<span class="name">L</span>.<span class="atom">pop</span>() # ==&gt; <span class="string">'Tracy'</span>,若不传参数<span class="atom">pop</span>()方法总是删掉<span class="atom">list</span>的最后一个元素，并且它还返回这个元素。
-<span class="name">L</span>.<span class="atom">pop</span>(<span class="number">1</span>) # ==&gt; <span class="string">'Bob'</span>
+# 向<span class="built_in">list</span>中插入元素
+<span class="type">L</span>.append(<span class="symbol">'Paul'</span>) # [<span class="symbol">'Michael'</span>, <span class="symbol">'Bob'</span>, <span class="symbol">'Tracy'</span>, <span class="symbol">'Paul'</span>]
+<span class="type">L</span>.insert(<span class="number">0</span>, <span class="symbol">'Paul'</span>) # [ <span class="symbol">'Paul'</span>, <span class="symbol">'Michael'</span>, <span class="symbol">'Bob'</span>, <span class="symbol">'Tracy'</span>]
+<span class="type">L</span>.insert(<span class="number">1</span>, <span class="symbol">'Paul'</span>) # [<span class="symbol">'Michael'</span>, <span class="symbol">'Paul'</span>, <span class="symbol">'Bob'</span>, <span class="symbol">'Tracy'</span>]
 
-# 从<span class="atom">list</span>中替换元素
-<span class="name">L</span>[<span class="number">2</span>] = <span class="string">'Paul'</span> # [<span class="string">'Michael'</span>, <span class="string">'Bob'</span>, <span class="string">'Paul'</span>]
+# 从<span class="built_in">list</span>中删除元素
+<span class="type">L</span>.pop<span class="literal">()</span> # ==&gt; <span class="symbol">'Tracy'</span>,若不传参数pop<span class="literal">()</span>方法总是删掉<span class="built_in">list</span>的最后一个元素，并且它还返回这个元素。
+<span class="type">L</span>.pop(<span class="number">1</span>) # ==&gt; <span class="symbol">'Bob'</span>
 
-# <span class="atom">list</span> 切片
-<span class="name">L</span>[<span class="number">0</span>:<span class="number">3</span>] # [<span class="string">'Michael'</span>, <span class="string">'Bob'</span>, <span class="string">'Tracy'</span>],如果第一个索引是<span class="number">0</span>，还可以省略。
-<span class="name">L</span>[<span class="number">1</span>:<span class="number">3</span>] # [<span class="string">'Bob'</span>, <span class="string">'Tracy'</span>]
-<span class="name">L</span>[:] # [<span class="string">'Michael'</span>, <span class="string">'Bob'</span>, <span class="string">'Tracy'</span>] 只用一个 : ，表示从头到尾。    <span class="name">L</span>[:]实际上复制出了一个新<span class="atom">list</span>。
-<span class="name">L</span>[::<span class="number">2</span>] # [<span class="string">'Michael'</span>, <span class="string">'Tracy'</span>] 第三个参数表示每<span class="name">N</span>个取一个，上面的 <span class="name">L</span>[::<span class="number">2</span>] 会每两个元素取出一个来，也就是隔一个取一个。
+# 从<span class="built_in">list</span>中替换元素
+<span class="type">L</span>[<span class="number">2</span>] = <span class="symbol">'Paul'</span> # [<span class="symbol">'Michael'</span>, <span class="symbol">'Bob'</span>, <span class="symbol">'Paul'</span>]
+
+# <span class="built_in">list</span> 切片
+<span class="type">L</span>[<span class="number">0</span>:<span class="number">3</span>] # [<span class="symbol">'Michael'</span>, <span class="symbol">'Bob'</span>, <span class="symbol">'Tracy'</span>],如果第一个索引是<span class="number">0</span>，还可以省略。
+<span class="type">L</span>[<span class="number">1</span>:<span class="number">3</span>] # [<span class="symbol">'Bob'</span>, <span class="symbol">'Tracy'</span>]
+<span class="type">L</span>[:] # [<span class="symbol">'Michael'</span>, <span class="symbol">'Bob'</span>, <span class="symbol">'Tracy'</span>] 只用一个 : ，表示从头到尾。    <span class="type">L</span>[:]实际上复制出了一个新<span class="built_in">list</span>。
+<span class="type">L</span>[::<span class="number">2</span>] # [<span class="symbol">'Michael'</span>, <span class="symbol">'Tracy'</span>] 第三个参数表示每<span class="type">N</span>个取一个，上面的 <span class="type">L</span>[::<span class="number">2</span>] 会每两个元素取出一个来，也就是隔一个取一个。
+<span class="type">L</span>[-<span class="number">2</span>:] # [<span class="symbol">'Bob'</span>, <span class="symbol">'Tracy'</span>] 倒序切片
+
+# 用方法生成<span class="built_in">list</span>
+range(<span class="number">1</span>, <span class="number">11</span>) # ==&gt; [<span class="number">1</span>, <span class="number">2</span>, <span class="number">3</span>, <span class="number">4</span>, <span class="number">5</span>, <span class="number">6</span>, <span class="number">7</span>, <span class="number">8</span>, <span class="number">9</span>, <span class="number">10</span>]
+# 列表生成式
+[x * x <span class="keyword">for</span> x <span class="keyword">in</span> range(<span class="number">1</span>, <span class="number">11</span>)] # ==&gt; [<span class="number">1</span>, <span class="number">4</span>, <span class="number">9</span>, <span class="number">16</span>, <span class="number">25</span>, <span class="number">36</span>, <span class="number">49</span>, <span class="number">64</span>, <span class="number">81</span>, <span class="number">100</span>]
+# 列表生成式中的条件过滤
+[x * x <span class="keyword">for</span> x <span class="keyword">in</span> range(<span class="number">1</span>, <span class="number">11</span>) <span class="keyword">if</span> x % <span class="number">2</span> == <span class="number">0</span>] # ==&gt; [<span class="number">4</span>, <span class="number">16</span>, <span class="number">36</span>, <span class="number">64</span>, <span class="number">100</span>]
+# 多层表达式
+[m + n <span class="keyword">for</span> m <span class="keyword">in</span> <span class="symbol">'ABC'</span> <span class="keyword">for</span> n <span class="keyword">in</span> <span class="char">'123'</span>] # ==&gt; [<span class="symbol">'A1'</span>, <span class="symbol">'A2'</span>, <span class="symbol">'A3'</span>, <span class="symbol">'B1'</span>, <span class="symbol">'B2'</span>, <span class="symbol">'B3'</span>, <span class="symbol">'C1'</span>, <span class="symbol">'C2'</span>, <span class="symbol">'C3'</span>]
+# 翻译成循环代码就像下面这样：
+<span class="type">L</span> = <span class="literal">[]</span>
+<span class="keyword">for</span> m <span class="keyword">in</span> <span class="symbol">'ABC'</span>:
+    <span class="keyword">for</span> n <span class="keyword">in</span> <span class="char">'123'</span>:
+        <span class="type">L</span>.append(m + n)
 </code></pre><p><code>tuple：</code>tuple是另一种有序的列表，中文翻译为“ 元组 ”。tuple 和 list 非常类似，但是，tuple一旦创建完毕，就不能修改了。</p>
 <pre><code><span class="comment"># 创建tuple</span>
 t = (<span class="string">'Adam'</span>, <span class="string">'Lisa'</span>, <span class="string">'Bart'</span>)
@@ -310,21 +350,44 @@ s.add(<span class="number">3</span>) # <span class="literal">set</span>([<span c
 <span class="keyword">print</span> <span class="string">"\"To be, or not to be\": that is the question.Whether it\'s nobler in the mind to suffer."</span>
 <span class="comment"># 我们可以在字符串前面加个前缀 r ，表示这是一个 raw 字符串，里面的字符就不需要转义了。</span>
 <span class="keyword">print</span> <span class="string">r'''"To be, or not to be": that is the question.Whether it's nobler in the mind to suffer.'''</span>
-</code></pre><p><code>for循环</code>：</p>
-<pre><code><span class="comment"># 遍历list</span>
-L = [<span class="string">'Adam'</span>, <span class="string">'Lisa'</span>, <span class="string">'Bart'</span>]
-<span class="keyword">for</span> name <span class="keyword">in</span> L:
-    <span class="built_in">print</span> name <span class="comment"># Adam Lisa Bart</span>
+</code></pre><p><code>for循环(迭代)</code>：</p>
+<pre><code># 遍历(迭代)<span class="built_in">list</span>
+<span class="type">L</span> = [<span class="symbol">'Adam'</span>, <span class="symbol">'Lisa'</span>, <span class="symbol">'Bart'</span>]
+<span class="keyword">for</span> name <span class="keyword">in</span> <span class="type">L</span>:
+    print name # <span class="type">Adam</span> <span class="type">Lisa</span> <span class="type">Bart</span>
 
-<span class="comment"># 遍历dict</span>
-d = { <span class="string">'Adam'</span>: <span class="number">95</span>, <span class="string">'Lisa'</span>: <span class="number">85</span>, <span class="string">'Bart'</span>: <span class="number">59</span> }
+# 遍历(迭代)dict
+d = { <span class="symbol">'Adam'</span>: <span class="number">95</span>, <span class="symbol">'Lisa'</span>: <span class="number">85</span>, <span class="symbol">'Bart'</span>: <span class="number">59</span> }
 <span class="keyword">for</span> key <span class="keyword">in</span> d:
-    <span class="built_in">print</span> key，<span class="string">':'</span>,d[key] <span class="comment"># ==&gt; Adam: 95 Lisa: 85 Bart: 59</span>
+    print key，<span class="char">':'</span>,d[key] # ==&gt; <span class="type">Adam</span>: <span class="number">95</span> <span class="type">Lisa</span>: <span class="number">85</span> <span class="type">Bart</span>: <span class="number">59</span>
+# 迭代 dict 的<span class="keyword">value</span>。
+# values<span class="literal">()</span> 方法，这个方法把dict转换成一个包含所有<span class="keyword">value</span>的<span class="built_in">list</span>。
+<span class="keyword">for</span> v <span class="keyword">in</span> d.values<span class="literal">()</span>:
+    print v # <span class="number">85</span> <span class="number">95</span> <span class="number">59</span>
+# itervalues<span class="literal">()</span> 方法不会转换，它会在迭代过程中依次从 dict 中取出 <span class="keyword">value</span>，所以 itervalues<span class="literal">()</span> 方法比 values<span class="literal">()</span> 方法节省了生成 <span class="built_in">list</span> 所需的内存。但是迭代的效果是一样的
+<span class="keyword">for</span> v <span class="keyword">in</span> d.itervalues<span class="literal">()</span>:
+    print v # <span class="number">85</span> <span class="number">95</span> <span class="number">59</span>
+# 迭代 dict 的key和<span class="keyword">value</span>。
+<span class="keyword">for</span> key, <span class="keyword">value</span> <span class="keyword">in</span> d.items<span class="literal">()</span>:
+    print key, <span class="char">':'</span>, <span class="keyword">value</span>
+# dict 对象的 items<span class="literal">()</span> 方法返回的值：
+print d.items<span class="literal">()</span> # ==&gt; [(<span class="symbol">'Lisa'</span>, <span class="number">85</span>), (<span class="symbol">'Adam'</span>, <span class="number">95</span>), (<span class="symbol">'Bart'</span>, <span class="number">59</span>)]
 
-<span class="comment"># 遍历set</span>
-s = <span class="built_in">set</span>([<span class="string">'Adam'</span>, <span class="string">'Lisa'</span>, <span class="string">'Bart'</span>])
+# 遍历(迭代)set
+s = set([<span class="symbol">'Adam'</span>, <span class="symbol">'Lisa'</span>, <span class="symbol">'Bart'</span>])
 <span class="keyword">for</span> name <span class="keyword">in</span> s:
-    <span class="built_in">print</span> name <span class="comment"># ==&gt; Lisa Adam Bart</span>
+    print name # ==&gt; <span class="type">Lisa</span> <span class="type">Adam</span> <span class="type">Bart</span>
+
+# <span class="type">Python</span>中，迭代永远是取出元素本身，而非元素的索引,想在<span class="keyword">for</span>循环中拿到索引，可以使用enumerate<span class="literal">()</span> 函数。
+<span class="type">L</span> = [<span class="symbol">'Adam'</span>, <span class="symbol">'Lisa'</span>, <span class="symbol">'Bart'</span>, <span class="symbol">'Paul'</span>]
+<span class="keyword">for</span> index, name <span class="keyword">in</span> enumerate(<span class="type">L</span>):
+    print index, <span class="char">'-'</span>, name
+# numerate<span class="literal">()</span> 函数把上述的<span class="built_in">list</span>变成了类似[(<span class="number">0</span>, <span class="symbol">'Adam'</span>), (<span class="number">1</span>, <span class="symbol">'Lisa'</span>), (<span class="number">2</span>, <span class="symbol">'Bart'</span>), (<span class="number">3</span>, <span class="symbol">'Paul'</span>)]的一个<span class="built_in">list</span>,因此，迭代的每一个元素实际上是一个tuple。
+<span class="keyword">for</span> t <span class="keyword">in</span> enumerate(<span class="type">L</span>):
+    index = t[<span class="number">0</span>]
+    name = t[<span class="number">1</span>]
+    print index, <span class="char">'-'</span>, name
+# 如果我们知道每个tuple元素都包含两个元素，<span class="keyword">for</span>循环又可以进一步简写为上述的形式。
 </code></pre><h3 id="四则运算">四则运算</h3><p>Python支持对整数和浮点数直接进行四则混合运算，运算规则和数学上的四则运算规则完全一致。</p>
 <pre><code><span class="number">1</span> + <span class="number">2</span> + <span class="number">3</span>   <span class="title"># ==&gt; 6</span>
 <span class="number">4</span> * <span class="number">5</span> - <span class="number">6</span>   <span class="title"># ==&gt; 14</span>
