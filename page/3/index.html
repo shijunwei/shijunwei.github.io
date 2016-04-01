@@ -110,7 +110,7 @@
 				
 				<section class="switch-part switch-part2">
 					<div class="widget tagcloud" id="js-tagcloud">
-						<a href="/tags/AngularJs/" style="font-size: 10px;">AngularJs</a> <a href="/tags/CSS/" style="font-size: 10px;">CSS</a> <a href="/tags/CSS3/" style="font-size: 16.67px;">CSS3</a> <a href="/tags/HTML5/" style="font-size: 10px;">HTML5</a> <a href="/tags/Python/" style="font-size: 10px;">Python</a> <a href="/tags/hexo/" style="font-size: 10px;">hexo</a> <a href="/tags/html/" style="font-size: 10px;">html</a> <a href="/tags/html5/" style="font-size: 10px;">html5</a> <a href="/tags/javascript/" style="font-size: 20px;">javascript</a> <a href="/tags/webApp/" style="font-size: 10px;">webApp</a> <a href="/tags/脚手架工具/" style="font-size: 13.33px;">脚手架工具</a> <a href="/tags/随笔/" style="font-size: 10px;">随笔</a>
+						<a href="/tags/CSS/" style="font-size: 10px;">CSS</a> <a href="/tags/CSS3/" style="font-size: 16.67px;">CSS3</a> <a href="/tags/HTML5/" style="font-size: 10px;">HTML5</a> <a href="/tags/Python/" style="font-size: 10px;">Python</a> <a href="/tags/hexo/" style="font-size: 10px;">hexo</a> <a href="/tags/html/" style="font-size: 10px;">html</a> <a href="/tags/html5/" style="font-size: 10px;">html5</a> <a href="/tags/javascript/" style="font-size: 20px;">javascript</a> <a href="/tags/webApp/" style="font-size: 10px;">webApp</a> <a href="/tags/脚手架工具/" style="font-size: 13.33px;">脚手架工具</a>
 					</div>
 				</section>
 				
@@ -183,8 +183,8 @@
     <article id="post-new运算符" class="article article-type-post" itemscope itemprop="blogPost">
   
     <div class="article-meta">
-      <a href="/2015/10/15/new运算符/" class="article-date">
-  	<time datetime="2015-10-15T04:02:38.000Z" itemprop="datePublished">2015-10-15</time>
+      <a href="/2015/10/28/new运算符/" class="article-date">
+  	<time datetime="2015-10-28T13:34:13.606Z" itemprop="datePublished">2015-10-28</time>
 </a>
     </div>
   
@@ -197,7 +197,7 @@
         
   
     <h1 itemprop="name">
-      <a class="article-title" href="/2015/10/15/new运算符/">javascript new 运算符</a>
+      <a class="article-title" href="/2015/10/28/new运算符/">javascript new 运算符</a>
     </h1>
   
 
@@ -258,11 +258,11 @@ Person.construct  = <span class="function"><span class="keyword">function</span>
 
 
   
-    <article id="post-js对象（1）" class="article article-type-post" itemscope itemprop="blogPost">
+    <article id="post-meta" class="article article-type-post" itemscope itemprop="blogPost">
   
     <div class="article-meta">
-      <a href="/2015/10/15/js对象（1）/" class="article-date">
-  	<time datetime="2015-10-15T04:02:12.000Z" itemprop="datePublished">2015-10-15</time>
+      <a href="/2015/10/28/meta/" class="article-date">
+  	<time datetime="2015-10-28T13:34:10.352Z" itemprop="datePublished">2015-10-28</time>
 </a>
     </div>
   
@@ -275,7 +275,7 @@ Person.construct  = <span class="function"><span class="keyword">function</span>
         
   
     <h1 itemprop="name">
-      <a class="article-title" href="/2015/10/15/js对象（1）/">js对象（1）</a>
+      <a class="article-title" href="/2015/10/28/meta/">meta&amp;viewport</a>
     </h1>
   
 
@@ -284,60 +284,122 @@ Person.construct  = <span class="function"><span class="keyword">function</span>
     
     <div class="article-entry" itemprop="articleBody">
       
-        <p>对象是JavaScript的基本数据类型，是复合值，在JavaScript中除了字符串、数字、true、false、null和undefined之外，JavaScript中的值都是对象。</p>
-<h3 id="创建JavaScript对象">创建JavaScript对象</h3><p>使用对象直接量，也就是名值对组成的映射表，格式如下：</p>
-<pre><code><span class="keyword">var</span> <span class="keyword">empty</span> = {};        <span class="comment">//这是一个空对象</span>
-<span class="keyword">var</span> point = { x:<span class="number">0</span> , y:<span class="number">1</span> };         <span class="comment">//这个对象有连个属性</span>
-<span class="keyword">var</span> car = {
-    name：<span class="string">'BMW X7'</span>,
-    color：<span class="string">'black'</span>,
-    <span class="string">'max-speed'</span>:<span class="string">'200'</span>    <span class="comment">//属性名中间有空格或-，必须用字符串表示</span>
-}
-</code></pre><p>使用<code>new</code>创建对象：</p>
-<pre><code><span class="built_in">var</span> myArray <span class="subst">=</span> <span class="literal">new</span> <span class="built_in">Array</span>（）;        <span class="comment">//创建一个数组，等同于[]</span>
-<span class="built_in">var</span> <span class="built_in">date</span> <span class="subst">=</span> <span class="literal">new</span> <span class="built_in">Date</span>()         <span class="comment">//创建一个Date对象</span>
-</code></pre><h3 id="原型">原型</h3><p>绝大多数JavaScript对象都会和另一个对象关联，这种关联就涉及到了原型，当通过关键字new和构造函数创建对象的时候，实际上是构造该对象的prototype属性，JavaScript对象具有自有属性，也有一些属性是从原型对象继承而来的，所以通过<code>new Array()</code>创建的对象的原型就是Array.prototype。</p>
-<p>举个例子，当我们要查询对象ooo中的x属性，如果o中不存在x，那么会在o的原型中继续查找x。如果原型对象中也没有x，那么会在这个原型对象的原型上继续查询，知道找到这个x，或者直到某个对象的原型是<code>null</code>为止，这样我们可以清楚的发现，对象的原型属性构成了一个链，通过这个链，就可以实现属性的继承(<a href="http://dmitrysoshnikov.com/ecmascript/javascript-the-core/" target="_blank" rel="external">图片来源</a>)。</p>
-<p><img src="http://7xivia.com1.z0.glb.clouddn.com/jsyuanxing.png" alt="图片"></p>
-<p>ECMAScript5中定义了一个Object.creat()的方法，创建一个新的对象，其中的一个参数就是对象的原型，同时还有第二个参数，是对对象的属性的进一步描述。</p>
-<pre><code><span class="keyword">var</span> o = <span class="built_in">Object</span>.creat({x:<span class="number">1</span>,y:<span class="number">1</span>});    <span class="comment">//o继承了属性x和y</span>
-</code></pre><p>如果我们传入了null参数，这时创建的对象就不会继承任何东西（基础方法也不会继承），比如toString(),如果想要创建一个新对象需要传入Object.prototype。下面这个方法可以模拟原型继承：</p>
-<pre><code><span class="function"><span class="keyword">function</span> <span class="title">inherit</span><span class="params">(p)</span></span>{
-    <span class="keyword">if</span>(p==<span class="literal">null</span>) <span class="keyword">throw</span> <span class="built_in">TypeError</span>();
-    <span class="keyword">if</span>(<span class="built_in">Object</span>.creat)
-        <span class="keyword">return</span> <span class="built_in">Object</span>.creat(p);
-    <span class="keyword">var</span> t = <span class="keyword">typeof</span> p;
-    <span class="keyword">if</span>(t !== <span class="string">"object"</span> &amp;&amp; t !== <span class="string">"function"</span>) <span class="keyword">throw</span> <span class="built_in">TypeError</span>();
-    <span class="function"><span class="keyword">function</span> <span class="title">f</span><span class="params">()</span> </span>{};
-    f.prototype = p;
-    <span class="keyword">return</span> <span class="keyword">new</span> f();
-}
-</code></pre><h3 id="对象属性的查询和设置">对象属性的查询和设置</h3><p>对象的属性可以通过’<code>.</code>‘或者’<code>[]</code>‘进行查询，简单的说，当使用’<code>.</code>‘的时候，’<code>.</code>‘的右边一定要是对象的属性名，当使用’<code>[]</code>‘的时候，’<code>[]</code>‘内必须是一个计算结果为字符串的表达式，也可以直接是字符串。同时我们也可以使用’<code>.</code>‘和’<code>[]</code>‘来设置属性值。</p>
-<pre><code>var book={
-    name:<span class="string">'AngularJs'</span>
-    title:<span class="string">'Easy Study'</span>
-    }
-console.<span class="keyword">log</span>(book.name);            <span class="comment">//AngularJs</span>
-console.<span class="keyword">log</span>(book[name]);        <span class="comment">//AngularJs</span>
-book.<span class="keyword">color</span> = <span class="string">'red'</span>;
-book.pages = <span class="number">1000</span>;
-console.<span class="keyword">log</span>(book.<span class="keyword">color</span>);        <span class="comment">//red</span>
-console.<span class="keyword">log</span>(book[pages]);        <span class="comment">//1000</span>
-</code></pre><p>值得注意的是，在我们的程序中可能经常会出现这样的代码，</p>
-<pre><code>var <span class="built_in">length</span> = book.subtitle.<span class="built_in">length</span>;        <span class="comment">//这会抛出一个错误，因为book.subtitle本身是undefined的，并没有length属性，除非你确定subtitle和book都是对象，否则尽量不要这样去写。可以用下面的两种方式。</span>
-<span class="comment">//方法一</span>
-var <span class="built_in">length</span> = undefined;
-<span class="keyword">if</span>(book){
-    <span class="keyword">if</span>(book.subtitle) len = book.subtitle.<span class="built_in">length</span>;
-}
-<span class="comment">//方法二:短路写法</span>
-var <span class="built_in">length</span> = book &amp;&amp; book.subtitle &amp;&amp; book.subtitle.<span class="built_in">length</span>;
-</code></pre><h3 id="对象属性的删除">对象属性的删除</h3><p>删除属性可以用delete运算符，但是delete只能断开属性和宿主对象的关系，而不会去操作属性中的属性，说白了，就是当一个对象的属性的值的类型还是一个对象的时候，当我们删除了这个属性，这个作为属性的这个对象依然可以使用的。</p>
-<pre><code>a = {p:{x:<span class="number">1</span>}};
-b = a.p;
-<span class="keyword">delete</span> a.p;
-console.<span class="built_in">log</span>(b.x);
-<span class="comment">//输出1，因为已经删除的属性的引用依然存在。这种问题有可能导致内存泄露，所以在删除对象属性的时候，一定要删除的彻底。遍历所有的属性，并且都删除。</span>
+        <h3 id="调研了一下meta标签，总结一些心得。">调研了一下meta标签，总结一些心得。</h3><p>meta标签主要是提供了有关页面的一些描述信息和HTTP标题信息，例如一些有关网页的描述和关键字等等，这些信息是用户不可见的。</p>
+<pre><code>&lt;meta <span class="variable">http-equiv=</span><span class="string">"Content-Type"</span> <span class="variable">Content=</span><span class="string">"text/html; Charset=gb2312"</span>&gt;
+</code></pre><p>定义了HTML页面所用的字符集，这个方法只是在html4中存在，在html5中可以直接通过charset属性进行字符集的设置，还有一个有意思的用法，meta可以让你的页面跳转</p>
+<pre><code>&lt;meta <span class="variable">http-equiv=</span><span class="string">"Refresh"</span> <span class="variable">Content=</span><span class="string">"5; Url=http://www.baidu.com"</span>&gt;
+</code></pre><p>页面会在5s之后跳转到百度首页，上面两个用法提到的http-equiv 属性，实际上是服务器把名称/值对添加到发送给浏览器的内容头部。</p>
+<pre><code>&lt;meta <span class="variable">http-equiv=</span><span class="string">"charset"</span> <span class="variable">content=</span><span class="string">"iso-8859-1"</span>&gt;
+</code></pre><p>这时发送到浏览器的头部就应该包含:</p>
+<pre><code><span class="attribute">content</span>-type: text/<span class="tag">html</span>
+charset:iso-<span class="number">8859</span>-<span class="number">1</span>
+</code></pre><p>因为所有服务器至少会发送一个：</p>
+<pre><code>content-<span class="class"><span class="keyword">type</span>:<span class="title">text</span>/<span class="title">html</span></span>
+</code></pre><p>meta标签还有一个<code>name</code>属性，name属性的值有author(网站作者)、description(网站描述)、keywords(网站的关键字)、generator(编辑软件)、revised(软件的版本)。<br>keywords和description通常是帮助搜索引擎更好的获取你页面的内容，制定搜索的关键字。</p>
+<h3 id="ViewPort">ViewPort</h3><p>如果一个在PC上正常浏览的网页，放到移动设备上，移动设备会默认先将网页放入一个虚拟的窗口中，这个窗口就是viewport。这个窗口会比手机的屏幕宽大，网页加载之后，再通过整体的缩放（或者是3：1，或者是2：1），来让网页整个现实到屏幕上。</p>
+<p>通常经过这样的缩放，页面上的元素已经很难看清楚了，为了解决这样的问题，可以使用meta标签的viewport属性，来人为的制定viewport的大小，这样，就可以避免由于缩放引起的问题。、</p>
+<pre><code>&lt;meta <span class="variable">name=</span><span class="string">"viewport"</span> <span class="variable">content=</span><span class="string">"width=device-width,height=device-height,inital-scale=1.0,maximum-scale=1.0,minimum-scale=1.0,user-scalable=no;"</span> /&gt;
+</code></pre><p>这里面制定的宽度为设备宽度，高度为设备的高度，inital-scale表示初始的缩放比例，maximum-scale和minimum-scale分别代表用户能缩放的最大和最小的比例，user-scalable则指定了用户是否可以进行缩放。</p>
+<p>通过这样的设置，使viewport和设备的屏幕大小一样，因此就不会产生缩放。元素也就能够看得清了。同时，在缩放比例为100%(也就是1，也就是没有进行缩放的时候)，设备的像素和css的像素相等。</p>
+
+      
+    </div>
+    
+    <div class="article-info article-info-index">
+      
+      
+	<div class="article-tag tagcloud">
+		<ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/html/">html</a></li></ul>
+	</div>
+
+      
+
+      
+      <div class="clearfix"></div>
+    </div>
+    
+  </div>
+  
+</article>
+
+
+
+
+
+
+
+  
+    <article id="post-js原生方法的总结" class="article article-type-post" itemscope itemprop="blogPost">
+  
+    <div class="article-meta">
+      <a href="/2015/10/28/js原生方法的总结/" class="article-date">
+  	<time datetime="2015-10-28T13:34:05.233Z" itemprop="datePublished">2015-10-28</time>
+</a>
+    </div>
+  
+  <div class="article-inner">
+    
+      <input type="hidden" class="isFancy" />
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2015/10/28/js原生方法的总结/">js原生方法的总结</a>
+    </h1>
+  
+
+      </header>
+      
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <h3 id="Math对象">Math对象</h3><ol>
+<li>Math.random():产生一个0~1之间的随机数。例：<code>0.39049036731012166</code>。</li>
+<li>Math.floor(x):x可以是任意一个数值或者表达式，返回值是小于等于x，且最接近x的整数。例：<code>Math.floor(Math.random())，返回0</code>。</li>
+<li>Math.ceil(x):对数字向上取整，返回大于或等于x的最接近的整数。</li>
+<li>Math.round(x):对数字进行四舍五入。</li>
+<li>Math.pow(x,y):计算x的y次方，若结果为虚数或负数则返回NaN。，若计算结果过大，返回Infinity。</li>
+<li>Math.sqrt(x):计算x的平方根。若x小于0则返回NaN。</li>
+</ol>
+<h3 id="Number方法">Number方法</h3><p>Number()方法将对象的值转化为数字：</p>
+<pre><code><span class="literal">true</span> =&gt; <span class="number">1</span>; <span class="literal">false</span> =&gt; <span class="number">0</span>; <span class="string">"214214124"</span> =&gt; <span class="number">214214124</span>;
+<span class="keyword">new</span> <span class="type">Date</span><span class="literal">()</span> =&gt; <span class="number">1256657776588</span>;
+<span class="string">"214214124 123"</span> =&gt; <span class="type">NaN</span>
+</code></pre><h3 id="JSON对象">JSON对象</h3><ol>
+<li>JSON.stringify(o):用来序列化JavaScript对象，也就是将JavaScript对象转换为JSON字符串。</li>
+<li>JSON.parse(s):用来还原Json字符串为JavaScript对象。</li>
+</ol>
+<h3 id="Date对象">Date对象</h3><p>Date对象用来处理时间和日期，使用关键字<code>new</code>实例化Date对象。若</p>
+<p>new Date():以当前日期作为初始值，实例化一个Date对象。也可以用如下的方式实例化Date对象：</p>
+<pre><code><span class="comment">//根据某个时间点创建一个时间戳（实例化一个Date对象）</span>
+<span class="keyword">new</span> <span class="built_in">Date</span>(<span class="string">"month dd,yyyy hh:mm:ss"</span>);
+<span class="keyword">new</span> <span class="built_in">Date</span>(<span class="string">"month dd,yyyy"</span>);
+<span class="keyword">new</span> <span class="built_in">Date</span>(yyyy,mth,dd,hh,mm,ss);
+<span class="keyword">new</span> <span class="built_in">Date</span>(yyyy,mth,dd);
+
+<span class="keyword">new</span> <span class="built_in">Date</span>(ms);  <span class="comment">//需要创建的时间和GMT时间1970年1月1日之间相差的毫秒数。</span>
+</code></pre><p>常用get方法：</p>
+<pre><code><span class="function"><span class="title">getDate</span><span class="params">()</span></span> 从 Date 对象返回一个月中的某一天 (<span class="number">1</span> ~ <span class="number">31</span>)。
+<span class="function"><span class="title">getDay</span><span class="params">()</span></span> 从 Date 对象返回一周中的某一天 (<span class="number">0</span> ~ <span class="number">6</span>，分别对应周日~周一)。
+<span class="function"><span class="title">getMonth</span><span class="params">()</span></span> 从 Date 对象返回月份 (<span class="number">0</span> ~ <span class="number">11</span>)。
+<span class="function"><span class="title">getFullYear</span><span class="params">()</span></span> 从 Date 对象以四位数字返回年份。
+<span class="function"><span class="title">getHours</span><span class="params">()</span></span> 返回 Date 对象的小时 (<span class="number">0</span> ~ <span class="number">23</span>)。
+<span class="function"><span class="title">getMinutes</span><span class="params">()</span></span> 返回 Date 对象的分钟 (<span class="number">0</span> ~ <span class="number">59</span>)。
+<span class="function"><span class="title">getSeconds</span><span class="params">()</span></span> 返回 Date 对象的秒数 (<span class="number">0</span> ~ <span class="number">59</span>)。
+<span class="function"><span class="title">getMilliseconds</span><span class="params">()</span></span> 返回 Date 对象的毫秒(<span class="number">0</span> ~ <span class="number">999</span>)。
+<span class="function"><span class="title">getTime</span><span class="params">()</span></span> 返回 <span class="number">1970</span> 年 <span class="number">1</span> 月 <span class="number">1</span> 日至今的毫秒数。
+</code></pre><p>常用set方法(set方法会改变Date对象的时间点)：</p>
+<pre><code><span class="function"><span class="title">setDate</span><span class="params">()</span></span> 设置 Date 对象中月的某一天 (<span class="number">1</span> ~ <span class="number">31</span>)。
+<span class="function"><span class="title">setMonth</span><span class="params">()</span></span> 设置 Date 对象中月份 (<span class="number">0</span> ~ <span class="number">11</span>)。
+<span class="function"><span class="title">setFullYear</span><span class="params">()</span></span> 设置 Date 对象中的年份（四位数字）。
+<span class="function"><span class="title">setYear</span><span class="params">()</span></span> 请使用 <span class="function"><span class="title">setFullYear</span><span class="params">()</span></span> 方法代替。
+<span class="function"><span class="title">setHours</span><span class="params">()</span></span> 设置 Date 对象中的小时 (<span class="number">0</span> ~ <span class="number">23</span>)。
+<span class="function"><span class="title">setMinutes</span><span class="params">()</span></span> 设置 Date 对象中的分钟 (<span class="number">0</span> ~ <span class="number">59</span>)。
+<span class="function"><span class="title">setSeconds</span><span class="params">()</span></span> 设置 Date 对象中的秒钟 (<span class="number">0</span> ~ <span class="number">59</span>)。
+</code></pre><p>还有一些其他的方法：</p>
+<pre><code><span class="function"><span class="title">toString</span><span class="params">()</span></span> 把 Date 对象转换为字符串。
 </code></pre>
       
     </div>
@@ -366,11 +428,11 @@ console.<span class="built_in">log</span>(b.x);
 
 
   
-    <article id="post-reduce方法" class="article article-type-post" itemscope itemprop="blogPost">
+    <article id="post-js继承学习笔记" class="article article-type-post" itemscope itemprop="blogPost">
   
     <div class="article-meta">
-      <a href="/2015/10/15/reduce方法/" class="article-date">
-  	<time datetime="2015-10-15T04:01:40.000Z" itemprop="datePublished">2015-10-15</time>
+      <a href="/2015/10/28/js继承学习笔记/" class="article-date">
+  	<time datetime="2015-10-28T13:33:50.341Z" itemprop="datePublished">2015-10-28</time>
 </a>
     </div>
   
@@ -383,7 +445,7 @@ console.<span class="built_in">log</span>(b.x);
         
   
     <h1 itemprop="name">
-      <a class="article-title" href="/2015/10/15/reduce方法/">javascript reduce方法</a>
+      <a class="article-title" href="/2015/10/28/js继承学习笔记/">js继承学习笔记</a>
     </h1>
   
 
@@ -392,37 +454,387 @@ console.<span class="built_in">log</span>(b.x);
     
     <div class="article-entry" itemprop="articleBody">
       
-        <h3 id="reduce怎么玩的？">reduce怎么玩的？</h3><p>reduce是处理数组元素的一种方法，说点个人的理解：</p>
-<p>reduce方法接受两个参数，第一个参数是一个处理函数，第二个参数是一个初始值。先说第一个：</p>
-<pre><code><span class="reserved">var</span> arr = [<span class="string">"apple"</span>,<span class="string">"orange"</span>,<span class="string">"apple"</span>,<span class="string">"orange"</span>,<span class="string">"pear"</span>,<span class="string">"orange"</span>];
-arr.reduce(<span class="reserved">function</span>(previous, current, index, array){
-    <span class="built_in">console</span>.log(previous, current, index, array);
-})
-<span class="regexp">//</span>上面的代码会输出：
-<span class="regexp">//</span> apple orange <span class="number">1</span> [<span class="string">""</span>, <span class="string">"orange"</span>, <span class="string">"apple"</span>, <span class="string">"orange"</span>, <span class="string">"pear"</span>, <span class="string">"orange"</span>]
-<span class="regexp">//</span> <span class="literal">undefined</span> <span class="string">"apple"</span> <span class="number">2</span> [<span class="string">"apple"</span>, <span class="string">"orange"</span>, <span class="string">"apple"</span>, <span class="string">"orange"</span>, <span class="string">"pear"</span>, <span class="string">"orange"</span>]
-<span class="regexp">//</span> <span class="literal">undefined</span> orange <span class="number">3</span> [<span class="string">"apple"</span>, <span class="string">"orange"</span>, <span class="string">"apple"</span>, <span class="string">"orange"</span>, <span class="string">"pear"</span>, <span class="string">"orange"</span>]
-<span class="regexp">//</span> <span class="literal">undefined</span> pear <span class="number">4</span> [<span class="string">"apple"</span>, <span class="string">"orange"</span>, <span class="string">"apple"</span>, <span class="string">"orange"</span>, <span class="string">"pear"</span>, <span class="string">"orange"</span>]
-<span class="regexp">//</span> <span class="literal">undefined</span> orange <span class="number">5</span> [<span class="string">"apple"</span>, <span class="string">"orange"</span>, <span class="string">"apple"</span>, <span class="string">"orange"</span>, <span class="string">"pear"</span>, <span class="string">"orange"</span>]
-<span class="regexp">//</span> <span class="literal">undefined</span>
-</code></pre><p>处理函数有四个参数，分别代表：</p>
-<pre><code>previous：通过上一次调用回调函数获得的值。
-current：当前数组元素的值。
-<span class="keyword">index</span>：当前数组元素的数字索引。
-<span class="keyword">array</span>：包含该元素的数组对象。
-</code></pre><p>由于上面的例子我们没有在调用reduce方法时传入一个初始值，所以在第一次执行回调时，<code>previous</code> 是数组的第一个元素，<code>current</code>则是数组的第二个元素，<code>index</code>为 1，<code>array</code>则是整个数组。</p>
-<p>当第二次执行回调的时候，由于<code>previous</code>是指通过上一次调用回调函数获得的值，然而我们并没有在回调函数中返回任何值，所以第二次<code>previous</code>的值为undefined，当我们在毁掉函数的末尾添加一句话<code>return previous;</code>。这时，你会发现所有的<code>undefined</code>都会变成<code>apple</code>。</p>
-<p>下面简单修改一下代码，添加一个新的方法：</p>
-<pre><code><span class="function"><span class="keyword">function</span> <span class="title">getWordCnt</span><span class="params">()</span></span>{
-    <span class="keyword">return</span> arr.reduce(<span class="function"><span class="keyword">function</span><span class="params">(previous, current)</span></span>{
-        previous[current] = (previous[current] + <span class="number">1</span>) || <span class="number">1</span>;
-        <span class="keyword">return</span> previous;
-    },{});
+        <h3 id="由一段代码印发的思考">由一段代码印发的思考</h3><pre><code><span class="function"><span class="keyword">function</span> <span class="title">A</span><span class="params">()</span></span>{}
+<span class="keyword">var</span> a = <span class="keyword">new</span> A();
+A.prototype = {x:<span class="number">3</span>};
+<span class="built_in">console</span>.log(a.x);
+</code></pre><p>想一下这段代码会输出什么，会输出3么，如果你的答案是3，那么恭喜你，下面的东西也是你需要的。</p>
+<p>首先，正确的答案是undefined，不相信可以在控制台输出一下，结果一定是undefined，也就是说，a中并不存在一个 <code>x</code>属性，如果我们将代码改成这样，再看看结果是什么样子的：</p>
+<pre><code><span class="function"><span class="keyword">function</span> <span class="title">A</span><span class="params">()</span></span>{}
+<span class="keyword">var</span> a = <span class="keyword">new</span> A();
+<span class="built_in">Object</span>.prototype.x=<span class="number">3</span>;
+<span class="built_in">console</span>.log(a.x);
+</code></pre><p>这次再试一下，你会发现输出了3，是否找到问题了呢？</p>
+<p>当我们在创建一个构造函数，也就是<code>function A</code>的时候，虽然没有规定他的<code>prototype</code>属性，但是JavaScript中明确指出，没一个JavaScript对象都和另一个对象关联，就是原型，换句话说，每一个JavaScript对象都有原型，那就证明<code>A</code>也是有原型的，而且原型值指向Object对象。</p>
+<p>所以，当我们实例化一个<code>A</code>的对象<code>a</code>的时候，<code>a</code>会继承<code>A</code>的属性，而<code>A</code>的属性中并不存在自有属性，所以<code>A</code>的属性实际上就是继承自Object，因此，<code>a</code>的原型是指向Object的。</p>
+<p>第一段代码，<code>a</code>的原型指向Object，这时我们设置A的prototype，也就是改变了A的原型，但是之前实例化的<code>a</code>的原型并没有继承<code>A</code>的属性，而是直接指向了Object，所以并不会受到影响。而Object的属性中也没有一个属性是<code>x</code>，JS中使用一个不存在的属性会返回一个undefined。</p>
+<p>第二段代码，我们直接给Object的prototype添加一个x的属性，此时在<code>a</code>中就可以拿到<code>x</code>属性的值了。</p>
+<p>如果我们将第二段代码中的</p>
+<pre><code><span class="built_in">Object</span>.prototype.x=<span class="number">3</span>;
+</code></pre><p>替换成</p>
+<pre><code><span class="built_in">Object</span>.x=<span class="number">3</span>;
+</code></pre><p>你会发现还是会输出同样的结果，其实js的继承，只有在查询属性的时候才会体现出来，查找一个对象的属性的时候，先会在对象的自有属性中进行查找，如果有就直接返回，如果没有会在对象的原型中查找，如果原型中也没有找到，就在原型的原型中查找，，，，这样传说中的原型链也就形成了。</p>
+<p>有些时候我们在使用<code>new</code>方法创建对象的时候，比如<code>new Date()</code>这样的方式创建的对象，他的prototype指向的是D<code>Date</code>对象，而<code>Date</code>的prototype也继承自Object。</p>
+
+      
+    </div>
+    
+    <div class="article-info article-info-index">
+      
+      
+	<div class="article-tag tagcloud">
+		<ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/javascript/">javascript</a></li></ul>
+	</div>
+
+      
+
+      
+      <div class="clearfix"></div>
+    </div>
+    
+  </div>
+  
+</article>
+
+
+
+
+
+
+
+  
+    <article id="post-Javascript笔试题集锦" class="article article-type-post" itemscope itemprop="blogPost">
+  
+    <div class="article-meta">
+      <a href="/2015/10/28/Javascript笔试题集锦/" class="article-date">
+  	<time datetime="2015-10-28T13:29:49.308Z" itemprop="datePublished">2015-10-28</time>
+</a>
+    </div>
+  
+  <div class="article-inner">
+    
+      <input type="hidden" class="isFancy" />
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2015/10/28/Javascript笔试题集锦/">Javascript 笔试题集锦</a>
+    </h1>
+  
+
+      </header>
+      
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <h3 id="１-有关this的使用">１.有关this的使用</h3><p>下面这段代码会输出什么？</p>
+<pre><code><span class="keyword">var</span> length = <span class="number">10</span>;
+function fn() {
+    console.log(this.length);
 }
-<span class="built_in">console</span>.log(getWordCnt());   <span class="comment">//Object {apple: 2, orange: 3, pear: 1}</span>
-</code></pre><p>上边的例子，我们给reduce方法传入了一个空对象作为初始值，那在第一次执行回调的时候，<code>previous</code>就是这个<code>{}</code>,<code>current</code>是数组的第一个元素<code>apple</code>，<code>index</code>为 0,<code>array</code>还是整个数组。</p>
-<p>如上代码实现了一个统计数组中相同元素出现的次数的功能，在回调函数中我们每次都会判断<code>previous</code>中是否已经存在了当前元素，并作相应的处理，之后将<code>previous</code>返回。最后我们会将处理结果对象返回。</p>
-<h3 id="reduce的用法">reduce的用法</h3><p>reduce可以用在求数组的合，统计数组中元素的个数，将二维数组转化成一维数组(concat方法)等等，主要还是看自己的想法。</p>
+<span class="keyword">var</span> obj = {
+    length: <span class="number">5</span>,
+    <span class="keyword">method</span>: function(fn) {
+        fn();
+        arguments[<span class="number">0</span>]();
+    }
+};
+obj.<span class="keyword">method</span>(fn, <span class="number">1</span>);
+</code></pre><p>　<code>答案：</code>10，2；</p>
+<p>　<code>this</code>是包含它的函数作为方法被调用时所属的对象。</p>
+<p>　调用<code>fn()</code>方法的时候，默认是<code>window</code>对象，所以第一方法会输出10；</p>
+<p>　使用<code>arguments[0]()</code>方法的时候，调用方法的对象是<code>arguments</code>，此时this指向arguments，我们传递了两个参数，所以输出结果是2</p>
+<h3 id="2-var和函数的提前声明">2.var和函数的提前声明</h3><p>下面这段代码会输出什么？</p>
+<pre><code><span class="function"><span class="keyword">function</span> <span class="title">fn</span><span class="params">(a)</span> </span>{
+    <span class="built_in">console</span>.log(a);
+    <span class="keyword">var</span> a = <span class="number">2</span>;
+    <span class="function"><span class="keyword">function</span> <span class="title">a</span><span class="params">()</span> </span>{}
+    <span class="built_in">console</span>.log(a);
+}
+fn(<span class="number">1</span>);
+</code></pre><p>　<code>答案：</code>function a() {}，2；</p>
+<p><code>var</code>和<code>function</code>是会提前声明的，而且<code>function</code>还会优先于<code>var</code>，如果是这样，那上面的代码就等价于：</p>
+<pre><code><span class="function"><span class="keyword">function</span> <span class="title">fn</span><span class="params">(a)</span> </span>{
+    <span class="keyword">var</span> a;
+    <span class="function"><span class="keyword">function</span> <span class="title">a</span><span class="params">()</span> </span>{}
+    <span class="built_in">console</span>.log(a);
+    a = <span class="number">2</span>;
+    <span class="built_in">console</span>.log(a);
+}
+fn(<span class="number">1</span>);
+</code></pre><p>这样就比较容易理解了，而且我们声明的<code>ａ</code>变量对传入的参数<code>ａ</code>进行了覆盖；</p>
+<h3 id="3、局部变量和全局变量">3、局部变量和全局变量</h3><p>下面这段代码会输出什么？</p>
+<pre><code><span class="keyword">var</span> f = <span class="literal">true</span>;
+<span class="keyword">if</span> (f === <span class="literal">true</span>) {
+    <span class="keyword">var</span> a = <span class="number">10</span>;
+}
+<span class="function"><span class="keyword">function</span> <span class="title">fn</span><span class="params">()</span> </span>{
+    <span class="keyword">var</span> b = <span class="number">20</span>;
+    c = <span class="number">30</span>;
+}
+fn();
+<span class="built_in">console</span>.log(a);
+<span class="built_in">console</span>.log(b);
+<span class="built_in">console</span>.log(c);
+</code></pre><p>　<code>答案：</code>10，报错，30；</p>
+<p>首先我们先明确一下，只有在函数内定义的变量才是局部变量，在<code>{...}</code>内定义的变量并不一定就是局部变量。但是不管在哪里，如果变量没有通过关键字<code>var</code>声明的变量，都是全局变量。在使用一个没有定义的变量的时候会报错，但是如果使用了一个没有定义的属性的话，只会返回<code>undefined</code></p>
+<h3 id="4、给基本类型数据添加属性">4、给基本类型数据添加属性</h3><p>下面这段代码会输出什么？</p>
+<pre><code><span class="keyword">var</span> a = 10;
+a.<span class="keyword">pro</span> = 10;
+console.<span class="literal">log</span>(a.<span class="keyword">pro</span> + a);
+<span class="keyword">var</span> s = 'hello';
+s.<span class="keyword">pro</span> = 'world';
+console.<span class="literal">log</span>(s + s.<span class="keyword">pro</span>);
+</code></pre><p>　<code>答案：</code>NaN,helloundefined；</p>
+<p>给基本类型数据添加属性并不会报错，但是如果引用该属性，则会返回<code>undefined,10+undefined</code>会返回<code>NaN</code>，而字符串<code>&quot;hello&quot;+undefined</code>时，<code>undefined</code>会被转换成字符串，所以输出了<code>helloundefined</code>。</p>
+<h3 id="5、判断一个字符串中出现次数最多的字符，并统计次数">5、判断一个字符串中出现次数最多的字符，并统计次数</h3><p>下面这段代码会输出什么？</p>
+<p>　<code>答案1：</code><a href="http://baike.baidu.com/link?url=l67nVVKUt0UgKnIWmWwDWn6pINcOYMI_arJVQEZXINkssX2zCIY2kDAbUqq7an3Md7EZ6lyji8jb2CUXXkhM5q" target="_blank" rel="external">hash table</a> 方式：</p>
+<pre><code><span class="keyword">var</span> s = <span class="string">'aaabbbcccaaabbbaaa'</span>;
+<span class="keyword">var</span> obj = <span class="comment">{}</span>;
+<span class="keyword">var</span> maxn = -<span class="number">1</span>;
+<span class="keyword">var</span> letter;
+<span class="keyword">for</span>(<span class="keyword">var</span> i = <span class="number">0</span>; i &lt; s.length; i++) <span class="comment">{
+    if(obj[s[i]]) {
+        obj[s[i]]++;
+        if(obj[s[i]] &gt; maxn) {
+            maxn = obj[s[i]];
+            letter = s[i];
+        }</span>
+    } <span class="keyword">else</span> <span class="comment">{
+        obj[s[i]] = 1;
+        if(obj[s[i]] &gt; maxn) {
+            maxn = obj[s[i]];
+            letter = s[i];
+        }</span>
+    }
+}
+alert(letter + <span class="string">': '</span> + maxn);
+</code></pre><p>　<code>答案2：</code>正则表达式方法：</p>
+<pre><code>var s = <span class="string">'aaabbbcccaaabbbaaabbbbbbbbbb'</span>;
+var a = s.split(<span class="string">''</span>);
+a.sort();
+s = a.join(<span class="string">''</span>);
+var pattern = /(\w)\<span class="number">1</span>*/g;
+var <span class="built_in">ans</span> = s.match(pattern);
+<span class="built_in">ans</span>.sort(<span class="function"><span class="keyword">function</span><span class="params">(a, b)</span> {</span>
+    <span class="keyword">return</span> a.<span class="built_in">length</span> &lt; b.<span class="built_in">length</span>;
+});;
+console.<span class="built_in">log</span>(<span class="built_in">ans</span><span class="matrix">[<span class="number">0</span>]</span><span class="matrix">[<span class="number">0</span>]</span> + <span class="string">': '</span> + <span class="built_in">ans</span><span class="matrix">[<span class="number">0</span>]</span>.<span class="built_in">length</span>);
+</code></pre>
+      
+    </div>
+    
+    <div class="article-info article-info-index">
+      
+      
+	<div class="article-tag tagcloud">
+		<ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/javascript/">javascript</a></li></ul>
+	</div>
+
+      
+
+      
+      <div class="clearfix"></div>
+    </div>
+    
+  </div>
+  
+</article>
+
+
+
+
+
+
+
+  
+    <article id="post-html标签语义化" class="article article-type-post" itemscope itemprop="blogPost">
+  
+    <div class="article-meta">
+      <a href="/2015/10/28/html标签语义化/" class="article-date">
+  	<time datetime="2015-10-28T13:29:41.292Z" itemprop="datePublished">2015-10-28</time>
+</a>
+    </div>
+  
+  <div class="article-inner">
+    
+      <input type="hidden" class="isFancy" />
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2015/10/28/html标签语义化/">html标签语义化</a>
+    </h1>
+  
+
+      </header>
+      
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <h3 id="语义化的理解">语义化的理解</h3><p>标签语义化，最开始接触到这个概念的时候理解的是对于开发者来说，让html代码的可读性更强，编写更规范，方便于扩展和维护。让开发的人一眼就知道这个标签里面放的什么东西。后面经过了解，标签语义化的另一个好处是使得HTML对爬虫和机器人更加友好，方便爬虫抓取网页的重要部分的内容，改进搜索引擎的优化。</p>
+<p>html本身是一种语言，在没有css的帮助下，<code>html</code>自身的结构也能很好的展示内容(虽然这也是默认的css在起作用)，<code>i</code>标签和<code>b</code>标签都可以达到强调的效果，但是w3c标准中还对这些标签的使用作出了明确的区分。但是大家使用的时候往往都是很随意的。比如页面中随意嵌套的div，不规范的嵌套规则，往往这样的页面，即使达到了你想要展示的效果，日后维护起来也是比较恶心的。</p>
+<p>HTML中新添加的标签语义更加明显，像<code>address</code>、<code>footer</code>、<code>header</code>、<code>nav</code>等等，单从标签的名字就可以看出标签应该被用来做什么，同时，爬虫也会根据页面中的这些具有语义的标签去判断和抓取页面的相关内容，并分析关键字的权重，文档规范化了，就更加有益于搜索引擎获取你页面的关键信息。</p>
+<p>让HTML和CSS各司其职，是一件美好的实情，HTML5的核心思想就是语义，所以我们只看标签表达的含义，而不是表现出来的样式，样式交给CSS就可以了，而不是为了实现某种表现效果而强行使用某个标签。</p>
+<p>显然HTML5中并没有废除所有没有语义的标签，有些时候可能所有的语义标签都不能满足我们的需求，我们就可以考虑使用<code>div</code>、<code>span</code>这样的没有语义的标签来达到我们的目的，有一个原则，就是如果有比<code>div</code>或<code>span</code>更加合适的标签，我们就不适用他们。</p>
+<p>之前也见过一些问题，说的是针对盲人阅读的时候，开发应注意什么，当时并没有理解这个问题，现在看，html的语义化也在一定程度上会帮助盲人阅读器去更好的解析页面的内容，从而帮助用户更好的去理解你的页面。总而言之，所有的规范或者标准的制定，都是为了保证通用行，让所有人开发出来的东西都可以被所有人使用。</p>
+<h3 id="语义化标签的积累">语义化标签的积累</h3><ol>
+<li>figure：用于规定独立的流内容（图像、图标、照片、代码等）。块级元素，有自带的margin值。</li>
+<li>figcaption：与figure配套使用，用于定义figure元素的标题。块级元素。</li>
+<li>nav：标记导航，网页中的链接群，nav中通常是<code>ul</code>无序列表，面包屑链接用<code>ol</code>有序列表。</li>
+<li>article：表示的是一个文档、页面、应用或是网站中的一个独立的容器，可以嵌套使用（要体现部分与整体的关系）。</li>
+<li>section：区块定义标签（表示的是文档或是应用的一个一般的块）。</li>
+<li>aside：定义侧栏标签（表示一部分内容与页面的主体并不是有很大的关系，但是可以独立存在）。</li>
+<li>footer：页脚标签（与<header>标签对应的标签），用他可以实现的功能有：附录、索引、版权页、许可协议等。</header></li>
+</ol>
+
+      
+    </div>
+    
+    <div class="article-info article-info-index">
+      
+      
+	<div class="article-tag tagcloud">
+		<ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/html5/">html5</a></li></ul>
+	</div>
+
+      
+
+      
+      <div class="clearfix"></div>
+    </div>
+    
+  </div>
+  
+</article>
+
+
+
+
+
+
+
+  
+    <article id="post-gulp学习记录" class="article article-type-post" itemscope itemprop="blogPost">
+  
+    <div class="article-meta">
+      <a href="/2015/10/28/gulp学习记录/" class="article-date">
+  	<time datetime="2015-10-28T13:29:32.829Z" itemprop="datePublished">2015-10-28</time>
+</a>
+    </div>
+  
+  <div class="article-inner">
+    
+      <input type="hidden" class="isFancy" />
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2015/10/28/gulp学习记录/">gulp学习记录</a>
+    </h1>
+  
+
+      </header>
+      
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <h3 id="gulp是干嘛的？">gulp是干嘛的？</h3><p>先来看官网的介绍：</p>
+<p><img src="http://7xivia.com1.z0.glb.clouddn.com/OU23{J)U2E9@3FHE5WA0K_1.png" width="500px"></p>
+<p>对我这种初学者来讲，看完之后并没有什么卵用，然而，在平时的使用中，似乎可以大概了解gulp做的事情，比如帮助我们在本地起一个服务器，帮助我们编译less、sass文件，压缩代码，合并、打包文件，图片压缩等等。</p>
+<p>说白了，当我们使用gulp的时候，无非就是为了让它帮我们对代码做一些事情，然后放到服务器上跑起来。当然这个说法可能不准确，但是我感觉可以先这样去理解。</p>
+<h3 id="如何开始？">如何开始？</h3><p>首先，我们可以试着用gulp起一个静态的服务器。</p>
+<pre><code>npm install gulp -g     <span class="comment">//全局安装gulp</span>
+npm install gulp --<span class="built_in">save</span>-<span class="built_in">dev</span> <span class="comment">//接着在你的项目文件夹下面安装gulp</span>
+<span class="comment">//--save-dev 是为了将gulp信息添加到你的package.json中，如果你是在一个空的项目中开始的，那你可能需要先执行npm init，按照提示，生成一个新的package.json文件。</span>
+</code></pre><p>上述步骤完成之后，我们就可以开始使用gulp了。</p>
+<h3 id="如何使用？">如何使用？</h3><p>如果你想让gulp帮你去做一些事情，也就是完成一些特定的任务，我们就要创建一系列任务让gulp帮我们去完成。</p>
+<p>在你的项目文件夹（根）下，创建一个gulpfile.js的文件，我们将会在这里创建任务，首先需要引入gulp：</p>
+<pre><code><span class="tag">var</span> gulp = <span class="function"><span class="title">require</span><span class="params">(<span class="string">'gulp'</span>)</span></span>,  
+</code></pre><p>要完成某些特殊的任务，我们需要载入不同的依赖文件，例如，我们需要编译我们的less文件，就需要安装<code>gulp-less</code>这个包。使用如下命令安装并并将包信息保存到package.json中：</p>
+<pre><code>npm <span class="keyword">install</span> gulp-<span class="operator">less</span> --save //如需其他的依赖包，安装的方式也是一样的
+</code></pre><p>现在我们来创建一个任务来编译我们的less文件：</p>
+<p>//用gulp.task()来创建一个任务。<br>    gulp.task(‘less’, function () {<br>      //用gulp.src()来定义一个或者多个文件来源，下面的写法就是选择所有的less文件<br>      return gulp.src(‘styles/*.less’)<br>        //pipe()是对文件做的操作，我们可以把pipe()处理的过程理解为一个车间的流水线，原料由src()提供，经过不同的加工步骤(pipe)的处理后再放回流水线上。<br>          .pipe(less())<br>        //gulp.dest()用来设定目的地的路径，我们这里就是指的css文件输出的路径。<br>        .pipe(gulp.dest(‘/styles’));<br>    });</p>
+<p>写完了上述方法，我们的任务文件应该是这样的：</p>
+<pre><code><span class="keyword">var</span> gulp = <span class="built_in">require</span>(<span class="string">'gulp'</span>);
+<span class="keyword">var</span> less = <span class="built_in">require</span>(<span class="string">'gulp-less'</span>);
+
+gulp.task(<span class="string">'less'</span>, <span class="function"><span class="keyword">function</span> <span class="params">()</span> </span>{
+  <span class="keyword">return</span> gulp.src(config.app+<span class="string">'/styles/*.less'</span>)
+    .pipe(less())
+    .pipe(gulp.dest(config.app+<span class="string">'/style'</span>));
+});
+</code></pre><p>首先在项目内新建一个文件夹<code>styles</code>,之后再文件夹中创建一个main.less文件，并添加一些代码：</p>
+<pre><code><span class="tag">body</span><span class="rules">{
+  <span class="rule"><span class="attribute">padding</span>:<span class="value"> <span class="number">0</span></span></span>;
+  <span class="rule"><span class="attribute">margin</span>:<span class="value"> <span class="number">0</span></span></span>;
+}</span>
+</code></pre><p>之后我们执行gulp命令，启动任务：</p>
+<pre><code>gulp <span class="operator">less</span>
+</code></pre><p>你会发现，你的styles文件夹下多出了一个main.css的文件，正式main.less编译之后的结果。</p>
+<p>有没有感觉gulp并没有那么高大上了呢？其他的任务也都是一样的原理。分享一个比较有用的文章：</p>
+<p><a href="http://www.techug.com/gulp" target="_blank">gulp使用指南</a></p>
+
+      
+    </div>
+    
+    <div class="article-info article-info-index">
+      
+      
+	<div class="article-tag tagcloud">
+		<ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/脚手架工具/">脚手架工具</a></li></ul>
+	</div>
+
+      
+
+      
+      <div class="clearfix"></div>
+    </div>
+    
+  </div>
+  
+</article>
+
+
+
+
+
+
+
+  
+    <article id="post-flex布局归纳" class="article article-type-post" itemscope itemprop="blogPost">
+  
+    <div class="article-meta">
+      <a href="/2015/10/28/flex布局归纳/" class="article-date">
+  	<time datetime="2015-10-28T13:29:23.673Z" itemprop="datePublished">2015-10-28</time>
+</a>
+    </div>
+  
+  <div class="article-inner">
+    
+      <input type="hidden" class="isFancy" />
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2015/10/28/flex布局归纳/">flex布局归纳</a>
+    </h1>
+  
+
+      </header>
+      
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <p>Flexbox布局旨在提供一个更佳有效的布局方式，更好的控制项目的对齐和自由分配容器空间，即使它们的大小是未知的或动态的。flex布局让从前的“盒子”具有了弹性，让大小可变，方向可变，顺序可变，可以伸展，也可以收缩。</p>
 
       
     </div>
@@ -454,8 +866,8 @@ current：当前数组元素的值。
     <article id="post-css各种属性知识总结" class="article article-type-post" itemscope itemprop="blogPost">
   
     <div class="article-meta">
-      <a href="/2015/10/15/css各种属性知识总结/" class="article-date">
-  	<time datetime="2015-10-15T04:01:05.000Z" itemprop="datePublished">2015-10-15</time>
+      <a href="/2015/10/28/css各种属性知识总结/" class="article-date">
+  	<time datetime="2015-10-28T13:29:01.302Z" itemprop="datePublished">2015-10-28</time>
 </a>
     </div>
   
@@ -468,7 +880,7 @@ current：当前数组元素的值。
         
   
     <h1 itemprop="name">
-      <a class="article-title" href="/2015/10/15/css各种属性知识总结/">css各种属性知识总结</a>
+      <a class="article-title" href="/2015/10/28/css各种属性知识总结/">css各种属性知识总结</a>
     </h1>
   
 
@@ -556,11 +968,11 @@ current：当前数组元素的值。
 
 
   
-    <article id="post-meta" class="article article-type-post" itemscope itemprop="blogPost">
+    <article id="post-css3动画" class="article article-type-post" itemscope itemprop="blogPost">
   
     <div class="article-meta">
-      <a href="/2015/10/15/meta/" class="article-date">
-  	<time datetime="2015-10-15T04:00:28.000Z" itemprop="datePublished">2015-10-15</time>
+      <a href="/2015/10/28/css3动画/" class="article-date">
+  	<time datetime="2015-10-28T13:28:50.030Z" itemprop="datePublished">2015-10-28</time>
 </a>
     </div>
   
@@ -573,7 +985,7 @@ current：当前数组元素的值。
         
   
     <h1 itemprop="name">
-      <a class="article-title" href="/2015/10/15/meta/">meta&amp;viewport</a>
+      <a class="article-title" href="/2015/10/28/css3动画/">css3动画</a>
     </h1>
   
 
@@ -582,280 +994,89 @@ current：当前数组元素的值。
     
     <div class="article-entry" itemprop="articleBody">
       
-        <h3 id="调研了一下meta标签，总结一些心得。">调研了一下meta标签，总结一些心得。</h3><p>meta标签主要是提供了有关页面的一些描述信息和HTTP标题信息，例如一些有关网页的描述和关键字等等，这些信息是用户不可见的。</p>
-<pre><code>&lt;meta <span class="variable">http-equiv=</span><span class="string">"Content-Type"</span> <span class="variable">Content=</span><span class="string">"text/html; Charset=gb2312"</span>&gt;
-</code></pre><p>定义了HTML页面所用的字符集，这个方法只是在html4中存在，在html5中可以直接通过charset属性进行字符集的设置，还有一个有意思的用法，meta可以让你的页面跳转</p>
-<pre><code>&lt;meta <span class="variable">http-equiv=</span><span class="string">"Refresh"</span> <span class="variable">Content=</span><span class="string">"5; Url=http://www.baidu.com"</span>&gt;
-</code></pre><p>页面会在5s之后跳转到百度首页，上面两个用法提到的http-equiv 属性，实际上是服务器把名称/值对添加到发送给浏览器的内容头部。</p>
-<pre><code>&lt;meta <span class="variable">http-equiv=</span><span class="string">"charset"</span> <span class="variable">content=</span><span class="string">"iso-8859-1"</span>&gt;
-</code></pre><p>这时发送到浏览器的头部就应该包含:</p>
-<pre><code><span class="attribute">content</span>-type: text/<span class="tag">html</span>
-charset:iso-<span class="number">8859</span>-<span class="number">1</span>
-</code></pre><p>因为所有服务器至少会发送一个：</p>
-<pre><code>content-<span class="class"><span class="keyword">type</span>:<span class="title">text</span>/<span class="title">html</span></span>
-</code></pre><p>meta标签还有一个<code>name</code>属性，name属性的值有author(网站作者)、description(网站描述)、keywords(网站的关键字)、generator(编辑软件)、revised(软件的版本)。<br>keywords和description通常是帮助搜索引擎更好的获取你页面的内容，制定搜索的关键字。</p>
-<h3 id="ViewPort">ViewPort</h3><p>如果一个在PC上正常浏览的网页，放到移动设备上，移动设备会默认先将网页放入一个虚拟的窗口中，这个窗口就是viewport。这个窗口会比手机的屏幕宽大，网页加载之后，再通过整体的缩放（或者是3：1，或者是2：1），来让网页整个现实到屏幕上。</p>
-<p>通常经过这样的缩放，页面上的元素已经很难看清楚了，为了解决这样的问题，可以使用meta标签的viewport属性，来人为的制定viewport的大小，这样，就可以避免由于缩放引起的问题。、</p>
-<pre><code>&lt;meta <span class="variable">name=</span><span class="string">"viewport"</span> <span class="variable">content=</span><span class="string">"width=device-width,height=device-height,inital-scale=1.0,maximum-scale=1.0,minimum-scale=1.0,user-scalable=no;"</span> /&gt;
-</code></pre><p>这里面制定的宽度为设备宽度，高度为设备的高度，inital-scale表示初始的缩放比例，maximum-scale和minimum-scale分别代表用户能缩放的最大和最小的比例，user-scalable则指定了用户是否可以进行缩放。</p>
-<p>通过这样的设置，使viewport和设备的屏幕大小一样，因此就不会产生缩放。元素也就能够看得清了。同时，在缩放比例为100%(也就是1，也就是没有进行缩放的时候)，设备的像素和css的像素相等。</p>
-
-      
-    </div>
-    
-    <div class="article-info article-info-index">
-      
-      
-	<div class="article-tag tagcloud">
-		<ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/html/">html</a></li></ul>
-	</div>
-
-      
-
-      
-      <div class="clearfix"></div>
-    </div>
-    
-  </div>
-  
-</article>
-
-
-
-
-
-
-
-  
-    <article id="post-js继承学习笔记" class="article article-type-post" itemscope itemprop="blogPost">
-  
-    <div class="article-meta">
-      <a href="/2015/10/15/js继承学习笔记/" class="article-date">
-  	<time datetime="2015-10-15T03:59:38.000Z" itemprop="datePublished">2015-10-15</time>
-</a>
-    </div>
-  
-  <div class="article-inner">
-    
-      <input type="hidden" class="isFancy" />
-    
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/2015/10/15/js继承学习笔记/">js继承学习笔记</a>
-    </h1>
-  
-
-      </header>
-      
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-        <h3 id="由一段代码印发的思考">由一段代码印发的思考</h3><pre><code><span class="function"><span class="keyword">function</span> <span class="title">A</span><span class="params">()</span></span>{}
-<span class="keyword">var</span> a = <span class="keyword">new</span> A();
-A.prototype = {x:<span class="number">3</span>};
-<span class="built_in">console</span>.log(a.x);
-</code></pre><p>想一下这段代码会输出什么，会输出3么，如果你的答案是3，那么恭喜你，下面的东西也是你需要的。</p>
-<p>首先，正确的答案是undefined，不相信可以在控制台输出一下，结果一定是undefined，也就是说，a中并不存在一个 <code>x</code>属性，如果我们将代码改成这样，再看看结果是什么样子的：</p>
-<pre><code><span class="function"><span class="keyword">function</span> <span class="title">A</span><span class="params">()</span></span>{}
-<span class="keyword">var</span> a = <span class="keyword">new</span> A();
-<span class="built_in">Object</span>.prototype.x=<span class="number">3</span>;
-<span class="built_in">console</span>.log(a.x);
-</code></pre><p>这次再试一下，你会发现输出了3，是否找到问题了呢？</p>
-<p>当我们在创建一个构造函数，也就是<code>function A</code>的时候，虽然没有规定他的<code>prototype</code>属性，但是JavaScript中明确指出，没一个JavaScript对象都和另一个对象关联，就是原型，换句话说，每一个JavaScript对象都有原型，那就证明<code>A</code>也是有原型的，而且原型值指向Object对象。</p>
-<p>所以，当我们实例化一个<code>A</code>的对象<code>a</code>的时候，<code>a</code>会继承<code>A</code>的属性，而<code>A</code>的属性中并不存在自有属性，所以<code>A</code>的属性实际上就是继承自Object，因此，<code>a</code>的原型是指向Object的。</p>
-<p>第一段代码，<code>a</code>的原型指向Object，这时我们设置A的prototype，也就是改变了A的原型，但是之前实例化的<code>a</code>的原型并没有继承<code>A</code>的属性，而是直接指向了Object，所以并不会受到影响。而Object的属性中也没有一个属性是<code>x</code>，JS中使用一个不存在的属性会返回一个undefined。</p>
-<p>第二段代码，我们直接给Object的prototype添加一个x的属性，此时在<code>a</code>中就可以拿到<code>x</code>属性的值了。</p>
-<p>如果我们将第二段代码中的</p>
-<pre><code><span class="built_in">Object</span>.prototype.x=<span class="number">3</span>;
-</code></pre><p>替换成</p>
-<pre><code><span class="built_in">Object</span>.x=<span class="number">3</span>;
-</code></pre><p>你会发现还是会输出同样的结果，其实js的继承，只有在查询属性的时候才会体现出来，查找一个对象的属性的时候，先会在对象的自有属性中进行查找，如果有就直接返回，如果没有会在对象的原型中查找，如果原型中也没有找到，就在原型的原型中查找，，，，这样传说中的原型链也就形成了。</p>
-<p>有些时候我们在使用<code>new</code>方法创建对象的时候，比如<code>new Date()</code>这样的方式创建的对象，他的prototype指向的是D<code>Date</code>对象，而<code>Date</code>的prototype也继承自Object。</p>
-
-      
-    </div>
-    
-    <div class="article-info article-info-index">
-      
-      
-	<div class="article-tag tagcloud">
-		<ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/javascript/">javascript</a></li></ul>
-	</div>
-
-      
-
-      
-      <div class="clearfix"></div>
-    </div>
-    
-  </div>
-  
-</article>
-
-
-
-
-
-
-
-  
-    <article id="post-有关promise的理解和实践" class="article article-type-post" itemscope itemprop="blogPost">
-  
-    <div class="article-meta">
-      <a href="/2015/10/15/有关promise的理解和实践/" class="article-date">
-  	<time datetime="2015-10-15T03:59:06.000Z" itemprop="datePublished">2015-10-15</time>
-</a>
-    </div>
-  
-  <div class="article-inner">
-    
-      <input type="hidden" class="isFancy" />
-    
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/2015/10/15/有关promise的理解和实践/">有关promise的理解和实践</a>
-    </h1>
-  
-
-      </header>
-      
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-        
-      
-    </div>
-    
-    <div class="article-info article-info-index">
-      
-      
-	<div class="article-tag tagcloud">
-		<ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/javascript/">javascript</a></li></ul>
-	</div>
-
-      
-
-      
-      <div class="clearfix"></div>
-    </div>
-    
-  </div>
-  
-</article>
-
-
-
-
-
-
-
-  
-    <article id="post-从px说起" class="article article-type-post" itemscope itemprop="blogPost">
-  
-    <div class="article-meta">
-      <a href="/2015/10/15/从px说起/" class="article-date">
-  	<time datetime="2015-10-15T03:58:18.000Z" itemprop="datePublished">2015-10-15</time>
-</a>
-    </div>
-  
-  <div class="article-inner">
-    
-      <input type="hidden" class="isFancy" />
-    
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/2015/10/15/从px说起/">从px说起</a>
-    </h1>
-  
-
-      </header>
-      
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-        <h3 id="移动设备的像素">移动设备的像素</h3><p>我们都知道iPhone5屏幕的像素是640<em>1136，然而，当你想把640px</em>1136px的图片完全显示在iPhone的屏幕上时，会发现图片并不能全部显示。</p>
-<p>因此，这个640*1136的单位和我们设置的px并不是一样的，iPhone指的是<code>dp</code>，也就是我们常说的<code>物理像素</code>，而我们使用的px是<code>逻辑像素</code>，逻辑像素于物理像素与<code>PPI</code>(屏幕每英寸的像素数量)和<code>dpr</code>(设备像素缩放比)有关。</p>
-<h3 id="PPI的计算">PPI的计算</h3><p>PPI指的是屏幕每英寸的像素数量，这里的像素指的是物理像素，也就是设备的像素，PPI越高，图片越清晰。</p>
-<p>PPI的计算还是以iPhone5为例：iPhone5的屏幕是4英寸，所以我们求得4英寸长度上的像素总数，除以4，就可以得到iPhone5的PPI了，计算方式如下：</p>
-<pre><code><span class="attribute">PPI</span>=<span class="string">√（1136²+640²）/4 = 326，所以iPhone5的PPI就是326。</span>
-</code></pre><h3 id="dpr的获取">dpr的获取</h3><p>dpr，也就是设备像素缩放比的获取如下图：</p>
-<p><img src="http://7xivia.com1.z0.glb.clouddn.com/dpr.png" width="500px"></p>
-<p>从图上我们可以知道iPhone5的dpr等于2，现在我们可以看下一个公式了。<br>8<br><code>1px = (dpr)² * dp</code> ，所以，1px在iPhone5上就相当于4dp，这是在平面上看，那如果在某一个纬度上，<code>1px = dpr * dp</code>，所以在iPhone5上，1px = 2dp，那么iPhone5的屏幕应该是320px*568px。</p>
-<p>因此我们的图片在iPhone5的屏幕上时显示不全的。</p>
-<h3 id="计算流程图">计算流程图</h3><p><img src="http://7xivia.com1.z0.glb.clouddn.com/route.jpg" width="400px"></p>
-
-      
-    </div>
-    
-    <div class="article-info article-info-index">
-      
-      
-	<div class="article-tag tagcloud">
-		<ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/webApp/">webApp</a></li></ul>
-	</div>
-
-      
-
-      
-      <div class="clearfix"></div>
-    </div>
-    
-  </div>
-  
-</article>
-
-
-
-
-
-
-
-  
-    <article id="post-transformtransition的用法" class="article article-type-post" itemscope itemprop="blogPost">
-  
-    <div class="article-meta">
-      <a href="/2015/10/15/transformtransition的用法/" class="article-date">
-  	<time datetime="2015-10-15T03:57:28.000Z" itemprop="datePublished">2015-10-15</time>
-</a>
-    </div>
-  
-  <div class="article-inner">
-    
-      <input type="hidden" class="isFancy" />
-    
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/2015/10/15/transformtransition的用法/">transform、transition的用法</a>
-    </h1>
-  
-
-      </header>
-      
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-        <h3 id="transform">transform</h3><p>transform属性可以对元素的位置、形状进行改变，包括平移、旋转、缩放、翻转等等。</p>
-<pre><code><span class="attribute">transform</span><span class="value">:<span class="function">translate</span>(<span class="number">10px</span>,<span class="number">10px</span>) <span class="function">rotate</span>(<span class="number">90deg</span>) <span class="function">scale</span>(<span class="number">1.5</span>,<span class="number">1.5</span>) <span class="function">skew</span>(<span class="number">20deg</span>,<span class="number">20deg</span>) <span class="function">rotateX</span>(<span class="number">120deg</span>);</span>
-<span class="comment">//分别表示了将元素平移，旋转、缩放和翻转，以及3D转换中的翻转（绕X轴）</span>
-<span class="attribute">transform-origin</span><span class="value">:<span class="number">50%</span> <span class="number">50%</span>;</span>
-<span class="comment">//规定旋转或缩放时，变形的基点位置。第一个值代表水平向，第二个值代表垂直向，（left|center|right|length|%）（top|center|bottom|length|%）</span>
-</code></pre><h3 id="transition(css过渡)">transition(css过渡)</h3><pre><code><span class="attribute">transition</span>: width <span class="number">1s</span> linear <span class="number">2s</span>;
-<span class="comment">//简写的transition属性，规定了要变换的属性，变化的时间，变化的速度曲线，以及变化的延迟。</span>
-<span class="comment">//需要变换的属性可以是width，也可以是transform，也可以是all</span>
-</code></pre><p>我们可以在某元素的样式里面添加<code>transition</code>属性，规定要变化的属性以及其他参数，在该元素<code>hover</code>时规定变化后的样式。这样就可以实现鼠标经过元素的时候实现元素的过渡效果。</p>
-<p>也可以通过js来实现更复杂的过渡控制。或者使用CSS3的<code>animation</code>和<code>@keyframes</code>来实现更复杂的动画效果</p>
+        <p>在之前实习的时候玩过一些CSS3的动画效果，感觉还是挺有意思的（除了有点麻烦），分享一些学习经验，也是对自己学习的一个总结。</p>
+<p>css3中的主要模块有<code>选择器</code>，<code>框模型</code>，<code>背景</code>，<code>边框</code>（圆角和阴影很常用），<code>文本效果</code>（好像不是很常用），<code>2D/3D转换</code>，<code>动画</code>，<code>多列布局</code>（好像也不常用）等等。在css3的背景中，已经可以设置背景的尺寸了，也可以通过<code>background-origin</code>属性设置背景图片的定位区域。</p>
+<p><img src="http://www.w3school.com.cn/i/background-origin.gif" alt="图片"></p>
+<p>当我们分别设置了这些值得时候，背景就会出现在不同的位置了。下面我们就可以进入正题了。</p>
+<h3 id="2D转换">2D转换</h3><p>关于2D转换，顾名思义，转换是在2D平面上进行了，这里主要介绍以下三种常用方法：</p>
+<pre><code><span class="function">translate</span>()  <span class="comment">//移动元素</span>
+<span class="attribute">transform</span><span class="value">: <span class="function">translate</span>(<span class="number">50px</span>,<span class="number">100px</span>);</span>  <span class="comment">//把元素在x轴方向移动50px，在y轴方向移动100px；</span>
+<span class="function">rotate</span>()   <span class="comment">//旋转元素</span>
+<span class="attribute">transform</span><span class="value">: <span class="function">translate</span>(<span class="number">30deg</span>);</span>  <span class="comment">//把元素旋转30度（方向试一试就知道了）</span>
+<span class="function">scale</span>()   <span class="comment">//改变元素的尺寸</span>
+<span class="attribute">transform</span><span class="value">: <span class="function">scale</span>(<span class="number">0.5</span>,<span class="number">4</span>);</span>   <span class="comment">//把元素的宽改成原来的0.5，高改为原来的4倍</span>
+</code></pre><p>2D转换的方法在实现动画效果的时候是很常用的。</p>
+<h3 id="3D转换">3D转换</h3><pre><code><span class="function"><span class="title">rotateX</span><span class="params">()</span></span> <span class="comment">//将元素围绕其 X 轴以给定的度数进行旋转</span>
+<span class="function"><span class="title">rotateY</span><span class="params">()</span></span> <span class="comment">//将元素围绕其 Y 轴以给定的度数进行旋转</span>
+</code></pre><hr>
+<p>好了，了解了上面的基本方法，我们实现一个简单的动画效果。先看html代码<a href="http://7xivia.com1.z0.glb.clouddn.com/ballon.png" target="_blank" rel="external">图片下载</a>,<a href="http://7xivia.com1.z0.glb.clouddn.com/baby.png" target="_blank" rel="external">图片下载</a>：</p>
+<pre><code>&lt;img <span class="keyword">class</span>=<span class="string">"img baby"</span> src=<span class="string">"baby.png"</span>&gt;
+&lt;img <span class="keyword">class</span>=<span class="string">"img ballon"</span> src=<span class="string">"ballon.png"</span>&gt;
+</code></pre><p>CSS代码：</p>
+<pre><code><span class="class">.img</span><span class="rules">{
+    <span class="rule"><span class="attribute">position</span>:<span class="value">absolute</span></span>;
+    <span class="rule"><span class="attribute">left</span>:<span class="value"><span class="number">50px</span></span></span>;
+}</span>
+<span class="class">.baby</span><span class="rules">{
+    <span class="rule"><span class="attribute">top</span>:<span class="value"><span class="number">86px</span></span></span>;
+}</span>
+</code></pre><p>现在页面上应该就是下面这个样子了。</p>
+<p><img src="http://7xivia.com1.z0.glb.clouddn.com/图片.png" alt="图片"></p>
+<p>下面我们看一下怎么让这个图片动起来：</p>
+<h2 id="@keyframes规则">@keyframes规则</h2><p>想要了解css3动画，要先简单介绍一下<code>@keyframes</code>规则，它用于规定动画的过程，在<code>@keyframes</code>中规定某项 CSS 样式，就能创建由当前样式逐渐改为新样式的动画效果(<a href="http://caniuse.com/#search=keyframes" target="_blank" rel="external">@keyframes浏览器支持</a>)。比如这样：</p>
+<pre><code><span class="at_rule">@<span class="keyword">keyframes</span> changeBg
+</span>{
+<span class="tag">from</span> <span class="rules">{<span class="rule"><span class="attribute">background</span>:<span class="value"> red</span></span>;}</span>
+<span class="tag">to</span> <span class="rules">{<span class="rule"><span class="attribute">background</span>:<span class="value"> yellow</span></span>;}</span>
+}
+<span class="tag">div</span>
+<span class="rules">{
+<span class="rule"><span class="attribute">animation</span>:<span class="value"> changeBg <span class="number">5s</span></span></span>;
+}</span>
+</code></pre><p>复制代码运行一下就能看到效果了。同时我们还可以这样写：</p>
+<pre><code><span class="at_rule">@<span class="keyword">keyframes</span> changeBg
+</span>{
+    0%   <span class="rules">{<span class="rule"><span class="attribute">background</span>:<span class="value"> red</span></span>;}</span>
+    25%  <span class="rules">{<span class="rule"><span class="attribute">background</span>:<span class="value"> yellow</span></span>;}</span>
+    50%  <span class="rules">{<span class="rule"><span class="attribute">background</span>:<span class="value"> blue</span></span>;}</span>
+    100% <span class="rules">{<span class="rule"><span class="attribute">background</span>:<span class="value"> green</span></span>;}</span>
+}
+</code></pre><p>这样我们就可以多次的改变样式了，同时我们还可以改变多个样式：</p>
+<pre><code><span class="at_rule">@<span class="keyword">keyframes</span> changeBg
+</span>{
+    0%   <span class="rules">{<span class="rule"><span class="attribute">background</span>:<span class="value"> red</span></span>; <span class="rule"><span class="attribute">left</span>:<span class="value"><span class="number">0px</span></span></span>; <span class="rule"><span class="attribute">top</span>:<span class="value"><span class="number">0px</span></span></span>;}</span>
+    25%  <span class="rules">{<span class="rule"><span class="attribute">background</span>:<span class="value"> yellow</span></span>; <span class="rule"><span class="attribute">left</span>:<span class="value"><span class="number">200px</span></span></span>; <span class="rule"><span class="attribute">top</span>:<span class="value"><span class="number">0px</span></span></span>;}</span>
+    50%  <span class="rules">{<span class="rule"><span class="attribute">background</span>:<span class="value"> blue</span></span>; <span class="rule"><span class="attribute">left</span>:<span class="value"><span class="number">200px</span></span></span>; <span class="rule"><span class="attribute">top</span>:<span class="value"><span class="number">200px</span></span></span>;}</span>
+    75%  <span class="rules">{<span class="rule"><span class="attribute">background</span>:<span class="value"> green</span></span>; <span class="rule"><span class="attribute">left</span>:<span class="value"><span class="number">0px</span></span></span>; <span class="rule"><span class="attribute">top</span>:<span class="value"><span class="number">200px</span></span></span>;}</span>
+    100% <span class="rules">{<span class="rule"><span class="attribute">background</span>:<span class="value"> red</span></span>; <span class="rule"><span class="attribute">left</span>:<span class="value"><span class="number">0px</span></span></span>; <span class="rule"><span class="attribute">top</span>:<span class="value"><span class="number">0px</span></span></span>;}</span>
+}
+</code></pre><p>刚才我们实际上进行了两部分行为，一部分是定义动画过程，一个是让元素应用动画效果。下面简单再完善一下如何使用动画：</p>
+<pre><code><span class="attribute">animation</span>:name duration function delay iteration-count direction 
+<span class="comment">//当给元素定义这个属性的时候，就是要对这个元素使用动画效果了，这个属性包括6个值，分别表示：</span>
+动画的名称（对应<span class="variable">@keyframes</span>），
+动画的执行时间（这个时间代表动画执行的总时间，而不是阶段时间，单位是毫秒），
+动画的速度曲线（匀速linear、低速-加快-变慢ease、以低速开始ease-in、以低速结束ease-out、以低速开始和结束ease-in-out），
+规定动画开始之前的延迟时间，
+规定该动画播放的次数（数字n，或者无限次播放infinite）
+</code></pre><p>掌握了这些之后，我们就可以为我们之前的html添加动画效果了，首先我们定义一下动画过程。</p>
+<pre><code><span class="at_rule">@<span class="keyword">-webkit-keyframes</span> ballon</span>{
+    <span class="tag">from</span><span class="rules">{
+        <span class="rule"><span class="attribute">-weblit-transform</span>:<span class="value"><span class="function">rotate</span>(-<span class="number">30deg</span>)</span></span>;
+        <span class="rule"><span class="attribute">-weblit-transform-origin</span>:<span class="value">center bottom</span></span>;
+    }</span>
+    <span class="tag">to</span><span class="rules">{
+        <span class="rule"><span class="attribute">-weblit-transform</span>:<span class="value"><span class="function">rotate</span>(<span class="number">30deg</span>)</span></span>;
+        <span class="rule"><span class="attribute">-weblit-transform-origin</span>:<span class="value">center bottom</span></span>;
+    }</span>
+}
+</code></pre><p>动画过程定义好了之后，我们就可以使用了：</p>
+<pre><code><span class="class">.ballon</span>{
+    <span class="attribute">-webkit-animation</span>:ballon <span class="number">2s</span> linear <span class="number">0s</span> infinite alternate
+}
+</code></pre><p>这样一个简单的气球摆动的动画就完成了，复杂的动画也都是通简单的动画组合而成的。在使用css3写动画的时候，注意要先写出静态的页面，通常的动画效果只是在页面加载完成后执行一次，这种情况下我们需要先完成动画页面的最终样式的布局，在此基础上添加动画效果（因为<code>动画执行完成之后会回到它的默认状态</code>）。</p>
+<p>在制作复杂的组合动画，或者单次动画的时候，尽量使用百分比方式定义动画，这样更容易掌控整个动画过程；当动画的行为比较简单且需要重复展示的时候（比如云彩的飘动等），可以使用<code>from...to</code>的方式定义动画。</p>
+<hr>
+<p>还有一个小技巧，之前我们介绍过动画开始之前可以设置延迟时间，但是当动画行为过多的时候，延迟时间会变得复杂且难以管理，这时我们可以使用另一种方式，我们首先要计算出页面所有动画执行完成所需要的时间，假设是10s，其中某一个动画在<code>5s</code>的时候才开始执行，我们可以在使用这个动画的时候就规定这个动画的时间为<code>10s</code>，但是在<code>前50%</code>我们什么都不去做，这样就实现了延迟的效果了。</p>
 
       
     </div>
@@ -884,79 +1105,9 @@ A.prototype = {x:<span class="number">3</span>};
 
 
   
-    <article id="post-前端工程构建···YEOMAN" class="article article-type-post" itemscope itemprop="blogPost">
-  
-    <div class="article-meta">
-      <a href="/2015/10/15/前端工程构建···YEOMAN/" class="article-date">
-  	<time datetime="2015-10-15T03:56:16.000Z" itemprop="datePublished">2015-10-15</time>
-</a>
-    </div>
-  
-  <div class="article-inner">
-    
-      <input type="hidden" class="isFancy" />
-    
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/2015/10/15/前端工程构建···YEOMAN/">前端工程构建···YEOMAN</a>
-    </h1>
-  
-
-      </header>
-      
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-        <p>当我们想创建一个前端项目的时候，首先我们需要配置开发的环境，初始化目录结构，下载一些库和框架文件（如JQuery，BootStrap），以及一些编译环境（就像Less），可能还要配置<a href="http://segmentfault.com/a/1190000000317146" target="_blank" rel="external">单元测试</a>框架,YEOMAN就可以帮我们做这一系列的繁琐工作，你需要做的只是敲几个命令，你熟悉的项目框架就已经搭建好了。</p>
-<p>YEOMAN包括三部分组成：YO、GRUNT(部署、预览、测试)、BOWER(包管理工具)。</p>
-<p>这里只分享一些简单的用法，至于高大上的东西还是要大家一起研究学习。</p>
-<p>首先你需要做的就是下载安装<a href="https://nodejs.org/" target="_blank" rel="external">Node.js</a>，安装好之后我们还需要安装一下<a href="http://bower.io/" target="_blank" rel="external">bower</a>:</p>
-<pre><code>-<span class="ruby"><span class="variable">$ </span>npm install -g bower</span>
-</code></pre><h3 id="安装YEOMAN">安装YEOMAN</h3><pre><code>-<span class="ruby"><span class="variable">$ </span>npm install -g yo</span>
-</code></pre><p>安装完之后，输入yo，如果出现了下面这个图片，证明你已经成功了！</p>
-<p><img src="http://7xivia.com1.z0.glb.clouddn.com/yeoman2.jpg" alt="图片"></p>
-<p>这是我们就可以使用YEOMAN来创建我们的项目了，如果你喜欢使用Angular(其他的也是一样的)，首先你需要选择<code>Install a generator</code>来安装你的框架，之后输入你的框架名称，YEOMAN会替我们寻找我们想要的东西。</p>
-<p>安装好之后在<code>Run a generator</code>下面选择你的框架（别忘了先创建一个项目文件夹，cd到里面）：</p>
-<p><img src="http://7xivia.com1.z0.glb.clouddn.com/yeoman.jpg" alt="图片"></p>
-<p>YEOMAN就会为我们创建好我们的项目了。YEOMAN在初始化项目之后会自动执行<code>npm install</code>和<code>bower install</code>下载依赖文件，并不需要我们手动执行。</p>
-<p><img src="http://7xivia.com1.z0.glb.clouddn.com/yeoman3.png" alt="图片"></p>
-<p>我们的项目文件会出现在app这个目录之下，你会发现，这个文件夹下面的东西就是我们熟悉的了。</p>
-<p><img src="http://7xivia.com1.z0.glb.clouddn.com/yeoman4.png" alt="图片"></p>
-<p>接下来我们就可以在这个基础上开发我们的项目了。</p>
-
-      
-    </div>
-    
-    <div class="article-info article-info-index">
-      
-      
-	<div class="article-tag tagcloud">
-		<ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/脚手架工具/">脚手架工具</a></li></ul>
-	</div>
-
-      
-
-      
-      <div class="clearfix"></div>
-    </div>
-    
-  </div>
-  
-</article>
-
-
-
-
-
-
-
-  
   
     <nav id="page-nav">
-      <a class="extend prev" rel="prev" href="/page/2/">&laquo; Prev</a><a class="page-number" href="/">1</a><a class="page-number" href="/page/2/">2</a><span class="page-number current">3</span><a class="page-number" href="/page/4/">4</a><a class="extend next" rel="next" href="/page/4/">Next &raquo;</a>
+      <a class="extend prev" rel="prev" href="/page/2/">&laquo; Prev</a><a class="page-number" href="/">1</a><a class="page-number" href="/page/2/">2</a><span class="page-number current">3</span>
     </nav>
   
 </div>
@@ -964,7 +1115,7 @@ A.prototype = {x:<span class="number">3</span>};
   <div class="outer">
     <div id="footer-info">
     	<div class="footer-left">
-    		&copy; 2015 惜安
+    		&copy; 2016 惜安
     	</div>
       	<div class="footer-right">
       		<a href="http://hexo.io/" target="_blank">Hexo</a>  Theme <a href="https://github.com/litten/hexo-theme-yilia" target="_blank">Yilia</a> by Litten

@@ -1,0 +1,413 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  
+  <title>js操作字符串、数组的常用方法总结 | 我想养只小金毛</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+  <meta name="description" content="对于像我这种记忆力不是很好的人，这样的整理还是很有必要的，虽然是很常用的方法，有时候也会因为强迫症要验证一次，在这里总结一下，方便以后查看。
+字符串在Javascript中字符串是固定不变的，也就是说，当使用某种方法处理字符串的时候，类似于replace()等，会返回一个新的字符串，也就是说字符串是不能被修改的。
+可以使用“+”号将两个字符串进行连接：
+msg = &quot;hello,&quot;+&quot;word&quot;;">
+<meta property="og:type" content="article">
+<meta property="og:title" content="js操作字符串、数组的常用方法总结">
+<meta property="og:url" content="http://shijunwei.github.io/2015/10/31/js操作字符串、数组的常用方法总结/index.html">
+<meta property="og:site_name" content="我想养只小金毛">
+<meta property="og:description" content="对于像我这种记忆力不是很好的人，这样的整理还是很有必要的，虽然是很常用的方法，有时候也会因为强迫症要验证一次，在这里总结一下，方便以后查看。
+字符串在Javascript中字符串是固定不变的，也就是说，当使用某种方法处理字符串的时候，类似于replace()等，会返回一个新的字符串，也就是说字符串是不能被修改的。
+可以使用“+”号将两个字符串进行连接：
+msg = &quot;hello,&quot;+&quot;word&quot;;">
+<meta property="og:updated_time" content="2015-10-30T16:25:13.606Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="js操作字符串、数组的常用方法总结">
+<meta name="twitter:description" content="对于像我这种记忆力不是很好的人，这样的整理还是很有必要的，虽然是很常用的方法，有时候也会因为强迫症要验证一次，在这里总结一下，方便以后查看。
+字符串在Javascript中字符串是固定不变的，也就是说，当使用某种方法处理字符串的时候，类似于replace()等，会返回一个新的字符串，也就是说字符串是不能被修改的。
+可以使用“+”号将两个字符串进行连接：
+msg = &quot;hello,&quot;+&quot;word&quot;;">
+  
+    <link rel="alternative" href="/atom.xml" title="我想养只小金毛" type="application/atom+xml">
+  
+  
+    <link rel="icon" href="/favicon.png">
+  
+  <link rel="stylesheet" href="/css/style.css" type="text/css">
+</head>
+<body>
+  <div id="container">
+    <div class="left-col">
+    <div class="overlay"></div>
+<div class="intrude-less">
+	<header id="header" class="inner">
+		<a href="/" class="profilepic">
+			
+			<img lazy-src="/img/avator.png" class="js-avatar">
+			
+		</a>
+
+		<hgroup>
+		  <h1 class="header-author"><a href="/">惜安</a></h1>
+		</hgroup>
+
+		
+		<p class="header-subtitle">惜安</p>
+		
+
+		
+			<div class="switch-btn">
+				<div class="icon">
+					<div class="icon-ctn">
+						<div class="icon-wrap icon-house" data-idx="0">
+							<div class="birdhouse"></div>
+							<div class="birdhouse_holes"></div>
+						</div>
+						<div class="icon-wrap icon-ribbon hide" data-idx="1">
+							<div class="ribbon"></div>
+						</div>
+						
+						<div class="icon-wrap icon-link hide" data-idx="2">
+							<div class="loopback_l"></div>
+							<div class="loopback_r"></div>
+						</div>
+						
+						
+						<div class="icon-wrap icon-me hide" data-idx="3">
+							<div class="user"></div>
+							<div class="shoulder"></div>
+						</div>
+						
+					</div>
+					
+				</div>
+				<div class="tips-box hide">
+					<div class="tips-arrow"></div>
+					<ul class="tips-inner">
+						<li>菜单</li>
+						<li>标签</li>
+						
+						<li>友情链接</li>
+						
+						
+						<li>关于我</li>
+						
+					</ul>
+				</div>
+			</div>
+		
+
+		<div class="switch-area">
+			<div class="switch-wrap">
+				<section class="switch-part switch-part1">
+					<nav class="header-menu">
+						<ul>
+						
+							<li><a href="/">主页</a></li>
+				        
+							<li><a href="/archives">所有文章</a></li>
+				        
+						</ul>
+					</nav>
+					<nav class="header-nav">
+						<div class="social">
+							
+								<a class="github" target="_blank" href="/#" title="github">github</a>
+					        
+								<a class="weibo" target="_blank" href="http://weibo.com/u/3013104975" title="weibo">weibo</a>
+					        
+						</div>
+					</nav>
+				</section>
+				
+				
+				<section class="switch-part switch-part2">
+					<div class="widget tagcloud" id="js-tagcloud">
+						<a href="/tags/CSS/" style="font-size: 10px;">CSS</a> <a href="/tags/CSS3/" style="font-size: 16.67px;">CSS3</a> <a href="/tags/HTML5/" style="font-size: 10px;">HTML5</a> <a href="/tags/Python/" style="font-size: 10px;">Python</a> <a href="/tags/hexo/" style="font-size: 10px;">hexo</a> <a href="/tags/html/" style="font-size: 10px;">html</a> <a href="/tags/html5/" style="font-size: 10px;">html5</a> <a href="/tags/javascript/" style="font-size: 20px;">javascript</a> <a href="/tags/webApp/" style="font-size: 10px;">webApp</a> <a href="/tags/脚手架工具/" style="font-size: 13.33px;">脚手架工具</a>
+					</div>
+				</section>
+				
+				
+				
+				<section class="switch-part switch-part3">
+					<div id="js-friends">
+					
+			          <a target="_blank" class="main-nav-link switch-friends-link" href="http://surongxiang.github.io">五世三生</a>
+			        
+			          <a target="_blank" class="main-nav-link switch-friends-link" href="http://zhujun24.github.io/">朱俊</a>
+			        
+			        </div>
+				</section>
+				
+
+				
+				
+				<section class="switch-part switch-part4">
+				
+					<div id="js-aboutme">伸手摘星，未必如愿，但不会脏了你的手。</div>
+				</section>
+				
+			</div>
+		</div>
+	</header>				
+</div>
+    </div>
+    <div class="mid-col">
+      <nav id="mobile-nav">
+  	<div class="overlay">
+  		<div class="slider-trigger"></div>
+  		<h1 class="header-author js-mobile-header hide">惜安</h1>
+  	</div>
+	<div class="intrude-less">
+		<header id="header" class="inner">
+			<div class="profilepic">
+				<img lazy-src="/img/avator.png" class="js-avatar">
+			</div>
+			<hgroup>
+			  <h1 class="header-author">惜安</h1>
+			</hgroup>
+			
+			<p class="header-subtitle">惜安</p>
+			
+			<nav class="header-menu">
+				<ul>
+				
+					<li><a href="/">主页</a></li>
+		        
+					<li><a href="/archives">所有文章</a></li>
+		        
+		        <div class="clearfix"></div>
+				</ul>
+			</nav>
+			<nav class="header-nav">
+				<div class="social">
+					
+						<a class="github" target="_blank" href="/#" title="github">github</a>
+			        
+						<a class="weibo" target="_blank" href="http://weibo.com/u/3013104975" title="weibo">weibo</a>
+			        
+				</div>
+			</nav>
+		</header>				
+	</div>
+</nav>
+      <div class="body-wrap"><article id="post-js操作字符串、数组的常用方法总结" class="article article-type-post" itemscope itemprop="blogPost">
+  
+    <div class="article-meta">
+      <a href="/2015/10/31/js操作字符串、数组的常用方法总结/" class="article-date">
+  	<time datetime="2015-10-30T16:25:13.606Z" itemprop="datePublished">2015-10-31</time>
+</a>
+    </div>
+  
+  <div class="article-inner">
+    
+      <input type="hidden" class="isFancy" />
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 class="article-title" itemprop="name">
+      js操作字符串、数组的常用方法总结
+    </h1>
+  
+
+      </header>
+      
+      <div class="article-info article-info-post">
+        
+	<div class="article-tag tagcloud">
+		<ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/javascript/">javascript</a></li></ul>
+	</div>
+
+        
+
+        <div class="clearfix"></div>
+      </div>
+      
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <p>对于像我这种记忆力不是很好的人，这样的整理还是很有必要的，虽然是很常用的方法，有时候也会因为强迫症要验证一次，在这里总结一下，方便以后查看。</p>
+<h3 id="字符串">字符串</h3><p>在Javascript中字符串是固定不变的，也就是说，当使用某种方法处理字符串的时候，类似于replace()等，会返回一个新的字符串，也就是说字符串是不能被修改的。</p>
+<p>可以使用“+”号将两个字符串进行连接：</p>
+<pre><code>msg = <span class="string">"hello,"</span>+<span class="string">"word"</span>;  <span class="comment">//生成字符串hello，word</span>
+</code></pre><p>字符串具有length属性，可以使用charAt()方法配合length属性返回字符串某个位置上的元素：</p>
+<pre><code>var s = <span class="string">"hello,word"</span>;
+s.charAt<span class="comment">(0)</span>        <span class="comment">//返回 h</span>
+s.charAt<span class="comment">(s.length-1)</span>    <span class="comment">//        返回 d</span>
+</code></pre><p>当需要根据索引截取一个字符串的时候，可以使用substring()方法或者slice()方法：</p>
+<pre><code>s.<span class="function"><span class="title">substring</span><span class="params">(<span class="number">1</span>,<span class="number">4</span>)</span></span>        <span class="comment">//返回索引位置为1、2、3的字符组成的字符串‘ell’；</span>
+s.<span class="function"><span class="title">slice</span><span class="params">(<span class="number">1</span>,<span class="number">4</span>)</span></span>            <span class="comment">//同上返回‘ell’</span>
+s.<span class="function"><span class="title">slice</span><span class="params">(<span class="number">0</span>)</span></span>                <span class="comment">//返回整个字符串‘hello word’</span>
+s.<span class="function"><span class="title">slice</span><span class="params">(-<span class="number">3</span>)</span></span>                <span class="comment">//从末尾开始返回后三个字符‘ord’</span>
+s.<span class="function"><span class="title">clice</span><span class="params">(<span class="number">0</span>,-<span class="number">3</span>)</span></span>            <span class="comment">//返回‘ellow,w’</span>
+<span class="comment">//负值的索引，可以理解为从最后的位置开始算起，但是并不存在‘-0’</span>
+</code></pre><p>当需要查找摸个字符在字符串中的位置的时候，可以使用indexOf()方法，返回该字符的索引位置：</p>
+<pre><code>s.indexOf(<span class="string">"o"</span>);            <span class="comment">//返回“4”，字符“o”首次出现位置的索引；</span>
+s.lastIndexOf(<span class="string">"o"</span>)        <span class="comment">//这是最后一次出现“o”的位置，返回7；</span>
+s.indexOf(<span class="string">"1"</span>,<span class="number">3</span>);        <span class="comment">//这是返回在位置3以及3以后首次出现“o”的索引，返回4；</span>
+</code></pre><p>可以使用split()方法将字符串分割成数组：</p>
+<pre><code>s.<span class="function"><span class="title">split</span><span class="params">(<span class="string">","</span>)</span></span>            <span class="comment">//根据“，”这一标识符，将字符串分割成一个数组，返回的数组为['hello','word']，值得注意的是这里面已经不包含“，”这个字符了。</span>
+</code></pre><p>同样，我们还可以使用replace()方法替换字符串中的某个字符：</p>
+<pre><code>s.<span class="keyword">replace</span>(<span class="string">"h"</span>,<span class="string">"H"</span>);        <span class="comment">//返回“Hello,word”，但是如果直接用“h”，作为标示，这个方法只会替换一次，也就是说如果字符串中有许多的“h”，也只会替换一次。想要全部替换可以选择使用正则表达式；</span>
+s.<span class="keyword">replace</span>(/\<span class="keyword">l</span>/<span class="keyword">g</span>,<span class="string">"L"</span>)；    <span class="comment">//这样就可以换掉所有的“l”；</span>
+s.toUpperCase()；        <span class="comment">//返回“HELLO,WORD”;</span>
+</code></pre><h3 id="数组">数组</h3><p>可以使用push()方法，向一个数组的末尾添加元素：</p>
+<pre><code><span class="atom">var</span> <span class="atom">arr</span> = [<span class="string">'heool'</span>,<span class="string">'word'</span>];
+<span class="atom">arr</span>.<span class="atom">push</span>(<span class="string">'!'</span>);        //<span class="atom">arr</span>=[<span class="string">'heool'</span>,<span class="string">'word'</span>,<span class="string">'!'</span>];
+</code></pre><p>对于数组的遍历，有两种方法，一种是根据数组的length属性，利用for循环进行遍历；另一种可以使用for/in循环，</p>
+<pre><code><span class="keyword">for</span>(<span class="keyword">var</span> index <span class="keyword">in</span> array){
+    <span class="keyword">var</span> <span class="keyword">value</span>  = array[index];
+}
+</code></pre><p>数组也可以转换成字符串，使用join()方法，可以将数组转换成字符串：</p>
+<pre><code><span class="keyword">var</span> arr = [<span class="string">'1'</span>,<span class="string">'2'</span>,<span class="string">'3'</span>];
+arr.<span class="keyword">join</span>(<span class="string">","</span>);        <span class="comment">//返回“1，2，3”;</span>
+</code></pre><p>sort()方法可以对数组进行排序，当不传入参数时，数组元素以字母表顺序排序：</p>
+<pre><code><span class="keyword">var</span> arr = [<span class="string">'banana'</span>,<span class="string">'cherry'</span>,<span class="string">'apple'</span>];
+arr.sort();
+<span class="keyword">var</span> str = a.join(<span class="string">","</span>)；    <span class="comment">//str的值是“apple,banana,cherry”；</span>
+<span class="comment">//如果数组中包含undefined，sort方法会把它放在数组的尾部。</span>
+<span class="comment">//sort方法把数组中的每个对象转换成字符串，然后进行比较，那么 11 会被放在 2 的前面。所以我们需要传递一个函数给sort用来比较纯数字的大小，这个函数有两个参数，排序的规则是根据这个函数的返回值，返回值大于零，第一个参数在后，返回值小于零，第一个参数在前，返回值等于零，顺序无所谓。</span>
+a.sort(<span class="function"><span class="keyword">function</span><span class="params">(a,b)</span></span>{<span class="keyword">return</span> a-b;});
+</code></pre><p>连接两个数组可以使用concat(),这个方法返回一个连接好的新数组：</p>
+<pre><code><span class="keyword">var</span> a = [<span class="number">1</span>,<span class="number">2</span>,<span class="number">3</span>];
+a.<span class="keyword">concat</span>(<span class="number">4</span>,<span class="number">5</span>);        <span class="comment">//返回[1,2,3,4,5];</span>
+a.<span class="keyword">concat</span>([<span class="number">4</span>,<span class="number">5</span>]);    <span class="comment">//返回[1,2,3,4,5];</span>
+</code></pre><p>数组也有slice()方法，slice()方法不会修改原来的数组，而是返回一个新的数组：</p>
+<pre><code>var a = [<span class="number">1</span>,<span class="number">2</span>,<span class="number">3</span>,<span class="number">4</span>,<span class="number">5</span>];
+a.slice<span class="comment">(0,3)</span>;    <span class="comment">//返回[1,2,3];</span>
+a.slice<span class="comment">(3)</span>;        <span class="comment">//返回[4,5];</span>
+a.slice<span class="comment">(1,-1)</span>;    <span class="comment">//返回[2,3,4];参数-1指定了最后一个元素</span>
+a.slice<span class="comment">(-3,-2)</span>;    <span class="comment">//返回[3];</span>
+</code></pre><p>slice()能够从数组中删除元素、插入元素到数组中或者同时完成这两件事情，var a = [1,2,3,4,5,6,7,8];a.splice(4)，当只有一个参数的时候，从数组的起点位置开始到数组结尾的所有元素都会被删除，这个方法会返回被删除的[5,6,7,8],这时数组a的值是[1,2,3,4]，a.splice(1,2);返回[2,3]，现在a的值是[1,4]，a.splice(1,0,’a’,’b’);    //返回[‘a’,’b’]，现在a的值是[1,’a’,’b’,4];</p>
+<p>向数组中添加或者删除元素，还有push(),pop(),unshift(),shift()四个方法，分别是想数组末尾添加元素，从数组末尾删除元素，在数组头添加一个或多个元素，shift()删除数组的第一个元素并返回。</p>
+
+      
+    </div>
+    
+  </div>
+  
+    
+<nav id="article-nav">
+  
+    <a href="/2015/10/31/js对象（1）/" id="article-nav-newer" class="article-nav-link-wrap">
+      <strong class="article-nav-caption"><</strong>
+      <div class="article-nav-title">
+        
+          js对象（1）
+        
+      </div>
+    </a>
+  
+  
+    <a href="/2015/10/30/《javascript面向对象精要》总结(一)/" id="article-nav-older" class="article-nav-link-wrap">
+      <div class="article-nav-title">《javascript面向对象精要》总结（一）</div>
+      <strong class="article-nav-caption">></strong>
+    </a>
+  
+</nav>
+
+  
+</article>
+
+
+<div class="share">
+	<!-- JiaThis Button BEGIN -->
+	<div class="jiathis_style">
+		<span class="jiathis_txt">分享到：</span>
+		<a class="jiathis_button_tsina"></a>
+		<a class="jiathis_button_cqq"></a>
+		<a class="jiathis_button_douban"></a>
+		<a class="jiathis_button_weixin"></a>
+		<a class="jiathis_button_tumblr"></a>
+		<a href="http://www.jiathis.com/share" class="jiathis jiathis_txt jtico jtico_jiathis" target="_blank"></a>
+	</div>
+	<script type="text/javascript" src="http://v3.jiathis.com/code/jia.js?uid=1405949716054953" charset="utf-8"></script>
+	<!-- JiaThis Button END -->
+</div>
+
+
+
+<div class="duoshuo">
+	<!-- 多说评论框 start -->
+	<div class="ds-thread" data-thread-key="js操作字符串、数组的常用方法总结" data-title="js操作字符串、数组的常用方法总结" data-url="http://shijunwei.github.io/2015/10/31/js操作字符串、数组的常用方法总结/"></div>
+	<!-- 多说评论框 end -->
+	<!-- 多说公共JS代码 start (一个网页只需插入一次) -->
+	<script type="text/javascript">
+	var duoshuoQuery = {short_name:"true"};
+	(function() {
+		var ds = document.createElement('script');
+		ds.type = 'text/javascript';ds.async = true;
+		ds.src = (document.location.protocol == 'https:' ? 'https:' : 'http:') + '//static.duoshuo.com/embed.js';
+		ds.charset = 'UTF-8';
+		(document.getElementsByTagName('head')[0] 
+		 || document.getElementsByTagName('body')[0]).appendChild(ds);
+	})();
+	</script>
+	<!-- 多说公共JS代码 end -->
+</div>
+
+
+
+
+</div>
+      <footer id="footer">
+  <div class="outer">
+    <div id="footer-info">
+    	<div class="footer-left">
+    		&copy; 2016 惜安
+    	</div>
+      	<div class="footer-right">
+      		<a href="http://hexo.io/" target="_blank">Hexo</a>  Theme <a href="https://github.com/litten/hexo-theme-yilia" target="_blank">Yilia</a> by Litten
+      	</div>
+    </div>
+  </div>
+</footer>
+    </div>
+    
+  <link rel="stylesheet" href="/fancybox/jquery.fancybox.css" type="text/css">
+
+
+<script>
+	var yiliaConfig = {
+		fancybox: true,
+		mathjax: true,
+		animate: true,
+		isHome: false,
+		isPost: true,
+		isArchive: false,
+		isTag: false,
+		isCategory: false,
+		open_in_new: true
+	}
+</script>
+<script src="http://7.url.cn/edu/jslib/comb/require-2.1.6,jquery-1.9.1.min.js" type="text/javascript"></script>
+<script src="/js/main.js" type="text/javascript"></script>
+
+
+
+
+
+
+<script type="text/x-mathjax-config">
+MathJax.Hub.Config({
+    tex2jax: {
+        inlineMath: [ ['$','$'], ["\\(","\\)"]  ],
+        processEscapes: true,
+        skipTags: ['script', 'noscript', 'style', 'textarea', 'pre', 'code']
+    }
+});
+
+MathJax.Hub.Queue(function() {
+    var all = MathJax.Hub.getAllJax(), i;
+    for(i=0; i < all.length; i += 1) {
+        all[i].SourceElement().parentNode.className += ' has-jax';                 
+    }       
+});
+</script>
+
+<script type="text/javascript" src="http://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML">
+</script>
+
+
+  </div>
+</body>
+</html>

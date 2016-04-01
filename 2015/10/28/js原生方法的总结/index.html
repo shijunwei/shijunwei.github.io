@@ -1,0 +1,407 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  
+  <title>js原生方法的总结 | 我想养只小金毛</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+  <meta name="description" content="Math对象
+Math.random():产生一个0~1之间的随机数。例：0.39049036731012166。
+Math.floor(x):x可以是任意一个数值或者表达式，返回值是小于等于x，且最接近x的整数。例：Math.floor(Math.random())，返回0。
+Math.ceil(x):对数字向上取整，返回大于或等于x的最接近的整数。
+Math.round(x):对数字进行四舍五">
+<meta property="og:type" content="article">
+<meta property="og:title" content="js原生方法的总结">
+<meta property="og:url" content="http://shijunwei.github.io/2015/10/28/js原生方法的总结/index.html">
+<meta property="og:site_name" content="我想养只小金毛">
+<meta property="og:description" content="Math对象
+Math.random():产生一个0~1之间的随机数。例：0.39049036731012166。
+Math.floor(x):x可以是任意一个数值或者表达式，返回值是小于等于x，且最接近x的整数。例：Math.floor(Math.random())，返回0。
+Math.ceil(x):对数字向上取整，返回大于或等于x的最接近的整数。
+Math.round(x):对数字进行四舍五">
+<meta property="og:updated_time" content="2015-10-28T13:34:05.233Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="js原生方法的总结">
+<meta name="twitter:description" content="Math对象
+Math.random():产生一个0~1之间的随机数。例：0.39049036731012166。
+Math.floor(x):x可以是任意一个数值或者表达式，返回值是小于等于x，且最接近x的整数。例：Math.floor(Math.random())，返回0。
+Math.ceil(x):对数字向上取整，返回大于或等于x的最接近的整数。
+Math.round(x):对数字进行四舍五">
+  
+    <link rel="alternative" href="/atom.xml" title="我想养只小金毛" type="application/atom+xml">
+  
+  
+    <link rel="icon" href="/favicon.png">
+  
+  <link rel="stylesheet" href="/css/style.css" type="text/css">
+</head>
+<body>
+  <div id="container">
+    <div class="left-col">
+    <div class="overlay"></div>
+<div class="intrude-less">
+	<header id="header" class="inner">
+		<a href="/" class="profilepic">
+			
+			<img lazy-src="/img/avator.png" class="js-avatar">
+			
+		</a>
+
+		<hgroup>
+		  <h1 class="header-author"><a href="/">惜安</a></h1>
+		</hgroup>
+
+		
+		<p class="header-subtitle">惜安</p>
+		
+
+		
+			<div class="switch-btn">
+				<div class="icon">
+					<div class="icon-ctn">
+						<div class="icon-wrap icon-house" data-idx="0">
+							<div class="birdhouse"></div>
+							<div class="birdhouse_holes"></div>
+						</div>
+						<div class="icon-wrap icon-ribbon hide" data-idx="1">
+							<div class="ribbon"></div>
+						</div>
+						
+						<div class="icon-wrap icon-link hide" data-idx="2">
+							<div class="loopback_l"></div>
+							<div class="loopback_r"></div>
+						</div>
+						
+						
+						<div class="icon-wrap icon-me hide" data-idx="3">
+							<div class="user"></div>
+							<div class="shoulder"></div>
+						</div>
+						
+					</div>
+					
+				</div>
+				<div class="tips-box hide">
+					<div class="tips-arrow"></div>
+					<ul class="tips-inner">
+						<li>菜单</li>
+						<li>标签</li>
+						
+						<li>友情链接</li>
+						
+						
+						<li>关于我</li>
+						
+					</ul>
+				</div>
+			</div>
+		
+
+		<div class="switch-area">
+			<div class="switch-wrap">
+				<section class="switch-part switch-part1">
+					<nav class="header-menu">
+						<ul>
+						
+							<li><a href="/">主页</a></li>
+				        
+							<li><a href="/archives">所有文章</a></li>
+				        
+						</ul>
+					</nav>
+					<nav class="header-nav">
+						<div class="social">
+							
+								<a class="github" target="_blank" href="/#" title="github">github</a>
+					        
+								<a class="weibo" target="_blank" href="http://weibo.com/u/3013104975" title="weibo">weibo</a>
+					        
+						</div>
+					</nav>
+				</section>
+				
+				
+				<section class="switch-part switch-part2">
+					<div class="widget tagcloud" id="js-tagcloud">
+						<a href="/tags/CSS/" style="font-size: 10px;">CSS</a> <a href="/tags/CSS3/" style="font-size: 16.67px;">CSS3</a> <a href="/tags/HTML5/" style="font-size: 10px;">HTML5</a> <a href="/tags/Python/" style="font-size: 10px;">Python</a> <a href="/tags/hexo/" style="font-size: 10px;">hexo</a> <a href="/tags/html/" style="font-size: 10px;">html</a> <a href="/tags/html5/" style="font-size: 10px;">html5</a> <a href="/tags/javascript/" style="font-size: 20px;">javascript</a> <a href="/tags/webApp/" style="font-size: 10px;">webApp</a> <a href="/tags/脚手架工具/" style="font-size: 13.33px;">脚手架工具</a>
+					</div>
+				</section>
+				
+				
+				
+				<section class="switch-part switch-part3">
+					<div id="js-friends">
+					
+			          <a target="_blank" class="main-nav-link switch-friends-link" href="http://surongxiang.github.io">五世三生</a>
+			        
+			          <a target="_blank" class="main-nav-link switch-friends-link" href="http://zhujun24.github.io/">朱俊</a>
+			        
+			        </div>
+				</section>
+				
+
+				
+				
+				<section class="switch-part switch-part4">
+				
+					<div id="js-aboutme">伸手摘星，未必如愿，但不会脏了你的手。</div>
+				</section>
+				
+			</div>
+		</div>
+	</header>				
+</div>
+    </div>
+    <div class="mid-col">
+      <nav id="mobile-nav">
+  	<div class="overlay">
+  		<div class="slider-trigger"></div>
+  		<h1 class="header-author js-mobile-header hide">惜安</h1>
+  	</div>
+	<div class="intrude-less">
+		<header id="header" class="inner">
+			<div class="profilepic">
+				<img lazy-src="/img/avator.png" class="js-avatar">
+			</div>
+			<hgroup>
+			  <h1 class="header-author">惜安</h1>
+			</hgroup>
+			
+			<p class="header-subtitle">惜安</p>
+			
+			<nav class="header-menu">
+				<ul>
+				
+					<li><a href="/">主页</a></li>
+		        
+					<li><a href="/archives">所有文章</a></li>
+		        
+		        <div class="clearfix"></div>
+				</ul>
+			</nav>
+			<nav class="header-nav">
+				<div class="social">
+					
+						<a class="github" target="_blank" href="/#" title="github">github</a>
+			        
+						<a class="weibo" target="_blank" href="http://weibo.com/u/3013104975" title="weibo">weibo</a>
+			        
+				</div>
+			</nav>
+		</header>				
+	</div>
+</nav>
+      <div class="body-wrap"><article id="post-js原生方法的总结" class="article article-type-post" itemscope itemprop="blogPost">
+  
+    <div class="article-meta">
+      <a href="/2015/10/28/js原生方法的总结/" class="article-date">
+  	<time datetime="2015-10-28T13:34:05.233Z" itemprop="datePublished">2015-10-28</time>
+</a>
+    </div>
+  
+  <div class="article-inner">
+    
+      <input type="hidden" class="isFancy" />
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 class="article-title" itemprop="name">
+      js原生方法的总结
+    </h1>
+  
+
+      </header>
+      
+      <div class="article-info article-info-post">
+        
+	<div class="article-tag tagcloud">
+		<ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/javascript/">javascript</a></li></ul>
+	</div>
+
+        
+
+        <div class="clearfix"></div>
+      </div>
+      
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <h3 id="Math对象">Math对象</h3><ol>
+<li>Math.random():产生一个0~1之间的随机数。例：<code>0.39049036731012166</code>。</li>
+<li>Math.floor(x):x可以是任意一个数值或者表达式，返回值是小于等于x，且最接近x的整数。例：<code>Math.floor(Math.random())，返回0</code>。</li>
+<li>Math.ceil(x):对数字向上取整，返回大于或等于x的最接近的整数。</li>
+<li>Math.round(x):对数字进行四舍五入。</li>
+<li>Math.pow(x,y):计算x的y次方，若结果为虚数或负数则返回NaN。，若计算结果过大，返回Infinity。</li>
+<li>Math.sqrt(x):计算x的平方根。若x小于0则返回NaN。</li>
+</ol>
+<h3 id="Number方法">Number方法</h3><p>Number()方法将对象的值转化为数字：</p>
+<pre><code><span class="literal">true</span> =&gt; <span class="number">1</span>; <span class="literal">false</span> =&gt; <span class="number">0</span>; <span class="string">"214214124"</span> =&gt; <span class="number">214214124</span>;
+<span class="keyword">new</span> <span class="type">Date</span><span class="literal">()</span> =&gt; <span class="number">1256657776588</span>;
+<span class="string">"214214124 123"</span> =&gt; <span class="type">NaN</span>
+</code></pre><h3 id="JSON对象">JSON对象</h3><ol>
+<li>JSON.stringify(o):用来序列化JavaScript对象，也就是将JavaScript对象转换为JSON字符串。</li>
+<li>JSON.parse(s):用来还原Json字符串为JavaScript对象。</li>
+</ol>
+<h3 id="Date对象">Date对象</h3><p>Date对象用来处理时间和日期，使用关键字<code>new</code>实例化Date对象。若</p>
+<p>new Date():以当前日期作为初始值，实例化一个Date对象。也可以用如下的方式实例化Date对象：</p>
+<pre><code><span class="comment">//根据某个时间点创建一个时间戳（实例化一个Date对象）</span>
+<span class="keyword">new</span> <span class="built_in">Date</span>(<span class="string">"month dd,yyyy hh:mm:ss"</span>);
+<span class="keyword">new</span> <span class="built_in">Date</span>(<span class="string">"month dd,yyyy"</span>);
+<span class="keyword">new</span> <span class="built_in">Date</span>(yyyy,mth,dd,hh,mm,ss);
+<span class="keyword">new</span> <span class="built_in">Date</span>(yyyy,mth,dd);
+
+<span class="keyword">new</span> <span class="built_in">Date</span>(ms);  <span class="comment">//需要创建的时间和GMT时间1970年1月1日之间相差的毫秒数。</span>
+</code></pre><p>常用get方法：</p>
+<pre><code><span class="function"><span class="title">getDate</span><span class="params">()</span></span> 从 Date 对象返回一个月中的某一天 (<span class="number">1</span> ~ <span class="number">31</span>)。
+<span class="function"><span class="title">getDay</span><span class="params">()</span></span> 从 Date 对象返回一周中的某一天 (<span class="number">0</span> ~ <span class="number">6</span>，分别对应周日~周一)。
+<span class="function"><span class="title">getMonth</span><span class="params">()</span></span> 从 Date 对象返回月份 (<span class="number">0</span> ~ <span class="number">11</span>)。
+<span class="function"><span class="title">getFullYear</span><span class="params">()</span></span> 从 Date 对象以四位数字返回年份。
+<span class="function"><span class="title">getHours</span><span class="params">()</span></span> 返回 Date 对象的小时 (<span class="number">0</span> ~ <span class="number">23</span>)。
+<span class="function"><span class="title">getMinutes</span><span class="params">()</span></span> 返回 Date 对象的分钟 (<span class="number">0</span> ~ <span class="number">59</span>)。
+<span class="function"><span class="title">getSeconds</span><span class="params">()</span></span> 返回 Date 对象的秒数 (<span class="number">0</span> ~ <span class="number">59</span>)。
+<span class="function"><span class="title">getMilliseconds</span><span class="params">()</span></span> 返回 Date 对象的毫秒(<span class="number">0</span> ~ <span class="number">999</span>)。
+<span class="function"><span class="title">getTime</span><span class="params">()</span></span> 返回 <span class="number">1970</span> 年 <span class="number">1</span> 月 <span class="number">1</span> 日至今的毫秒数。
+</code></pre><p>常用set方法(set方法会改变Date对象的时间点)：</p>
+<pre><code><span class="function"><span class="title">setDate</span><span class="params">()</span></span> 设置 Date 对象中月的某一天 (<span class="number">1</span> ~ <span class="number">31</span>)。
+<span class="function"><span class="title">setMonth</span><span class="params">()</span></span> 设置 Date 对象中月份 (<span class="number">0</span> ~ <span class="number">11</span>)。
+<span class="function"><span class="title">setFullYear</span><span class="params">()</span></span> 设置 Date 对象中的年份（四位数字）。
+<span class="function"><span class="title">setYear</span><span class="params">()</span></span> 请使用 <span class="function"><span class="title">setFullYear</span><span class="params">()</span></span> 方法代替。
+<span class="function"><span class="title">setHours</span><span class="params">()</span></span> 设置 Date 对象中的小时 (<span class="number">0</span> ~ <span class="number">23</span>)。
+<span class="function"><span class="title">setMinutes</span><span class="params">()</span></span> 设置 Date 对象中的分钟 (<span class="number">0</span> ~ <span class="number">59</span>)。
+<span class="function"><span class="title">setSeconds</span><span class="params">()</span></span> 设置 Date 对象中的秒钟 (<span class="number">0</span> ~ <span class="number">59</span>)。
+</code></pre><p>还有一些其他的方法：</p>
+<pre><code><span class="function"><span class="title">toString</span><span class="params">()</span></span> 把 Date 对象转换为字符串。
+</code></pre>
+      
+    </div>
+    
+  </div>
+  
+    
+<nav id="article-nav">
+  
+    <a href="/2015/10/28/meta/" id="article-nav-newer" class="article-nav-link-wrap">
+      <strong class="article-nav-caption"><</strong>
+      <div class="article-nav-title">
+        
+          meta&amp;viewport
+        
+      </div>
+    </a>
+  
+  
+    <a href="/2015/10/28/js继承学习笔记/" id="article-nav-older" class="article-nav-link-wrap">
+      <div class="article-nav-title">js继承学习笔记</div>
+      <strong class="article-nav-caption">></strong>
+    </a>
+  
+</nav>
+
+  
+</article>
+
+
+<div class="share">
+	<!-- JiaThis Button BEGIN -->
+	<div class="jiathis_style">
+		<span class="jiathis_txt">分享到：</span>
+		<a class="jiathis_button_tsina"></a>
+		<a class="jiathis_button_cqq"></a>
+		<a class="jiathis_button_douban"></a>
+		<a class="jiathis_button_weixin"></a>
+		<a class="jiathis_button_tumblr"></a>
+		<a href="http://www.jiathis.com/share" class="jiathis jiathis_txt jtico jtico_jiathis" target="_blank"></a>
+	</div>
+	<script type="text/javascript" src="http://v3.jiathis.com/code/jia.js?uid=1405949716054953" charset="utf-8"></script>
+	<!-- JiaThis Button END -->
+</div>
+
+
+
+<div class="duoshuo">
+	<!-- 多说评论框 start -->
+	<div class="ds-thread" data-thread-key="js原生方法的总结" data-title="js原生方法的总结" data-url="http://shijunwei.github.io/2015/10/28/js原生方法的总结/"></div>
+	<!-- 多说评论框 end -->
+	<!-- 多说公共JS代码 start (一个网页只需插入一次) -->
+	<script type="text/javascript">
+	var duoshuoQuery = {short_name:"true"};
+	(function() {
+		var ds = document.createElement('script');
+		ds.type = 'text/javascript';ds.async = true;
+		ds.src = (document.location.protocol == 'https:' ? 'https:' : 'http:') + '//static.duoshuo.com/embed.js';
+		ds.charset = 'UTF-8';
+		(document.getElementsByTagName('head')[0] 
+		 || document.getElementsByTagName('body')[0]).appendChild(ds);
+	})();
+	</script>
+	<!-- 多说公共JS代码 end -->
+</div>
+
+
+
+
+</div>
+      <footer id="footer">
+  <div class="outer">
+    <div id="footer-info">
+    	<div class="footer-left">
+    		&copy; 2016 惜安
+    	</div>
+      	<div class="footer-right">
+      		<a href="http://hexo.io/" target="_blank">Hexo</a>  Theme <a href="https://github.com/litten/hexo-theme-yilia" target="_blank">Yilia</a> by Litten
+      	</div>
+    </div>
+  </div>
+</footer>
+    </div>
+    
+  <link rel="stylesheet" href="/fancybox/jquery.fancybox.css" type="text/css">
+
+
+<script>
+	var yiliaConfig = {
+		fancybox: true,
+		mathjax: true,
+		animate: true,
+		isHome: false,
+		isPost: true,
+		isArchive: false,
+		isTag: false,
+		isCategory: false,
+		open_in_new: true
+	}
+</script>
+<script src="http://7.url.cn/edu/jslib/comb/require-2.1.6,jquery-1.9.1.min.js" type="text/javascript"></script>
+<script src="/js/main.js" type="text/javascript"></script>
+
+
+
+
+
+
+<script type="text/x-mathjax-config">
+MathJax.Hub.Config({
+    tex2jax: {
+        inlineMath: [ ['$','$'], ["\\(","\\)"]  ],
+        processEscapes: true,
+        skipTags: ['script', 'noscript', 'style', 'textarea', 'pre', 'code']
+    }
+});
+
+MathJax.Hub.Queue(function() {
+    var all = MathJax.Hub.getAllJax(), i;
+    for(i=0; i < all.length; i += 1) {
+        all[i].SourceElement().parentNode.className += ' has-jax';                 
+    }       
+});
+</script>
+
+<script type="text/javascript" src="http://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML">
+</script>
+
+
+  </div>
+</body>
+</html>

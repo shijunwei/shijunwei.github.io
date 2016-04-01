@@ -1,0 +1,439 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  
+  <title>css3动画 | 我想养只小金毛</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+  <meta name="description" content="在之前实习的时候玩过一些CSS3的动画效果，感觉还是挺有意思的（除了有点麻烦），分享一些学习经验，也是对自己学习的一个总结。
+css3中的主要模块有选择器，框模型，背景，边框（圆角和阴影很常用），文本效果（好像不是很常用），2D/3D转换，动画，多列布局（好像也不常用）等等。在css3的背景中，已经可以设置背景的尺寸了，也可以通过background-origin属性设置背景图片的定位区域。
+
+当">
+<meta property="og:type" content="article">
+<meta property="og:title" content="css3动画">
+<meta property="og:url" content="http://shijunwei.github.io/2015/10/28/css3动画/index.html">
+<meta property="og:site_name" content="我想养只小金毛">
+<meta property="og:description" content="在之前实习的时候玩过一些CSS3的动画效果，感觉还是挺有意思的（除了有点麻烦），分享一些学习经验，也是对自己学习的一个总结。
+css3中的主要模块有选择器，框模型，背景，边框（圆角和阴影很常用），文本效果（好像不是很常用），2D/3D转换，动画，多列布局（好像也不常用）等等。在css3的背景中，已经可以设置背景的尺寸了，也可以通过background-origin属性设置背景图片的定位区域。
+
+当">
+<meta property="og:image" content="http://www.w3school.com.cn/i/background-origin.gif">
+<meta property="og:image" content="http://7xivia.com1.z0.glb.clouddn.com/图片.png">
+<meta property="og:updated_time" content="2015-10-28T13:28:50.030Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="css3动画">
+<meta name="twitter:description" content="在之前实习的时候玩过一些CSS3的动画效果，感觉还是挺有意思的（除了有点麻烦），分享一些学习经验，也是对自己学习的一个总结。
+css3中的主要模块有选择器，框模型，背景，边框（圆角和阴影很常用），文本效果（好像不是很常用），2D/3D转换，动画，多列布局（好像也不常用）等等。在css3的背景中，已经可以设置背景的尺寸了，也可以通过background-origin属性设置背景图片的定位区域。
+
+当">
+  
+    <link rel="alternative" href="/atom.xml" title="我想养只小金毛" type="application/atom+xml">
+  
+  
+    <link rel="icon" href="/favicon.png">
+  
+  <link rel="stylesheet" href="/css/style.css" type="text/css">
+</head>
+<body>
+  <div id="container">
+    <div class="left-col">
+    <div class="overlay"></div>
+<div class="intrude-less">
+	<header id="header" class="inner">
+		<a href="/" class="profilepic">
+			
+			<img lazy-src="/img/avator.png" class="js-avatar">
+			
+		</a>
+
+		<hgroup>
+		  <h1 class="header-author"><a href="/">惜安</a></h1>
+		</hgroup>
+
+		
+		<p class="header-subtitle">惜安</p>
+		
+
+		
+			<div class="switch-btn">
+				<div class="icon">
+					<div class="icon-ctn">
+						<div class="icon-wrap icon-house" data-idx="0">
+							<div class="birdhouse"></div>
+							<div class="birdhouse_holes"></div>
+						</div>
+						<div class="icon-wrap icon-ribbon hide" data-idx="1">
+							<div class="ribbon"></div>
+						</div>
+						
+						<div class="icon-wrap icon-link hide" data-idx="2">
+							<div class="loopback_l"></div>
+							<div class="loopback_r"></div>
+						</div>
+						
+						
+						<div class="icon-wrap icon-me hide" data-idx="3">
+							<div class="user"></div>
+							<div class="shoulder"></div>
+						</div>
+						
+					</div>
+					
+				</div>
+				<div class="tips-box hide">
+					<div class="tips-arrow"></div>
+					<ul class="tips-inner">
+						<li>菜单</li>
+						<li>标签</li>
+						
+						<li>友情链接</li>
+						
+						
+						<li>关于我</li>
+						
+					</ul>
+				</div>
+			</div>
+		
+
+		<div class="switch-area">
+			<div class="switch-wrap">
+				<section class="switch-part switch-part1">
+					<nav class="header-menu">
+						<ul>
+						
+							<li><a href="/">主页</a></li>
+				        
+							<li><a href="/archives">所有文章</a></li>
+				        
+						</ul>
+					</nav>
+					<nav class="header-nav">
+						<div class="social">
+							
+								<a class="github" target="_blank" href="/#" title="github">github</a>
+					        
+								<a class="weibo" target="_blank" href="http://weibo.com/u/3013104975" title="weibo">weibo</a>
+					        
+						</div>
+					</nav>
+				</section>
+				
+				
+				<section class="switch-part switch-part2">
+					<div class="widget tagcloud" id="js-tagcloud">
+						<a href="/tags/CSS/" style="font-size: 10px;">CSS</a> <a href="/tags/CSS3/" style="font-size: 16.67px;">CSS3</a> <a href="/tags/HTML5/" style="font-size: 10px;">HTML5</a> <a href="/tags/Python/" style="font-size: 10px;">Python</a> <a href="/tags/hexo/" style="font-size: 10px;">hexo</a> <a href="/tags/html/" style="font-size: 10px;">html</a> <a href="/tags/html5/" style="font-size: 10px;">html5</a> <a href="/tags/javascript/" style="font-size: 20px;">javascript</a> <a href="/tags/webApp/" style="font-size: 10px;">webApp</a> <a href="/tags/脚手架工具/" style="font-size: 13.33px;">脚手架工具</a>
+					</div>
+				</section>
+				
+				
+				
+				<section class="switch-part switch-part3">
+					<div id="js-friends">
+					
+			          <a target="_blank" class="main-nav-link switch-friends-link" href="http://surongxiang.github.io">五世三生</a>
+			        
+			          <a target="_blank" class="main-nav-link switch-friends-link" href="http://zhujun24.github.io/">朱俊</a>
+			        
+			        </div>
+				</section>
+				
+
+				
+				
+				<section class="switch-part switch-part4">
+				
+					<div id="js-aboutme">伸手摘星，未必如愿，但不会脏了你的手。</div>
+				</section>
+				
+			</div>
+		</div>
+	</header>				
+</div>
+    </div>
+    <div class="mid-col">
+      <nav id="mobile-nav">
+  	<div class="overlay">
+  		<div class="slider-trigger"></div>
+  		<h1 class="header-author js-mobile-header hide">惜安</h1>
+  	</div>
+	<div class="intrude-less">
+		<header id="header" class="inner">
+			<div class="profilepic">
+				<img lazy-src="/img/avator.png" class="js-avatar">
+			</div>
+			<hgroup>
+			  <h1 class="header-author">惜安</h1>
+			</hgroup>
+			
+			<p class="header-subtitle">惜安</p>
+			
+			<nav class="header-menu">
+				<ul>
+				
+					<li><a href="/">主页</a></li>
+		        
+					<li><a href="/archives">所有文章</a></li>
+		        
+		        <div class="clearfix"></div>
+				</ul>
+			</nav>
+			<nav class="header-nav">
+				<div class="social">
+					
+						<a class="github" target="_blank" href="/#" title="github">github</a>
+			        
+						<a class="weibo" target="_blank" href="http://weibo.com/u/3013104975" title="weibo">weibo</a>
+			        
+				</div>
+			</nav>
+		</header>				
+	</div>
+</nav>
+      <div class="body-wrap"><article id="post-css3动画" class="article article-type-post" itemscope itemprop="blogPost">
+  
+    <div class="article-meta">
+      <a href="/2015/10/28/css3动画/" class="article-date">
+  	<time datetime="2015-10-28T13:28:50.030Z" itemprop="datePublished">2015-10-28</time>
+</a>
+    </div>
+  
+  <div class="article-inner">
+    
+      <input type="hidden" class="isFancy" />
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 class="article-title" itemprop="name">
+      css3动画
+    </h1>
+  
+
+      </header>
+      
+      <div class="article-info article-info-post">
+        
+	<div class="article-tag tagcloud">
+		<ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/CSS3/">CSS3</a></li></ul>
+	</div>
+
+        
+
+        <div class="clearfix"></div>
+      </div>
+      
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <p>在之前实习的时候玩过一些CSS3的动画效果，感觉还是挺有意思的（除了有点麻烦），分享一些学习经验，也是对自己学习的一个总结。</p>
+<p>css3中的主要模块有<code>选择器</code>，<code>框模型</code>，<code>背景</code>，<code>边框</code>（圆角和阴影很常用），<code>文本效果</code>（好像不是很常用），<code>2D/3D转换</code>，<code>动画</code>，<code>多列布局</code>（好像也不常用）等等。在css3的背景中，已经可以设置背景的尺寸了，也可以通过<code>background-origin</code>属性设置背景图片的定位区域。</p>
+<p><img src="http://www.w3school.com.cn/i/background-origin.gif" alt="图片"></p>
+<p>当我们分别设置了这些值得时候，背景就会出现在不同的位置了。下面我们就可以进入正题了。</p>
+<h3 id="2D转换">2D转换</h3><p>关于2D转换，顾名思义，转换是在2D平面上进行了，这里主要介绍以下三种常用方法：</p>
+<pre><code><span class="function">translate</span>()  <span class="comment">//移动元素</span>
+<span class="attribute">transform</span><span class="value">: <span class="function">translate</span>(<span class="number">50px</span>,<span class="number">100px</span>);</span>  <span class="comment">//把元素在x轴方向移动50px，在y轴方向移动100px；</span>
+<span class="function">rotate</span>()   <span class="comment">//旋转元素</span>
+<span class="attribute">transform</span><span class="value">: <span class="function">translate</span>(<span class="number">30deg</span>);</span>  <span class="comment">//把元素旋转30度（方向试一试就知道了）</span>
+<span class="function">scale</span>()   <span class="comment">//改变元素的尺寸</span>
+<span class="attribute">transform</span><span class="value">: <span class="function">scale</span>(<span class="number">0.5</span>,<span class="number">4</span>);</span>   <span class="comment">//把元素的宽改成原来的0.5，高改为原来的4倍</span>
+</code></pre><p>2D转换的方法在实现动画效果的时候是很常用的。</p>
+<h3 id="3D转换">3D转换</h3><pre><code><span class="function"><span class="title">rotateX</span><span class="params">()</span></span> <span class="comment">//将元素围绕其 X 轴以给定的度数进行旋转</span>
+<span class="function"><span class="title">rotateY</span><span class="params">()</span></span> <span class="comment">//将元素围绕其 Y 轴以给定的度数进行旋转</span>
+</code></pre><hr>
+<p>好了，了解了上面的基本方法，我们实现一个简单的动画效果。先看html代码<a href="http://7xivia.com1.z0.glb.clouddn.com/ballon.png" target="_blank" rel="external">图片下载</a>,<a href="http://7xivia.com1.z0.glb.clouddn.com/baby.png" target="_blank" rel="external">图片下载</a>：</p>
+<pre><code>&lt;img <span class="keyword">class</span>=<span class="string">"img baby"</span> src=<span class="string">"baby.png"</span>&gt;
+&lt;img <span class="keyword">class</span>=<span class="string">"img ballon"</span> src=<span class="string">"ballon.png"</span>&gt;
+</code></pre><p>CSS代码：</p>
+<pre><code><span class="class">.img</span><span class="rules">{
+    <span class="rule"><span class="attribute">position</span>:<span class="value">absolute</span></span>;
+    <span class="rule"><span class="attribute">left</span>:<span class="value"><span class="number">50px</span></span></span>;
+}</span>
+<span class="class">.baby</span><span class="rules">{
+    <span class="rule"><span class="attribute">top</span>:<span class="value"><span class="number">86px</span></span></span>;
+}</span>
+</code></pre><p>现在页面上应该就是下面这个样子了。</p>
+<p><img src="http://7xivia.com1.z0.glb.clouddn.com/图片.png" alt="图片"></p>
+<p>下面我们看一下怎么让这个图片动起来：</p>
+<h2 id="@keyframes规则">@keyframes规则</h2><p>想要了解css3动画，要先简单介绍一下<code>@keyframes</code>规则，它用于规定动画的过程，在<code>@keyframes</code>中规定某项 CSS 样式，就能创建由当前样式逐渐改为新样式的动画效果(<a href="http://caniuse.com/#search=keyframes" target="_blank" rel="external">@keyframes浏览器支持</a>)。比如这样：</p>
+<pre><code><span class="at_rule">@<span class="keyword">keyframes</span> changeBg
+</span>{
+<span class="tag">from</span> <span class="rules">{<span class="rule"><span class="attribute">background</span>:<span class="value"> red</span></span>;}</span>
+<span class="tag">to</span> <span class="rules">{<span class="rule"><span class="attribute">background</span>:<span class="value"> yellow</span></span>;}</span>
+}
+<span class="tag">div</span>
+<span class="rules">{
+<span class="rule"><span class="attribute">animation</span>:<span class="value"> changeBg <span class="number">5s</span></span></span>;
+}</span>
+</code></pre><p>复制代码运行一下就能看到效果了。同时我们还可以这样写：</p>
+<pre><code><span class="at_rule">@<span class="keyword">keyframes</span> changeBg
+</span>{
+    0%   <span class="rules">{<span class="rule"><span class="attribute">background</span>:<span class="value"> red</span></span>;}</span>
+    25%  <span class="rules">{<span class="rule"><span class="attribute">background</span>:<span class="value"> yellow</span></span>;}</span>
+    50%  <span class="rules">{<span class="rule"><span class="attribute">background</span>:<span class="value"> blue</span></span>;}</span>
+    100% <span class="rules">{<span class="rule"><span class="attribute">background</span>:<span class="value"> green</span></span>;}</span>
+}
+</code></pre><p>这样我们就可以多次的改变样式了，同时我们还可以改变多个样式：</p>
+<pre><code><span class="at_rule">@<span class="keyword">keyframes</span> changeBg
+</span>{
+    0%   <span class="rules">{<span class="rule"><span class="attribute">background</span>:<span class="value"> red</span></span>; <span class="rule"><span class="attribute">left</span>:<span class="value"><span class="number">0px</span></span></span>; <span class="rule"><span class="attribute">top</span>:<span class="value"><span class="number">0px</span></span></span>;}</span>
+    25%  <span class="rules">{<span class="rule"><span class="attribute">background</span>:<span class="value"> yellow</span></span>; <span class="rule"><span class="attribute">left</span>:<span class="value"><span class="number">200px</span></span></span>; <span class="rule"><span class="attribute">top</span>:<span class="value"><span class="number">0px</span></span></span>;}</span>
+    50%  <span class="rules">{<span class="rule"><span class="attribute">background</span>:<span class="value"> blue</span></span>; <span class="rule"><span class="attribute">left</span>:<span class="value"><span class="number">200px</span></span></span>; <span class="rule"><span class="attribute">top</span>:<span class="value"><span class="number">200px</span></span></span>;}</span>
+    75%  <span class="rules">{<span class="rule"><span class="attribute">background</span>:<span class="value"> green</span></span>; <span class="rule"><span class="attribute">left</span>:<span class="value"><span class="number">0px</span></span></span>; <span class="rule"><span class="attribute">top</span>:<span class="value"><span class="number">200px</span></span></span>;}</span>
+    100% <span class="rules">{<span class="rule"><span class="attribute">background</span>:<span class="value"> red</span></span>; <span class="rule"><span class="attribute">left</span>:<span class="value"><span class="number">0px</span></span></span>; <span class="rule"><span class="attribute">top</span>:<span class="value"><span class="number">0px</span></span></span>;}</span>
+}
+</code></pre><p>刚才我们实际上进行了两部分行为，一部分是定义动画过程，一个是让元素应用动画效果。下面简单再完善一下如何使用动画：</p>
+<pre><code><span class="attribute">animation</span>:name duration function delay iteration-count direction 
+<span class="comment">//当给元素定义这个属性的时候，就是要对这个元素使用动画效果了，这个属性包括6个值，分别表示：</span>
+动画的名称（对应<span class="variable">@keyframes</span>），
+动画的执行时间（这个时间代表动画执行的总时间，而不是阶段时间，单位是毫秒），
+动画的速度曲线（匀速linear、低速-加快-变慢ease、以低速开始ease-in、以低速结束ease-out、以低速开始和结束ease-in-out），
+规定动画开始之前的延迟时间，
+规定该动画播放的次数（数字n，或者无限次播放infinite）
+</code></pre><p>掌握了这些之后，我们就可以为我们之前的html添加动画效果了，首先我们定义一下动画过程。</p>
+<pre><code><span class="at_rule">@<span class="keyword">-webkit-keyframes</span> ballon</span>{
+    <span class="tag">from</span><span class="rules">{
+        <span class="rule"><span class="attribute">-weblit-transform</span>:<span class="value"><span class="function">rotate</span>(-<span class="number">30deg</span>)</span></span>;
+        <span class="rule"><span class="attribute">-weblit-transform-origin</span>:<span class="value">center bottom</span></span>;
+    }</span>
+    <span class="tag">to</span><span class="rules">{
+        <span class="rule"><span class="attribute">-weblit-transform</span>:<span class="value"><span class="function">rotate</span>(<span class="number">30deg</span>)</span></span>;
+        <span class="rule"><span class="attribute">-weblit-transform-origin</span>:<span class="value">center bottom</span></span>;
+    }</span>
+}
+</code></pre><p>动画过程定义好了之后，我们就可以使用了：</p>
+<pre><code><span class="class">.ballon</span>{
+    <span class="attribute">-webkit-animation</span>:ballon <span class="number">2s</span> linear <span class="number">0s</span> infinite alternate
+}
+</code></pre><p>这样一个简单的气球摆动的动画就完成了，复杂的动画也都是通简单的动画组合而成的。在使用css3写动画的时候，注意要先写出静态的页面，通常的动画效果只是在页面加载完成后执行一次，这种情况下我们需要先完成动画页面的最终样式的布局，在此基础上添加动画效果（因为<code>动画执行完成之后会回到它的默认状态</code>）。</p>
+<p>在制作复杂的组合动画，或者单次动画的时候，尽量使用百分比方式定义动画，这样更容易掌控整个动画过程；当动画的行为比较简单且需要重复展示的时候（比如云彩的飘动等），可以使用<code>from...to</code>的方式定义动画。</p>
+<hr>
+<p>还有一个小技巧，之前我们介绍过动画开始之前可以设置延迟时间，但是当动画行为过多的时候，延迟时间会变得复杂且难以管理，这时我们可以使用另一种方式，我们首先要计算出页面所有动画执行完成所需要的时间，假设是10s，其中某一个动画在<code>5s</code>的时候才开始执行，我们可以在使用这个动画的时候就规定这个动画的时间为<code>10s</code>，但是在<code>前50%</code>我们什么都不去做，这样就实现了延迟的效果了。</p>
+
+      
+    </div>
+    
+  </div>
+  
+    
+<nav id="article-nav">
+  
+    <a href="/2015/10/28/css各种属性知识总结/" id="article-nav-newer" class="article-nav-link-wrap">
+      <strong class="article-nav-caption"><</strong>
+      <div class="article-nav-title">
+        
+          css各种属性知识总结
+        
+      </div>
+    </a>
+  
+  
+</nav>
+
+  
+</article>
+
+
+<div class="share">
+	<!-- JiaThis Button BEGIN -->
+	<div class="jiathis_style">
+		<span class="jiathis_txt">分享到：</span>
+		<a class="jiathis_button_tsina"></a>
+		<a class="jiathis_button_cqq"></a>
+		<a class="jiathis_button_douban"></a>
+		<a class="jiathis_button_weixin"></a>
+		<a class="jiathis_button_tumblr"></a>
+		<a href="http://www.jiathis.com/share" class="jiathis jiathis_txt jtico jtico_jiathis" target="_blank"></a>
+	</div>
+	<script type="text/javascript" src="http://v3.jiathis.com/code/jia.js?uid=1405949716054953" charset="utf-8"></script>
+	<!-- JiaThis Button END -->
+</div>
+
+
+
+<div class="duoshuo">
+	<!-- 多说评论框 start -->
+	<div class="ds-thread" data-thread-key="css3动画" data-title="css3动画" data-url="http://shijunwei.github.io/2015/10/28/css3动画/"></div>
+	<!-- 多说评论框 end -->
+	<!-- 多说公共JS代码 start (一个网页只需插入一次) -->
+	<script type="text/javascript">
+	var duoshuoQuery = {short_name:"true"};
+	(function() {
+		var ds = document.createElement('script');
+		ds.type = 'text/javascript';ds.async = true;
+		ds.src = (document.location.protocol == 'https:' ? 'https:' : 'http:') + '//static.duoshuo.com/embed.js';
+		ds.charset = 'UTF-8';
+		(document.getElementsByTagName('head')[0] 
+		 || document.getElementsByTagName('body')[0]).appendChild(ds);
+	})();
+	</script>
+	<!-- 多说公共JS代码 end -->
+</div>
+
+
+
+
+</div>
+      <footer id="footer">
+  <div class="outer">
+    <div id="footer-info">
+    	<div class="footer-left">
+    		&copy; 2016 惜安
+    	</div>
+      	<div class="footer-right">
+      		<a href="http://hexo.io/" target="_blank">Hexo</a>  Theme <a href="https://github.com/litten/hexo-theme-yilia" target="_blank">Yilia</a> by Litten
+      	</div>
+    </div>
+  </div>
+</footer>
+    </div>
+    
+  <link rel="stylesheet" href="/fancybox/jquery.fancybox.css" type="text/css">
+
+
+<script>
+	var yiliaConfig = {
+		fancybox: true,
+		mathjax: true,
+		animate: true,
+		isHome: false,
+		isPost: true,
+		isArchive: false,
+		isTag: false,
+		isCategory: false,
+		open_in_new: true
+	}
+</script>
+<script src="http://7.url.cn/edu/jslib/comb/require-2.1.6,jquery-1.9.1.min.js" type="text/javascript"></script>
+<script src="/js/main.js" type="text/javascript"></script>
+
+
+
+
+
+
+<script type="text/x-mathjax-config">
+MathJax.Hub.Config({
+    tex2jax: {
+        inlineMath: [ ['$','$'], ["\\(","\\)"]  ],
+        processEscapes: true,
+        skipTags: ['script', 'noscript', 'style', 'textarea', 'pre', 'code']
+    }
+});
+
+MathJax.Hub.Queue(function() {
+    var all = MathJax.Hub.getAllJax(), i;
+    for(i=0; i < all.length; i += 1) {
+        all[i].SourceElement().parentNode.className += ' has-jax';                 
+    }       
+});
+</script>
+
+<script type="text/javascript" src="http://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML">
+</script>
+
+
+  </div>
+</body>
+</html>

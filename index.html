@@ -110,7 +110,7 @@
 				
 				<section class="switch-part switch-part2">
 					<div class="widget tagcloud" id="js-tagcloud">
-						<a href="/tags/AngularJs/" style="font-size: 10px;">AngularJs</a> <a href="/tags/CSS/" style="font-size: 10px;">CSS</a> <a href="/tags/CSS3/" style="font-size: 16.67px;">CSS3</a> <a href="/tags/HTML5/" style="font-size: 10px;">HTML5</a> <a href="/tags/Python/" style="font-size: 10px;">Python</a> <a href="/tags/hexo/" style="font-size: 10px;">hexo</a> <a href="/tags/html/" style="font-size: 10px;">html</a> <a href="/tags/html5/" style="font-size: 10px;">html5</a> <a href="/tags/javascript/" style="font-size: 20px;">javascript</a> <a href="/tags/webApp/" style="font-size: 10px;">webApp</a> <a href="/tags/脚手架工具/" style="font-size: 13.33px;">脚手架工具</a> <a href="/tags/随笔/" style="font-size: 10px;">随笔</a>
+						<a href="/tags/CSS/" style="font-size: 10px;">CSS</a> <a href="/tags/CSS3/" style="font-size: 16.67px;">CSS3</a> <a href="/tags/HTML5/" style="font-size: 10px;">HTML5</a> <a href="/tags/Python/" style="font-size: 10px;">Python</a> <a href="/tags/hexo/" style="font-size: 10px;">hexo</a> <a href="/tags/html/" style="font-size: 10px;">html</a> <a href="/tags/html5/" style="font-size: 10px;">html5</a> <a href="/tags/javascript/" style="font-size: 20px;">javascript</a> <a href="/tags/webApp/" style="font-size: 10px;">webApp</a> <a href="/tags/脚手架工具/" style="font-size: 13.33px;">脚手架工具</a>
 					</div>
 				</section>
 				
@@ -440,11 +440,11 @@ fn(<span class="string">'a'</span>,<span class="string">'b'</span>) <span class=
 
 
   
-    <article id="post-AngularJs双向绑定" class="article article-type-post" itemscope itemprop="blogPost">
+    <article id="post-ECMAScript5中新增的数组方法总结" class="article article-type-post" itemscope itemprop="blogPost">
   
     <div class="article-meta">
-      <a href="/2015/11/06/AngularJs双向绑定/" class="article-date">
-  	<time datetime="2015-11-06T10:29:24.000Z" itemprop="datePublished">2015-11-06</time>
+      <a href="/2015/11/06/ECMAScript5中新增的数组方法总结/" class="article-date">
+  	<time datetime="2015-11-06T04:49:38.066Z" itemprop="datePublished">2015-11-06</time>
 </a>
     </div>
   
@@ -457,7 +457,7 @@ fn(<span class="string">'a'</span>,<span class="string">'b'</span>) <span class=
         
   
     <h1 itemprop="name">
-      <a class="article-title" href="/2015/11/06/AngularJs双向绑定/">AngularJs双向绑定</a>
+      <a class="article-title" href="/2015/11/06/ECMAScript5中新增的数组方法总结/">ECMAScript5中新增的数组方法总结</a>
     </h1>
   
 
@@ -466,8 +466,46 @@ fn(<span class="string">'a'</span>,<span class="string">'b'</span>) <span class=
     
     <div class="article-entry" itemprop="articleBody">
       
-        <p>算一算基础从接触Angular到现在已经差不多一年的时间了，一直没有总结过之前用到过的东西，现在决定总结一下，就当是备忘录了。</p>
-<p>貌似我在刚开始正经学习前端就开始玩Angular了，这有一个弊端，就是让我对DOM操作十分的陌生（所以恶补了很久…），因为在某种程度上来说，Angular不需要DOM操作，模板和双向绑定帮你实现了页面的自动刷新</p>
+        <h3 id="every():测试断言函数是否对每个数组元素为真">every():测试断言函数是否对每个数组元素为真</h3><p>array.ervery(predicate,o);</p>
+<p><code>参数predicate</code>：断言函数，有三个参数predicate（array[i],i,array),返回值被当做布尔值解析。所有数组元素通过断言函数的返回值都可以被转换成布尔真时，<code>every()</code>方法返回true；</p>
+<p><code>参数o</code>：调用predicate时可选的this值,可选；</p>
+<p>例子：</p>
+<pre><code>[<span class="number">1</span>,<span class="number">2</span>,<span class="number">3</span>].every(<span class="function"><span class="keyword">function</span><span class="params">(x)</span></span>{<span class="keyword">return</span> x&lt;<span class="number">5</span>}); //=&gt;<span class="keyword">true</span>:所有元素都小于<span class="number">5</span>
+[<span class="number">1</span>,<span class="number">2</span>,<span class="number">3</span>].every(<span class="function"><span class="keyword">function</span><span class="params">(x)</span></span>{<span class="keyword">return</span> x&lt;<span class="number">3</span>}); //=&gt;<span class="keyword">false</span>:不是所有元素都小于<span class="number">3</span>
+[].every(<span class="function"><span class="keyword">function</span><span class="params">(x)</span></span>{<span class="keyword">return</span> <span class="keyword">false</span>}); //=&gt;<span class="keyword">true</span>:[]总是返回<span class="keyword">true</span>
+</code></pre><h3 id="filter():过滤数组元素，返回一个满足条件的新数组">filter():过滤数组元素，返回一个满足条件的新数组</h3><p>array.filter(predicate,o);</p>
+<p><code>参数predicate</code>：过滤函数，有三个参数predicate（array[i],i,array),按序号从小到大遍历array，每个数组元素调用一次predicate，若返回值为真，则该数组元素会添加到返回的数组中；</p>
+<p><code>参数o</code>：调用predicate时可选的this值,可选；</p>
+<p>例子：</p>
+<pre><code>[<span class="number">1</span>,<span class="number">2</span>,<span class="number">3</span>].filter(<span class="function"><span class="keyword">function</span><span class="params">(x)</span></span>{<span class="keyword">return</span> x&gt;<span class="number">1</span>}); <span class="comment">//=&gt;[2,3]</span>
+</code></pre><h3 id="forEach():便利数组元素，并对每一个元素调用一次f">forEach():便利数组元素，并对每一个元素调用一次f</h3><p>array.forEach(f,o);</p>
+<p><code>参数f</code>：为array的每一个元素调用的函数(序号从小到大)；</p>
+<p><code>参数o</code>：调用f时可选的this值,可选；</p>
+<p>例子：</p>
+<pre><code><span class="keyword">var</span> a = [<span class="number">1</span>,<span class="number">2</span>,<span class="number">3</span>];
+a.forEach(<span class="function"><span class="keyword">function</span><span class="params">(x,i,<span class="keyword">array</span>)</span><span class="comment">{array[i]++}</span>);</span> <span class="comment">//a现在的值是[2,3,4]。forEach没有返回值。</span>
+</code></pre><h3 id="indexOf():在数组中查找值">indexOf():在数组中查找值</h3><p>array.indexOf(value,start);</p>
+<p><code>参数value</code>：要查找的值；</p>
+<p><code>参数start</code>：开始查找数组元素的序号，可选参数，不传则从0开始查找；</p>
+<p>若找到该值(用<code>&#39;====&#39;</code>判断)，则方法返回该值的索引位置，若没有找到，返回-1。</p>
+<p>例子：</p>
+<pre><code>[<span class="string">'a'</span>,<span class="string">'b'</span>,<span class="string">'c'</span>].indexOf(<span class="string">'b'</span>);  <span class="comment">// =&gt; 1</span>
+[<span class="string">'a'</span>,<span class="string">'b'</span>,<span class="string">'c'</span>].indexOf(<span class="string">'a'</span>,<span class="number">1</span>);  <span class="comment">// =&gt; -1</span>
+[<span class="string">'a'</span>,<span class="string">'b'</span>,<span class="string">'c'</span>].indexOf(<span class="string">'d'</span>);  <span class="comment">// =&gt; -1</span>
+</code></pre><h3 id="lastIndexOf()：在数组中查找值(反向)">lastIndexOf()：在数组中查找值(反向)</h3><p>array.lastIndexOf(value,start);</p>
+<p><code>参数value</code>：要查找的值；</p>
+<p><code>参数start</code>：开始查找数组元素的序号，可选参数，不传则从最后一个元素开始查找；</p>
+<p>若找到该值(用<code>&#39;====&#39;</code>判断)，则方法返回该值的索引位置，若没有找到，返回-1，查找的方向与indexOf相反。</p>
+<h3 id="map()：按某种规则处理每个数组元素，返回一个等长的新的数组">map()：按某种规则处理每个数组元素，返回一个等长的新的数组</h3><p>array.map(f,o);</p>
+<p><code>参数f</code>：数组的处理函数,有三个参数f (array[i],i,array)，该方法返回的值会成为<code>map</code>方法返回数组的一个元素，索引为<code>i</code>；</p>
+<p><code>参数o</code>：调用f时可选的this值,可选；</p>
+<p>例子：</p>
+<pre><code>[<span class="number">1</span>,<span class="number">2</span>,<span class="number">3</span>].map(<span class="function"><span class="keyword">function</span><span class="params">(x)</span></span>{<span class="keyword">return</span> x*x;});  <span class="comment">// =&gt; [1,4,9]</span>
+</code></pre><h3 id="reduce():从数组中计算出一个值">reduce():从数组中计算出一个值</h3><p><code>详见</code>：<a href="http://shijunwei.github.io/2015/10/04/jsreduce/" target="_blank">javascript reduce方法</a></p>
+<h3 id="reduceRight():从数组中计算出一个值(从右到左)">reduceRight():从数组中计算出一个值(从右到左)</h3><p><code>reduceRight()</code>方法与<code>reduce()</code>方法只有一点不同：reduceRight()方法遍历数组的时候是从右到左(从最大序号到最小序号)。</p>
+<h3 id="some():测试是否有数组元素满足断言函数">some():测试是否有数组元素满足断言函数</h3><p><code>参数predicate</code>：断言函数，有三个参数predicate（array[i],i,array)；</p>
+<p><code>参数o</code>：调用predicate时可选的this值,可选；</p>
+<p><code>some()</code>方法与<code>every()</code>很相似，不同的是，<code>some()</code>并不需要所有的数组元素在调用predicate时都返回真，只需要有一个元素在调用predicate时返回真，<code>some()</code>就会停止遍历，并返回true。</p>
 
       
     </div>
@@ -476,7 +514,167 @@ fn(<span class="string">'a'</span>,<span class="string">'b'</span>) <span class=
       
       
 	<div class="article-tag tagcloud">
-		<ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/AngularJs/">AngularJs</a></li></ul>
+		<ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/javascript/">javascript</a></li></ul>
+	</div>
+
+      
+
+      
+      <div class="clearfix"></div>
+    </div>
+    
+  </div>
+  
+</article>
+
+
+
+
+
+
+
+  
+    <article id="post-DOM" class="article article-type-post" itemscope itemprop="blogPost">
+  
+    <div class="article-meta">
+      <a href="/2015/11/06/DOM/" class="article-date">
+  	<time datetime="2015-11-06T04:49:22.407Z" itemprop="datePublished">2015-11-06</time>
+</a>
+    </div>
+  
+  <div class="article-inner">
+    
+      <input type="hidden" class="isFancy" />
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2015/11/06/DOM/">DOM</a>
+    </h1>
+  
+
+      </header>
+      
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <h3 id="DOM概览">DOM概览</h3><p>DOM（文档对象模型）是表示和操作HTML文档内容的基础API。用DOM树对象表示HTML文档的嵌套元素，包括HTML标签、表示文本字符串的节点，也可能包含HTML的注释节点。</p>
+<h3 id="选取文档元素">选取文档元素</h3><p>树形的根部是<code>document</code>节点，代表整个文档，代表HTML元素的是<code>Element</code>节点，代表文本的是<code>text</code>节点。这些节点都是<code>Node</code>的子类。JavaScript避免不了要操作DOM，这时可以使用全局变量document来引用DOM对象，同时，DOM也定义了许多方式来选取元素，如通过指定的id属性，name属性，标签名字，指定的CSS类等。</p>
+<p>1、通过id查找多个元素：</p>
+<pre><code><span class="comment">/*函数接受任意多个字符串参数，每个参数将作为元素id传入*/</span>
+<span class="function"><span class="keyword">function</span><span class="params">(/ids<span class="rest_arg">.../){
+    var</span> elements = {};
+    for(var i=0;i&lt;arguments.length;i++)</span></span>{
+        <span class="keyword">var</span> id = arguments[i];
+        <span class="keyword">var</span> elt = document.getElementById(id);
+        <span class="keyword">if</span>(elt == <span class="literal">null</span>){
+            thow <span class="keyword">new</span> Error(<span class="string">"No element with id:"</span>+id);
+        }<span class="keyword">else</span>{
+            elements[id] = elt;
+        }
+    }
+    <span class="keyword">return</span> elements;
+}
+<span class="comment">//低于IE8版本的浏览器中，getElementById()方法对匹配元素的ID不区分大小写，同时也会匹配到那么属性符合条件的元素。所以，注意设置name和id属性的时候尽量让这两个元素不要重名。</span>
+</code></pre><p>2、用过name属性和标签名来查找元素，分别使用getElementByName()和getElementsByTagName()方法，这两个方法都是返回一个<code>NodeList对象</code>。像document.images或者document.forms的属性为<code>HTMLCollection对象</code>。<br>这两种都是只读的类数组对象，他们有length属性，也可以像数组一样索引（只能读），但是不能在这两类对象上直接调用数组的方法，但是可以间接的调用：</p>
+<pre><code><span class="comment">//获取p标签中的内容</span>
+<span class="keyword">var</span> content = <span class="built_in">Array</span>.prototype.map.call(<span class="built_in">document</span>.getElementByTagName(<span class="string">"p"</span>),<span class="function"><span class="keyword">function</span><span class="params">(e)</span></span>{ <span class="keyword">return</span> e.innerHTML;});
+</code></pre><p>值得注意的是<code>NodeList对象</code>和<code>HTMLCollection对象</code>都是实时的。<br>同时，Element类也定义了getElementsByTagName()方法，该方法只在调用该方法的元素对象的后代中选取元素。</p>
+<p>3、通过HTML的class属性选择元素，使用getElementsByClassName()方法，返回的是一个实时的NodeList对象，该方法需要一个字符串参数，可以是由多个空格隔开的标识符组成。</p>
+<pre><code><span class="comment">//查找包含fatal和error类的元素,使用</span>
+<span class="keyword">var</span> ele = getElementsByClassName(<span class="string">'fatal error'</span>);
+</code></pre><p>4、使用querySelector方法返回文档中匹配指定 CSS 选择器的第一个元素。</p>
+<pre><code><span class="built_in">document</span>.<span class="built_in">querySelector</span>(CSS selectors);
+<span class="built_in">document</span>.<span class="built_in">querySelector</span>(<span class="string">"p"</span>);<span class="comment">//返回第一个p标签元素</span>
+<span class="built_in">document</span>.<span class="built_in">querySelector</span>(<span class="string">".container"</span>);<span class="comment">//返回class等于container的第一个元素</span>
+<span class="built_in">document</span>.<span class="built_in">querySelector</span>(<span class="string">".container header"</span>);<span class="comment">//返回class等于container中的第一个header子元素</span>
+</code></pre><p>5、使用querySelectorAll方法返回所有文档中匹配指定 CSS 选择器的元素，与querySelector相同，只不过querySelectorAll方法返回一个匹配的nodeList。</p>
+<h3 id="文档结构">文档结构</h3><p>一旦从文档中选取了一个元素，有时需要查找文档中与之在结构上相关的部分，这种结构可以看作一个节点对象树。</p>
+<p>1、节点树的文档。我们之前说的Document对象，和他的Element对象，文档中表示文本的Text对象都是属于Node对象，对于一个节点来讲，他具有以下的属性，</p>
+<pre><code>parentNode：父节点（document没有父节点，值为null），任何元素的父节点都不可能是<span class="keyword">Text</span>。任何Elemnt的parentNode总是一个<span class="keyword">Element</span>。
+childNodes：子节点的实时表示
+firstChild、lastChild：子节点的第一个和最后一个。不存在则为nul
+nextSibling、previousSibling：兄弟节点中的前一个和下一个。
+nodeType：节点的类型（<span class="number">9</span>代表Document节点，<span class="number">1</span>代表<span class="keyword">Element</span>节点，<span class="number">3</span>代表<span class="keyword">Text</span>节点，<span class="number">11</span>代表DocumenFragment节点）
+nodeValue：<span class="keyword">Text</span>节点的文本内容
+nodeName：元素的标签名（大写）
+</code></pre><p>例如有这样的一段HTML：<code>&lt;html&gt;&lt;head&gt;&lt;/head&gt;&lt;body&gt;hello word!&lt;/body&gt;&lt;/html&gt;</code><br>下面的方法可以获取到<code>body</code>：</p>
+<pre><code><span class="built_in">document</span>.childNodes[<span class="number">0</span>].childNodes[<span class="number">1</span>];<span class="comment">//选择到了body元素节点的引用</span>
+<span class="built_in">document</span>.firstChild.firstChild.nextSibling;
+</code></pre><p>API对文档的变化极其敏感，若我们在<code>head</code>和<code>html</code>之间插入一个新行，那么表示这个新行的Text节点就是文档下面的第一个子节点了。</p>
+<p>2、元素树的文档。这个应该是比较熟悉的内容，当我们想忽略部分文档，如Text节点的时候，可以使用另一个API（基于元素文档遍历API）：</p>
+<p><code>第一部分，children属性</code>：</p>
+<pre><code>该属性类似childNodes，也是一个NodeList对象，但是它只包含<span class="keyword">Element</span>。并且<span class="keyword">Text</span>节点和Commont节点没有children属性。
+</code></pre><p><code>第二部分，Element属性</code>：</p>
+<pre><code><span class="comment">//类似于firstChild和lastChild，不同的是只代表子Element</span>
+firstElementChild，lastElementChild
+<span class="comment">//类似于nextSibling和lastSibling，不同的是只代表兄弟Element</span>
+nextElementSibling，previousElementSibling
+<span class="comment">//子元素的个数，和children.length相等</span>
+childElementCount
+</code></pre><h3 id="元素的属性">元素的属性</h3><p>元素的属性应该都是比较熟悉的了，如id，class，src，以及一些时间的处理如onclick等，值得注意的是，有些属性在JavaScript中是保留字，如class，在JavaScript中把他变为ClassName。</p>
+<pre><code>getAttribute()<span class="comment">//获取html属性，返回的是一个字符串，</span>
+setAttribute()<span class="comment">//设置元素的属性</span>
+hasAttribute()<span class="comment">//判断元素属性是否存在，</span>
+removeAttribute()<span class="comment">//完全删除属性</span>
+
+var width = parseInt(images.getAttribute(<span class="string">"WIDTH));</span>
+images.setAttribute('class','thumbnail<span class="string">");</span>
+</code></pre><p>还有一种使用Element属性的方法，Node类型定义了attribute属性。</p>
+<pre><code>document.<span class="keyword">body</span>.attributes[<span class="number">0</span>];<span class="comment">//返回body元素的第一个属性</span>
+document.<span class="keyword">body</span>.attributes.bgcolor;<span class="comment">//返回body元素的第一个属性</span>
+</code></pre><p>html5文档中中表明，任意以<code>data-</code>为前缀的小写的属性名字都是合法的。这些数据集属性会以属性的形式存在于该元素的dataset属性内。如data-x的值保存在dataset.x内，带连字符的属性采用驼峰命名方式。</p>
+<h3 id="元素的内容">元素的内容</h3><p>Element的innerHTML属性会返回元素的内容，内容可以是HTML字符串，也可以是纯文本的字符串。<br>查询和插入纯文本形式的内容，可以使用Node对象的textContent属性实现，在ie中使用innerHTML替代。</p>
+<pre><code><span class="comment">/**
+*一个参数，返回element的textContent或者innerText
+*两个参数，设置elemnet的textContent或者innerText
+*/</span>
+<span class="function"><span class="keyword">function</span><span class="params">(element,value)</span></span>{
+    <span class="keyword">var</span> content = element.textContent;
+    <span class="keyword">if</span>(value === <span class="literal">undefined</span>){
+        <span class="comment">//没有传递value</span>
+        <span class="keyword">if</span>(content !== <span class="literal">undefined</span>) <span class="keyword">return</span> content;
+        <span class="keyword">else</span> <span class="keyword">return</span> element.innerText;
+    }
+    <span class="keyword">else</span>{
+        <span class="keyword">if</span>(content !== <span class="literal">undefined</span>) element.textContent = value;
+        <span class="keyword">else</span> element.innerText = value;
+    }
+}
+</code></pre><h3 id="创建、插入和删除节点">创建、插入和删除节点</h3><p>创建新的元素节点可以使用Document对象的createElement()方法。给方法传递元素的标签名（不区分大小写）。创建Text节点可以使用document.createTextNode()方法。</p>
+<pre><code><span class="reserved">var</span> newNode = <span class="built_in">document</span>.createTextNode(<span class="string">"this is a textNode"</span>);
+<span class="reserved">var</span> s = <span class="built_in">document</span>.createElement(<span class="string">"script"</span>)
+</code></pre><p>也可以选择clone已经存在的节点作为创建节点的另一种方式，每个节点都有一个<code>cloneNode()</code>方法，该方法返回该节点的一个全新副本, 给方法传递参数true可以递归的复制所有的后代节点。</p>
+<pre><code><span class="reserved">var</span> cloneNode = <span class="built_in">document</span>.getElementById(<span class="string">"test"</span>).cloneNode(<span class="literal">true</span>);
+</code></pre><hr>
+<p>将创建的节点插入到文档中的方法有<code>appendChild()</code>和<code>insertBefore()</code>。<br>appendChild()在需要插入的元素上调用，并将节点作为他最后一个子节点插入。</p>
+<pre><code><span class="reserved">var</span> ele = <span class="built_in">document</span>.getElementById(<span class="string">"test"</span>);
+<span class="reserved">var</span> span = <span class="built_in">document</span>.createElement(<span class="string">"span"</span>);
+ele.appendChild(span);
+</code></pre><p><code>insertBefore()</code>与<code>appendChild()</code>类似，也是在被插入的元素节点上调用.不同的是<code>insertBefore()</code>接受两个参数，第一个是待插入的元素，另一个是在被插入元素中已经存在的节点（该方法将新节点插入到该节点之前）。</p>
+<pre><code><span class="comment">//当位置索引大于被插入元素的子元素个数时，元素会被插入到末尾</span>
+ele<span class="class">.insertBefore</span>(<span class="tag">span</span>,ele<span class="class">.children</span><span class="attr_selector">[0]</span>);
+</code></pre><p>当用这两个方法将已经存在于文档中的节点再插入一次的时候，那个节点将自动从他当前的位置删除，并在新的位置插入,不需要显示删除节点。</p>
+<hr>
+<p><code>removeChild()</code>从文档中删除节点，同样也是在被删除节点的父节点上调用，被删除节点作为参数传入方法。</p>
+<pre><code>n<span class="class">.parentNode</span><span class="class">.removeChild</span>(n)
+</code></pre><p><code>replaceChild()</code>方法删除一个子节点，并用一个新的子节点取而代之。在父节点上调用该方法，第一个参数是新节点，第二个参数是需要替代的节点。</p>
+<pre><code><span class="keyword">n</span>.parrentNode.replaceChild(<span class="keyword">n</span>.parrentNode.replaceChild(document.createTextNode(<span class="string">"this is a text node"</span>),<span class="keyword">n</span>);
+</code></pre><p><code>replaceChild()</code>另一种用法：<br>    //用元素<b>包裹节点n<br>    function embolden(n){<br>        //假如参数为字符串而不是节点，将其当作元素的id<br>        if(typeof n == ‘string’) n = document.getElementById(n);<br>        var parrent = n.parrentNode;    //获得n的父节点<br>        var b = document.createElement(“b”);<br>        parrent.replaceChild(b,n);<br>        b.apperndChild(n);<br>    }</b></p>
+<h3 id="文档片段">文档片段</h3><p>DocumentFragment是一种特殊的Node，他做为一个节点的临时容器存在。使用如下方法创建一个文档片段：</p>
+<pre><code><span class="tag">var</span> frag = document.<span class="function"><span class="title">createDocumentFragment</span><span class="params">()</span></span>；
+</code></pre><p>文档碎片是独立的，没有父节点，但是可以有任意多的子节点，所以插入元素的方法在文档碎片上同样适用。文档片段可以将一组节点被当做一个节点来看待，当我们把一个文档片段插入到文档中的时候，实际上是将文档片段中的节点插入到了文档中，二不是文档片段本身。</p>
+
+      
+    </div>
+    
+    <div class="article-info article-info-index">
+      
+      
+	<div class="article-tag tagcloud">
+		<ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/javascript/">javascript</a></li></ul>
 	</div>
 
       
@@ -827,6 +1025,222 @@ person.name = <span class="string">"Grey"</span>;
 
 
   
+    <article id="post-js对象（1）" class="article article-type-post" itemscope itemprop="blogPost">
+  
+    <div class="article-meta">
+      <a href="/2015/10/31/js对象（1）/" class="article-date">
+  	<time datetime="2015-10-31T01:25:25.492Z" itemprop="datePublished">2015-10-31</time>
+</a>
+    </div>
+  
+  <div class="article-inner">
+    
+      <input type="hidden" class="isFancy" />
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2015/10/31/js对象（1）/">js对象（1）</a>
+    </h1>
+  
+
+      </header>
+      
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <p>对象是JavaScript的基本数据类型，是复合值，在JavaScript中除了字符串、数字、true、false、null和undefined之外，JavaScript中的值都是对象。</p>
+<h3 id="创建JavaScript对象">创建JavaScript对象</h3><p>使用对象直接量，也就是名值对组成的映射表，格式如下：</p>
+<pre><code><span class="keyword">var</span> <span class="keyword">empty</span> = {};        <span class="comment">//这是一个空对象</span>
+<span class="keyword">var</span> point = { x:<span class="number">0</span> , y:<span class="number">1</span> };         <span class="comment">//这个对象有连个属性</span>
+<span class="keyword">var</span> car = {
+    name：<span class="string">'BMW X7'</span>,
+    color：<span class="string">'black'</span>,
+    <span class="string">'max-speed'</span>:<span class="string">'200'</span>    <span class="comment">//属性名中间有空格或-，必须用字符串表示</span>
+}
+</code></pre><p>使用<code>new</code>创建对象：</p>
+<pre><code><span class="built_in">var</span> myArray <span class="subst">=</span> <span class="literal">new</span> <span class="built_in">Array</span>（）;        <span class="comment">//创建一个数组，等同于[]</span>
+<span class="built_in">var</span> <span class="built_in">date</span> <span class="subst">=</span> <span class="literal">new</span> <span class="built_in">Date</span>()         <span class="comment">//创建一个Date对象</span>
+</code></pre><h3 id="原型">原型</h3><p>绝大多数JavaScript对象都会和另一个对象关联，这种关联就涉及到了原型，当通过关键字new和构造函数创建对象的时候，实际上是构造该对象的prototype属性，JavaScript对象具有自有属性，也有一些属性是从原型对象继承而来的，所以通过<code>new Array()</code>创建的对象的原型就是Array.prototype。</p>
+<p>举个例子，当我们要查询对象ooo中的x属性，如果o中不存在x，那么会在o的原型中继续查找x。如果原型对象中也没有x，那么会在这个原型对象的原型上继续查询，知道找到这个x，或者直到某个对象的原型是<code>null</code>为止，这样我们可以清楚的发现，对象的原型属性构成了一个链，通过这个链，就可以实现属性的继承(<a href="http://dmitrysoshnikov.com/ecmascript/javascript-the-core/" target="_blank" rel="external">图片来源</a>)。</p>
+<p><img src="http://7xivia.com1.z0.glb.clouddn.com/jsyuanxing.png" alt="图片"></p>
+<p>ECMAScript5中定义了一个Object.creat()的方法，创建一个新的对象，其中的一个参数就是对象的原型，同时还有第二个参数，是对对象的属性的进一步描述。</p>
+<pre><code><span class="keyword">var</span> o = <span class="built_in">Object</span>.creat({x:<span class="number">1</span>,y:<span class="number">1</span>});    <span class="comment">//o继承了属性x和y</span>
+</code></pre><p>如果我们传入了null参数，这时创建的对象就不会继承任何东西（基础方法也不会继承），比如toString(),如果想要创建一个新对象需要传入Object.prototype。下面这个方法可以模拟原型继承：</p>
+<pre><code><span class="function"><span class="keyword">function</span> <span class="title">inherit</span><span class="params">(p)</span></span>{
+    <span class="keyword">if</span>(p==<span class="literal">null</span>) <span class="keyword">throw</span> <span class="built_in">TypeError</span>();
+    <span class="keyword">if</span>(<span class="built_in">Object</span>.creat)
+        <span class="keyword">return</span> <span class="built_in">Object</span>.creat(p);
+    <span class="keyword">var</span> t = <span class="keyword">typeof</span> p;
+    <span class="keyword">if</span>(t !== <span class="string">"object"</span> &amp;&amp; t !== <span class="string">"function"</span>) <span class="keyword">throw</span> <span class="built_in">TypeError</span>();
+    <span class="function"><span class="keyword">function</span> <span class="title">f</span><span class="params">()</span> </span>{};
+    f.prototype = p;
+    <span class="keyword">return</span> <span class="keyword">new</span> f();
+}
+</code></pre><h3 id="对象属性的查询和设置">对象属性的查询和设置</h3><p>对象的属性可以通过’<code>.</code>‘或者’<code>[]</code>‘进行查询，简单的说，当使用’<code>.</code>‘的时候，’<code>.</code>‘的右边一定要是对象的属性名，当使用’<code>[]</code>‘的时候，’<code>[]</code>‘内必须是一个计算结果为字符串的表达式，也可以直接是字符串。同时我们也可以使用’<code>.</code>‘和’<code>[]</code>‘来设置属性值。</p>
+<pre><code>var book={
+    name:<span class="string">'AngularJs'</span>
+    title:<span class="string">'Easy Study'</span>
+    }
+console.<span class="keyword">log</span>(book.name);            <span class="comment">//AngularJs</span>
+console.<span class="keyword">log</span>(book[name]);        <span class="comment">//AngularJs</span>
+book.<span class="keyword">color</span> = <span class="string">'red'</span>;
+book.pages = <span class="number">1000</span>;
+console.<span class="keyword">log</span>(book.<span class="keyword">color</span>);        <span class="comment">//red</span>
+console.<span class="keyword">log</span>(book[pages]);        <span class="comment">//1000</span>
+</code></pre><p>值得注意的是，在我们的程序中可能经常会出现这样的代码，</p>
+<pre><code>var <span class="built_in">length</span> = book.subtitle.<span class="built_in">length</span>;        <span class="comment">//这会抛出一个错误，因为book.subtitle本身是undefined的，并没有length属性，除非你确定subtitle和book都是对象，否则尽量不要这样去写。可以用下面的两种方式。</span>
+<span class="comment">//方法一</span>
+var <span class="built_in">length</span> = undefined;
+<span class="keyword">if</span>(book){
+    <span class="keyword">if</span>(book.subtitle) len = book.subtitle.<span class="built_in">length</span>;
+}
+<span class="comment">//方法二:短路写法</span>
+var <span class="built_in">length</span> = book &amp;&amp; book.subtitle &amp;&amp; book.subtitle.<span class="built_in">length</span>;
+</code></pre><h3 id="对象属性的删除">对象属性的删除</h3><p>删除属性可以用delete运算符，但是delete只能断开属性和宿主对象的关系，而不会去操作属性中的属性，说白了，就是当一个对象的属性的值的类型还是一个对象的时候，当我们删除了这个属性，这个作为属性的这个对象依然可以使用的。</p>
+<pre><code>a = {p:{x:<span class="number">1</span>}};
+b = a.p;
+<span class="keyword">delete</span> a.p;
+console.<span class="built_in">log</span>(b.x);
+<span class="comment">//输出1，因为已经删除的属性的引用依然存在。这种问题有可能导致内存泄露，所以在删除对象属性的时候，一定要删除的彻底。遍历所有的属性，并且都删除。</span>
+</code></pre>
+      
+    </div>
+    
+    <div class="article-info article-info-index">
+      
+      
+	<div class="article-tag tagcloud">
+		<ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/javascript/">javascript</a></li></ul>
+	</div>
+
+      
+
+      
+      <div class="clearfix"></div>
+    </div>
+    
+  </div>
+  
+</article>
+
+
+
+
+
+
+
+  
+    <article id="post-js操作字符串、数组的常用方法总结" class="article article-type-post" itemscope itemprop="blogPost">
+  
+    <div class="article-meta">
+      <a href="/2015/10/31/js操作字符串、数组的常用方法总结/" class="article-date">
+  	<time datetime="2015-10-30T16:25:13.606Z" itemprop="datePublished">2015-10-31</time>
+</a>
+    </div>
+  
+  <div class="article-inner">
+    
+      <input type="hidden" class="isFancy" />
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2015/10/31/js操作字符串、数组的常用方法总结/">js操作字符串、数组的常用方法总结</a>
+    </h1>
+  
+
+      </header>
+      
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <p>对于像我这种记忆力不是很好的人，这样的整理还是很有必要的，虽然是很常用的方法，有时候也会因为强迫症要验证一次，在这里总结一下，方便以后查看。</p>
+<h3 id="字符串">字符串</h3><p>在Javascript中字符串是固定不变的，也就是说，当使用某种方法处理字符串的时候，类似于replace()等，会返回一个新的字符串，也就是说字符串是不能被修改的。</p>
+<p>可以使用“+”号将两个字符串进行连接：</p>
+<pre><code>msg = <span class="string">"hello,"</span>+<span class="string">"word"</span>;  <span class="comment">//生成字符串hello，word</span>
+</code></pre><p>字符串具有length属性，可以使用charAt()方法配合length属性返回字符串某个位置上的元素：</p>
+<pre><code>var s = <span class="string">"hello,word"</span>;
+s.charAt<span class="comment">(0)</span>        <span class="comment">//返回 h</span>
+s.charAt<span class="comment">(s.length-1)</span>    <span class="comment">//        返回 d</span>
+</code></pre><p>当需要根据索引截取一个字符串的时候，可以使用substring()方法或者slice()方法：</p>
+<pre><code>s.<span class="function"><span class="title">substring</span><span class="params">(<span class="number">1</span>,<span class="number">4</span>)</span></span>        <span class="comment">//返回索引位置为1、2、3的字符组成的字符串‘ell’；</span>
+s.<span class="function"><span class="title">slice</span><span class="params">(<span class="number">1</span>,<span class="number">4</span>)</span></span>            <span class="comment">//同上返回‘ell’</span>
+s.<span class="function"><span class="title">slice</span><span class="params">(<span class="number">0</span>)</span></span>                <span class="comment">//返回整个字符串‘hello word’</span>
+s.<span class="function"><span class="title">slice</span><span class="params">(-<span class="number">3</span>)</span></span>                <span class="comment">//从末尾开始返回后三个字符‘ord’</span>
+s.<span class="function"><span class="title">clice</span><span class="params">(<span class="number">0</span>,-<span class="number">3</span>)</span></span>            <span class="comment">//返回‘ellow,w’</span>
+<span class="comment">//负值的索引，可以理解为从最后的位置开始算起，但是并不存在‘-0’</span>
+</code></pre><p>当需要查找摸个字符在字符串中的位置的时候，可以使用indexOf()方法，返回该字符的索引位置：</p>
+<pre><code>s.indexOf(<span class="string">"o"</span>);            <span class="comment">//返回“4”，字符“o”首次出现位置的索引；</span>
+s.lastIndexOf(<span class="string">"o"</span>)        <span class="comment">//这是最后一次出现“o”的位置，返回7；</span>
+s.indexOf(<span class="string">"1"</span>,<span class="number">3</span>);        <span class="comment">//这是返回在位置3以及3以后首次出现“o”的索引，返回4；</span>
+</code></pre><p>可以使用split()方法将字符串分割成数组：</p>
+<pre><code>s.<span class="function"><span class="title">split</span><span class="params">(<span class="string">","</span>)</span></span>            <span class="comment">//根据“，”这一标识符，将字符串分割成一个数组，返回的数组为['hello','word']，值得注意的是这里面已经不包含“，”这个字符了。</span>
+</code></pre><p>同样，我们还可以使用replace()方法替换字符串中的某个字符：</p>
+<pre><code>s.<span class="keyword">replace</span>(<span class="string">"h"</span>,<span class="string">"H"</span>);        <span class="comment">//返回“Hello,word”，但是如果直接用“h”，作为标示，这个方法只会替换一次，也就是说如果字符串中有许多的“h”，也只会替换一次。想要全部替换可以选择使用正则表达式；</span>
+s.<span class="keyword">replace</span>(/\<span class="keyword">l</span>/<span class="keyword">g</span>,<span class="string">"L"</span>)；    <span class="comment">//这样就可以换掉所有的“l”；</span>
+s.toUpperCase()；        <span class="comment">//返回“HELLO,WORD”;</span>
+</code></pre><h3 id="数组">数组</h3><p>可以使用push()方法，向一个数组的末尾添加元素：</p>
+<pre><code><span class="atom">var</span> <span class="atom">arr</span> = [<span class="string">'heool'</span>,<span class="string">'word'</span>];
+<span class="atom">arr</span>.<span class="atom">push</span>(<span class="string">'!'</span>);        //<span class="atom">arr</span>=[<span class="string">'heool'</span>,<span class="string">'word'</span>,<span class="string">'!'</span>];
+</code></pre><p>对于数组的遍历，有两种方法，一种是根据数组的length属性，利用for循环进行遍历；另一种可以使用for/in循环，</p>
+<pre><code><span class="keyword">for</span>(<span class="keyword">var</span> index <span class="keyword">in</span> array){
+    <span class="keyword">var</span> <span class="keyword">value</span>  = array[index];
+}
+</code></pre><p>数组也可以转换成字符串，使用join()方法，可以将数组转换成字符串：</p>
+<pre><code><span class="keyword">var</span> arr = [<span class="string">'1'</span>,<span class="string">'2'</span>,<span class="string">'3'</span>];
+arr.<span class="keyword">join</span>(<span class="string">","</span>);        <span class="comment">//返回“1，2，3”;</span>
+</code></pre><p>sort()方法可以对数组进行排序，当不传入参数时，数组元素以字母表顺序排序：</p>
+<pre><code><span class="keyword">var</span> arr = [<span class="string">'banana'</span>,<span class="string">'cherry'</span>,<span class="string">'apple'</span>];
+arr.sort();
+<span class="keyword">var</span> str = a.join(<span class="string">","</span>)；    <span class="comment">//str的值是“apple,banana,cherry”；</span>
+<span class="comment">//如果数组中包含undefined，sort方法会把它放在数组的尾部。</span>
+<span class="comment">//sort方法把数组中的每个对象转换成字符串，然后进行比较，那么 11 会被放在 2 的前面。所以我们需要传递一个函数给sort用来比较纯数字的大小，这个函数有两个参数，排序的规则是根据这个函数的返回值，返回值大于零，第一个参数在后，返回值小于零，第一个参数在前，返回值等于零，顺序无所谓。</span>
+a.sort(<span class="function"><span class="keyword">function</span><span class="params">(a,b)</span></span>{<span class="keyword">return</span> a-b;});
+</code></pre><p>连接两个数组可以使用concat(),这个方法返回一个连接好的新数组：</p>
+<pre><code><span class="keyword">var</span> a = [<span class="number">1</span>,<span class="number">2</span>,<span class="number">3</span>];
+a.<span class="keyword">concat</span>(<span class="number">4</span>,<span class="number">5</span>);        <span class="comment">//返回[1,2,3,4,5];</span>
+a.<span class="keyword">concat</span>([<span class="number">4</span>,<span class="number">5</span>]);    <span class="comment">//返回[1,2,3,4,5];</span>
+</code></pre><p>数组也有slice()方法，slice()方法不会修改原来的数组，而是返回一个新的数组：</p>
+<pre><code>var a = [<span class="number">1</span>,<span class="number">2</span>,<span class="number">3</span>,<span class="number">4</span>,<span class="number">5</span>];
+a.slice<span class="comment">(0,3)</span>;    <span class="comment">//返回[1,2,3];</span>
+a.slice<span class="comment">(3)</span>;        <span class="comment">//返回[4,5];</span>
+a.slice<span class="comment">(1,-1)</span>;    <span class="comment">//返回[2,3,4];参数-1指定了最后一个元素</span>
+a.slice<span class="comment">(-3,-2)</span>;    <span class="comment">//返回[3];</span>
+</code></pre><p>slice()能够从数组中删除元素、插入元素到数组中或者同时完成这两件事情，var a = [1,2,3,4,5,6,7,8];a.splice(4)，当只有一个参数的时候，从数组的起点位置开始到数组结尾的所有元素都会被删除，这个方法会返回被删除的[5,6,7,8],这时数组a的值是[1,2,3,4]，a.splice(1,2);返回[2,3]，现在a的值是[1,4]，a.splice(1,0,’a’,’b’);    //返回[‘a’,’b’]，现在a的值是[1,’a’,’b’,4];</p>
+<p>向数组中添加或者删除元素，还有push(),pop(),unshift(),shift()四个方法，分别是想数组末尾添加元素，从数组末尾删除元素，在数组头添加一个或多个元素，shift()删除数组的第一个元素并返回。</p>
+
+      
+    </div>
+    
+    <div class="article-info article-info-index">
+      
+      
+	<div class="article-tag tagcloud">
+		<ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/javascript/">javascript</a></li></ul>
+	</div>
+
+      
+
+      
+      <div class="clearfix"></div>
+    </div>
+    
+  </div>
+  
+</article>
+
+
+
+
+
+
+
+  
     <article id="post-《javascript面向对象精要》总结(一)" class="article article-type-post" itemscope itemprop="blogPost">
   
     <div class="article-meta">
@@ -946,134 +1360,11 @@ sayNameForPerson2();    <span class="comment">// "person2:Grey"</span>
 
 
   
-    <article id="post-flex布局归纳" class="article article-type-post" itemscope itemprop="blogPost">
-  
-    <div class="article-meta">
-      <a href="/2015/10/26/flex布局归纳/" class="article-date">
-  	<time datetime="2015-10-26T09:39:46.000Z" itemprop="datePublished">2015-10-26</time>
-</a>
-    </div>
-  
-  <div class="article-inner">
-    
-      <input type="hidden" class="isFancy" />
-    
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/2015/10/26/flex布局归纳/">flex布局归纳</a>
-    </h1>
-  
-
-      </header>
-      
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-        <p>Flexbox布局旨在提供一个更佳有效的布局方式，更好的控制项目的对齐和自由分配容器空间，即使它们的大小是未知的或动态的。flex布局让从前的“盒子”具有了弹性，让大小可变，方向可变，顺序可变，可以伸展，也可以收缩。</p>
-
-      
-    </div>
-    
-    <div class="article-info article-info-index">
-      
-      
-	<div class="article-tag tagcloud">
-		<ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/javascript/">javascript</a></li></ul>
-	</div>
-
-      
-
-      
-      <div class="clearfix"></div>
-    </div>
-    
-  </div>
-  
-</article>
-
-
-
-
-
-
-
-  
-    <article id="post-随笔" class="article article-type-post" itemscope itemprop="blogPost">
-  
-    <div class="article-meta">
-      <a href="/2015/10/18/随笔/" class="article-date">
-  	<time datetime="2015-10-18T15:02:59.000Z" itemprop="datePublished">2015-10-18</time>
-</a>
-    </div>
-  
-  <div class="article-inner">
-    
-      <input type="hidden" class="isFancy" />
-    
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/2015/10/18/随笔/">写给“忙碌”的自己</a>
-    </h1>
-  
-
-      </header>
-      
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-        <p>我想写点东西记录一下此时此刻的心情：</p>
-<p>感觉好久没有闲下来了，无论是做什么，感觉从去年的暑假，一直到现在，我也不知道自己的选择是对是错了，但是谁又知道呢？</p>
-<p>我也没有想到我忽然就成了老师眼里的坏学生，然而我也不是很在意，毕竟他们对我来讲意义不是很大。</p>
-<p>想到大三上学期，在时光留影，每天总是想多写点东西，多学点东西，现在想想还是没有尽全力，也不想尽全力，对于我这样的人来讲好像也不现实，有时感觉自己都不了解自己了，不知道自己会为什么坚持，会为什么放弃。</p>
-<p>这一年多一直在学一个方向，开始是跟着栋哥和寒晓学，然后自己学，接着乐土，时光留影，我看到我的进步，那些时候并没有考虑到我在做的事情对我的影响是什么样的，好像我只是感兴趣，我想学我就学了，我不想去上课我就不去了，我不想学专业的东西我就不学了，我不在意考试了，不在意成绩了。同样，也就没有人再告诉我，我应该去做什么，怎么做。</p>
-<p>回忆起那些满脑子都是创业想法的日子，和现在的自己真是判若两人了，不知不觉消退的热情回想起来多少有些惋惜，总是安慰自己说当时的想法的不成熟，有时也感觉像是在给自己找借口，我想我还是缺少勇气。</p>
-<p>既然缺少勇气，那就说说毅力吧，有毅力么？有吧，至少我现在没放弃，我在朝着既定的方向努力，说到努力，我又想到最后在时光留影的两个月，早出晚归，整个暑假，我好像已经忘记了当时烦躁的感觉，当时只是想逃出那个“规律”的生活吧，好像总是自己暗示自己，累了，累了，想休息，然后是说走就走，周五辞职，周六早上临时决定回去一趟，北京，长春，家，正是北方凉爽的天气，看到一群自己最想见的人，亲人，朋友，我爱的人，那段时间说不出的开心，好多不愉快的事情都忘了。</p>
-<p>半个月，再回来，好像又充满了力量，对好多事情又怀抱希望，当时就希望生活会想预想的一样顺利的发展，然而我并没有什么奢求，好像一直都没有，我只想和我爱的人能一直在一起，做我们想做的事情，不过现在想想确实不容易实现，说实话，我以前把找工作想的有点简单了，确实好多事也都是事与愿违，我想不是所有事情都是我能改变的，我能改变的也就是我自己。</p>
-<p>从阿里实习被拒，到被拒四次，还是比较受打击的，但是并没有沮丧，也没有想过放弃，毕竟我还是从那些经历中学到好多东西的，无论是从知识还是经验来讲，有大于无。</p>
-<p>我也说不好从什么时候开始我对学校的老师有这么大的意见，有时候都感觉自己过于偏激，可能自己的想法就是错的，可能自己做的也是错的，然而也只是有时候。大学的生活从老师这个层面上讲，我感觉已经不能再失败了，还好我收获的东西很多，认识了很多有用的人，很多影响自己向前的人，很多可以拿来当榜样的人，从这个角度讲，我收获颇丰。</p>
-<p>想起之前学长问我的问题，想去一个什么样的公司工作？我当时说我不挑地方，只想和一个合得来的人一起做点事情。我骨子里就是一个随性的人，我注定不是一个守规矩的人，对于那些一成不变的东西并不能吸引我太长时间，这可能是个缺点，但是我好像并不是很在乎，我好像一直不在意别人怎么看我，我总这么跟自己说，但是这也不一定是真的。</p>
-<p>看看上面写的东西，是乱七八糟的，没有什么头绪，更谈不上逻辑，这可能能反应我之前这一年的状态，在做事情，但是不守规矩，有成绩，但是没人看得懂。可能我现在才知道，有些事情按照规矩来才能有更好的效果，有些事情还可以做得更好。</p>
-<p>今天我切身的体会到了，有好多人比你优秀，还比你努力，而你知道的也许都是做出成绩的，还有那些默默无闻在做事情的人，所以有时候还是要沉下来，别太把自己当回事，也许就能做的更好，想想那年自己的信誓旦旦，想想别人对自己的付出，就不会那么容易放过自己了。</p>
-<p>写了这么多，我也不知道我想表达什么，想到很多，不直到还能写些什么，还是那句话，伸手摘星，未必如愿，但不会脏了你的手。</p>
-
-      
-    </div>
-    
-    <div class="article-info article-info-index">
-      
-      
-	<div class="article-tag tagcloud">
-		<ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/随笔/">随笔</a></li></ul>
-	</div>
-
-      
-
-      
-      <div class="clearfix"></div>
-    </div>
-    
-  </div>
-  
-</article>
-
-
-
-
-
-
-
-  
     <article id="post-javascript排序算法" class="article article-type-post" itemscope itemprop="blogPost">
   
     <div class="article-meta">
-      <a href="/2015/10/17/javascript排序算法/" class="article-date">
-  	<time datetime="2015-10-17T15:45:09.000Z" itemprop="datePublished">2015-10-17</time>
+      <a href="/2015/10/28/javascript排序算法/" class="article-date">
+  	<time datetime="2015-10-28T13:38:32.632Z" itemprop="datePublished">2015-10-28</time>
 </a>
     </div>
   
@@ -1086,7 +1377,7 @@ sayNameForPerson2();    <span class="comment">// "person2:Grey"</span>
         
   
     <h1 itemprop="name">
-      <a class="article-title" href="/2015/10/17/javascript排序算法/">javascript排序算法</a>
+      <a class="article-title" href="/2015/10/28/javascript排序算法/">javascript排序算法</a>
     </h1>
   
 
@@ -1196,119 +1487,11 @@ function merge (left,right) {
 
 
   
-    <article id="post-js操作字符串、数组的常用方法总结" class="article article-type-post" itemscope itemprop="blogPost">
-  
-    <div class="article-meta">
-      <a href="/2015/10/15/js操作字符串、数组的常用方法总结/" class="article-date">
-  	<time datetime="2015-10-15T04:10:07.000Z" itemprop="datePublished">2015-10-15</time>
-</a>
-    </div>
-  
-  <div class="article-inner">
-    
-      <input type="hidden" class="isFancy" />
-    
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/2015/10/15/js操作字符串、数组的常用方法总结/">js操作字符串、数组的常用方法总结</a>
-    </h1>
-  
-
-      </header>
-      
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-        <p>对于像我这种记忆力不是很好的人，这样的整理还是很有必要的，虽然是很常用的方法，有时候也会因为强迫症要验证一次，在这里总结一下，方便以后查看。</p>
-<h3 id="字符串">字符串</h3><p>在Javascript中字符串是固定不变的，也就是说，当使用某种方法处理字符串的时候，类似于replace()等，会返回一个新的字符串，也就是说字符串是不能被修改的。</p>
-<p>可以使用“+”号将两个字符串进行连接：</p>
-<pre><code>msg = <span class="string">"hello,"</span>+<span class="string">"word"</span>;  <span class="comment">//生成字符串hello，word</span>
-</code></pre><p>字符串具有length属性，可以使用charAt()方法配合length属性返回字符串某个位置上的元素：</p>
-<pre><code>var s = <span class="string">"hello,word"</span>;
-s.charAt<span class="comment">(0)</span>        <span class="comment">//返回 h</span>
-s.charAt<span class="comment">(s.length-1)</span>    <span class="comment">//        返回 d</span>
-</code></pre><p>当需要根据索引截取一个字符串的时候，可以使用substring()方法或者slice()方法：</p>
-<pre><code>s.<span class="function"><span class="title">substring</span><span class="params">(<span class="number">1</span>,<span class="number">4</span>)</span></span>        <span class="comment">//返回索引位置为1、2、3的字符组成的字符串‘ell’；</span>
-s.<span class="function"><span class="title">slice</span><span class="params">(<span class="number">1</span>,<span class="number">4</span>)</span></span>            <span class="comment">//同上返回‘ell’</span>
-s.<span class="function"><span class="title">slice</span><span class="params">(<span class="number">0</span>)</span></span>                <span class="comment">//返回整个字符串‘hello word’</span>
-s.<span class="function"><span class="title">slice</span><span class="params">(-<span class="number">3</span>)</span></span>                <span class="comment">//从末尾开始返回后三个字符‘ord’</span>
-s.<span class="function"><span class="title">clice</span><span class="params">(<span class="number">0</span>,-<span class="number">3</span>)</span></span>            <span class="comment">//返回‘ellow,w’</span>
-<span class="comment">//负值的索引，可以理解为从最后的位置开始算起，但是并不存在‘-0’</span>
-</code></pre><p>当需要查找摸个字符在字符串中的位置的时候，可以使用indexOf()方法，返回该字符的索引位置：</p>
-<pre><code>s.indexOf(<span class="string">"o"</span>);            <span class="comment">//返回“4”，字符“o”首次出现位置的索引；</span>
-s.lastIndexOf(<span class="string">"o"</span>)        <span class="comment">//这是最后一次出现“o”的位置，返回7；</span>
-s.indexOf(<span class="string">"1"</span>,<span class="number">3</span>);        <span class="comment">//这是返回在位置3以及3以后首次出现“o”的索引，返回4；</span>
-</code></pre><p>可以使用split()方法将字符串分割成数组：</p>
-<pre><code>s.<span class="function"><span class="title">split</span><span class="params">(<span class="string">","</span>)</span></span>            <span class="comment">//根据“，”这一标识符，将字符串分割成一个数组，返回的数组为['hello','word']，值得注意的是这里面已经不包含“，”这个字符了。</span>
-</code></pre><p>同样，我们还可以使用replace()方法替换字符串中的某个字符：</p>
-<pre><code>s.<span class="keyword">replace</span>(<span class="string">"h"</span>,<span class="string">"H"</span>);        <span class="comment">//返回“Hello,word”，但是如果直接用“h”，作为标示，这个方法只会替换一次，也就是说如果字符串中有许多的“h”，也只会替换一次。想要全部替换可以选择使用正则表达式；</span>
-s.<span class="keyword">replace</span>(/\<span class="keyword">l</span>/<span class="keyword">g</span>,<span class="string">"L"</span>)；    <span class="comment">//这样就可以换掉所有的“l”；</span>
-s.toUpperCase()；        <span class="comment">//返回“HELLO,WORD”;</span>
-</code></pre><h3 id="数组">数组</h3><p>可以使用push()方法，向一个数组的末尾添加元素：</p>
-<pre><code><span class="atom">var</span> <span class="atom">arr</span> = [<span class="string">'heool'</span>,<span class="string">'word'</span>];
-<span class="atom">arr</span>.<span class="atom">push</span>(<span class="string">'!'</span>);        //<span class="atom">arr</span>=[<span class="string">'heool'</span>,<span class="string">'word'</span>,<span class="string">'!'</span>];
-</code></pre><p>对于数组的遍历，有两种方法，一种是根据数组的length属性，利用for循环进行遍历；另一种可以使用for/in循环，</p>
-<pre><code><span class="keyword">for</span>(<span class="keyword">var</span> index <span class="keyword">in</span> array){
-    <span class="keyword">var</span> <span class="keyword">value</span>  = array[index];
-}
-</code></pre><p>数组也可以转换成字符串，使用join()方法，可以将数组转换成字符串：</p>
-<pre><code><span class="keyword">var</span> arr = [<span class="string">'1'</span>,<span class="string">'2'</span>,<span class="string">'3'</span>];
-arr.<span class="keyword">join</span>(<span class="string">","</span>);        <span class="comment">//返回“1，2，3”;</span>
-</code></pre><p>sort()方法可以对数组进行排序，当不传入参数时，数组元素以字母表顺序排序：</p>
-<pre><code><span class="keyword">var</span> arr = [<span class="string">'banana'</span>,<span class="string">'cherry'</span>,<span class="string">'apple'</span>];
-arr.sort();
-<span class="keyword">var</span> str = a.join(<span class="string">","</span>)；    <span class="comment">//str的值是“apple,banana,cherry”；</span>
-<span class="comment">//如果数组中包含undefined，sort方法会把它放在数组的尾部。</span>
-<span class="comment">//sort方法把数组中的每个对象转换成字符串，然后进行比较，那么 11 会被放在 2 的前面。所以我们需要传递一个函数给sort用来比较纯数字的大小，这个函数有两个参数，排序的规则是根据这个函数的返回值，返回值大于零，第一个参数在后，返回值小于零，第一个参数在前，返回值等于零，顺序无所谓。</span>
-a.sort(<span class="function"><span class="keyword">function</span><span class="params">(a,b)</span></span>{<span class="keyword">return</span> a-b;});
-</code></pre><p>连接两个数组可以使用concat(),这个方法返回一个连接好的新数组：</p>
-<pre><code><span class="keyword">var</span> a = [<span class="number">1</span>,<span class="number">2</span>,<span class="number">3</span>];
-a.<span class="keyword">concat</span>(<span class="number">4</span>,<span class="number">5</span>);        <span class="comment">//返回[1,2,3,4,5];</span>
-a.<span class="keyword">concat</span>([<span class="number">4</span>,<span class="number">5</span>]);    <span class="comment">//返回[1,2,3,4,5];</span>
-</code></pre><p>数组也有slice()方法，slice()方法不会修改原来的数组，而是返回一个新的数组：</p>
-<pre><code>var a = [<span class="number">1</span>,<span class="number">2</span>,<span class="number">3</span>,<span class="number">4</span>,<span class="number">5</span>];
-a.slice<span class="comment">(0,3)</span>;    <span class="comment">//返回[1,2,3];</span>
-a.slice<span class="comment">(3)</span>;        <span class="comment">//返回[4,5];</span>
-a.slice<span class="comment">(1,-1)</span>;    <span class="comment">//返回[2,3,4];参数-1指定了最后一个元素</span>
-a.slice<span class="comment">(-3,-2)</span>;    <span class="comment">//返回[3];</span>
-</code></pre><p>slice()能够从数组中删除元素、插入元素到数组中或者同时完成这两件事情，var a = [1,2,3,4,5,6,7,8];a.splice(4)，当只有一个参数的时候，从数组的起点位置开始到数组结尾的所有元素都会被删除，这个方法会返回被删除的[5,6,7,8],这时数组a的值是[1,2,3,4]，a.splice(1,2);返回[2,3]，现在a的值是[1,4]，a.splice(1,0,’a’,’b’);    //返回[‘a’,’b’]，现在a的值是[1,’a’,’b’,4];</p>
-<p>向数组中添加或者删除元素，还有push(),pop(),unshift(),shift()四个方法，分别是想数组末尾添加元素，从数组末尾删除元素，在数组头添加一个或多个元素，shift()删除数组的第一个元素并返回。</p>
-
-      
-    </div>
-    
-    <div class="article-info article-info-index">
-      
-      
-	<div class="article-tag tagcloud">
-		<ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/javascript/">javascript</a></li></ul>
-	</div>
-
-      
-
-      
-      <div class="clearfix"></div>
-    </div>
-    
-  </div>
-  
-</article>
-
-
-
-
-
-
-
-  
     <article id="post-用canvas制作炫酷的倒计时" class="article article-type-post" itemscope itemprop="blogPost">
   
     <div class="article-meta">
-      <a href="/2015/10/15/用canvas制作炫酷的倒计时/" class="article-date">
-  	<time datetime="2015-10-15T04:09:41.000Z" itemprop="datePublished">2015-10-15</time>
+      <a href="/2015/10/28/用canvas制作炫酷的倒计时/" class="article-date">
+  	<time datetime="2015-10-28T13:36:14.754Z" itemprop="datePublished">2015-10-28</time>
 </a>
     </div>
   
@@ -1321,7 +1504,7 @@ a.slice<span class="comment">(-3,-2)</span>;    <span class="comment">//返回[3
         
   
     <h1 itemprop="name">
-      <a class="article-title" href="/2015/10/15/用canvas制作炫酷的倒计时/">用canvas制作炫酷的倒计时</a>
+      <a class="article-title" href="/2015/10/28/用canvas制作炫酷的倒计时/">用canvas制作炫酷的倒计时</a>
     </h1>
   
 
@@ -1692,7 +1875,7 @@ function renderDigit( x , y , num , cxt ){
   
   
     <nav id="page-nav">
-      <span class="page-number current">1</span><a class="page-number" href="/page/2/">2</a><a class="page-number" href="/page/3/">3</a><a class="page-number" href="/page/4/">4</a><a class="extend next" rel="next" href="/page/2/">Next &raquo;</a>
+      <span class="page-number current">1</span><a class="page-number" href="/page/2/">2</a><a class="page-number" href="/page/3/">3</a><a class="extend next" rel="next" href="/page/2/">Next &raquo;</a>
     </nav>
   
 </div>
@@ -1700,7 +1883,7 @@ function renderDigit( x , y , num , cxt ){
   <div class="outer">
     <div id="footer-info">
     	<div class="footer-left">
-    		&copy; 2015 惜安
+    		&copy; 2016 惜安
     	</div>
       	<div class="footer-right">
       		<a href="http://hexo.io/" target="_blank">Hexo</a>  Theme <a href="https://github.com/litten/hexo-theme-yilia" target="_blank">Yilia</a> by Litten
